@@ -1,4 +1,4 @@
-Protection Profile for ESM - Endpoint Detection and Response (EDR) 
+Protection Profile for Endpoint Detection and Response (EDR) 
 ===============
 
 This repository hosts the draft version of the Protection Profile for Endpoint Detection and Response based on the 
