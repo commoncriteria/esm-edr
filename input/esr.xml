@@ -4,12 +4,12 @@
 <ESR xmlns="http://common-criteria.rhcloud.com/ns/esr" name="Operating System Fundamentals">
   
 	<intro>
-		<esrtitle>Some PP Name</esrtitle>
+		<esrtitle>Endpoint Detection and Response (EDR)</esrtitle>
 		<maintainer>NIAP and CESG</maintainer>
 		<identifier>42</identifier>
 		<version>1.0</version>
 		<status>draft</status>
-		<issuedate>19 March 2015</issuedate>
+		<issuedate>DAY MONTH YEAR</issuedate>
 		<approver/>
 		<supercedes/>
 	</intro>
@@ -26,85 +26,99 @@
 		statements.
 	</section>
 	<section title="Use Cases" id="usecases">
-	  This section is intended to provide the initial scope/bound of the 
-	  security problem by providing the reader with concise statements 
-	  regarding the scenarios in which the technology is being used. The 
-	  intended usage presented here should lay the groundwork for the 
-	  identifying the resources to be protected, and what threats must be
-	  considered in the drafting of the Essential Security Requirements 
-	  (ESR) and for the TC to consider when writing the PP.
+		EDR automatically detects malicious system activities and behaviors.
+		<ul>
+			<li>Continuously records significant events occurring on managed systems.</li>
+			<li>Automatically identifies, reports, and investigates potential malicious activity.</li>
+			<li>Enables access through a management console query interface.</li>
+		</ul>
 	</section>
 
 	<section title="Resources to be protected" id="resourcesprotected">
-    	  This section is intended to provide the initial scope/bound of the 
-    	  security problem by providing the reader with concise statements
-    	  regarding the scenarios in which the technology is being used. The 
-    	  intended usage presented here should lay the groundwork for the 
-    	  identifying the resources to be protected, and what threats must be
-    	  considered in the drafting of the Essential Security Requirements 
-    	  (ESR) and for the TC to consider when writing the PP.
+    	<ul>
+			<li>Sensitive data in transit.</li>
+			<li>Sensitive data stored locally by endpoint agent.</li>
+			<li>Sensitive data stored by common management server.</li>
+		</ul>
 	</section>
 
 	<section title="Attacker access" id="attackeraccess"> 
-	  The following assumptions are made about
-	  attackers' ability to develop attacks: 
-	  <ul>
-	    <li> An attacker has an arbitrary amount of time to analyze the behavior of the product, its
-	    interaction with its platform, and the data it transmits over the network. </li>
-	    <li> An attacker is able to acquire their own copy of the target product and study its
-	    behavior on a platform that they control. </li>
-	  </ul>
-	  <p/> The attacker is expected to engage in the following general classes of attack: <!-- added in order to allow for rather direct flow to Threats section in PP -->
-	  <ul>
-	    <li> Network eavesdropping, in which an attacker may monitor and gain access to data
-	    exchanged between the product and other endpoints. </li>
-	    <li> Network attack, in which an attacker may initiate malicious communications with the
-	    product or alter communications between the product and other endpoints. </li>
-	    <li> Local attack, in which an attacker has gained the ability to execute code on the
-	    system, which may be used to escalate privilege or access data without
-	    authorization. </li>
-	    <li> Limited physical access attack, in which an attacker may attempt to access data on
-	    the system by virtue of being physically present for a limited period of time. This
-	    limited physical access does not include attacks in which the attacker could
-	    disassemble the system to gain access to its storage media or manipulate the product's
-	    underlying hardware and firmware. Systems used for working remotely, such as laptops
-	    and tablets, for which an attacker could gain longer physical access to, should
-	    apply additional protections that are provided by products evaluated against other
-	    Protection Profiles (e.g. FDE cPP). </li>
-	    <li> Persistence, in which an attacker has already exploited the system and wishes to
-	    maintain presence on the system. </li>
-	  </ul>
+	<ul>
+		<li>An attacker is assumed to attempt attacks from the following vantage points:
+			<ul>
+				<li>The network across which the application engages in communication, both actively
+				and passively.</li>
+				<li>The platform on which the application is installed, though as an unprivileged
+				subject.</li>
+			</ul>
+		</li>
+		<li>An attacker has an arbitrary amount of time to analyze the behavior of the application,
+		its interaction with its host device or platform, and/or the data it transmits over the network.</li>
+	</ul>
 	</section>
 	
 	<section title="Essential Security Requirements" id="requirements">
-        	This is where the authors present an initial set of English 
-        	requirements that specify security functionality, rather than 
-        	design and/or implementation characteristics. These requirements 
-        	will provide the foundation for which the detailed set of 
-        	requirements is derived. It is important that the requirements 
-        	captured here make an attempt to fully address the categories 
-        	(e.g., access control, identification and authentication, 
-        	management capabilities, roles of administration, secure 
-        	communications, and audit). That's not to say the requirements are 
-        	fully specified or detailed enough to simply translate to Common 
-        	Criteria security functional requirements. The goal is that there 
-        	is enough information contained here, as well as the other sections
-        	of this document, to provide the TC enough information to ensure 
-        	they have an understanding of what is minimally required in breath.
-
-			<!--
-			This is where the authors explicitly state english requirements
-			that this class of product must satisfy. 
-	        -->
+		The following are the essential security requirements expected to be implemented by an
+		EDR within the established scope.
+		<ul>
+			<li>Implementation does not impair authorized system operations (e.g., updating, patching,
+			scanning, business software usage) or native platform security mechanisms.</li>
+			<li>Encrypt all data in transit and data at rest with FIPS 140-2 compliant cryptographic
+			modules.
+				<ul>
+					<li>Securely store and transmit data in a manner that ensures the confidentiality,
+					integrity, availability, and source authenticity of the data.</li>>
+				</ul>
+			</li>
+			<li>Provide the ability to automatically capture, record, and analyze a range of endpoint
+			parameters and events, including:
+				<ul>
+					<li>User activity - privileged or unprivileged.</li>
+					<li>Network activity - file transfers, connections, destination URLs, IPs, traffic
+					type, and encryptiono used.</li>
+					<li>Processes and services - scheduled and manual starts and stops, process tree,
+					libraries loaded, and file associations.</li>
+					<li>Software changes - driver or software installation, uninstallation, patching,
+					and modification.</li>
+					<li>Peripheral connections - wired and wireless connections to peripheral devices.</li>
+					<li>File activity - files created, opened, closed, saved, modified, moved, or deleted.</li>
+					<li>In-memory activity - activity within memory associated with known, malicious
+					processes (e.g., mutexes, named pipes).</li>
+					<li>Hardware changes - peripheral device detection, removal, or modification.</li>
+				</ul>
+			</li>
+			<li>Provide automated analyses and visualization of an incident; include an incident timeline
+			and an initial assessment of severity or impact.</li>
+			<li>Support for user-specific delegation of who can access or view collected endpoint data.</li>
+			<li>Automatically report detection of potentially malicious events to a common management
+			server and support a non-proprietary, standard data format (e.g., STIX).
+				<ul>
+					<li>Report all potential incidents encountered during high latency or disconnected
+					periods.</li>
+				</ul>
+			</li>
+			<li>Provide response and isolation capabilities upon detection of a potentially malicious
+			event, including:
+				<ul>
+					<li>Endpoint quarantine/isolation.</li>
+					<li>Process kill.</li>
+					<li>File or artifact capture.</li>
+					<li>Blacklist of known bad executables.</li>
+				</ul>
+			</li>
+			<li>Provide an API or similar means for integration into custom or third-party reporting
+			software or existing security program workflows.</li>
+		</ul>
 	</section>
 
 	<section title="Assumptions" id="assumptions">
-	  Simply put, this section presents the aspects of the product and 
-	  its	intended environment that can be assumed to hold true. This 
-	  will provide additional scope on the resulting PP.
+		Simply put, this section presents the aspects of the product and 
+		its	intended environment that can be assumed to hold true. This 
+		will provide additional scope on the resulting PP.
 
-	  The following assumptions are made for the operating system product and its operational
-	  environment: <ul>
+		The following assumptions are made for the operating system product and its operational
+		environment:
+		<ul>
 			<li>The underlying platform is physically protected, to a large extent. The hardware
 				that the product manages is secured by defensive measures that make physical attacks
 				impractical for most attackers. At the same time, casual passersby might attempt to
@@ -140,29 +154,10 @@
 	</section>
 
 	<section title="Outside the TOE's Scope" id="outsidescope">
-	  <!--
-			This is where the authors explicitly state things they do not want 
-			to be considered for inclusion in an evaluation against a 
-			resulting PP.  Items expressed here could include threats, 
-			functions or capabilities that would require assurance activities 
-			that are too subjective, or specific expertise not available in the
-			evaluation facilities expected to assess products against the PP 
-	  -->
 		The following list contains items that are explicitly out-of-scope for any evaluation
 		against the product PP <ul>
-			<li>Malicious, Highly-Privileged Administrators - Highly-privileged administrators
-				acting maliciously can disable most, if not all, security protections on the product.
-				Additionally procedural controls that are out of scope of this document should be
-				considered to help highlight administrator accounts acting suspiciously.</li>
-			<li>Zero Days - The disclosure of recently published vulnerabilities (Zero Days) should
-				not be used as a reason to fail an product undergoing evaluation.</li>
-			<li>Unofficial Versions - Non-vendor supplied install images often contain added
-				functionality and may weaken the normal operating functionality of the product</li>
-			<li>Platform - The product PP shall not address the hardware or firmware of its underlying
-				platform to include the boot sequence before control is handed off to the product. That
-				the platform itself is virtual or physical is irrelevant to any evaluations. </li>
-			<li>Applications - The product PP shall not address applications that are not delivered as
-				part of the product installation process. </li>
+			<li>The hardware or firmware of the underlying platforms.</li>
+			<li>The host operating system of the endpoint.</li>
 		</ul>
 	</section>
 </ESR>
