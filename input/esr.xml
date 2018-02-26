@@ -68,19 +68,16 @@
 		The following are the essential security requirements expected to be implemented by an
 		EDR within the established scope.
 		<ul>
-			<!-- This is probably an SAR, and more on the Agent then the Server -->
-			<li>The EDR Server shall not impair authorized system operations (e.g., updating, patching,
-			scanning, business software usage) or native platform security mechanisms.</li>
-			
-			<li>The EDR shall ensure encryption of all data in transit between clients and between clients 
+			<li>The EDR management server shall ensure encryption of all data in transit between clients and between clients 
 				and servers using TLS or DTLS
 			</li>
 			
-			<li>The EDR Server shall encrypt at rest all endpoint collected data</li>
+			<li>The EDR management server or OS platform shall encrypt all endpoint collected data stored on persistant storage</li>
 			
-			<li>The EDR shall cryptograpically assure the integrity of all commends sent to EDR Agents</li>
+			<li>The EDR management server shall cryptograpically assure the integrity of 
+				all commends sent to EDR Agents</li>
 			
-			<li>The EDR Server shall store the following minimum set of endpoint collected
+			<li>The EDR management server shall store the following minimum set of endpoint collected
 			parameters and events, including:
 				<ul>
 					<li>Basic system information to include Architecture, OS type and version, Host IP address</li>
@@ -95,11 +92,12 @@
 				</ul>
 			</li>
 			
-			<li>The EDR shall provide a visualization of an incident; include an incident timeline</li>
+			<li>The EDR management server shall provide a visualization of an incident; include an incident timeline</li>
 			
-			<li>The EDR shall display an initial assessment of severity for an incident</li>
+			<li>The EDR management server shall display an initial assessment of severity for an incident</li>
 			
-			<li>The EDR shall support Role Based Access Control for the delegation of the following minium roles:
+			<li>The EDR management server shall support Role Based Access Control 
+				for the delegation of the following minium roles:
 				<ul>
 					<li>Administrator, someone who fully exersize all features of the EDR</li>
 					<li>SOC Analyst, someone who can invesitate an incent and close incidents</li>
@@ -107,7 +105,7 @@
 				</ul>
 			</li>
 			
-			<li>The EDR shall provide response and isolation capabilities, including at a minimum:
+			<li>The EDR management server shall provide response and isolation capabilities, including at a minimum:
 				<ul>
 					<li>Endpoint network quarantine and isolation</li>
 					<li>Endpoint Process termination</li>
@@ -115,11 +113,15 @@
 				</ul>
 			</li>
 			
-			<li>The EDR shall provide an API or a data export mechanism using standards based formats (e.g., STIX)
+			<li>The EDR management server shall provide an API or a data export mechanism using standards based formats (e.g., STIX)
 				for intgration into custom or third-party reporting software</li>
 			
-			<li>The EDR shall provide a configuration option for the retention period of collected data</li>
+			<li>The EDR management server shall provide a configuration option for the retention period of collected data</li>
 		
+			<li>The EDR management server shall implement modern anti-exploitation features, these include, but are not limited
+				to Address Space Layer Randomization (ASLR), Stack Canaries/Cookies, and Data
+				Execution Protection (DEP), CSRF Tokens to protect itself</li>
+			
 		</ul>
 	</section>
 
