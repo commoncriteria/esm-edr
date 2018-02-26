@@ -15,12 +15,10 @@
 	</intro>
 
 	<section title="Background and Purpose" id="purpose">
-		This document describes a core set of security requirements
-		for a management server of an Endpoint Detection and Response (EDR) product.
-		These requirements cover basic security behavior for EDR management system that are
-		hosted in a cloud, on-prem, or both. EDR Agents are covered by the EDR-Agent 
-		protection profile. Evaluation against the resulting EDR and EDR Agent Protection Profile
-		ensures that this fundamental set of requirements is met. 
+		This document describes a core set of security requirements for Endpoint Detection and Response management servers.
+		These requirements cover basic security characteristics and behaviors for management servers that are hosted in-cloud,
+		on-premises, or a hybrid. EDR host agent security requirements are addressed in the ESM-HostAgent Protection Profile.
+		Evaluation against the resulting EDR and ESM-HostAgent Protection Profile will ensure that a fundamental set of requirements is met. 
 		<br/>
 		The intent is that the remaining sections provide succinct statements that 
 		highlight the relevant aspects to be addressed by the Technical 
@@ -31,21 +29,21 @@
 		statements.
 	</section>
 	<section title="Use Cases" id="usecases">
-		The EDR management system collects data from endpoint devices to allow the detection and remediation of potentailly
-		malicious endpoint system activities.
+		The EDR management server collects data from endpoint devices to enable the detection and remediation of potentially
+		malicious endpoint system activity.
 		<ul>
 			<li>Continuously records significant events occurring on managed systems.</li>
 			<li>Automatically identifies, reports, and investigates potential malicious activity.</li>
-			<li>Enables access through a management console query interface.</li>
+			<li>Enables access through a management dashboard query interface.</li>
 		</ul>
 	</section>
 
 	<section title="Resources to be protected" id="resourcesprotected">
     	<ul>
-			<li>Sensitive data stored on the EDR management server</li>
-			<li>Credentials for login to the EDR management server</li>
-    		<li>Cryptographic key material used to perform secure communications with endpoints</li>
-    		<li>Sensitive data in transit with the EDR management server</li>
+			<li>Sensitive data stored on the EDR management server.</li>
+			<li>Credentials for authentication to or from the EDR management server.</li>
+    		<li>Cryptographic key material used to perform secure communications with host agents.</li>
+    		<li>Sensitive data in transit to or from the EDR management server.</li>
 		</ul>
 	</section>
 
