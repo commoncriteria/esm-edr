@@ -175,8 +175,9 @@
 	<section title="Outside the TOE's Scope" id="outsidescope">
 		The following list contains items that are explicitly out-of-scope for any evaluation
 		against the product PP <ul>
-			<li>The hardware or firmware of the underlying platforms.</li>
-			<li>The host operating system of the endpoint.</li>
+			<li>The hardware or firmware of the underlying platforms</li>
+			<li>The host operating system of the EDR management server</li>
+			<li>The underlying web server used by the EDR management server</li>		
 		</ul>
 	</section>
 </ESR>
