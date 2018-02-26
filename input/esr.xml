@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/esr2html.xsl"?>
 
-<ESR xmlns="http://common-criteria.rhcloud.com/ns/esr" name="Operating System Fundamentals">
+<ESR xmlns="http://common-criteria.rhcloud.com/ns/esr" name="Endpoint Detection Response(EDR)">
   
 	<intro>
 		<esrtitle>Endpoint Detection and Response (EDR)</esrtitle>
-		<maintainer>NIAP and CESG</maintainer>
+		<maintainer>NIAP</maintainer>
 		<identifier>42</identifier>
 		<version>1.0</version>
 		<status>draft</status>
-		<issuedate>DAY MONTH YEAR</issuedate>
+		<issuedate>March 05, 2018</issuedate>
 		<approver/>
 		<supercedes/>
 	</intro>
 
 	<section title="Background and Purpose" id="purpose">
-		This section sets the context for not only the ESR, but what is 
-		expected of the resulting Protection Profile (PP). The intent is 
-		that the remaining sections provide succinct statements that 
+		This document describes a core set of security requirements
+		for a management server of an Endpoint Detection and Response (EDR) product.
+		These requirements cover basic security behavior for EDR management system that are
+		hosted in a cloud, on-prem, or both. EDR Agents are covered by the EDR-Agent 
+		protection profile. Evaluation against the resulting EDR and EDR Agent Protection Profile
+		ensures that this fundamental set of requirements is met. 
+		<br/>
+		The intent is that the remaining sections provide succinct statements that 
 		highlight the relevant aspects to be addressed by the Technical 
 		Community (TC) constructing the PP. Here, the authors provide a 
 		narrative that introduces the reader to the problem being solved, 
@@ -26,7 +31,8 @@
 		statements.
 	</section>
 	<section title="Use Cases" id="usecases">
-		EDR automatically detects malicious system activities and behaviors.
+		The EDR management system collects data from endpoint devices to allow the detection and remediation of potentailly
+		malicious endpoint system activities.
 		<ul>
 			<li>Continuously records significant events occurring on managed systems.</li>
 			<li>Automatically identifies, reports, and investigates potential malicious activity.</li>
@@ -36,9 +42,10 @@
 
 	<section title="Resources to be protected" id="resourcesprotected">
     	<ul>
-			<li>Sensitive data in transit.</li>
-			<li>Sensitive data stored locally by endpoint agent.</li>
-			<li>Sensitive data stored by common management server.</li>
+			<li>Sensitive data stored on the EDR management server</li>
+			<li>Credentials for login to the EDR management server</li>
+    		<li>Cryptographic key material used to perform secure communications with endpoints</li>
+    		<li>Sensitive data in transit with the EDR management server</li>
 		</ul>
 	</section>
 
@@ -61,53 +68,58 @@
 		The following are the essential security requirements expected to be implemented by an
 		EDR within the established scope.
 		<ul>
-			<li>Implementation does not impair authorized system operations (e.g., updating, patching,
+			<!-- This is probably an SAR, and more on the Agent then the Server -->
+			<li>The EDR Server shall not impair authorized system operations (e.g., updating, patching,
 			scanning, business software usage) or native platform security mechanisms.</li>
-			<li>Encrypt all data in transit and data at rest with FIPS 140-2 compliant cryptographic
-			modules.
-				<ul>
-					<li>Securely store and transmit data in a manner that ensures the confidentiality,
-					integrity, availability, and source authenticity of the data.</li>>
-				</ul>
+			
+			<li>The EDR shall ensure encryption of all data in transit between clients and between clients 
+				and servers using TLS or DTLS
 			</li>
-			<li>Provide the ability to automatically capture, record, and analyze a range of endpoint
+			
+			<li>The EDR Server shall encrypt at rest all endpoint collected data</li>
+			
+			<li>The EDR shall cryptograpically assure the integrity of all commends sent to EDR Agents</li>
+			
+			<li>The EDR Server shall store the following minimum set of endpoint collected
 			parameters and events, including:
 				<ul>
-					<li>User activity - privileged or unprivileged.</li>
-					<li>Network activity - file transfers, connections, destination URLs, IPs, traffic
-					type, and encryptiono used.</li>
-					<li>Processes and services - scheduled and manual starts and stops, process tree,
-					libraries loaded, and file associations.</li>
-					<li>Software changes - driver or software installation, uninstallation, patching,
-					and modification.</li>
-					<li>Peripheral connections - wired and wireless connections to peripheral devices.</li>
-					<li>File activity - files created, opened, closed, saved, modified, moved, or deleted.</li>
-					<li>In-memory activity - activity within memory associated with known, malicious
-					processes (e.g., mutexes, named pipes).</li>
-					<li>Hardware changes - peripheral device detection, removal, or modification.</li>
+					<li>Basic system information to include Architecture, OS type and version, Host IP address</li>
+					<li>All Privileged and unprivileged endpoint account login activity</li>
+					<li>All process creation and termination</li>
+					<li>All libraries and modules loaded by a process</li>
+					<li>All network connection activity, including destination URLs, IPs</li>
+					<li>All files created on persistant storage</li>
+					<li>All new hardware devices added to system (this might be objective)</li>
+					<li>All volitatile memory regions marked for execution that are not backed by 
+						files on persistant storage (this might be objective)</li>					
 				</ul>
 			</li>
-			<li>Provide automated analyses and visualization of an incident; include an incident timeline
-			and an initial assessment of severity or impact.</li>
-			<li>Support for user-specific delegation of who can access or view collected endpoint data.</li>
-			<li>Automatically report detection of potentially malicious events to a common management
-			server and support a non-proprietary, standard data format (e.g., STIX).
+			
+			<li>The EDR shall provide a visualization of an incident; include an incident timeline</li>
+			
+			<li>The EDR shall display an initial assessment of severity for an incident</li>
+			
+			<li>The EDR shall support Role Based Access Control for the delegation of the following minium roles:
 				<ul>
-					<li>Report all potential incidents encountered during high latency or disconnected
-					periods.</li>
+					<li>Administrator, someone who fully exersize all features of the EDR</li>
+					<li>SOC Analyst, someone who can invesitate an incent and close incidents</li>
+					<li>Read Only, someone who can only read data and cannot make any changes</li>
 				</ul>
 			</li>
-			<li>Provide response and isolation capabilities upon detection of a potentially malicious
-			event, including:
+			
+			<li>The EDR shall provide response and isolation capabilities, including at a minimum:
 				<ul>
-					<li>Endpoint quarantine/isolation.</li>
-					<li>Process kill.</li>
-					<li>File or artifact capture.</li>
-					<li>Blacklist of known bad executables.</li>
+					<li>Endpoint network quarantine and isolation</li>
+					<li>Endpoint Process termination</li>
+					<li>Retrieval of Endpoint Files (malicious artifact capture)</li>
 				</ul>
 			</li>
-			<li>Provide an API or similar means for integration into custom or third-party reporting
-			software or existing security program workflows.</li>
+			
+			<li>The EDR shall provide an API or a data export mechanism using standards based formats (e.g., STIX)
+				for intgration into custom or third-party reporting software</li>
+			
+			<li>The EDR shall provide a configuration option for the retention period of collected data</li>
+		
 		</ul>
 	</section>
 
@@ -144,12 +156,17 @@
 	</section>
 
 
+	<section title="Objective Requirements" id="objective">
+			<li>
+				The EDR shall provide an automated remediation activities when configured to do so.
+			</li>
+	</section>
+
 	<section title="Optional Extensions" id="extensions"> 
-		Additional security functionality that may
-		be appropriate for some use cases, and can be expressed in extensions to this document,
-		includes: 
 		<ul>
-			<li></li>
+			<li>
+				Client authentication to endpoint agents using X.509v3 certificates.
+			</li>
 		</ul>
 	</section>
 
