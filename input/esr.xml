@@ -63,63 +63,54 @@
 	</section>
 	
 	<section title="Essential Security Requirements" id="requirements">
-		The following are the essential security requirements expected to be implemented by an
-		EDR within the established scope.
+		The following are the essential security requirements expected to be implemented by an EDR management server
+		within the established scope.
 		<ul>
-			<li>The EDR management server shall ensure encryption of all data in transit between clients and between clients 
-				and servers using TLS or DTLS
-			</li>
-			
-			<li>The EDR management server or OS platform shall encrypt all endpoint collected data stored on persistant storage</li>
-			
-			<li>The EDR management server shall cryptograpically assure the integrity of 
-				all commends sent to EDR Agents</li>
-			
-			<li>The EDR management server shall store the following minimum set of endpoint collected
-			parameters and events, including:
+			<li>The EDR management server shall ensure encryption of all data in transit using TLS or DTLS.</li>
+			<li>The EDR management server or underling platform shall encrypt all endpoint collected all persistently stored data.</li>
+			<li>The EDR management server shall cryptograpically assure the integrity of all commands sent to host agents.</li>
+			<li>The EDR management server shall collect and store a minimum set of parameters and events
+			from endpoint systems, including:
 				<ul>
-					<li>Basic system information to include Architecture, OS type and version, Host IP address</li>
-					<li>All Privileged and unprivileged endpoint account login activity</li>
+					<li>Endpoint system architecture, operating system version, internal/external host IP addresses</li>
+					<li>All privileged and unprivileged endpoint account login activity</li>
 					<li>All process creation and termination</li>
-					<li>All libraries and modules loaded by a process</li>
+					<li>All libraries and modules loaded by processes</li>
 					<li>All network connection activity, including destination URLs, IPs</li>
 					<li>All files created on persistant storage</li>
-					<li>All new hardware devices added to system (this might be objective)</li>
-					<li>All volitatile memory regions marked for execution that are not backed by 
-						files on persistant storage (this might be objective)</li>					
+					<li>All new hardware devices added to system (this might be an objective)</li>
+					<li>All volatile memory regions marked for execution running processes not backed by 
+						executable files on persistant storage (this might be an objective)</li>					
 				</ul>
 			</li>
-			
 			<li>The EDR management server shall provide a visualization of an incident; include an incident timeline</li>
-			
 			<li>The EDR management server shall display an initial assessment of severity for an incident</li>
-			
 			<li>The EDR management server shall support Role Based Access Control 
-				for the delegation of the following minium roles:
+				for the delegation of, at least, the following roles:
 				<ul>
-					<li>Administrator, someone who fully exersize all features of the EDR</li>
-					<li>SOC Analyst, someone who can invesitate an incent and close incidents</li>
-					<li>Read Only, someone who can only read data and cannot make any changes</li>
+					<li>Administrator, or someone who fully exercises all EDR features</li>
+					<li>SOC Analyst, or someone who can investigate, remediate, and close incidents</li>
+					<li>Read Only, or someone who can only read data and cannot make any changes</li>
 				</ul>
 			</li>
-			
 			<li>The EDR management server shall provide response and isolation capabilities, including at a minimum:
 				<ul>
 					<li>Endpoint network quarantine and isolation</li>
-					<li>Endpoint Process termination</li>
-					<li>Retrieval of Endpoint Files (malicious artifact capture)</li>
+					<li>Endpoint process termination</li>
+					<li>Retrieval of endpoint files (malicious artifact capture)</li>
 				</ul>
 			</li>
-			
 			<li>The EDR management server shall provide an API or a data export mechanism using standards based formats (e.g., STIX)
-				for intgration into custom or third-party reporting software</li>
-			
-			<li>The EDR management server shall provide a configuration option for the retention period of collected data</li>
-		
-			<li>The EDR management server shall implement modern anti-exploitation features, these include, but are not limited
-				to Address Space Layer Randomization (ASLR), Stack Canaries/Cookies, and Data
-				Execution Protection (DEP), CSRF Tokens to protect itself</li>
-			
+				for integration into custom or third-party reporting software.</li>
+			<li>The EDR management server shall provide a retention period configuration option for collected data.</li>
+			<li>The EDR management server shall implement a minimum set of modern anti-exploitation features, including:
+				<ul>
+					<li>Address Space Layer Randomization (ASLR)</li>
+					<li>Stack Canaries/Cookies</li>
+					<li>Data Execution Protection (DEP)</li>
+					<li>CSRF Tokens to protect itself</li>
+				</ul>
+			</li>
 		</ul>
 	</section>
 
