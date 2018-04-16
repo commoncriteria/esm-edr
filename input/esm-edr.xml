@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
 
+
 <PP xmlns="https://niap-ccevs.org/cc/v1" name="Protection Profile QQQQ"
     xmlns:h="http://www.w3.org/1999/xhtml">
   <!-- <inline-comment color='green'> Hello World QQQQ </inline-comment> -->
@@ -13,7 +14,7 @@
       <PPPubDate>2018-07-14</PPPubDate>
       <PPCertificationID>unassigned</PPCertificationID>
       <CCVersion>3.1R4</CCVersion>
-      <Keywords>edr, software, endpoint detection, respone</Keywords>
+      <Keywords>edr, software, endpoint detection, response</Keywords>
       <entry>
         <name>Registration</name>
         <description>National Information Assurance Partnership</description>
@@ -21,7 +22,7 @@
     </ReferenceTable>
   </PPReference>
 
-  <RevisionHistory role="final">
+  <RevisionHistory>
     <entry>
       <version>1.0</version>
       <date>2018-07-14</date>
@@ -30,12 +31,10 @@
   </RevisionHistory>
 
   <chapter title="Introduction" id="int">
-    <section title="Overview" id="ppoverview"> The scope of this Protection Profile (PP) is to
-      describe the security functionality of operating systems in terms of <cite linkend="bibCC"/>
-      and to define functional and assurance requirements for such products.
-      An operating system is software that manages computer hardware and software
-      resources, and provides common services for application programs. The hardware
-      it manages may be physical or virtual.
+    <section title="Overview" id="ppoverview"> This document describes a core set of security requirements for Endpoint Detection and Response (EDR) management servers.
+      These requirements cover basic security characteristics and behaviors for management servers that are hosted in-cloud,
+      on-premises, or a hybrid. EDR host agent security requirements are addressed in the ESM-HostAgent Protection Profile.
+      Evaluation against the resulting EDR and ESM-HostAgent Protection Profile will ensure that a fundamental set of requirements is met.
     </section>
     <section title="Terms" id="glossary"> The following sections provide both Common Criteria and
       technology terms used in this Protection Profile. <subsection title="Common Criteria Terms"
