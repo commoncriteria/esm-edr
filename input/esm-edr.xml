@@ -36,8 +36,8 @@
       on-premises, or a hybrid. EDR host agent security requirements are addressed in the ESM-HostAgent Protection Profile.
       Evaluation against the resulting EDR and ESM-HostAgent Protection Profile will ensure that a fundamental set of requirements is met. There are three primary architectural categories for EDR management servers:
       <h:li>In-cloud: endpoints communicate over the Internet with an off-site server or "cloud"</h:li>
-      <h:li>On-premises: ednpoints communicate with a local, on-site management server
-      </h:li>Hybrid: a cross between the in-cloud and on-premises setups (for example: peer-to-peer)
+      <h:li>On-premises: ednpoints communicate with a local, on-site management server</h:li>
+      <h:li>Hybrid: a cross between the in-cloud and on-premises setups (for example: peer-to-peer)</h:li>
     </section>
     <section title="Terms" id="glossary"> The following sections provide both Common Criteria and
       technology terms used in this Protection Profile. <subsection title="Common Criteria Terms"
@@ -54,7 +54,7 @@
               Evaluation.</description>
           </entry>
           <entry>
-            <term><abbr title="Endpoint Detection and Response">CC</abbr></term>
+            <term><abbr title="Endpoint Detection and Response">EDR</abbr></term>
             <description>A category of tools or solutions that focus on detecting, investigating, and mitigating suspicious activities and events on hosts and endpoints.</description>
           </entry>
           <entry>
