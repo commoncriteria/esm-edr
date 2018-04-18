@@ -2,10 +2,9 @@
 <?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
 
 
-<PP xmlns="https://niap-ccevs.org/cc/v1" name="Protection Profile QQQQ"
+<PP xmlns="https://niap-ccevs.org/cc/v1" name="Protection Profile Endpoint Detection and Response (EDR)"
     xmlns:h="http://www.w3.org/1999/xhtml">
-  <!-- <inline-comment color='green'> Hello World QQQQ </inline-comment> -->
-  <!-- <inline-comment color='blue' linebreak='yes'> Hello World QQQQ </inline-comment> -->
+
   <PPReference title="PP Reference">
     <ReferenceTable>
       <PPTitle>Protection Profile for Endpoint Detection and Response (EDR)</PPTitle>
@@ -31,13 +30,22 @@
   </RevisionHistory>
 
   <chapter title="Introduction" id="int">
-    <section title="Overview" id="ppoverview"> This document describes a core set of security requirements for Endpoint Detection and Response (EDR) management servers.
-      These requirements cover basic security characteristics and behaviors for management servers that are hosted in-cloud,
-      on-premises, or a hybrid. EDR host agent security requirements are addressed in the ESM-HostAgent Protection Profile.
-      Evaluation against the resulting EDR and ESM-HostAgent Protection Profile will ensure that a fundamental set of requirements is met. There are three primary architectural categories for EDR management servers:
-      <h:li>In-cloud: endpoints communicate over the Internet with an off-site server or "cloud"</h:li>
-      <h:li>On-premises: ednpoints communicate with a local, on-site management server</h:li>
-      <h:li>Hybrid: a cross between the in-cloud and on-premises setups (for example: peer-to-peer)</h:li>
+    <section title="Overview" id="ppoverview">
+      The scope of this Protection Profile (PP) is to describe the security functionality of Endpoint Detection and 
+      Response (EDR) system in terms of [CC] and to define functional and assurance requirements for such products.
+      An EDR system is managment software that collects endpoint host data for the purpose of detecting malicous activity
+      and enabling response actions to remediate the malicious behaviors. These requirements cover basic security 
+      characteristics and behaviors for EDR management systems that are hosted in a cloud, on-premises, or a hybrid. 
+      The platform on which the EDR system runs may be physical, virtual, or part of a cloud environment.
+      <h:br />
+      The security requirement for the host agent are addressed in the seperate ESM-HostAgent 
+      Protection Profile. Evaluation of an EDR system will require evaluation against the ESM-EDR PP and the ESM-HostAgent PP.
+      <h:br />
+      There are three primary architectural categories for a EDR system addressed by requirements in this PP. 
+      <h:li>Cloud: Endpoints communicate over the Internet to an EDR cloud service.</h:li>
+      <h:li>On-Premises: Ednpoints communicate with an on-premises EDR server in a hub and spoke network model.</h:li>
+      <h:li>On-Premises: Ednpoints communicate with other Endpoints and ultimately an on-premises EDR server in a 
+        ring based network model (for example: peer-to-peer).</h:li>
     </section>
     <section title="Terms" id="glossary"> The following sections provide both Common Criteria and
       technology terms used in this Protection Profile. <subsection title="Common Criteria Terms"
@@ -54,10 +62,6 @@
               Evaluation.</description>
           </entry>
           <entry>
-            <term><abbr title="Endpoint Detection and Response">EDR</abbr></term>
-            <description>A category of tools or solutions that focus on detecting, investigating, and mitigating suspicious activities and events on hosts and endpoints.</description>
-          </entry>
-          <entry>
             <term><abbr title="Protection Profile">PP</abbr></term>
             <description>An implementation-independent set of security requirements for a category
               of products.</description>
@@ -70,7 +74,7 @@
           <entry>
             <term><abbr title="Target of Evaluation">TOE</abbr></term>
             <description>
-	      The product under evaluation. In this case, the Operating System as described in section 
+              The product under evaluation. In this case, the Endpoint Detection and Response (EDR) as described in section 
 	      <xref linkend="TOEboundary"/> and its
               supporting documentation.
 	    </description>
@@ -99,9 +103,12 @@
       <subsection title="Technology Terms" id="techterms">
         <glossary>
           <entry>
-            <term><abbr title="SOMETHING"></abbr></term>
-            <description>
-	    </description>
+            <term><abbr title="Endpoint Detection and Response">EDR</abbr></term>
+            <description>A category of tools or solutions that focus on detecting, investigating, and mitigating suspicious activities and events on hosts and endpoints.</description>
+          </entry>
+          <entry>
+            <term><abbr title="SOC Analyst">EDR</abbr></term>
+            <description>Security Operations Center (SOC) Analyst is typically the person responsible for reviewing malicious alerts and performing remediation and clean up.</description>
           </entry>
         </glossary>
       </subsection>
@@ -1012,16 +1019,16 @@
       <entry id="bibCC">
         <tag>CC</tag>
         <description>Common Criteria for Information Technology Security Evaluation - <h:ul>
-            <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R4.pdf">Part
-                1: Introduction and General Model</h:a>, CCMB-2012-09-001, Version 3.1 Revision 4,
-              September 2012.</h:li>
-            <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R4.pdf">Part
-                2: Security Functional Components</h:a>, CCMB-2012-09-002, Version 3.1 Revision 4,
-              September 2012.</h:li>
-            <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R4.pdf">Part
-                3: Security Assurance Components</h:a>, CCMB-2012-09-003, Version 3.1 Revision 4,
-              September 2012.</h:li>
-          </h:ul></description>
+          <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R5.pdf">Part
+            1: Introduction and General Model</h:a>, CCMB-2017-04-001, Version 3.1 Revision 5,
+            April 2017.</h:li>
+          <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R5.pdf">Part
+            2: Security Functional Components</h:a>, CCMB-2017-04-002, Version 3.1 Revision 5,
+            April 2017.</h:li>
+          <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R5.pdf">Part
+            3: Security Assurance Components</h:a>, CCMB-2017-04-003, Version 3.1 Revision 5,
+            April 2017.</h:li>
+        </h:ul></description>
       </entry>
       <entry id="bibCEM">
         <tag>CEM</tag>
