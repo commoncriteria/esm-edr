@@ -121,13 +121,23 @@
       </subsection>
     </section>
     <section title="Use Cases" id="usecases">Requirements in this Protection Profile are designed to
-      address the security problems in at least the following use cases. These use cases are intentionally
-      very broad, as many specific use cases exist for an operating system. These use cases may also
-      overlap with one another.  An operating system's functionality may even be effectively extended by
-      privileged applications installed onto it.  However, these are out of scope of this PP. <usecases>
-        <usecase title="End User Devices" id="enduserdevices">
-          <description>
+      address the security problems in at least the following use cases. 
+      An EDR system's functionality may be effectively extended by
+      addon applications or threat feeds installed onto it.  However, these are out of scope of this PP. 
+      <usecases>
+        <usecase title="On-Premises EDR System" id="serversystems">
+          <description>The EDR management system is provided by server-side services on
+            physical or virtual hardware.
           </description>
+        </usecase>
+        <usecase title="Cloud Based EDR System" id="cloudsystems">
+          <description>The EDR management system is provided by cloud services running on
+            physical or virtual hardware.  An EDR is typically part of offerings
+            identified as Software as a Service (SaaS), or Platform as a Service (PaaS). 
+            <h:br/>
+            This use case typically involves the use of virtualization technology 
+            which should be evaluated against the 
+            <h:i>Protection Profile for Server Virtualization</h:i>.</description>
         </usecase>
       </usecases>
     </section>
@@ -158,7 +168,7 @@
       </cclaim>
       <cclaim id="CC Conformance Claims">
         <description>This PP is conformant to Parts 2 (extended) and 3 (extended) of Common Criteria
-          Version 3.1, Revision 4.<cite linkend="bibCC"/>.</description>
+          Version 3.1, Revision 5.<cite linkend="bibCC"/>.</description>
       </cclaim>
       <cclaim id="PP Claim">
         <description>This PP does not claim conformance to any other Protection
