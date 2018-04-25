@@ -345,79 +345,13 @@
       </subsection>
       
       <subsection title="Security Audit (FAU)" id="fau">
-  
-        <f-component id="FAU_ALT_EXT.1" name="Server Alerts">
-          <f-element id="FAU_ALT_EXT.1.1">
-            <title>The <abbr linkend="EDR"/> system shall alert the administrators in 
-              the event of any of the following: <h:ol type="a">
-                <h:li>change in endpoint host enrollment status</h:li>
-                <h:li>detection of endpoint malicous activity</h:li>
-              </h:ol>
-            </title>
-            <note role="application">
-              Add Note
-            </note>
-            <aactivity>
-            </aactivity>
-          </f-element>
-        </f-component>
         
-        <f-component id="FAU_COL_EXT.1" name="Collected Audit">
-          <f-element id="FAU_ALT_EXT.1.1">
-            <title>The <abbr linkend="EDR"/> system shall collect the following minimum set of
-              endpoint host event data: <h:ol type="a">
-                <h:li>Operating System (OS) version, architecture, and IP Address</h:li>
-                <h:li>All privileged and unprivileged endpoint account login activity</h:li>
-                <h:li>All process creation</h:li>
-                <h:li>All libraries and modules loaded by processes</h:li>
-                <h:li>All network connection activity, including destination URLs, IP</h:li>
-                <h:li>All files created on persistant storage</h:li>
-                <h:li>All network connection activity, including destination URLs, IP</h:li>
-                <selectables>
-                  <selectable><assignable>other host data</assignable></selectable>
-                  <selectable>no other data</selectable>
-                </selectables>
-              </h:ol>
-            </title>
-            <note role="application">
-            </note>
-            <aactivity>
-            </aactivity>
-          </f-element>
-        </f-component>
-        
-        <f-component id="FAU_NET_EXT.1" name="Network Reachability Review">
-          <f-element id="FAU_NET_EXT.1.1">
-            <title>The <abbr linkend="EDR"/> system shall provide administrators with the
-              capability to read the network connectivity status of an enrolled EDR Host agent.</title>
-            <note role="application">
-            </note>
-            <aactivity>
-            </aactivity>
-          </f-element>
-        </f-component> 
-  
-        <f-component id="FAU_SAR.1" name="Audit Review">
-          <f-element id="FAU_SAR.1.1">
-            <title>The <selectables>
-              <selectable>EDR</selectable>
-              <selectable><abbr linkend="EDR"/> Platform</selectable>
-            </selectables> shall provide administrators with the capability to read
-              all audit data from the audit records.</title>
-          <note role="application">The intent of this requirement is to ensure that the
-              administrator can read and view the collected EDR Host Agent collected
-              audit records and to prevent unauthorized users from accessing the logs.</note>
-            <aactivity>
-              <guidance>The evaluator shall check the AGD guidance and ensure that it describes how
-                the administrator accesses and reviews the ESM-HostAgent collected audit data.
-              </guidance>
-              <tests>The evaluator shall attempt to view the audit record as the authorized
-                administrator and verify that the action succeeds.
-              </tests>
-            </aactivity>
-          </f-element>
-        </f-component>
-  
+      </subsection>
+      
+      <subsection title="Security Management (FMT)" id="fmt">
+      </subsection>
+      
+      <subsection title="Trusted Path/Channels" id="tpc">
       </subsection>
     
     </section>
