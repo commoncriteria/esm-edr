@@ -103,12 +103,12 @@
       <subsection title="Technology Terms" id="techterms">
         <glossary>
           <entry>
-            <term><abbr title="Dashboard">Dashboard</abbr></term>
+            <term><abbr title="Dashboard"></abbr></term>
             <description>A management interface for setting and viewing EDR policy and 
             visualizing collected endpoint alert data.</description>
           </entry>
           <entry>
-            <term><abbr title="Endpoint">Endpoint</abbr></term>
+            <term><abbr title="Endpoint"></abbr></term>
             <description>An computing device that runs an Operating System. Endpoints can 
               include desktops, servers, and mobile devices.</description>
           </entry>
@@ -118,17 +118,17 @@
               investigating, and mitigating suspicious activities on endpoints.</description>
           </entry>
           <entry>
-            <term><abbr title="Endpoint Detection and Response Agent">EDR Agent</abbr></term>
+            <term><abbr title="Endpoint Detection and Response (EDR) Agent"></abbr></term>
             <description>Software that executes on endpoints to collect a set of Operating System 
               data for analysis by the EDR product.</description>
           </entry>
           <entry>
-            <term><abbr title="Operating System (OS)">Operating System (OS)</abbr></term>
+            <term><abbr title="Operating System">OS</abbr></term>
             <description>Software that manages physical and logical resources and provides 
               services for applications.</description>
           </entry>
           <entry>
-            <term><abbr title="SOC Analyst">EDR</abbr></term>
+            <term><abbr title="SOC Analyst"></abbr></term>
             <description>Security Operations Center (SOC) Analyst is typically the person 
               responsible for reviewing malicious alerts and performing remediation and 
               clean up.</description>
@@ -346,7 +346,9 @@
       Technology Security Evaluation, Version 3.1, Revision 5, with additional extended functional
       components. 
 
-      <!-- Note: Every SFR must have a status = "threshold" or "optional" or "sel-based" or "objective" -->
+      <subsection title="Cryptographic Support (FCS)" id="fcs">
+      </subsection>
+      
       <subsection title="Security Audit (FAU)" id="fau">
   
         <f-component id="FAU_ALT_EXT.1" name="Server Alerts">
@@ -422,6 +424,7 @@
         </f-component>
   
       </subsection>
+    
     </section>
     <section title="Security Assurance Requirements" id="SARs">
       The Security Objectives in 
