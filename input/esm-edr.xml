@@ -103,12 +103,35 @@
       <subsection title="Technology Terms" id="techterms">
         <glossary>
           <entry>
+            <term><abbr title="Dashboard">Dashboard</abbr></term>
+            <description>A management interface for setting and viewing EDR policy and 
+            visualizing collected endpoint alert data.</description>
+          </entry>
+          <entry>
+            <term><abbr title="Endpoint">Endpoint</abbr></term>
+            <description>An computing device that runs an Operating System. Endpoints can 
+              include desktops, servers, and mobile devices.</description>
+          </entry>
+          <entry>
             <term><abbr title="Endpoint Detection and Response">EDR</abbr></term>
-            <description>A category of tools or solutions that focus on detecting, investigating, and mitigating suspicious activities and events on hosts and endpoints.</description>
+            <description>A system that analyzes collected EDR Agent data for detecting, 
+              investigating, and mitigating suspicious activities on endpoints.</description>
+          </entry>
+          <entry>
+            <term><abbr title="Endpoint Detection and Response Agent">EDR Agent</abbr></term>
+            <description>Software that executes on endpoints to collect a set of Operating System 
+              data for analysis by the EDR product.</description>
+          </entry>
+          <entry>
+            <term><abbr title="Operating System (OS)">Operating System (OS)</abbr></term>
+            <description>Software that manages physical and logical resources and provides 
+              services for applications.</description>
           </entry>
           <entry>
             <term><abbr title="SOC Analyst">EDR</abbr></term>
-            <description>Security Operations Center (SOC) Analyst is typically the person responsible for reviewing malicious alerts and performing remediation and clean up.</description>
+            <description>Security Operations Center (SOC) Analyst is typically the person 
+              responsible for reviewing malicious alerts and performing remediation and 
+              clean up.</description>
           </entry>
         </glossary>
       </subsection>
@@ -320,20 +343,84 @@
 
     <section title="Security Functional Requirements" id="SFRs">The Security Functional Requirements
       included in this section are derived from Part 2 of the Common Criteria for Information
-      Technology Security Evaluation, Version 3.1, Revision 4, with additional extended functional
+      Technology Security Evaluation, Version 3.1, Revision 5, with additional extended functional
       components. 
 
       <!-- Note: Every SFR must have a status = "threshold" or "optional" or "sel-based" or "objective" -->
-      <subsection title="QQQQ" id="QQQQ">
-        <f-component id="QQQ_QQQ.1" name="QQQQQ" status="threshold">
-          <f-element id="QQQ_QQQ.1.1">
-            <title> 
+      <subsection title="Security Audit (FAU)" id="fau">
+  
+        <f-component id="FAU_ALT_EXT.1" name="Server Alerts">
+          <f-element id="FAU_ALT_EXT.1.1">
+            <title>The <abbr linkend="EDR"/> system shall alert the administrators in 
+              the event of any of the following: <h:ol type="a">
+                <h:li>change in endpoint host enrollment status</h:li>
+                <h:li>detection of endpoint malicous activity</h:li>
+              </h:ol>
             </title>
-            <note role="application"></note>
+            <note role="application">
+              Add Note
+            </note>
             <aactivity>
-	    </aactivity>
+            </aactivity>
           </f-element>
         </f-component>
+        
+        <f-component id="FAU_COL_EXT.1" name="Collected Audit">
+          <f-element id="FAU_ALT_EXT.1.1">
+            <title>The <abbr linkend="EDR"/> system shall collect the following minimum set of
+              endpoint host event data: <h:ol type="a">
+                <h:li>Operating System (OS) version, architecture, and IP Address</h:li>
+                <h:li>All privileged and unprivileged endpoint account login activity</h:li>
+                <h:li>All process creation</h:li>
+                <h:li>All libraries and modules loaded by processes</h:li>
+                <h:li>All network connection activity, including destination URLs, IP</h:li>
+                <h:li>All files created on persistant storage</h:li>
+                <h:li>All network connection activity, including destination URLs, IP</h:li>
+                <selectables>
+                  <selectable><assignable>other host data</assignable></selectable>
+                  <selectable>no other data</selectable>
+                </selectables>
+              </h:ol>
+            </title>
+            <note role="application">
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="FAU_NET_EXT.1" name="Network Reachability Review">
+          <f-element id="FAU_NET_EXT.1.1">
+            <title>The <abbr linkend="EDR"/> system shall provide administrators with the
+              capability to read the network connectivity status of an enrolled EDR Host agent.</title>
+            <note role="application">
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+        </f-component> 
+  
+        <f-component id="FAU_SAR.1" name="Audit Review">
+          <f-element id="FAU_SAR.1.1">
+            <title>The <selectables>
+              <selectable>EDR</selectable>
+              <selectable><abbr linkend="EDR"/> Platform</selectable>
+            </selectables> shall provide administrators with the capability to read
+              all audit data from the audit records.</title>
+          <note role="application">The intent of this requirement is to ensure that the
+              administrator can read and view the collected EDR Host Agent collected
+              audit records and to prevent unauthorized users from accessing the logs.</note>
+            <aactivity>
+              <guidance>The evaluator shall check the AGD guidance and ensure that it describes how
+                the administrator accesses and reviews the ESM-HostAgent collected audit data.
+              </guidance>
+              <tests>The evaluator shall attempt to view the audit record as the authorized
+                administrator and verify that the action succeeds.
+              </tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+  
       </subsection>
     </section>
     <section title="Security Assurance Requirements" id="SARs">
