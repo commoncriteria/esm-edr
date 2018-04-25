@@ -138,7 +138,7 @@
           The TOE boundary encompasses two primary components: the <abbr linkend="EDR"/> server 
           service and the Endpoint Host Agent. The <abbr linkend="EDR"/> server service and
           Endpoint Host Agent communicate over an untrusted network as pictured below.
-          <figure entity="edr_overview.jpg" title="EDR Overview" id="toe"/>
+          <figure entity="images/edr_overview.jpg" title="EDR Overview" id="toe"/>
         </subsection>
       <subsection title="TOE Platform" id="TOEplatform">
         The TOE platform, which consists of the operating system or cloud environment on which 
