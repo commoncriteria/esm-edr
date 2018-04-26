@@ -694,9 +694,119 @@
 	  </aactivity>
           </f-element>
         </f-component>
+        
+        <f-component id="fcs_cop.1(2)" name="Cryptographic Operation - Hashing" status="sel-based">
+          <selection-depends req="fcs_tlsc_ext.1.1" ids="sel_impl_tls"/>
+          <f-element id="fcs_cop.1.1(2)">
+            <title>The application shall perform cryptographic hashing services in accordance with a specified 
+              cryptographic algorithm 
+              <selectables linebreak="yes">
+                <selectable>SHA-1</selectable>
+                <selectable>SHA-256</selectable>
+                <selectable>SHA-384</selectable>
+                <selectable>SHA-512</selectable>
+                <selectable>no other algorithms</selectable>
+              </selectables>
+              and message digest sizes <selectables linebreak="yes">
+                <selectable>160</selectable>
+                <selectable>256</selectable>
+                <selectable>384</selectable>
+                <selectable>512</selectable>
+                <selectable>no other message digest sizes</selectable>
+              </selectables> bits that meet the following: FIPS Pub 180-4.
+            </title>
+            <note role="application">
+              Per NIST SP 800-131A, SHA-1 for generating digital signatures is no
+              longer allowed, and SHA-1 for verification of digital signatures is strongly discouraged as
+              there may be risk in accepting these signatures.
+              <h:br/>
+              SHA-1 is currently required in order to comply with <linkref linkend="FCS_TLSC_EXT.1"/>. If
+              FCS_TLSC_EXT.1.1 is included in the ST, the hashing algorithms selection for FCS_COP.1(2)
+              must match the hashing algorithms used in the mandatory and selected cipher suites of
+              FCS_TLSC_EXT.1.1. Vendors are strongly encouraged to implement updated protocols that
+              support the SHA-2 family; until updated protocols are supported, this PP allows support for
+              SHA-1 implementations in compliance with SP 800-131A.
+              <h:br/>
+              The intent of this requirement is to specify the hashing function. The hash selection must
+              support the message digest size selection. The hash selection should be consistent with the
+              overall strength of the algorithm used (for example, SHA 256 for 128-bit keys).
+            </note>
+            <aactivity>
+              The evaluator shall check that the association of the hash function with other
+              application cryptographic functions (for example, the digital signature verification
+              function) is documented in the TSS.
+              <h:br/>
+              The <abbr title="TOE Security Functionality" linkend="TSF">TSF</abbr> hashing functions can be implemented in one of two 
+              modes. The first mode is the byte-oriented mode. In this mode the <abbr title="TOE Security Functionality" linkend="TSF">TSF</abbr> 
+              hashes only messages that are an integral number of bytes in length; i.e., the length 
+              (in bits) of the message to be hashed is divisible by 8. The second mode is the 
+              bit-oriented mode. In this mode the <abbr title="TOE Security Functionality" linkend="TSF">TSF</abbr> hashes messages of arbitrary 
+              length. As there are different tests for each mode, an indication is given in the 
+              following sections for the bit-oriented vs. the byte-oriented testmacs. The evaluator 
+              shall perform all of the following tests for each hash algorithm implemented by the 
+              <abbr title="TOE Security Functionality" linkend="TSF">TSF</abbr> and used to satisfy the requirements of this PP.
+              <h:br/>
+              The following tests require the developer to provide access to a test application
+              that provides the evaluator with tools that are typically not found in the production
+              application.
+              <testlist>
+                <test>Short Messages Test - Bit oriented Mode The evaluators devise an input set
+                  consisting of m+1 messages, where m is the block length of the hash algorithm. The
+                  length of the messages range sequentially from 0 to m bits. The message text shall
+                  be pseudorandomly generated. The evaluators compute the message digest for each of
+                  the messages and ensure that the correct result is produced when the messages are
+                  provided to the <abbr title="TOE Security Functionality" linkend="TSF">TSF</abbr>. </test>
+                <test>Short Messages Test - Byte oriented Mode The evaluators devise an input set
+                  consisting of m/8+1 messages, where m is the block length of the hash algorithm.
+                  The length of the messages range sequentially from 0 to m/8 bytes, with each
+                  message being an integral number of bytes. The message text shall be
+                  pseudorandomly generated. The evaluators compute the message digest for each of
+                  the messages and ensure that the correct result is produced when the messages are
+                  provided to the <abbr title="TOE Security Functionality" linkend="TSF">TSF</abbr>. </test>
+                <test>Selected Long Messages Test - Bit oriented Mode The evaluators devise an input
+                  set consisting of m messages, where m is the block length of the hash algorithm.
+                  The length of the ith message is 512 + 99*i, where 1 ≤ i ≤ m. The message text
+                  shall be pseudorandomly generated. The evaluators compute the message digest for
+                  each of the messages and ensure that the correct result is produced when the
+                  messages are provided to the <abbr title="TOE Security Functionality" linkend="TSF">TSF</abbr>. </test>
+                <test>Selected Long Messages Test - Byte oriented Mode The evaluators devise an
+                  input set consisting of m/8 messages, where m is the block length of the hash
+                  algorithm. The length of the ith message is 512 + 8*99*i, where 1 ≤ i ≤ m/8. The
+                  message text shall be pseudorandomly generated. The evaluators compute the message
+                  digest for each of the messages and ensure that the correct result is produced
+                  when the messages are provided to the <abbr title="TOE Security Functionality" linkend="TSF">TSF</abbr>. </test>
+                <test>Pseudorandomly Generated Messages Test This test is for byte-oriented
+                  implementations only. The evaluators randomly generate a seed that is n bits long,
+                  where n is the length of the message digest produced by the hash function to be
+                  tested. The evaluators then formulate a set of 100 messages and associated digests
+                  by following the algorithm provided in Figure 1 of [SHAVS]. The evaluators then
+                  ensure that the correct result is produced when the messages are provided to the
+                  <abbr title="TOE Security Functionality" linkend="TSF">TSF</abbr>. </test>
+              </testlist>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
       </subsection>
       
       <subsection title="Security Audit (FAU)" id="fau">
+        
+        <f-component id="fau_alt_ext.1" name="Server Alerts">
+          <f-element id="fau_alt_ext.1.1">
+            <title>The <abbr linkend="EDR"/> system shall alert the administrators in 
+              the event of any of the following: <h:ol type="a">
+                <h:li>change in endpoint agent enrollment status</h:li>
+                <h:li>detection of endpoint malicous activity</h:li>
+              </h:ol>
+            </title>
+            <note role="application">
+              
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
         <f-component id="fau_col_ext.1" name="Collected Audit">
           <f-element id="fau_col_ext.1.1">
             <title>The <abbr linkend="EDR"/> system shall collect the following minimum set of
@@ -707,10 +817,7 @@
                 <h:li>All libraries and modules loaded by processes</h:li>
                 <h:li>All network connection activity, including destination URLs, IP</h:li>
                 <h:li>All files created on persistant storage</h:li>
-                <selectables linebreak="yes">
-                  <selectable><assignable>other host data</assignable></selectable>
-                  <selectable>no other data</selectable>
-                </selectables>
+                <assignable>other host data</assignable>
               </h:ol>
             </title>
             <note role="application">The intent of this requirement is to specify the minimum
@@ -727,6 +834,7 @@
             </aactivity>
           </f-element>
         </f-component>
+        
       </subsection>
       
       <subsection title="Security Management (FMT)" id="fmt">
