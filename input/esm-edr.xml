@@ -797,14 +797,15 @@
         
         <f-component id="fau_alt_ext.1" name="Server Alerts">
           <f-element id="fau_alt_ext.1.1">
-            <title>The <abbr linkend="EDR"/> system shall alert the administrators in 
+            <title>The <abbr linkend="EDR"/> system shall alert authorized users on a dsahboard in 
               the event of any of the following: <h:ol type="a">
                 <h:li>change in endpoint agent enrollment status</h:li>
-                <h:li>detection of endpoint malicous activity</h:li>
+                <h:li>detection of potentially malicous endpoint activity</h:li>
               </h:ol>
             </title>
             <note role="application">
-              
+              The intent of this requirement is to specify the minimum set of dashboard alerts
+              the EDR must be capabile of displaying to an authorized user of the EDR server.
             </note>
             <aactivity>
             </aactivity>
@@ -819,9 +820,9 @@
                 <h:li>All privileged and unprivileged endpoint account login activity</h:li>
                 <h:li>All process creation</h:li>
                 <h:li>All libraries and modules loaded by processes</h:li>
-                <h:li>All network connection activity, including destination URLs, IP</h:li>
+                <h:li>All network connection activity, including destination IP</h:li>
                 <h:li>All files created on persistant storage</h:li>
-                <assignable>other host data</assignable>
+                <h:li><assignable>other host data</assignable></h:li>
               </h:ol>
             </title>
             <note role="application">The intent of this requirement is to specify the minimum

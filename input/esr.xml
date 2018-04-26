@@ -63,7 +63,9 @@
 		The following are the essential security requirements expected to be implemented by an EDR management server
 		within the established scope.
 		<ul>
-			<li>The EDR management server shall ensure encryption of all data in transit using TLS or DTLS.</li>
+			<li>The EDR management server shall use good crypto (hasing, signing, etc)</li>
+			<li>The EDR management server shall ensure encryption of all data in transit between endpoint agent and EDR server using TLS.</li>
+			<li>THe EDR management server shell use secure TLS/HTTPS connections to the management dashboard</li>
 			<li>The EDR management server or underling platform shall encrypt all endpoint collected all persistently stored data.</li>
 			<li>The EDR management server shall cryptograpically assure the integrity of all commands sent to host agents.</li>
 			<li>The EDR management server shall collect and store a minimum set of parameters and events
