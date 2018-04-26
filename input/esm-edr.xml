@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
 
-<?xml-model href="https://raw.githubusercontent.com/commoncriteria/transforms/master/schemas/CCProtectionProfile.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-
 <PP xmlns="https://niap-ccevs.org/cc/v1" name="Protection Profile Endpoint Detection and Response (EDR)"
     xmlns:h="http://www.w3.org/1999/xhtml">
 
@@ -336,7 +334,8 @@
         <h:b>Selection</h:b> (denoted by <h:i>italicized text</h:i>): is used to select one or more options
         provided by the [CC] in stating a requirement.</h:li>
       <h:li>
-        <h:b>Assignment</h:b> operation (denoted by <h:span class="assignable-content">italicized text</h:span>): is used to assign a
+        <h:b>Assignment</h:b> operation (denoted by <h:span class="assignable-content">italicized text</h:span>): 
+        is used to assign a
         specific value to an unspecified parameter, such as the length of a password. Showing the
         value in square brackets indicates assignment.</h:li>
       <h:li>
