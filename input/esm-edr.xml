@@ -794,12 +794,16 @@
         <f-component id="fcs_https_ext.1" name="HTTPS Protocol">
           <f-element id="fcs_https_ext.1.1">
             <title>
-              The EDR shall 
-              <selectables linebreak="yes">
-                <selectable>invoke platform-provided HTTPS functionality</selectable>
-                <selectable>implement HTTPS functionality in accordance with <linkref linkend="FCS_TLSS_EXT.1"/></selectable>
-              </selectables>
-              that complies with RFC 2818.
+              The  
+              <selectables>
+                <selectable>
+                  EDR
+                </selectable>
+                <selectable>
+                  EDR platform
+                </selectable>
+              </selectables> 
+              shall implement the HTTPS protocol that complies with RFC 2818.
             </title>
             <aactivity>
               The evaluator shall attempt to establish an HTTPS connection with the EDR management server, 
@@ -808,6 +812,26 @@
               <h:abbr title="Transport Layer Security">TLS</h:abbr> or HTTPS.
             </aactivity>
           </f-element>
+          
+          <f-element id="fcs_https_ext.1.2">
+            <title>The 
+              <selectables>
+                <selectable>
+                  EDR
+                </selectable>
+                <selectable>
+                  EDR platform
+                </selectable>
+              </selectables>
+              shall implement HTTPS using
+              <h:abbr title="Transport Layer Security">TLS</h:abbr> in accordance with 
+              with FCS_TLSS_EXT.1 from the TLS Package
+            </title>
+            <aactivity>
+              Other tests are performed in conjunction with <linkref linkend="FCS_TLSS_EXT.1"/>.
+            </aactivity>
+          </f-element>
+          
           <f-element id="fcs_https_ext.1.3">
             <title> The EDR shall 
               <selectables>
