@@ -353,6 +353,38 @@
       </subsection>
       
       <subsection title="Security Audit (FAU)" id="fau">
+        
+        <f-component id="fau_col_ext.1" name="Collected Audit">
+          <f-element id="fau_col_ext.1.1">
+            <title>The <abbr linkend="EDR"/> system shall collect the following minimum set of
+              endpoint event data: <h:ol type="a">
+                <h:li>Operating System (OS) version, architecture, and IP Address</h:li>
+                <h:li>All privileged and unprivileged endpoint account login activity</h:li>
+                <h:li>All process creation</h:li>
+                <h:li>All libraries and modules loaded by processes</h:li>
+                <h:li>All network connection activity, including destination URLs, IP</h:li>
+                <h:li>All files created on persistant storage</h:li>
+                <selectables linebreak="yes">
+                  <selectable><assignable>other host data</assignable></selectable>
+                  <selectable>no other data</selectable>
+                </selectables>
+              </h:ol>
+            </title>
+            <note role="application">The intent of this requirement is to specify the minimum
+              set of endpoint data that the EDR system must be capable of collecting.
+            </note>
+            <aactivity>
+              <h:p>
+                The evaluator shall check the administrative guide and ensure
+                that it lists all of the collectable types of endpoint event data.  
+                The evaluator shall
+                check to make sure that every endpoint event data type selected in the ST
+                is included in the administrative guidance.
+              </h:p>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
       </subsection>
       
       <subsection title="Security Management (FMT)" id="fmt">
