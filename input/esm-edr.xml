@@ -291,7 +291,7 @@
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
         <SO id="O.ACCOUNTABILITY">
-          <description> Conformant <abbr linkend="OS"/>s ensure that information exists that allows
+          <description> Conformant <abbr linkend="EDR"/>s ensure that information exists that allows
             administrators to discover unintentional issues with the configuration and operation of
             the operating system and discover its cause.  Gathering event information and immediately 
             transmitting it to another system can also enable incident response in the event
@@ -302,22 +302,22 @@
     </section>
     <section title="Security Objectives for the Operational Environment"
       id="SecurityObjectivesTOEorEnvironment">The following security objectives for the operational
-      environment assist the <abbr linkend="OS"/> in correctly providing its security functionality.
+      environment assist the <abbr linkend="EDR"/> in correctly providing its security functionality.
       These track with the assumptions about the environment. <SOEs>
         <SOE id="OE.PLATFORM">
-          <description>The <abbr linkend="OS"/> relies on being installed on trusted
+          <description>The <abbr linkend="EDR"/> relies on being installed on trusted
             hardware.</description>
         </SOE>
         <SOE id="OE.PROPER_USER">
-          <description> The user of the <abbr linkend="OS"/> is not willfully negligent or hostile,
+          <description> The user of the <abbr linkend="EDR"/> is not willfully negligent or hostile,
             and uses the software within compliance of the applied enterprise security policy.
             Standard user accounts are provisioned in accordance with the least privilege model.
             Users requiring higher levels of access should have a separate account dedicated for
             that use. </description>
         </SOE>
         <SOE id="OE.PROPER_ADMIN">
-          <description> The administrator of the <abbr linkend="OS"/> is not careless, willfully
-            negligent or hostile, and administers the OS within compliance of the applied enterprise
+          <description> The administrator of the <abbr linkend="EDR"/> is not careless, willfully
+            negligent or hostile, and administers the EDR within compliance of the applied enterprise
             security policy. </description>
         </SOE>
       </SOEs></section>
@@ -326,7 +326,7 @@
       <InsertSPDCorrespondence/></section>
   </chapter>
   <chapter title="Security Requirements" id="req">This chapter describes the security requirements
-    which have to be fulfilled by the <abbr linkend="OS"/>. Those requirements comprise functional
+    which have to be fulfilled by the <abbr linkend="EDR"/>. Those requirements comprise functional
     components from Part 2 and assurance components from Part 3 of <cite linkend="bibCC"/>. The
     following notations are used: <h:ul>
       <h:li>
@@ -350,10 +350,353 @@
       components. 
 
       <subsection title="Cryptographic Support (FCS)" id="fcs">
+        <f-component id="fcs_cop.1(1)" name="Cryptographic Operation - Encryption/Decryption (Refined)">
+          <f-element id="fcs_cop.1.1(1)">
+            <title>
+              The <h:b>EDR</h:b> shall perform encryption/decryption services for data in 
+	      accordance with a specified cryptographic algorithm 
+	      <selectables linebreak="yes">
+	              <selectable>AES-XTS (as defined in NIST SP 800-38E)</selectable>
+	              <selectable>AES-CBC (as defined in NIST SP 800-38A)</selectable>
+              </selectables> 
+	      and 
+	      <selectables linebreak="yes">
+	        <selectable>AES-CCMP (as defined in FIPS PUB 197, NIST SP 800-38C and IEEE 802.11-2012)</selectable>
+                <selectable>AES Key Wrap (KW) (as defined in NIST SP 800-38F)</selectable>
+                <selectable>AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)</selectable>
+                <selectable>AES-GCM (as defined in NIST SP 800-38D)</selectable>
+                <selectable>AES-CCM (as defined in NIST SP 800-38C)</selectable>
+                <selectable>AES-CCMP-256 (as defined in NIST SP800-38C and IEEE 802.11ac-2013)</selectable>
+                <selectable>AES-GCMP-256 (as defined in NIST SP800-38D and IEEE 802.11ac-2013)</selectable>
+                <selectable exclusive="yes">no other modes</selectable>
+              </selectables> 
+              and cryptographic key sizes 
+              <selectables>
+                <selectable>128-bit</selectable>
+                <selectable>256-bit</selectable>
+              </selectables>
+        <h:strike>that meet the following: [assignment: list of standards]</h:strike>
+	      .
+	    </title>
+            <note role="application"> 
+	      <h:p>
+              AES CCMP (which uses AES in CCM as specified in SP 800-38C) becomes mandatory and must
+              be selected if the ST includes the WLAN Client <abbr linkend="PP-Module"/>
+	      </h:p>
+	      <h:p>
+	            For the second selection, the ST author should choose the mode
+              or modes in which AES operates. For the third selection, the ST author should choose
+              the key sizes that are supported by this functionality. 128-bit key size is required
+              in order to comply with <linkref linkend="FCS_TLSC_EXT.1"/> and <linkref
+                linkend="FCS_CKM.1"/>, if those are selected. 
+	      </h:p>
+	    </note>
+            <aactivity> 
+	      <h:p>
+	      The evaluator will verify that the AGD documents contains instructions required 
+	      to configure the EDR to use the required modes and key sizes. 
+	      The evaluator will execute all instructions as specified to configure the EDR
+	      to the appropriate state.
+	      The evaluator will perform all of the following tests for each
+              algorithm implemented by the EDR and used to satisfy the requirements of this PP: 
+	      </h:p>
+	      <h:p>
+              <h:b>AES-CBC Known Answer Tests</h:b>
+	      </h:p>
+	      <h:p>
+		There are four Known Answer Tests (KATs), described below. In all KATs, the
+              plaintext, ciphertext, and IV values shall be 128-bit blocks. The results from each
+              test may either be obtained by the evaluator directly or by supplying the inputs to
+              the implementer and receiving the results in response. To determine correctness, the
+              evaluator will compare the resulting values to those obtained by submitting the same
+              inputs to a known good implementation. <h:ul>
+                <h:li>KAT-1. To test the encrypt functionality of AES-CBC, the evaluator will supply
+                  a set of 10 plaintext values and obtain the ciphertext value that results from
+                  AES-CBC encryption of the given plaintext using a key value of all zeros and an IV
+                  of all zeros. Five plaintext values shall be encrypted with a 128-bit all-zeros
+                  key, and the other five shall be encrypted with a 256-bit all- zeros key. To test
+                  the decrypt functionality of AES-CBC, the evaluator will perform the same test as
+                  for encrypt, using 10 ciphertext values as input and AES-CBC decryption.</h:li>
+                <h:li>KAT-2. To test the encrypt functionality of AES-CBC, the evaluator will supply
+                  a set of 10 key values and obtain the ciphertext value that results from AES-CBC
+                  encryption of an all-zeros plaintext using the given key value and an IV of all
+                  zeros. Five of the keys shall be 128-bit keys, and the other five shall be 256-bit
+                  keys. To test the decrypt functionality of AES-CBC, the evaluator will perform
+                  the same test as for encrypt, using an all-zero ciphertext value as input and
+                  AES-CBC decryption.</h:li>
+                <h:li>KAT-3. To test the encrypt functionality of AES-CBC, the evaluator will supply
+                  the two sets of key values described below and obtain the ciphertext value that
+                  results from AES encryption of an all-zeros plaintext using the given key value
+                  and an IV of all zeros. The first set of keys shall have 128 128-bit keys, and the
+                  second set shall have 256 256-bit keys. Key i in each set shall have the leftmost
+                  i bits be ones and the rightmost N-i bits be zeros, for i in [1,N]. To test the
+                  decrypt functionality of AES-CBC, the evaluator will supply the two sets of key
+                  and ciphertext value pairs described below and obtain the plaintext value that
+                  results from AES-CBC decryption of the given ciphertext using the given key and an
+                  IV of all zeros. The first set of key/ciphertext pairs shall have 128 128-bit
+                  key/ciphertext pairs, and the second set of key/ciphertext pairs shall have 256
+                  256-bit key/ciphertext pairs. Key i in each set shall have the leftmost i bits be
+                  ones and the rightmost N-i bits be zeros, for i in [1,N]. The ciphertext value in
+                  each pair shall be the value that results in an all-zeros plaintext when decrypted
+                  with its corresponding key.</h:li>
+                <h:li>KAT-4. To test the encrypt functionality of AES-CBC, the evaluator will supply
+                  the set of 128 plaintext values described below and obtain the two ciphertext
+                  values that result from AES-CBC encryption of the given plaintext using a 128-bit
+                  key value of all zeros with an IV of all zeros and using a 256-bit key value of
+                  all zeros with an IV of all zeros, respectively. Plaintext value i in each set
+                  shall have the leftmost i bits be ones and the rightmost 128-i bits be zeros, for
+                  i in [1,128].</h:li>
+              </h:ul>
+	      <h:br/>
+	      To test the decrypt functionality of AES-CBC, the evaluator will perform the
+              same test as for encrypt, using ciphertext values of the same form as the plaintext in
+              the encrypt test as input and AES-CBC decryption.
+	      </h:p>
+              <h:b>AES-CBC Multi-Block Message Test</h:b>
+	      <h:p>
+              The evaluator will test the encrypt functionality by encrypting an i-block
+              message where 1 &lt; i &#x2264; 10. The evaluator will choose a key, an IV and plaintext
+              message of length i blocks and encrypt the message, using the mode to be tested, with
+              the chosen key and IV. The ciphertext shall be compared to the result of encrypting
+              the same plaintext message with the same key and IV using a known good implementation.
+              The evaluator will also test the decrypt functionality for each mode by decrypting an
+              i-block message where 1 &lt; i &#x2264;10. The evaluator will choose a key, an IV and a
+              ciphertext message of length i blocks and decrypt the message, using the mode to be
+              tested, with the chosen key and IV. The plaintext shall be compared to the result of
+              decrypting the same ciphertext message with the same key and IV using a known good
+              implementation. 
+	    </h:p>
+	    <h:p>
+	      <h:b>AES-CBC Monte Carlo Tests</h:b>
+	    </h:p>
+	    <h:p>
+	      The evaluator will test the encrypt
+              functionality using a set of 200 plaintext, IV, and key 3- tuples. 100 of these shall
+              use 128 bit keys, and 100 shall use 256 bit keys. The plaintext and IV values shall be
+              128-bit blocks. For each 3-tuple, 1000 iterations shall be run as follows:
+              <h:pre>
+              # Input: PT, IV, Key
+              for i = 1 to 1000:
+                if i == 1:
+                      CT[1] = AES-CBC-Encrypt(Key, IV, PT)
+                      PT = IV
+                else:
+                  CT[i] = AES-CBC-Encrypt(Key, PT) 
+                  PT = CT[i-1]
+              </h:pre>The
+              ciphertext computed in the 1000th iteration (i.e., CT[1000]) is the result for that
+              trial. This result shall be compared to the result of running 1000 iterations with the
+              same values using a known good implementation. 
+	    </h:p>
+	    <h:p>
+	      The evaluator will test the
+              decrypt functionality using the same test as for encrypt, exchanging CT and PT and
+              replacing AES-CBC-Encrypt with AES-CBC-Decrypt. 
+	    </h:p>
+	    <h:p>
+              <h:b>AES-GCM Monte Carlo Tests</h:b>
+              <h:p/>The evaluator will test the authenticated encrypt functionality of AES-GCM for
+              each combination of the following input parameter lengths: <h:ul>
+                <h:li>128 bit and 256 bit keys</h:li>
+                <h:li>Two plaintext lengths. One of the plaintext lengths shall be a non-zero integer
+                  multiple of 128 bits, if supported. The other plaintext length shall not be an
+                  integer multiple of 128 bits, if supported.</h:li>
+                <h:li>Three AAD lengths. One AAD length shall be 0, if supported. One AAD length shall
+                  be a non-zero integer multiple of 128 bits, if supported. One AAD length shall not
+                  be an integer multiple of 128 bits, if supported.</h:li>
+                <h:li>Two IV lengths. If 96 bit IV is supported, 96 bits shall be one of the two IV
+                  lengths tested.</h:li>
+              </h:ul>The evaluator will test the encrypt functionality using a set of 10 key,
+              plaintext, AAD, and IV tuples for each combination of parameter lengths above and
+              obtain the ciphertext value and tag that results from AES-GCM authenticated encrypt.
+              Each supported tag length shall be tested at least once per set of 10. The IV value
+              may be supplied by the evaluator or the implementation being tested, as long as it is
+              known. 
+	    </h:p>
+	    <h:p>
+
+
+	      The evaluator will test the decrypt functionality using a set of 10 key,
+              ciphertext, tag, AAD, and IV 5-tuples for each combination of parameter lengths above
+              and obtain a Pass/Fail result on authentication and the decrypted plaintext if Pass.
+              The set shall include five tuples that Pass and five that Fail. 
+	    </h:p>
+	    <h:p>
+	      The results from
+              each test may either be obtained by the evaluator directly or by supplying the inputs
+              to the implementer and receiving the results in response. To determine correctness,
+              the evaluator will compare the resulting values to those obtained by submitting the
+              same inputs to a known good implementation.
+	      </h:p>
+
+              <h:p><h:b>AES-CCM Tests</h:b></h:p>
+	      <h:p>
+              The evaluator will test the generation-encryption and decryption-verification
+              functionality of AES-CCM for the following input parameter and tag lengths: <h:ul>
+                <h:li>128 bit and 256 bit keys</h:li>
+                <h:li>Two payload lengths. One payload length shall be the shortest supported payload
+                  length, greater than or equal to zero bytes. The other payload length shall be the
+                  longest supported payload length, less than or equal to 32 bytes (256 bits).
+                </h:li>
+                <h:li>Two or three associated data lengths. One associated data length shall be 0, if
+                  supported. One associated data length shall be the shortest supported payload length,
+                  greater than or equal to zero bytes. One associated data length shall be the longest
+                  supported payload length, less than or equal to 32 bytes (256 bits). If the
+                  implementation supports an associated data length of 2
+                  16 bytes, an associated data length of 216 bytes shall be tested.
+                </h:li>
+                <h:li>Nonce lengths. All supported nonce lengths between 7 and 13 bytes, inclusive, shall
+                  be tested.
+                </h:li>
+                <h:li>Tag lengths. All supported tag lengths of 4, 6, 8, 10, 12, 14 and 16 bytes shall be
+                  tested.
+                </h:li>
+              </h:ul>
+              To test the generation-encryption functionality of AES-CCM, the evaluator will perform the
+              following four tests: 
+	      <testlist>
+		<test> For EACH supported key and associated data length and ANY supported
+                  payload, nonce and tag length, the evaluator will supply one key value, one nonce
+                  value and 10 pairs of associated data and payload values and obtain the resulting
+                  ciphertext.
+		</test>
+		<test>For EACH supported key and payload length and ANY supported associated
+                  data, nonce and tag length, the evaluator will supply one key value, one nonce value
+                  and 10 pairs of associated data and payload values and obtain the resulting ciphertext.
+		</test>
+
+                <test>For EACH supported key and nonce length and ANY supported associated
+                  data, payload and tag length, the evaluator will supply one key value and 10
+                  associated data, payload and nonce value 3-tuples and obtain the resulting ciphertext.
+                </test>
+                <test>For EACH supported key and tag length and ANY supported associated data,
+                  payload and nonce length, the evaluator will supply one key value, one nonce value
+                  and 10 pairs of associated data and payload values and obtain the resulting ciphertext.
+                </test>
+	      </testlist>
+	      </h:p>
+	      <h:p>
+              To determine correctness in each of the above tests, the evaluator will compare the
+              ciphertext with the result of generation-encryption of the same inputs with a known good
+              implementation. 
+	      </h:p>
+	      <h:p>
+              To test the decryption-verification functionality of AES-CCM, for EACH combination of
+              supported associated data length, payload length, nonce length and tag length, the evaluator
+              shall supply a key value and 15 nonce, associated data and ciphertext 3-tuples and obtain
+              either a FAIL result or a PASS result with the decrypted payload. The evaluator will supply
+              10 tuples that should FAIL and 5 that should PASS per set of 15. 
+	      </h:p>
+	      <h:p>
+              Additionally, the evaluator will use tests from the IEEE 802.11-02/362r6 document
+              “Proposed Test vectors for IEEE 802.11 TGi”, dated September 10, 2002, Section 2.1 AESCCMP
+              Encapsulation Example and Section 2.2 Additional AES CCMP Test Vectors to
+              further verify the IEEE 802.11-2007 implementation of AES-CCMP.
+	      </h:p>
+	      <h:p> <h:b>AES-GCM Test</h:b></h:p>
+              <h:p>The evaluator will test the authenticated encrypt functionality of AES-GCM for each
+                combination of the following input parameter lengths: <h:br/>
+              <h:ul>
+                <h:li>128 bit and 256 bit keys</h:li>
+                <h:li>Two plaintext lengths. One of the plaintext lengths shall be a non-zero integer
+                  multiple of 128 bits, if supported. The other plaintext length shall not be an integer
+                  multiple of 128 bits, if supported.
+                </h:li>
+                <h:li>Three AAD lengths. One AAD length shall be 0, if supported. One AAD length shall
+                  be a non-zero integer multiple of 128 bits, if supported. One AAD length shall not be
+                  an integer multiple of 128 bits, if supported.
+                </h:li>
+                <h:li>Two IV lengths. If 96 bit IV is supported, 96 bits shall be one of the two IV lengths
+                  tested.
+                </h:li>
+              </h:ul>
+              The evaluator will test the encrypt functionality using a set of 10 key, plaintext, AAD, and
+              IV tuples for each combination of parameter lengths above and obtain the ciphertext value
+              and tag that results from AES-GCM authenticated encrypt. Each supported tag length shall be
+              tested at least once per set of 10. The IV value may be supplied by the evaluator or the
+              implementation being tested, as long as it is known.
+	      </h:p>
+	      <h:p>
+              The evaluator will test the decrypt functionality using a set of 10 key, ciphertext, tag, AAD,
+              and IV 5-tuples for each combination of parameter lengths above and obtain a Pass/Fail result
+              on authentication and the decrypted plaintext if Pass. The set shall include five tuples that
+              Pass and five that Fail.
+	      </h:p>
+	      <h:p>
+              The results from each test may either be obtained by the evaluator directly or by supplying
+              the inputs to the implementer and receiving the results in response. To determine correctness,
+              the evaluator will compare the resulting values to those obtained by submitting the same
+              inputs to a known good implementation.
+	      </h:p>
+	      <h:p><h:b>XTS-AES Test</h:b></h:p>
+	      <h:p>
+		The evaluator will test the encrypt functionality of XTS-AES for each combination of the
+              following input parameter lengths:
+              <h:ul>
+                <h:li>256 bit (for AES-128) and 512 bit (for AES-256) keys</h:li>
+                <h:li>Three data unit (i.e., plaintext) lengths. One of the data unit lengths shall be a nonzero
+                  integer multiple of 128 bits, if supported. One of the data unit lengths shall be an
+                  integer multiple of 128 bits, if supported. The third data unit length shall be either the
+                  longest supported data unit length or 216 bits, whichever is smaller.
+                </h:li>
+              </h:ul>
+              using a set of 100 (key, plaintext and 128-bit random tweak value) 3-tuples and obtain the
+              ciphertext that results from XTS-AES encrypt.
+	      </h:p>
+	      <h:p>
+		The evaluator may supply a data unit sequence number instead of the tweak value if the
+		implementation supports it. The data unit sequence number is a base-10 number ranging
+		between 0 and 255 that implementations convert to a tweak value internally.
+	      </h:p>
+	      <h:p>
+		The evaluator will test the decrypt functionality of XTS-AES using the same test as for
+		encrypt, replacing plaintext values with ciphertext values and XTS-AES encrypt with XTSAES
+              decrypt.
+	      </h:p>
+	      <h:p><h:b>AES Key Wrap (AES-KW) and Key Wrap with Padding (AES-KWP) Test</h:b></h:p>
+              <h:p>
+		The evaluator will test the authenticated encryption functionality of AES-KW for EACH
+		combination of the following input parameter lengths:
+              <h:ul>
+                <h:li>128 and 256 bit key encryption keys (KEKs)</h:li>
+                <h:li>Three plaintext lengths. One of the plaintext lengths shall be two semi-blocks (128
+                  bits). One of the plaintext lengths shall be three semi-blocks (192 bits). The third data
+                  unit length shall be the longest supported plaintext length less than or equal to 64
+                  semi-blocks (4096 bits).
+                </h:li>
+              </h:ul>
+              using a set of 100 key and plaintext pairs and obtain the ciphertext that results from AES-KW
+              authenticated encryption. To determine correctness, the evaluator will use the AES-KW
+              authenticated-encryption function of a known good implementation.
+	      </h:p>
+	      <h:p>
+
+              The evaluator will test the authenticated-decryption functionality of AES-KW using the
+              same test as for authenticated-encryption, replacing plaintext values with ciphertext values
+              and AES-KW authenticated-encryption with AES-KW authenticated-decryption.
+	      </h:p>
+	      <h:p>
+              The evaluator will test the authenticated-encryption functionality of AES-KWP using the
+              same test as for AES-KW authenticated-encryption with the following change in the three
+              plaintext lengths:
+              <h:ul>
+                <h:li>One plaintext length shall be one octet. One plaintext length shall be 20 octets (160
+                  bits).</h:li>
+                <h:li>
+                  One plaintext length shall be the longest supported plaintext length less than or equal
+                  to 512 octets (4096 bits).
+                </h:li>
+              </h:ul>
+              The evaluator will test the authenticated-decryption functionality of AES-KWP using the
+              same test as for AES-KWP authenticated-encryption, replacing plaintext values with
+              ciphertext values and AES-KWP authenticated-encryption with AES-KWP authenticated-decryption.
+            </h:p>
+	  </aactivity>
+          </f-element>
+        </f-component>
       </subsection>
       
       <subsection title="Security Audit (FAU)" id="fau">
-        
         <f-component id="fau_col_ext.1" name="Collected Audit">
           <f-element id="fau_col_ext.1.1">
             <title>The <abbr linkend="EDR"/> system shall collect the following minimum set of
@@ -384,7 +727,6 @@
             </aactivity>
           </f-element>
         </f-component>
-        
       </subsection>
       
       <subsection title="Security Management (FMT)" id="fmt">
@@ -398,105 +740,127 @@
     
     </section>
     <section title="Security Assurance Requirements" id="SARs">
-      The Security Objectives in 
-      <secref linkend="obj"/> were constructed to address threats identified in
-      <secref linkend="threats"/>. The Security Functional Requirements (<abbr linkend="SFR"/>s)
-      in <secref linkend="SFRs"/> are a formal instantiation of the Security Objectives. The PP
-      identifies the Security Assurance Requirements (<abbr linkend="SAR"/>s) to frame the extent to
-      which the evaluator assesses the documentation applicable for the evaluation and performs
-      independent testing. <h:br/> This section lists the set of <abbr linkend="SAR"/>s from CC part 3
-      that are required in evaluations against this PP. Individual Assurance Activities
+      <h:p>
+The Security Objectives in <secref linkend="obj"/> were constructed to 
+address threats identified in <secref linkend="threats"/>. 
+The Security Functional Requirements (<abbr linkend="SFR"/>s) in <secref linkend="SFRs"/>
+are a formal instantiation of the Security Objectives. 
+The PP identifies the Security Assurance Requirements (<abbr linkend="SAR"/>s) to frame 
+the extent to which the evaluator assesses the documentation applicable for the 
+evaluation and performs independent testing. 
+      </h:p><h:p>
+      This section lists the set of <abbr linkend="SAR"/>s from CC part 3
+      that are required in evaluations against this PP. Individual evaluation activities
       <!--(AAs). Never use these again --> to be performed are specified both in <secref
-        linkend="req"/> as well as in this section. <h:br/> The general model for evaluation of <abbr
-        linkend="OS"/>s against STs written to conform to this PP is as follows: <h:br/> After the
-        <abbr linkend="ST"/> has been approved for evaluation, the <abbr class="expanded"
-        title="Information Technology Security Evaluation Facility">ITSEF</abbr> will obtain the
-        <abbr linkend="OS"/>, supporting environmental IT, and the administrative/user guides for
-      the OS. The ITSEF is expected to perform actions mandated by the Common Evaluation
-      Methodology (CEM) for the ASE and ALC SARs. The ITSEF also performs the Assurance Activities
+        linkend="req"/> as well as in this section. 
+      </h:p><h:p>
+      The general model for evaluation of <abbr
+        linkend="EDR"/>'s against STs written to conform to this PP is as follows: 
+      <h:br/> 
+      After the <abbr linkend="ST"/> has been approved for evaluation,
+      the 
+      <abbr class="expanded" title="Information Technology Security Evaluation Facility">ITSEF</abbr>
+      will obtain the EDR, supporting environmental IT, and the administrative/user guides for
+      the EDR. The ITSEF is expected to perform actions mandated by the Common Evaluation
+      Methodology (CEM) for the ASE and ALC SARs. The ITSEF also performs the evaluation activities
       contained within <secref linkend="req"/>, which are intended to be an interpretation of the
       other CEM assurance requirements as they apply to the specific technology instantiated in the
-      OS. The Assurance Activities that are captured in <secref linkend="req"/> also provide
-      clarification as to what the developer needs to provide to demonstrate the OS is compliant
-      with the PP. <subsection title="Class ASE: Security Target" id="ase">As per ASE activities
-        defined in <cite linkend="bibCEM"/>.</subsection>
+      EDR. The evaluation activities that are captured in <secref linkend="req"/> also provide
+      clarification as to what the developer needs to provide to demonstrate the EDR is compliant
+      with the PP. 
+    </h:p>
+
+      <subsection title="Class ASE: Security Target" id="ase">
+        The following ASE components as defined in <cite linkend="bibCEM"/> are required:
+        <h:ul>
+        <h:li>Conformance claims (ASE_CCL.1)</h:li>
+        <h:li>Extended components definition (ASE_ECD.1)</h:li>
+        <h:li>ST introduction (ASE_INT.1)</h:li>
+        <h:li>Security objectives for the operational environment (ASE_OBJ.1)</h:li>
+        <h:li>Stated security requirements (ASE_REQ.1)</h:li>
+        <h:li>Security Problem Definition (ASE_SPD.1)</h:li>
+        <h:li>TOE summary specification (ASE_TSS.1)</h:li>
+        </h:ul>
+        The requirements for exact conformance of the Security Target are described in <secref linkend="ccl"/>.
+      </subsection>
+
       <subsection title="Class ADV: Development" id="adv">The information about the <abbr
-          linkend="OS"/> is contained in the guidance documentation available to the end user as
+          linkend="EDR"/> is contained in the guidance documentation available to the end user as
         well as the <abbr linkend="TSS"/> portion of the <abbr linkend="ST"/>. The <abbr
-          linkend="OS"/> developer must concur with the description of the product that is
-        contained in the TSS as it relates to the functional requirements. The Assurance Activities
+          linkend="EDR"/> developer must concur with the description of the product that is
+        contained in the TSS as it relates to the functional requirements. The evaluation activities
         contained in <secref linkend="SFRs"/> should provide the <abbr linkend="ST"/> authors with
         sufficient information to determine the appropriate content for the TSS section.
           <a-component id="adv_fsp.1" name="Basic Functional Specification (ADV_FSP.1)">The
           functional specification describes the <abbr title="TSF Interface">TSFI</abbr>s. It is not
           necessary to have a formal or complete specification of these interfaces. Additionally,
-          because <abbr linkend="OS"/>s conforming to this PP will necessarily have interfaces to
-          the Operational Environment that are not directly invokable by <abbr linkend="OS"/>
+          because OSes conforming to this PP will necessarily have interfaces to
+          the Operational Environment that are not directly invokable by EDR
           users, there is little point specifying that such interfaces be described in and of
           themselves since only indirect testing of such interfaces may be possible. For this PP,
           the activities for this family should focus on understanding the interfaces presented in
           the <abbr linkend="TSS"/> in response to the functional requirements and the interfaces
           presented in the AGD documentation. No additional “functional specification” documentation
-          is necessary to satisfy the assurance activities specified. The interfaces that need to be
+          is necessary to satisfy the evaluation activities specified. The interfaces that need to be
           evaluated are characterized through the information needed to perform the assurance
           activities listed, rather than as an independent, abstract list. 
-	  <group type="dev-action">
-            <a-element id="ADV_FSP.1.1D">
+	          <evalactionlabel title="Developer action elements:"/>
+            <a-element id="adv_fsp.1.1d">
               <title>The developer shall provide a functional specification.</title>
             </a-element>
-            <a-element id="ADV_FSP.1.2D">
+            <a-element id="adv_fsp.1.2d">
               <title>The developer shall provide a tracing from the functional specification to the
               SFRs.</title>
               <note role="application">As indicated in the introduction to this section, the
               functional specification is comprised of the information contained in the AGD_OPE and
               AGD_PRE documentation. The developer may reference a website accessible to application
-              developers and the evaluator. The assurance activities in the functional requirements
+              developers and the evaluator. The evaluation activities in the functional requirements
               point to evidence that should exist in the documentation and <abbr linkend="TSS"/>
               section; since these are directly associated with the SFRs, the tracing in element
               ADV_FSP.1.2D is implicitly already done and no additional documentation is
               necessary.</note>
             </a-element>
-	  </group>
-	  <group type="con-pres">
-            <a-element id="ADV_FSP.1.1C">
+	  
+	          <evalactionlabel title="Content and presentation elements:"/>
+            <a-element id="adv_fsp.1.1c">
               <title>The functional specification shall describe the purpose and method of use for
               each SFR-enforcing and SFR-supporting <abbr title="TSF Interface">TSFI</abbr>.</title>
             </a-element>
-            <a-element id="ADV_FSP.1.2C">
+            <a-element id="adv_fsp.1.2c">
               <title>The functional specification shall identify all parameters associated with each
               SFR-enforcing and SFR-supporting <abbr title="TSF Interface">TSFI</abbr>.</title>
             </a-element>
-            <a-element id="ADV_FSP.1.3C">
+            <a-element id="adv_fsp.1.3c">
               <title>The functional specification shall provide rationale for the implicit
               categorization of interfaces as SFR-non-interfering.</title>
             </a-element>
-            <a-element id="ADV_FSP.1.4C">
+            <a-element id="adv_fsp.1.4c">
               <title>
 		The tracing shall demonstrate that the SFRs trace to 
 		<abbr title="TSF Interface">TSFI</abbr>s 
 		in the functional specification.
 	      </title>
             </a-element>
-	  </group>
-	  <group type="eval-action">
-            <a-element id="ADV_FSP.1.1E">
+	  
+	          <evalactionlabel title="Evaluator action elements:"/>
+            <a-element id="adv_fsp.1.1e">
               <title>The evaluator shall confirm that the information provided meets all requirements
               for content and presentation of evidence.</title>
             </a-element>
-            <a-element id="ADV_FSP.1.2E">
+            <a-element id="adv_fsp.1.2e">
               <title>The evaluator shall determine that the functional specification is an accurate
               and complete instantiation of the SFRs.</title>
-              <aactivity>There are no specific assurance activities associated with these SARs, except
+              <aactivity>There are no specific evaluation activities associated with these SARs, except
               ensuring the information is provided. The functional specification documentation is
               provided to support the evaluation activities described in <secref linkend="SFRs"/>, and
               other activities described for AGD, ATE, and AVA SARs. The requirements on the content
               of the functional specification information is implicitly assessed by virtue of the
-              other assurance activities being performed; if the evaluator is unable to perform an
+              other evaluation activities being performed; if the evaluator is unable to perform an
               activity because there is insufficient interface information, then an adequate
               functional specification has not been provided.
 	      </aactivity>
             </a-element>
-	  </group>
+	  
         </a-component>
       </subsection>
       <subsection id="agd" title="Class AGD: Guidance Documentation">The guidance documents will be
@@ -508,34 +872,34 @@
         successfully install the <abbr linkend="TSF"/> in that environment; and Instructions to
         manage the security of the <abbr linkend="TSF"/> as a product and as a component of the
         larger operational environment. Guidance pertaining to particular security functionality is
-        also provided; requirements on such guidance are contained in the assurance activities
+        also provided; requirements on such guidance are contained in the Evaluation Activities
         specified with each requirement. 
 	<a-component id="agd_ope.1" name="Operational User Guidance (AGD_OPE.1)">
-	  <group type="dev-action">
-	    <a-element id="AGD_OPE.1.1D">
+	          <evalactionlabel title="Developer action elements:"/>
+	    <a-element id="agd_ope.1.1d">
 	      <title>The developer shall provide operational user guidance.</title>
 	      <note role="application">The operational user guidance does not have to be contained in a
 	      single document. Guidance to users, administrators and application developers can be
               spread among documents or web pages. 
 	      Rather than repeat information here, the developer should
-              review the assurance activities for this component to ascertain the specifics of the
+              review the evaluation activities for this component to ascertain the specifics of the
               guidance that the evaluator will be checking for. This will provide the necessary
               information for the preparation of acceptable guidance.</note>
             </a-element>
-          </group>
-	  <group type="con-pres">
-            <a-element id="AGD_OPE.1.1C">
+          
+	          <evalactionlabel title="Content and presentation elements:"/>
+            <a-element id="agd_ope.1.1c">
               <title>The operational user guidance shall describe, for each user role, the
               user-accessible functions and privileges that should be controlled in a secure
               processing environment, including appropriate warnings.</title>
               <note role="application">User and administrator are to be considered in the definition
               of user role.</note>
             </a-element>
-            <a-element id="AGD_OPE.1.2C">
+            <a-element id="agd_ope.1.2c">
               <title>The operational user guidance shall describe, for each user role, how to use the
-              available interfaces provided by the <abbr linkend="OS"/> in a secure manner.</title>
+              available interfaces provided by the EDR in a secure manner.</title>
             </a-element>
-            <a-element id="AGD_OPE.1.3C">
+            <a-element id="agd_ope.1.3c">
               <title>The operational user guidance shall describe, for each user role, the available
               functions and interfaces, in particular all security parameters under the control of
               the user, indicating secure values as appropriate.</title>
@@ -551,176 +915,180 @@
 		instructions for achieving the secure configuration, and any relevant rationale.  
               </note>
             </a-element>
-            <a-element id="AGD_OPE.1.4C">
+            <a-element id="agd_ope.1.4c">
               <title>The operational user guidance shall, for each user role, clearly present each
               type of security-relevant event relative to the user-accessible functions that need to
               be performed, including changing the security characteristics of entities under the
               control of the <abbr linkend="TSF"/>.</title>
             </a-element>
-            <a-element id="AGD_OPE.1.5C">
+            <a-element id="agd_ope.1.5c">
               <title>The operational user guidance shall identify all possible modes of operation of
-              the <abbr linkend="OS"/> (including operation following failure or operational
+              the EDR (including operation following failure or operational
               error), their consequences, and implications for maintaining secure operation.</title>
             </a-element>
-            <a-element id="AGD_OPE.1.6C">
+            <a-element id="agd_ope.1.6c">
               <title>The operational user guidance shall, for each user role, describe the security
               measures to be followed in order to fulfill the security objectives for the
               operational environment as described in the <abbr linkend="ST"/>.</title>
             </a-element>
-            <a-element id="AGD_OPE.1.7C">
+            <a-element id="agd_ope.1.7c">
               <title>The operational user guidance shall be clear and reasonable.</title>
             </a-element>
-	  </group>
-	  <group type="eval-action">
-            <a-element id="AGD_OPE.1.1E">
+	  
+	          <evalactionlabel title="Evaluator action elements:"/>
+            <a-element id="agd_ope.1.1e">
               <title>The evaluator shall confirm that the information provided meets all requirements
               for content and presentation of evidence. </title>
               <aactivity>Some of the contents of the operational guidance are verified by the
-              assurance activities in <secref linkend="SFRs"/> and evaluation of the <abbr
-              linkend="OS"/> according to the <cite linkend="bibCEM"/>. The following additional
+              evaluation activities in <secref linkend="SFRs"/> and evaluation of the <abbr
+              linkend="EDR"/> according to the <cite linkend="bibCEM"/>. The following additional
               information is also required. If cryptographic functions are provided by the <abbr
-              linkend="OS"/>, the operational guidance shall contain instructions for configuring
+              linkend="EDR"/>, the operational guidance shall contain instructions for configuring
               the cryptographic engine associated with the evaluated configuration of the <abbr
-              linkend="OS"/>. It shall provide a warning to the administrator that use of other
+              linkend="EDR"/>. It shall provide a warning to the administrator that use of other
               cryptographic engines was not evaluated nor tested during the CC evaluation of the
-              <abbr linkend="OS"/>. The documentation must describe the process for verifying
-              updates to the <abbr linkend="OS"/> by verifying a digital signature – this may be
-              done by the <abbr linkend="OS"/> or the underlying platform. The evaluator will
+              EDR. The documentation must describe the process for verifying
+              updates to the EDR by verifying a digital signature – this may be
+              done by the EDR or the underlying platform. The evaluator will
               verify that this process includes the following steps: Instructions for obtaining the
               update itself. This should include instructions for making the update accessible to
-              the <abbr linkend="OS"/> (e.g., placement in a specific directory). Instructions for
+              the EDR (e.g., placement in a specific directory). Instructions for
               initiating the update process, as well as discerning whether the process was
               successful or unsuccessful. This includes generation of the hash/digital signature.
-              The <abbr linkend="OS"/> will likely contain security functionality that does not
+              The EDR will likely contain security functionality that does not
               fall in the scope of evaluation under this PP. The operational guidance shall make it
               clear to an administrator which security functionality is covered by the evaluation
               activities. </aactivity>
           </a-element>
-	  </group>
+	  
         </a-component>
         <a-component id="agd_pre.1" name="Preparative Procedures (AGD_PRE.1)">
-	  <group type="dev-action">
-            <a-element id="AGD_PRE.1.1D">
-              <title>The developer shall provide the <abbr linkend="OS"/>, including its preparative
+	          <evalactionlabel title="Developer action elements:"/>
+            <a-element id="agd_pre.1.1d">
+              <title>The developer shall provide the EDR, including its preparative
               procedures.</title>
               <note role="application">As with the operational guidance, the developer should look to
-              the assurance activities to determine the required content with respect to preparative
+              the evaluation activities to determine the required content with respect to preparative
               procedures.</note>
             </a-element>
-	  </group>
-	  <group type="con-pres">
-            <a-element id="AGD_PRE.1.1C">
+	  
+	          <evalactionlabel title="Content and presentation elements:"/>
+            <a-element id="agd_pre.1.1c">
               <title>The preparative procedures shall describe all the steps necessary for secure
-              acceptance of the delivered <abbr linkend="OS"/> in accordance with the developer's
+              acceptance of the delivered EDR in accordance with the developer's
               delivery procedures.</title>
             </a-element>
-            <a-element id="AGD_PRE.1.2C">
+            <a-element id="agd_pre.1.2c">
               <title>The preparative procedures shall describe all the steps necessary for secure
-              installation of the <abbr linkend="OS"/> and for the secure preparation of the
+              installation of the EDR and for the secure preparation of the
               operational environment in accordance with the security objectives for the operational
               environment as described in the <abbr linkend="ST"/>.</title>
             </a-element>
-	  </group>
-	  <group type="eval-action">
-            <a-element id="AGD_PRE.1.1E">
+	  
+	          <evalactionlabel title="Evaluator action elements:"/>
+            <a-element id="agd_pre.1.1e">
               <title>The evaluator shall confirm that the information provided meets all requirements
               for content and presentation of evidence.</title>
             </a-element>
-            <a-element id="AGD_PRE.1.2E">
+            <a-element id="agd_pre.1.2e">
               <title>The evaluator shall apply the preparative procedures to confirm that the <abbr
-              linkend="OS"/> can be prepared securely for operation.</title>
+              linkend="EDR"/> can be prepared securely for operation.</title>
               <aactivity>As indicated in the introduction above, there are significant expectations
               with respect to the documentation—especially when configuring the operational
-              environment to support <abbr linkend="OS"/> functional requirements. The evaluator
-              shall check to ensure that the guidance provided for the <abbr linkend="OS"/>
-              adequately addresses all platforms claimed for the <abbr linkend="OS"/> in the <abbr
+              environment to support EDR functional requirements. The evaluator
+              shall check to ensure that the guidance provided for the EDR
+              adequately addresses all platforms claimed for the EDR in the <abbr
               linkend="ST"/>. </aactivity>
             </a-element>
-	  </group>
+	  
         </a-component>
       </subsection>
       <subsection id="alc" title="Class ALC: Life-cycle Support"> At the assurance level provided
-        for OSs conformant to this PP, life-cycle support is limited to end-user-visible aspects of
-        the life-cycle, rather than an examination of the OS vendor’s development and configuration
+        for OSes conformant to this PP, life-cycle support is limited to end-user-visible aspects of
+        the life-cycle, rather than an examination of the EDR vendor’s development and configuration
         management process. This is not meant to diminish the critical role that a developer’s
         practices play in contributing to the overall trustworthiness of a product; rather, it is a
         reflection on the information to be made available for evaluation at this assurance level.
           <a-component id="alc_cmc.1" name="Labeling of the TOE (ALC_CMC.1)">This component is
-          targeted at identifying the <abbr linkend="OS"/> such that it can be distinguished from
+          targeted at identifying the EDR such that it can be distinguished from
           other products or versions from the same vendor and can be easily specified when being
           procured by an end user. 
-	  <group type="dev-action">
+	          <evalactionlabel title="Developer action elements:"/>
             <a-element id="alc_cmc.1.1d">
-              <title>The developer shall provide the <abbr linkend="OS"/> and a reference for the
-              <abbr linkend="OS"/>.</title>
+              <title>The developer shall provide the EDR and a reference for the
+              EDR.</title>
             </a-element>
-	  </group>
-	  <group type="con-pres">
+	  
+	          <evalactionlabel title="Content and presentation elements:"/>
             <a-element id="alc_cmc.1.1c">
-              <title>The <abbr linkend="OS"/> shall be labeled with a unique reference.</title>
+              <title>The EDR shall be labeled with a unique reference.</title>
               <note role="application">Unique reference information includes: 
 	      <h:ul>
-		<h:li>OS Name</h:li>
-		<h:li>OS Version</h:li>
-		<h:li>OS Description</h:li>
+		<h:li>EDR Name</h:li>
+		<h:li>EDR Version</h:li>
+		<h:li>EDR Description</h:li>
 		<h:li>Software Identification (SWID) tags, if available</h:li>
               </h:ul>
               </note>
             </a-element>
-	  </group>
-	  <group type="eval-action">
+	  
+	          <evalactionlabel title="Evaluator action elements:"/>
             <a-element id="alc_cmc.1.1e">
               <title>The evaluator shall confirm that the information provided meets all requirements
               for content and presentation of evidence.</title>
               <aactivity>The evaluator will check the <abbr linkend="ST"/> to ensure that it contains
               an identifier (such as a product name/version number) that specifically identifies the
               version that meets the requirements of the <abbr linkend="ST"/>. Further, the
-              evaluator will check the AGD guidance and <abbr linkend="OS"/> samples received for
+              evaluator will check the AGD guidance and EDR samples received for
               testing to ensure that the version number is consistent with that in the <abbr
               linkend="ST"/>. If the vendor maintains a web site advertising the <abbr
-              linkend="OS"/>, the evaluator will examine the information on the web site to
+              linkend="EDR"/>, the evaluator will examine the information on the web site to
               ensure that the information in the <abbr linkend="ST"/> is sufficient to distinguish
               the product.</aactivity>
             </a-element>
-	  </group>
+	  
         </a-component>
         <a-component id="alc_cms.1" name="TOE CM Coverage (ALC_CMS.1)">
-	  Given the scope of the <abbr linkend="OS"/> and its associated evaluation 
-	  evidence requirements, this component’s assurance activities are covered 
-	  by the assurance activities listed for ALC_CMC.1.
-          <group type="dev-action">
+	  Given the scope of the EDR and its associated evaluation 
+	  evidence requirements, this component’s evaluation activities are covered 
+	  by the evaluation activities listed for ALC_CMC.1.
+                  <evalactionlabel title="Developer action elements:"/>
             <a-element id="alc_cms.1.1d">
               <title>
-		The developer shall provide a configuration list for the  <abbr linkend="OS"/>.
+		The developer shall provide a configuration list for the  EDR.
 	      </title>
             </a-element>
-	  </group>
-	  <group type="con-pres">
+	  
+	          <evalactionlabel title="Content and presentation elements:"/>
             <a-element id="alc_cms.1.1c">
-              <title>The configuration list shall include the following: the <abbr linkend="OS"/>
+              <title>The configuration list shall include the following: the EDR
               itself; and the evaluation evidence required by the SARs.</title>
             </a-element>
             <a-element id="alc_cms.1.2c">
               <title>The configuration list shall uniquely identify the configuration items.</title>
             </a-element>
-	  </group>
-          <group type="eval-action">
+	  
+                  <evalactionlabel title="Evaluator action elements:"/>
             <a-element id="alc_cms.1.1e">
               <title>The evaluator shall confirm that the information provided meets all requirements
               for content and presentation of evidence.</title>
-              <aactivity>The "evaluation evidence required by the SARs" in this PP is limited to the
+              <aactivity>
+		<h:p>
+		  The "evaluation evidence required by the SARs" in this PP is limited to the
               information in the <abbr linkend="ST"/> coupled with the guidance provided to
               administrators and users under the AGD requirements. By ensuring that the <abbr
-              linkend="OS"/> is specifically identified and that this identification is
+              linkend="EDR"/> is specifically identified and that this identification is
               consistent in the <abbr linkend="ST"/> and in the AGD guidance (as done in the
-              assurance activity for ALC_CMC.1), the evaluator implicitly confirms the information
+              evaluation activity for ALC_CMC.1), the evaluator implicitly confirms the information
               required by this component. Life-cycle support is targeted aspects of the developer’s
               life-cycle and instructions to providers of applications for the developer’s devices,
               rather than an in-depth examination of the <abbr linkend="TSF"/> manufacturer’s
               development and configuration management process. This is not meant to diminish the
               critical role that a developer’s practices play in contributing to the overall
               trustworthiness of a product; rather, it’s a reflection on the information to be made
-              available for evaluation. <h:br/> The evaluator will ensure that the developer has
+              available for evaluation.
+	      </h:p><h:p>
+	      The evaluator will ensure that the developer has
               identified (in guidance documentation for application developers concerning the
               targeted platform) one or more development environments appropriate for use in
               developing applications for the developer’s platform. For each of these development
@@ -732,63 +1100,73 @@
               uniquely identified (with respect to other products from the <abbr linkend="TSF"/>
               vendor), and that documentation provided by the developer in association with the
               requirements in the <abbr linkend="ST"/> is associated with the <abbr linkend="TSF"/>
-              using this unique identification.</aactivity>
+              using this unique identification.
+	      </h:p>
+	      </aactivity>
           </a-element>
-	  </group>
+	  
         </a-component>
         <a-component id="alc_tsu_ext.1" name="Timely Security Updates"> This component requires the
-          OS developer, in conjunction with any other necessary parties, to provide information as
+          EDR developer, in conjunction with any other necessary parties, to provide information as
           to how the end-user devices are updated to address security issues in a timely manner. The
           documentation describes the process of providing updates to the public from the time a
           security flaw is reported/discovered, to the time an update is released. This description
           includes the parties involved (e.g., the developer, carriers(s)) and the steps that are
           performed (e.g., developer testing, carrier testing), including worst case time periods,
           before an update is made available to the public. 
-	  <group type="dev-action">
+	          <evalactionlabel title="Developer action elements:"/>
             <a-element id="alc_tsu_ext.1.1d">
               <title>The developer shall provide a description in the TSS of how timely security
-              updates are made to the <abbr linkend="OS"/>.</title>
+              updates are made to the EDR.</title>
             </a-element>
             <a-element id="alc_tsu_ext.1.2d">
               <title> The developer shall provide a description in the TSS of how users are notified
               when updates change security properties or the configuration of the product. </title>
             </a-element>
-	  </group>
-	  <group type="con-pres">
+	  
+	          <evalactionlabel title="Content and presentation elements:"/>
             <a-element id="alc_tsu_ext.1.1c">
               <title>The description shall include the process for creating and deploying security
-              updates for the <abbr linkend="OS"/> software.</title>
+              updates for the EDR software.</title>
             </a-element>
             <a-element id="alc_tsu_ext.1.2c">
               <title>The description shall include the mechanisms publicly available for reporting
-              security issues pertaining to the <abbr linkend="OS"/>.</title>
+              security issues pertaining to the EDR.</title>
               <note> The reporting mechanism could include web sites, email addresses, as well as a
               means to protect the sensitive nature of the report (e.g., public keys that could be
               used to encrypt the details of a proof-of-concept exploit). </note>
             </a-element>
-	  </group>
-	  <group type="eval-action">
+	  
+	          <evalactionlabel title="Evaluator action elements:"/>
             <a-element id="alc_tsu_ext.1.1e">
               <title>The evaluator shall confirm that the information provided meets all
               requirements for content and presentation of evidence.</title>
-              <aactivity> The evaluator will verify that the TSS contains a description of the timely
+              <aactivity> 
+		<h:p>
+		The evaluator will verify that the TSS contains a description of the timely
               security update process used by the developer to create and deploy security updates.
               The evaluator will verify that this description addresses the entire application. The
-              evaluator will also verify that, in addition to the OS developer’s process, any
+              evaluator will also verify that, in addition to the EDR developer’s process, any
               third-party processes are also addressed in the description. The evaluator will also
-              verify that each mechanism for deployment of security updates is described. <h:br/> The
+              verify that each mechanism for deployment of security updates is described. 
+	      </h:p><h:p> 
+	      The
               evaluator will verify that, for each deployment mechanism described for the update
               process, the TSS lists a time between public disclosure of a vulnerability and public
-              availability of the security update to the OS patching this vulnerability, to include
+              availability of the security update to the EDR patching this vulnerability, to include
               any third-party or carrier delays in deployment. The evaluator will verify that this
-              time is expressed in a number or range of days. <h:br/> The evaluator will verify that
+              time is expressed in a number or range of days.
+	      </h:p><h:p>
+	      The evaluator will verify that
               this description includes the publicly available mechanisms (including either an email
-              address or website) for reporting security issues related to the OS. The evaluator
+              address or website) for reporting security issues related to the EDR. The evaluator
               shall verify that the description of this mechanism includes a method for protecting
               the report either using a public key for encrypting email or a trusted channel for a
-              website. </aactivity>
+              website. 
+	    </h:p>
+	    </aactivity>
             </a-element>
-	  </group>
+	  
         </a-component>
       </subsection>
       <subsection id="ate" title="Class ATE: Tests">Testing is specified for functional aspects of
@@ -803,23 +1181,23 @@
           (including configuration and operational) documentation provided. The focus of the testing
           is to confirm that the requirements specified in <secref linkend="SFRs"/> being met,
           although some additional testing is specified for SARs in <secref linkend="SARs"/>. The
-          Assurance Activities identify the additional testing activities associated with these
+          evaluation activities identify the additional testing activities associated with these
           components. The evaluator produces a test report documenting the plan for and results of
-          testing, as well as coverage arguments focused on the platform/<abbr linkend="OS"/>
+          testing, as well as coverage arguments focused on the platform/EDR
           combinations that are claiming conformance to this PP. Given the scope of the <abbr
-            linkend="OS"/> and its associated evaluation evidence requirements, this component’s
-          assurance activities are covered by the assurance activities listed for ALC_CMC.1.
-	  <group type="dev-action">
+            linkend="EDR"/> and its associated evaluation evidence requirements, this component’s
+          evaluation activities are covered by the evaluation activities listed for ALC_CMC.1.
+	          <evalactionlabel title="Developer action elements:"/>
             <a-element id="ate_ind.1.1d">
-              <title>The developer shall provide the <abbr linkend="OS"/> for testing.</title>
+              <title>The developer shall provide the EDR for testing.</title>
             </a-element>
-	  </group>
-          <group type="con-pres">
+	  
+                  <evalactionlabel title="Content and presentation elements :"/>
             <a-element id="ate_ind.1.1c">
-              <title>The <abbr linkend="OS"/> shall be suitable for testing.</title>
+              <title>The EDR shall be suitable for testing.</title>
             </a-element>
-	  </group>
-	  <group type="eval-action">
+	  
+	          <evalactionlabel title="Evaluator action elements:"/>
             <a-element id="ate_ind.1.1e">
               <title>The evaluator <h:i>shall confirm</h:i> that the information provided meets all
               requirements for content and presentation of evidence.</title>
@@ -827,14 +1205,18 @@
             <a-element id="ate_ind.1.2e">
               <title>The evaluator shall test a subset of the <abbr linkend="TSF"/> to confirm that
               the <abbr linkend="TSF"/> operates as specified.</title>
-              <note role="application">The evaluator will test the OS on the most current fully
+              <note role="application">The evaluator will test the EDR on the most current fully
               patched version of the platform.</note>
-              <aactivity>The evaluator will prepare a test plan and report documenting the testing
+              <aactivity>
+		<h:p>
+		  The evaluator will prepare a test plan and report documenting the testing
               aspects of the system, including any application crashes during testing. The evaluator
               shall determine the root cause of any application crashes and include that information
               in the report. The test plan covers all of the testing actions contained in the <cite
-                linkend="bibCEM"/> and the body of this PP’s Assurance Activities. <h:br/> While it is
-              not necessary to have one test case per test listed in an Assurance Activity, the
+                linkend="bibCEM"/> and the body of this PP’s evaluation activities. 
+	      </h:p><h:p>
+	      While it is
+              not necessary to have one test case per test listed in an evaluation activity, the
               evaluator must document in the test plan that each applicable testing requirement in
               the <abbr linkend="ST"/> is covered. The test plan identifies the platforms to be
               tested, and for those platforms not included in the test plan but included in the
@@ -850,20 +1232,25 @@
               of each platform either as part of a test or as a standard pre-test condition. This
               may include special test drivers or tools. For each driver or tool, an argument (not
               just an assertion) should be provided that the driver or tool will not adversely
-              affect the performance of the functionality by the <abbr linkend="OS"/> and its
-              platform. <h:br/> This also includes the configuration of the cryptographic engine to be
+              affect the performance of the functionality by the EDR and its
+              platform.
+	      </h:p><h:p>
+	      This also includes the configuration of the cryptographic engine to be
               used. The cryptographic algorithms implemented by this engine are those specified by
               this PP and used by the cryptographic protocols being evaluated (IPsec, TLS). The test
               plan identifies high-level test objectives as well as the test procedures to be
-              followed to achieve those objectives. These procedures include expected results. <h:br/>
+              followed to achieve those objectives. These procedures include expected results.
+	      </h:p><h:p>
               The test report (which could just be an annotated version of the test plan) details
               the activities that took place when the test procedures were executed, and includes
               the actual results of the tests. This shall be a cumulative account, so if there was a
               test run that resulted in a failure; a fix installed; and then a successful re-run of
               the test, the report would show a “fail” and “pass” result (and the supporting
-              details), and not just the “pass” result.</aactivity>
+              details), and not just the “pass” result.
+	    </h:p>
+	    </aactivity>
             </a-element>
-	  </group>
+	  
         </a-component>
       </subsection>
       <subsection id="ava" title="Class AVA: Vulnerability Assessment">For the first generation of
@@ -871,29 +1258,29 @@
         what vulnerabilities have been discovered in these types of products. In most cases, these
         vulnerabilities will require sophistication beyond that of a basic attacker. Until
         penetration tools are created and uniformly distributed to the evaluation labs, the
-        evaluator will not be expected to test for these vulnerabilities in the <abbr linkend="OS"
+        evaluator will not be expected to test for these vulnerabilities in the <abbr linkend="EDR"
         />. The labs will be expected to comment on the likelihood of these vulnerabilities given
         the documentation provided by the vendor. This information will be used in the development
         of penetration testing tools and for the development of future protection profiles.
         <a-component id="ava_van.1" name="Vulnerability Survey (AVA_VAN.1)">
-	  <group type="dev-action">
-            <a-element id="ava_van.1.1d">
-              <title>The developer shall provide the <abbr linkend="OS"/> for testing.</title>
-            </a-element>
-	  </group>
-	  <group type="con-pres">
-          <a-element id="ava_van.1.1c">
-            <title>The <abbr linkend="OS"/> shall be suitable for testing.</title>
+	  <evalactionlabel title="Developer action elements:"/>
+          <a-element id="ava_van.1.1d">
+            <title>The developer shall provide the EDR for testing.</title>
           </a-element>
-	  </group>
-	  <group type="eval-action">
+	  
+	  <evalactionlabel title="Content and presentation elements:"/>
+	  <a-element id="ava_van.1.1c">
+            <title>The EDR shall be suitable for testing.</title>
+          </a-element>
+	  
+	  <evalactionlabel title="Evaluator action elements:"/>
           <a-element id="ava_van.1.1e">
             <title>The evaluator shall confirm that the information provided meets all requirements
-              for content and presentation of evidence.</title>
+            for content and presentation of evidence.</title>
           </a-element>
           <a-element id="ava_van.1.2e">
             <title>The evaluator shall perform a search of public domain sources to identify
-              potential vulnerabilities in the <abbr linkend="OS"/>.</title>
+              potential vulnerabilities in the EDR.</title>
             <note role="application">Public domain sources include the Common Vulnerabilities 
               and Exposures (CVE) dictionary for publicly-known vulnerabilities.  Public domain
               sources also include sites which provide free checking of files for viruses.</note>
@@ -901,9 +1288,11 @@
           </a-element>
           <a-element id="ava_van.1.3e">
             <title>The evaluator shall conduct penetration testing, based on the identified
-              potential vulnerabilities, to determine that the <abbr linkend="OS"/> is resistant to
+              potential vulnerabilities, to determine that the EDR is resistant to
               attacks performed by an attacker possessing Basic attack potential.</title>
-            <aactivity>The evaluator will generate a report to document their
+            <aactivity>
+	      <h:p>
+	      The evaluator will generate a report to document their
               findings with respect to this requirement. This report could physically be part of the
               overall test report mentioned in ATE_IND, or a separate document. The evaluator
               performs a search of public information to find vulnerabilities that have been found
@@ -911,19 +1300,22 @@
               uses and document formats it parses. 
               The evaluator documents the sources consulted and
               the vulnerabilities found in the report. 
-              <h:br/>
+	      </h:p><h:p>
               For each vulnerability found, the evaluator
               either provides a rationale with respect to its non-applicability, or the evaluator
               formulates a test (using the guidelines provided in ATE_IND) to confirm the
               vulnerability, if suitable. Suitability is determined by assessing the attack vector
               needed to take advantage of the vulnerability. If exploiting the vulnerability
               requires expert skills and an electron microscope, for instance, then a test would not
-              be suitable and an appropriate justification would be formulated.</aactivity>
+              be suitable and an appropriate justification would be formulated.
+	    </h:p>
+	    </aactivity>
           </a-element>
-	  </group>
+	  
         </a-component>
       </subsection>      
     </section>
+    
   </chapter>
 
   <!-- 
@@ -931,11 +1323,11 @@
        To make an SFR optional tag it above as status="optional" 
   -->
   <appendix title="Optional Requirements" id="optional"> As indicated in <secref linkend="ccl"/>,
-    the baseline requirements (those that must be performed by the <abbr linkend="OS"/>) are
+    the baseline requirements (those that must be performed by the <abbr linkend="EDR"/>) are
     contained in the body of this PP. Additionally, there are three other types of requirements
     specified in <appref linkend="optional"/>, <appref linkend="sel-based"/>, and <appref
       linkend="objective"/>. The first type (in this Appendix) are requirements that can be included
-    in the <abbr linkend="ST"/>, but are not required in order for a OS to claim conformance to
+    in the <abbr linkend="ST"/>, but are not required in order for a EDR to claim conformance to
     this PP. The second type (in <appref linkend="sel-based"/>) are requirements based on selections
     in the body of the PP: if certain selections are made, then additional requirements in that
     appendix must be included. The third type (in <appref linkend="objective"/> are components that
@@ -950,7 +1342,7 @@
        To make an SFR optional tag it above as status="sel-based" 
   -->
   <appendix title="Selection-Based Requirements" id="sel-based"> As indicated in the introduction to
-    this PP, the baseline requirements (those that must be performed by the OS or its underlying
+    this PP, the baseline requirements (those that must be performed by the EDR or its underlying
     platform) are contained in the body of this PP. There are additional requirements based on
     selections in the body of the PP: if certain selections are made, then additional requirements
     below will need to be included. </appendix>
@@ -963,7 +1355,7 @@
     specify security functionality which also addresses threats. The requirements are not currently
     mandated in the body of this PP as they describe security functionality not yet widely-available
     in commercial technology. However, these requirements may be included in the ST such that the
-    OS is still conformant to this PP, and it is expected that they be included as soon as
+    EDR is still conformant to this PP, and it is expected that they be included as soon as
     possible. </appendix>
 
   <appendix title="References" id="biblio">
@@ -1102,6 +1494,10 @@
       <entry>
         <term>ECDSA</term>
         <description>Elliptic Curve Digital Signature Algorithm</description>
+      </entry>
+      <entry>
+        <term>EDR</term>
+        <description>Endpoint Detection and Response</description>
       </entry>
       <entry>
         <term>EST</term>
