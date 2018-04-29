@@ -38,8 +38,9 @@
       characteristics and behaviors for EDR management systems that are hosted in a cloud, on-premises, or a hybrid. 
       The platform on which the EDR system runs may be physical, virtual, or part of a cloud environment.
       <h:br />
-      The security requirements for the host agent are addressed in the separate ESM-HostAgent 
-      Protection Profile. Evaluation of an EDR system will require evaluation against the ESM-EDR PP and the ESM-HostAgent PP.
+      The security requirements for the host agent are addressed in the separate <cite linkend="bibHAGT"/> 
+      Protection Profile. Evaluation of an EDR system will require evaluation against the ESM-EDR PP and 
+      the <cite linkend="bibHAGT"/>  PP.
       <h:br />
       There are three primary architectural categories for an EDR system addressed by requirements in this PP. 
       <h:li>Cloud: Endpoints communicate over the Internet to an EDR cloud service.</h:li>
@@ -150,19 +151,16 @@
       An EDR system's functionality may be effectively extended by
       addon applications or threat feeds installed onto it.  However, these are out of scope of this PP. 
       <usecases>
-        <usecase title="On-Premises EDR System" id="serversystems">
-          <description>The EDR management system is provided by server-side services on
-            physical or virtual hardware.
+        <usecase title="Detection of Potential Malware" id="detect">
+          <description>The detection of potentially malicious activity is enable by the collection
+            of endpoint host data to a central EDR system where the data is analyzed.
           </description>
         </usecase>
-        <usecase title="Cloud Based EDR System" id="cloudsystems">
-          <description>The EDR management system is provided by cloud services running on
-            physical or virtual hardware.  An EDR is typically part of offerings
-            identified as Software as a Service (SaaS), or Platform as a Service (PaaS). 
-            <h:br/>
-            This use case typically involves the use of virtualization technology 
-            which should be evaluated against the 
-            <h:i>Protection Profile for Server Virtualization</h:i>.</description>
+        <usecase title="Remediation of Malware" id="response">
+          <description>The remediation of detected malicious activity is a key use case of EDR software
+            which enables a SOC Analyst to clean up and neutrealize malware by mechanisim offered by
+            the EDR system.
+          </description>
         </usecase>
       </usecases>
     </section>
@@ -878,7 +876,8 @@
         
         <f-component id="fau_alt_ext.1" name="Server Alerts">
           <f-element id="fau_alt_ext.1.1">
-            <title>The <abbr linkend="EDR"/> system shall alert authorized users on a dsahboard in 
+            <title>The <abbr linkend="EDR"/> system shall alert authorized users on a 
+              <abbr linkend="dashboard"/> in 
               the event of any of the following: <h:ol type="a">
                 <h:li>change in endpoint agent enrollment status</h:li>
                 <h:li>detection of potentially malicous endpoint activity</h:li>
@@ -924,9 +923,132 @@
       </subsection>
       
       <subsection title="Security Management (FMT)" id="fmt">
+        
+        <f-component id="FMT_SMF.1(1)"
+          name="Specification of Management Functions (Server configuration of Host Agent)">
+          <f-element id="FMT_SMF.1.1(1)">
+            <title>The <h:b>EDR, or EDR Platform</h:b> shall be capable of communicating the
+              following management functions to the <abbr linkend="EDR"/> Host Agent:
+              <h:br/>
+              <management-function-set default="O">
+                <manager id="a">Administrator</manager>
+                <manager id="u">User</manager>
+                <management-function><text>
+                  Configure the time frame for sending host agent data to the EDR every
+                  <selectables>
+                    <selectable>5 minutes</selectable>
+                    <selectable>30 minutes</selectable>
+                    <assignable>list of other time frames allowed by the EDR</assignable>
+                  </selectables>
+                </text></management-function>
+                </management-function-set>.
+            </title>
+            <note role="application"> This requirement captures all the configuration functionality
+              the <abbr linkend="TSF"/> provides the administrator to configure the <abbr
+                linkend="EDR"/> Host Agent. 
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="FMT_SMF.1(2)"
+          name="Specification of Management Functions (Server Configuration of Server)">
+          <f-element id="FMT_SMF.1.1(2)">
+            <title> The <abbr linkend="EDR"/> Server shall be capable of performing the following
+              management functions:   
+              <h:br/>
+              <management-function-set default="O">
+                <manager id="a">Administrator</manager>
+                <manager id="u">User</manager>
+                <management-function><text>
+                  Configure the amount of time to retain collected EDR as 
+                  <selectables>
+                    <selectable>90 days</selectable>
+                    <selectable>180 days</selectable>
+                    <assignable>other time frame allowed by the EDR</assignable>
+                  </selectables>
+                </text>
+                </management-function>
+              </management-function-set>.
+            </title>
+            <note role="application"> This requirement captures all the configuration functionality
+              the <abbr linkend="TSF"/> provides the administrator to configure the EDR Server.
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="FMT_SMR.1(1)" name="Security Management Roles">
+          <f-element id="FMT_SMR.1.1(1)">
+            <title>The 
+              <selectables>
+                <selectable>EDR</selectable>
+                <selectable>EDR platform</selectable>
+              </selectables> 
+              shall maintain the roles of administrator, 
+              SOC analyst, read-only user,
+              and <assignable>additional authorized identified roles</assignable>.
+            </title>
+            <note role="application">It is envisioned that the <abbr linkend="EDR"/> Server will be
+              configured, maintained, and used by different user roles. At a minimum, one
+              administrative role shall be supported, one SOC analyst who can issue remediation commands
+              to host agents, and one read-only user who can only view data.
+              <br />
+              The user accounts do not literally need to be named as above, but they must have 
+              the effect of those roles. The assignment is used by the <abbr linkend="ST"/> author to 
+              list any other roles that are supported. If no additional roles are supported, then “no
+              additional roles” is stated. 
+            </note>
+            <aactivity>
+              <tss>The evaluator shall examine the <abbr linkend="TSS"/> to verify that it describes
+                the roles and the powers granted to and limitations of the role.</tss>
+              <guidance>The evaluator shall review the operational guidance to ensure that it
+                contains instructions for administering the <abbr linkend="EDR"/> and which
+                user roles are supported.</guidance>
+              <tests>In the course of performing the testing activities for the evaluation, the
+                evaluator shall use all supported interfaces, although it is not necessary to repeat
+                each test involving an administrative action with each interface. The evaluator
+                shall ensure, however, that each supported method of administering the <abbr
+                  linkend="EDR"/> that conforms to the requirements of this <abbr linkend="PP"/> be
+                tested; for instance, if the <abbr linkend="EDR"/> can be administered through a
+                local hardware interface or TLS/HTTPS then both methods of administration must be
+                exercised during the evaluation team’s test activities.
+              </tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
       </subsection>
       
       <subsection title="Protection of the TSF (FPT)" id="fpt">
+        
+        <f-component id="fpt_aex_ext.1" name="Anti-Exploitation Capabilities">
+        <f-element id="fpt_aex_ext.1.1">
+          <title>
+            The EDR shall 
+            <selectables linebreak="yes">
+              <selectable> 
+                not allocate any memory region with both write and execute permissions 
+              </selectable>
+              <selectable>
+                allocate memory regions with write and execute permissions for only
+                <assignable> list of functions performing just-in-time compilation</assignable>
+              </selectable>
+            </selectables>
+            .
+          </title>
+          <note role="application"> Requesting a memory mapping with both write and execute
+            permissions subverts the platform protection provided by 
+            <abbr title="Data Execution Prevention" linkend="DEP">DEP</abbr>. 
+            If the EDR performs no just-in-time compiling, then the first selection must be chosen.
+          </note>
+          <aactivity>
+          </aactivity>
+        </f-element>
+        </f-component>
+        
       </subsection>
       
       <subsection title="Trusted Path/Channels (FTP)" id="ftp">
@@ -1594,6 +1716,13 @@ evaluation and performs independent testing.
             >Reporting Incidents Involving Personally Identifiable Information and Incorporating the
             Cost for Security in Agency Information Technology Investments</h:a>, OMB M-06-19, July
           12, 2006. </description>
+      </entry>
+      <entry id="bibHAGT">
+        <tag>ESM Host Agent Module</tag>
+        <description>
+          <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?id=403">Protection Profile for
+            ESM Host Agent, Version 1.0, July 2018</h:a>
+        </description>
       </entry>
     </bibliography>
   </appendix>
