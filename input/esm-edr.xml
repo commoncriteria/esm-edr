@@ -42,11 +42,13 @@
       Protection Profile. Evaluation of an EDR system will require evaluation against the ESM-EDR PP and 
       the <cite linkend="bibHAGT"/>  PP.
       <h:br />
-      There are three primary architectural categories for an EDR system addressed by requirements in this PP. 
-      <h:li>Cloud: Endpoints communicate over the Internet to an EDR cloud service.</h:li>
-      <h:li>On-Premises: Endpoints communicate with an on-premises EDR server in a hub and spoke network model.</h:li>
-      <h:li>Hybrid: Endpoints communicate with other Endpoints and ultimately an on-premises EDR server in a 
+      There are three primary architectural categories for an EDR system addressed by requirements in this PP and 
+      as seen in the figure below. 
+      <h:li>Endpoints communicate over the Internet to an EDR cloud service. Often refered to as Software as a Service (SaaS)</h:li>
+      <h:li>Endpoints communicate with an on-premises EDR server in a hub and spoke network model. </h:li>
+      <h:li>Endpoints communicate with other Endpoints and ultimately an on-premises EDR server in a 
         ring based network model (for example: peer-to-peer).</h:li>
+      <figure entity="images/edr_archi.jpg" title="EDR Architectures Overview" id="toe"/>
     </section>
     <section title="Terms" id="glossary"> The following sections provide both Common Criteria and
       technology terms used in this Protection Profile.
