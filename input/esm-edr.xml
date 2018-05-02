@@ -878,8 +878,7 @@
         <f-component id="fau_alt_ext.1" name="Server Alerts">
           <f-element id="fau_alt_ext.1.1">
             <title>The <abbr linkend="EDR"/> system shall alert authorized users on a 
-              <abbr linkend="dashboard">dashboard</abbr> in  
-              the event of any of the following: 
+              dashboard in the event of any of the following: 
               <h:ol type="a">
                 <h:li>change in endpoint agent enrollment status</h:li>
                 <h:li>detection of potentially malicous endpoint activity</h:li>
