@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
 
+<?xml-model href="https://raw.githubusercontent.com/commoncriteria/transforms/master/schemas/CCProtectionProfile.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 
 <PP xmlns="https://niap-ccevs.org/cc/v1" name="Protection Profile Endpoint Detection and Response (EDR)"
     xmlns:h="http://www.w3.org/1999/xhtml">
@@ -936,12 +937,8 @@
                 <manager id="a">Administrator</manager>
                 <manager id="u">User</manager>
                 <management-function><text>
-                  Configure the time frame for sending host agent data to the EDR every
-                  <selectables>
-                    <selectable>5 minutes</selectable>
-                    <selectable>30 minutes</selectable>
-                    <assignable>list of other time frames allowed by the EDR</assignable>
-                  </selectables>
+                  Configure the time frame for sending host agent data to the EDR
+                  <assignable>list of configurable time frames</assignable>
                 </text></management-function>
                 </management-function-set>.
             </title>
@@ -964,12 +961,8 @@
                 <manager id="a">Administrator</manager>
                 <manager id="u">User</manager>
                 <management-function><text>
-                  Configure the amount of time to retain collected EDR as 
-                  <selectables>
-                    <selectable>90 days</selectable>
-                    <selectable>180 days</selectable>
-                    <assignable>other time frame allowed by the EDR</assignable>
-                  </selectables>
+                  Configure the amount of time to retain collected EDR data 
+                  <assignable>time frame to retain data</assignable>
                 </text>
                 </management-function>
               </management-function-set>.
@@ -997,7 +990,7 @@
               configured, maintained, and used by different user roles. At a minimum, one
               administrative role shall be supported, one SOC analyst who can issue remediation commands
               to host agents, and one read-only user who can only view data.
-              <br />
+              <h:br />
               The user accounts do not literally need to be named as above, but they must have 
               the effect of those roles. The assignment is used by the <abbr linkend="ST"/> author to 
               list any other roles that are supported. If no additional roles are supported, then “no
