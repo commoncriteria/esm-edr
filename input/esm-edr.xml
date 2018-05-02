@@ -878,8 +878,9 @@
         <f-component id="fau_alt_ext.1" name="Server Alerts">
           <f-element id="fau_alt_ext.1.1">
             <title>The <abbr linkend="EDR"/> system shall alert authorized users on a 
-              <abbr linkend="dashboard"/> in 
-              the event of any of the following: <h:ol type="a">
+              <abbr linkend="dashboard">dashboard</abbr> in  
+              the event of any of the following: 
+              <h:ol type="a">
                 <h:li>change in endpoint agent enrollment status</h:li>
                 <h:li>detection of potentially malicous endpoint activity</h:li>
               </h:ol>
@@ -938,7 +939,7 @@
                   Configure the time frame for sending host agent data to the EDR
                   <assignable>list of configurable time frames</assignable>
                 </text></management-function>
-                </management-function-set>.
+                </management-function-set>
             </title>
             <note role="application"> This requirement captures all the configuration functionality
               the <abbr linkend="TSF"/> provides the administrator to configure the <abbr
@@ -963,7 +964,7 @@
                   <assignable>time frame to retain data</assignable>
                 </text>
                 </management-function>
-              </management-function-set>.
+              </management-function-set>
             </title>
             <note role="application"> This requirement captures all the configuration functionality
               the <abbr linkend="TSF"/> provides the administrator to configure the EDR Server.
@@ -996,10 +997,12 @@
             </note>
             <aactivity>
               <tss>The evaluator shall examine the <abbr linkend="TSS"/> to verify that it describes
-                the roles and the powers granted to and limitations of the role.</tss>
+                the roles and the powers granted to and limitations of the role.
+              </tss>
               <guidance>The evaluator shall review the operational guidance to ensure that it
                 contains instructions for administering the <abbr linkend="EDR"/> and which
-                user roles are supported.</guidance>
+                user roles are supported.
+              </guidance>
               <tests>In the course of performing the testing activities for the evaluation, the
                 evaluator shall use all supported interfaces, although it is not necessary to repeat
                 each test involving an administrative action with each interface. The evaluator
@@ -1029,8 +1032,7 @@
                 allocate memory regions with write and execute permissions for only
                 <assignable> list of functions performing just-in-time compilation</assignable>
               </selectable>
-            </selectables>
-            .
+            </selectables>.
           </title>
           <note role="application"> Requesting a memory mapping with both write and execute
             permissions subverts the platform protection provided by 
