@@ -1070,9 +1070,21 @@
               <management-function-set default="O">
                 <manager id="a">Administrator</manager>
                 <manager id="u">User</manager>
-                <management-function><text>
+                <management-function>
+                  <text>
                   Configure the amount of time to retain collected EDR data 
                   <assignable>time frame to retain data</assignable>
+                </text>
+                </management-function>
+                <management-function>
+                  <text>
+                  Configure the suppression of alerts based on
+                  <selectables>
+                    <selectable>filename</selectable>
+                    <selectable>folder</selectable>
+                    <selectable>hash</selectable>
+                  </selectables> 
+                  <assignable>other factors</assignable>
                 </text>
                 </management-function>
               </management-function-set>
