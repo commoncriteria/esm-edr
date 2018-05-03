@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml-stylesheet type="text/xsl" href="../transforms/pp2html.xsl"?>
 
-
-<?xml-model href="https://raw.githubusercontent.com/commoncriteria/transforms/master/schemas/CCProtectionProfile.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-
-
 <PP xmlns="https://niap-ccevs.org/cc/v1" name="Protection Profile Endpoint Detection and Response (EDR)"
     xmlns:h="http://www.w3.org/1999/xhtml">
 
@@ -1269,10 +1265,10 @@
           </f-element>
         </f-component>
         
-        <f-component id="FTP_ITC.1(2)" name="Trusted Channel (Host Agent)"
-          status="optional">
+        <f-component id="FTP_ITC.1(2)" name="Trusted Channel (Host Agent)">
           <f-element id="FTP_ITC.1.1(2)">
-            <title>The <abbr linkend="TSF"/> shall use <selectables>
+            <title>The <abbr linkend="TSF"/> shall use 
+              <selectables linebreak="yes">
               <selectable id="ITC_TLS_2">TLS</selectable>
               <selectable id="ITC_HTTPS_2">HTTPS</selectable>
             </selectables> to provide a trusted communication channel between itself and another
