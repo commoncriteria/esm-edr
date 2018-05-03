@@ -287,16 +287,7 @@
   </chapter>
   <chapter title="Security Objectives" id="obj">
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
-      <SOs>
-        <SO id="O.ACCOUNTABILITY">
-          <description> Conformant <abbr linkend="EDR"/>s ensure that information exists that allows
-            administrators to discover unintentional issues with the configuration and operation of
-            the operating system and discover its cause.  Gathering event information and immediately 
-            transmitting it to another system can also enable incident response in the event
-            of system compromise.</description>
-          <component-refer ref="fau_gen.1"/>
-        </SO>
-      </SOs>
+      <!-- TODO -->
     </section>
     <section title="Security Objectives for the Operational Environment"
       id="SecurityObjectivesTOEorEnvironment">The following security objectives for the operational
