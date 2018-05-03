@@ -121,7 +121,7 @@
               document. </description>
           </entry>
           <entry>
-            <term>Endpoint Host Agent</term>
+            <term>Host Agent</term>
             <description>Software that executes on endpoints to collect a set of Operating System 
               data for analysis by the EDR Server service.</description>
           </entry>
@@ -1253,6 +1253,89 @@
                   channel data is not sent in plaintext.</test>
               </testlist> Further assurance activities are associated with the specific
                 protocols.</tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="FTP_ITC.1(2)" name="Trusted Channel (Host Agent)"
+          status="optional">
+          <f-element id="FTP_ITC.1.1(2)">
+            <title>The <abbr linkend="TSF"/> shall use <selectables>
+              <selectable id="ITC_TLS_2">TLS</selectable>
+              <selectable id="ITC_HTTPS_2">HTTPS</selectable>
+            </selectables> to provide a trusted communication channel between itself and another
+              trusted IT product that is logically distinct from other communication channels,
+              provides assured identification of its end points, protects channel data from
+              disclosure, and detects modification of the channel data.
+            </title>
+            <note role="application"> The intent of the above requirement
+              is to use the cryptographic protocols identified in the requirement to establish and
+              maintain a trusted channel between the <abbr linkend="EDR"/> system and the <abbr
+                linkend="Host Agent"/>. Only TLS, or HTTPS can be used in this trusted
+              channel.
+              <h:br/><h:br/> 
+              This requirement is to ensure that the transmission of any logs, process lists, system 
+              information, etc, when commanded, or at configurable intervals, is properly protected.
+              This trusted channel also protects any commands and policies sent by the <abbr
+              linkend="EDR"/> system to the <abbr linkend="Host Agent"/>. 
+              Either the <abbr linkend="Host Agent"/> or the <abbr linkend="EDR"/> System is able to 
+              initiate the connection.
+              <h:br/><h:br/> 
+              This trusted channel protects both the connection between an
+              enrolled <abbr linkend="Host Agent"/> and the <abbr linkend="EDR"/> system and the
+              connection between an unenrolled <abbr linkend="Host Agent"/> and the <abbr
+                linkend="EDR"/> system during the enrollment operation. Different protocols can be
+              used for these two connections, and the description in the <abbr linkend="TSS"/>
+              should make this difference clear.
+              <h:br/><h:br/> 
+              The trusted channel uses TLS, or
+              HTTPS as the protocol that preserves the confidentiality and integrity of <abbr
+              linkend="EDR"/> communications. The <abbr linkend="ST"/> author chooses the
+              mechanism or mechanisms supported by the <abbr linkend="EDR"/>, and then ensures the
+              correct requirements are included the <abbr linkend="ST"/> if not already present. 
+              Protocol, RBG, Certificate validation, algorithm, and similar services may be met 
+              with platform provided services.
+            </note>
+          </f-element>
+          <f-element id="FTP_ITC.1.2(2)">
+            <title>The <abbr linkend="TSF"/> shall permit the <abbr linkend="EDR"/> and <abbr
+              linkend="Host Agent"/> to initiate communication via the trusted channel.
+            </title>
+          </f-element>
+          <f-element id="FTP_ITC.1.3(2)">
+            <title>The <abbr linkend="TSF"/> shall initiate communication via the trusted channel
+              for all communication between the <abbr linkend="EDR"/> system and the <abbr
+                linkend="Host Agent"/>. 
+            </title>
+            <aactivity>
+              <tss>The evaluator shall examine the <abbr linkend="TSS"/> to determine that the
+                methods of Agent-Server communication are indicated, along with how those
+                communications are protected. The evaluator shall also confirm that all protocols
+                listed in the <abbr linkend="TSS"/> in support of remote <abbr linkend="TOE"/>
+                administration are consistent with those specified in the requirement, and are
+                included in the requirements in the <abbr linkend="ST"/>.
+              </tss>
+              <guidance>The evaluator shall confirm that the operational guidance contains
+                instructions for configuring the communication channel between the <abbr
+                  linkend="Host Agent"/> and the <abbr linkend="EDR"/> system for each supported
+                method.
+              </guidance>
+              <tests>
+                <testlist>
+                  <test>The evaluators shall ensure that communications using each specified (in the
+                    operational guidance) Agent-Server communication method is tested during the
+                    course of the evaluation, setting up the connections as described in the
+                    operational guidance and ensuring that communication is successful.
+                  </test>
+                  <test>The evaluator shall ensure, for each method of Agent-Server communication,
+                    the channel data is not sent in plaintext.
+                  </test>
+                  <test>The evaluator shall ensure, for each communication channel with the <abbr
+                    linkend="EDR"/> system, that a protocol analyzer identifies the traffic as the
+                    protocol under testing.
+                  </test>
+                </testlist>
+              </tests>
             </aactivity>
           </f-element>
         </f-component>
