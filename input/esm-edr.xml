@@ -781,6 +781,82 @@
           </f-element>
         </f-component>
         
+        <f-component id="fcs_cop.1(3)" name="Cryptographic Operation - Signing"  status="sel-based">
+          <selection-depends req="fcs_tlsc_ext.1.1" ids="sel_impl_tls"/>
+          <f-element id="fcs_cop.1.1(3)">
+            <title>The application shall perform cryptographic signature services (generation and
+              verification) in accordance with a specified cryptographic algorithm <selectables
+                linebreak="yes">
+                <selectable><h:b>RSA schemes</h:b> using cryptographic key sizes of 2048-bit or greater that meet the 
+                  following: FIPS PUB 186-4, “Digital Signature Standard (DSS)”, Section 4
+                </selectable>
+                <selectable><h:b>ECDSA schemes</h:b> using “NIST curves” P-256, P-384 and 
+                  <selectables>
+                    <selectable>P-521</selectable>
+                    <selectable>no other curves</selectable>
+                  </selectables>
+                  that meet the following: FIPS PUB 186-4, “Digital Signature Standard (DSS)”, Section 5
+                </selectable>
+              </selectables>
+              .
+            </title>
+            <note role="application">
+              The ST Author should choose the algorithm implemented to perform
+              digital signatures; if more than one algorithm is available, this requirement should be iterated
+              to specify the functionality. For the algorithm chosen, the ST author should make the
+              appropriate assignments/selections to specify the parameters that are implemented for that
+              algorithm. RSA signature generation and verification is currently required in order to comply
+              with <linkref linkend="FCS_TLSC_EXT.1"/>.
+            </note>
+            <aactivity>The evaluator shall perform the following activities based on the selections
+              in the <abbr title="Security Target" linkend="ST">ST</abbr>.
+              <h:br/>
+              The following tests require the developer to provide access to a test application
+              that provides the evaluator with tools that are typically not found in the production
+              application.
+              <h:br/>
+              ECDSA Algorithm Tests
+              <testlist>
+                <test>ECDSA FIPS 186-4 Signature Generation Test. For each
+                  supported NIST curve (i.e., P-256, P-384 and P-521) and SHA function pair, the
+                  evaluator shall generate 10 1024-bit long messages and obtain for each message a
+                  public key and the resulting signature values R and S. To determine correctness,
+                  the evaluator shall use the signature verification function of a known good
+                  implementation. 
+                </test>
+                <test>
+                  ECDSA FIPS 186-4 Signature Verification Test. For each supported
+                  NIST curve (i.e., P-256, P-384 and P-521) and SHA function pair, the evaluator
+                  shall generate a set of 10 1024-bit message, public key and signature tuples and
+                  modify one of the values (message, public key or signature) in five of the 10
+                  tuples. The evaluator shall obtain in response a set of 10 PASS/FAIL values.
+                </test>
+              </testlist>
+              RSA Signature Algorithm Tests
+              <testlist>
+                <test>Signature Generation Test. The evaluator shall
+                  verify the implementation of RSA Signature Generation by the <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr>
+                  using the Signature Generation Test. To conduct this test the evaluator must 
+                  generate or obtain 10 messages from a trusted reference implementation for each 
+                  modulus size/SHA combination supported by the <abbr title="TOE Security Functionality" linkend="TSF">TSF</abbr>. The evaluator 
+                  shall have the <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr> use their private key and modulus value to 
+                  sign these messages. The evaluator shall verify the correctness of the 
+                  <abbr title="TOE Security Functionality" linkend="TSF">TSF</abbr>’s signature using a known good implementation and the 
+                  associated public keys to verify the signatures.
+                </test>
+                <test>Signature Verification Test. The 
+                  evaluator shall perform the Signature Verification test to verify the ability of 
+                  the <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr> to recognize another party’s valid and invalid 
+                  signatures. The evaluator shall inject errors into the test vectors produced 
+                  during the Signature Verification Test by introducing errors in some of the public 
+                  keys, e, messages, IR format, and/or signatures. The <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr> attempts 
+                  to verify the signatures and returns success or failure.
+                </test>
+              </testlist>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
         <f-component id="fcs_https_ext.1" name="HTTPS Protocol">
           <f-element id="fcs_https_ext.1.1">
             <title>
@@ -858,6 +934,47 @@
                   in the SFR, the user is notified of the validation failure.
                 </test>
               </testlist>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="fcs_sto_ext.1" name="Storage of Credentials">
+          <f-element id="fcs_sto_ext.1.1">
+            <title>The EDR shall 
+              <selectables linebreak="yes">
+                <selectable>invoke the functionality provided by the platform to securely store 
+                  <assignable>list of credentials</assignable>
+                </selectable>
+                <selectable id="sel_impl_sto">implement functionality to securely store
+                  <assignable>list of credentials</assignable>
+                </selectable>
+              </selectables>
+              to non-volatile memory.</title>
+            <note role="application">This requirement ensures that persistent credentials (secret 
+              keys, PKI private keys, or passwords) are stored securely, and never persisted in cleartext form.  
+              <h:br/>
+              EDR are encouraged to use platform mechanisms for the secure storage of credentials.
+              Depending on the platform that may include hardware-backed protection for credential storage. EDR products
+               must choose a selection, or multiple selections, based on all credentials that the application 
+              stores.
+              <h:br/>
+              If <h:i>invoke the functionality provided by the platform to securely store</h:i> is selected then the 
+              EDR developer must closely review the AA and provide documentation indicating 
+              which platform mechanisms are used to store credentials. If <h:i>implement functionality to securely store credentials</h:i>
+              is selected, then the following components must be included in the <abbr title="Security Target" linkend="ST">
+              ST</abbr>: <linkref linkend="FCS_COP.1(1)"/>. 
+              If other cryptographic operations are used to implement the secure storage of credentials, 
+              the corresponding requirements must be included in the ST.
+            </note>
+            <aactivity>The evaluator shall check the TSS to ensure that it lists all persistent 
+              credentials (secret keys, PKI private keys, or passwords) needed to meet the 
+              requirements in the <abbr title="Security Target" linkend="ST">ST</abbr>. For each of these items, the evaluator shall 
+              confirm that the TSS lists for what purpose it is used, and how it is stored. 
+              <h:br/>
+              For all credentials for which the application implements functionality, the evaluator shall 
+              verify credentials are encrypted according to FCS_COP.1(1) or conditioned according to 
+              FCS_CKM.1.1(A) and FCS_CKM.1.2(A).
+            
             </aactivity>
           </f-element>
         </f-component>
@@ -1011,32 +1128,131 @@
       <subsection title="Protection of the TSF (FPT)" id="fpt">
         
         <f-component id="fpt_aex_ext.1" name="Anti-Exploitation Capabilities">
-        <f-element id="fpt_aex_ext.1.1">
-          <title>
-            The EDR shall 
-            <selectables linebreak="yes">
-              <selectable> 
-                not allocate any memory region with both write and execute permissions 
-              </selectable>
-              <selectable>
-                allocate memory regions with write and execute permissions for only
-                <assignable> list of functions performing just-in-time compilation</assignable>
-              </selectable>
-            </selectables>.
-          </title>
-          <note role="application"> Requesting a memory mapping with both write and execute
-            permissions subverts the platform protection provided by 
-            <abbr title="Data Execution Prevention" linkend="DEP">DEP</abbr>. 
-            If the EDR performs no just-in-time compiling, then the first selection must be chosen.
-          </note>
-          <aactivity>
-          </aactivity>
-        </f-element>
+          <f-element id="fpt_aex_ext.1.1">
+            <title> The EDR shall not request to map memory at an explicit address
+              except for <assignable>list of explicit exceptions</assignable>.
+            </title>
+            <note role="application"> Requesting a memory mapping at an explicit address
+              subverts address space layout randomization (<abbr title="Address Space Layout Randomization" linkend="ASLR">ASLR</abbr>). </note>
+            
+            <aactivity> The evaluator shall ensure that the <abbr title="TOE Summary Specification" linkend="TSS">TSS</abbr> 
+              describes the compiler flags used to enable <abbr title="Address Space Layout Randomization" linkend="ASLR">ASLR</abbr> when the
+              application is compiled. The evaluator shall perform either a static or dynamic
+              analysis to determine that no memory mappings are placed at an explicit and
+              consistent address. 
+            </aactivity>
+          </f-element>
+          
+          <f-element id="fpt_aex_ext.1.2">
+            <title>
+              The EDR shall 
+              <selectables linebreak="yes">
+                <selectable> 
+                  not allocate any memory region with both write and execute permissions 
+                </selectable>
+                <selectable>
+                  allocate memory regions with write and execute permissions for only
+                  <assignable> list of functions performing just-in-time compilation</assignable>
+                </selectable>
+              </selectables>.
+            </title>
+            <note role="application"> Requesting a memory mapping with both write and execute
+              permissions subverts the platform protection provided by <abbr title="Data Execution Prevention" linkend="DEP">DEP</abbr>. 
+              If the application performs no just-in-time compiling, then the first selection must be chosen.
+            </note>
+            <aactivity> 
+              The evaluator shall verify that no memory mapping requests are made with write and execute permissions.
+             </aactivity>
+          </f-element>
+        </f-component>
+        
+        <f-component id="fpt_lib_ext.1" name="Use of Third Party Libraries">
+          <f-element id="fpt_lib_ext.1.1">
+            <title> The application shall be packaged with only
+              <assignable>list of third-party libraries</assignable>. 
+            </title>
+            <note role="application"> 
+              The intention of this requirement is for the evaluator to discover and document whether the 
+              application is including unnecessary or unexpected third-party libraries.  This includes
+              adware libraries which could present a privacy threat, as well as ensuring
+              documentation of such libraries in case vulnerabilities are later discovered.
+            </note>
+            <aactivity> 
+              The evaluator shall install the application and survey its installation directory for 
+              dynamic libraries. 
+              The evaluator shall verify that libraries found to be packaged with or employed by the 
+              application are limited to those in the assignment.
+            </aactivity>
+          </f-element>
         </f-component>
         
       </subsection>
       
       <subsection title="Trusted Path/Channels (FTP)" id="ftp">
+        
+        <f-component id="FTP_TRP.1(1)" name="Trusted Path for Remote Administration">
+          <f-element id="FTP_TRP.1.1(1)">
+            <title>The <selectables>
+              <selectable>EDR</selectable>
+              <selectable><abbr linkend="EDR"/> platform</selectable>
+            </selectables> shall use <selectables>
+              <selectable id="TRP_HTTPS_1">TLS/HTTPS</selectable>
+              <selectable id="TRP_SSH_1">SSH</selectable>
+            </selectables>to provide a trusted communication path between itself and remote
+              administrators that is logically distinct from other communication paths and provides
+              assured identification of its endpoints and protection of the communicated data from
+              modification and disclosure.</title>
+          </f-element>
+          <f-element id="FTP_TRP.1.2(1)">
+            <title>The <selectables>
+              <selectable>EDR</selectable>
+              <selectable><abbr linkend="EDR"/> platform</selectable>
+            </selectables> shall permit remote administrators to initiate communication via the
+              trusted path.</title>
+          </f-element>
+          <f-element id="FTP_TRP.1.3(1)">
+            <title>The <selectables>
+              <selectable>EDR</selectable>
+              <selectable><abbr linkend="EDR"/> platform</selectable>
+            </selectables> shall require the use of the trusted path for all remote
+              administration actions.</title>
+            <note role="application">This requirement ensures that authorized remote administrators
+              initiate all communication with the <abbr linkend="EDR"/> via a trusted path, and that
+              all communications with the <abbr linkend="EDR"/> by remote administrators is
+              performed over this path. The data passed in this trusted communication channel are
+              encrypted as defined the protocol chosen in the first selection. The <abbr
+                linkend="ST"/> author chooses the mechanism or mechanisms supported by the <abbr
+                  linkend="EDR"/>. If “SSH” is selected the Extended
+              Package for Secure Shell must be included in the <abbr linkend="ST"/>. If
+              “TLS/HTTPS” is selected the TLS Package must be included in the <abbr linkend="ST"/> 
+              </note>
+            <aactivity>
+              <tss>The evaluator shall examine the <abbr linkend="TSS"/> to determine that the
+                methods of remote <abbr linkend="TOE"/> administration are indicated, along with how
+                those communications are protected. The evaluator shall also confirm that all
+                protocols listed in the <abbr linkend="TSS"/> in support of <abbr linkend="TOE"/>
+                administration are consistent with those specified in the requirement, and are
+                included in the requirements in the <abbr linkend="ST"/>.</tss>
+              <guidance>The evaluator shall confirm that the operational guidance contains
+                instructions for establishing the remote administrative sessions for each supported
+                method.</guidance>
+              <tests>The evaluator shall also perform the following tests: <testlist>
+                <test>The evaluators shall ensure that communications using each specified (in the
+                  operational guidance) remote administration method is tested during the course
+                  of the evaluation, setting up the connections as described in the operational
+                  guidance and ensuring that communication is successful.</test>
+                <test>For each method of remote administration supported, the evaluator shall
+                  follow the operational guidance to ensure that there is no available interface
+                  that can be used by a remote user to establish remote administrative sessions
+                  without invoking the trusted path.</test>
+                <test>The evaluator shall ensure, for each method of remote administration, the
+                  channel data is not sent in plaintext.</test>
+              </testlist> Further assurance activities are associated with the specific
+                protocols.</tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
       </subsection>
     
     </section>
