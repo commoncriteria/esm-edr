@@ -63,40 +63,41 @@
 		The following are the essential security requirements expected to be implemented by an EDR management server
 		within the established scope.
 		<ul>
-			<li>The EDR management server shall use good crypto (hasing, signing, etc)</li>
-			<li>The EDR management server shall ensure encryption of all data in transit between endpoint agent and EDR server using TLS.</li>
-			<li>THe EDR management server shell use secure TLS/HTTPS connections to the management dashboard</li>
-			<li>The EDR management server or underling platform shall encrypt all endpoint collected all persistently stored data.</li>
-			<li>The EDR management server shall cryptograpically assure the integrity of all commands sent to host agents.</li>
+			<li>The EDR management server shall use established encryption techniques (hashing, signing, etc)</li>
+			<li>The EDR management server shall ensure encryption of all data in transit to and from any host agents using TLS</li>
+			<li>THe EDR management server shall use secure TLS/HTTPS connections to and from the management dashboard</li>
+			<li>The EDR management server or underling platform shall encrypt all persistently stored data collected from endpoints.</li>
+			<li>The EDR management server shall cryptograpically assure the confidentiality and integrity of all commands sent to host agents.</li>
 			<li>The EDR management server shall collect and store a minimum set of parameters and events
 			from endpoint systems, including:
 				<ul>
 					<li>Endpoint system architecture, operating system version, internal/external host IP addresses</li>
-					<li>All privileged and unprivileged endpoint account login activity</li>
+					<li>All privileged and unprivileged user account login activity</li>
 					<li>All process creation and termination</li>
 					<li>All libraries and modules loaded by processes</li>
 					<li>All network connection activity, including destination URLs, IPs</li>
 					<li>All files created on persistant storage</li>
 					<li>All new hardware devices added to system (this might be an objective)</li>
-					<li>All volatile memory regions marked for execution running processes not backed by 
+					<li>All executable memory regions running processes not backed by 
 						executable files on persistant storage (this might be an objective)</li>					
 				</ul>
 			</li>
+			<li>The EDR management server shall provide the ability to multi-label, tag, or categorize individual endpoint systems.</li>
 			<li>The EDR management server shall provide a visualization of an incident; include an incident timeline</li>
-			<li>The EDR management server shall display an initial assessment of severity for an incident</li>
-			<li>The EDR management server shall support Role Based Access Control 
+			<li>The EDR management server shall generate and display an initial severity assessment for an incident</li>
+			<li>The EDR management server shall support Role-Based Access Control 
 				for the delegation of, at least, the following roles:
 				<ul>
 					<li>Administrator, or someone who fully exercises all EDR features</li>
 					<li>SOC Analyst, or someone who can investigate, remediate, and close incidents</li>
-					<li>Read Only, or someone who can only read data and cannot make any changes</li>
+					<li>Read Only, or someone who can only read data and cannot perform analysis actions</li>
 				</ul>
 			</li>
 			<li>The EDR management server shall provide response and isolation capabilities, including at a minimum:
 				<ul>
 					<li>Endpoint network quarantine and isolation</li>
 					<li>Endpoint process termination</li>
-					<li>Retrieval of endpoint files (malicious artifact capture)</li>
+					<li>Retrieval of remote endpoint files (malicious artifact capture)</li>
 				</ul>
 			</li>
 			<li>The EDR management server shall provide an API or a data export mechanism using standards based formats
@@ -107,7 +108,7 @@
 					<li>Address Space Layer Randomization (ASLR)</li>
 					<li>Stack Canaries/Cookies</li>
 					<li>Data Execution Protection (DEP)</li>
-					<li>CSRF Tokens to protect itself</li>
+					<li>CSRF Tokens</li>
 				</ul>
 			</li>
 		</ul>
