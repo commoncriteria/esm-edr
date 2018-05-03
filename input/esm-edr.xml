@@ -117,7 +117,7 @@
               document. </description>
           </entry>
           <entry>
-            <term>Host Agent</term>
+            <term><abbr title="Host Agent"></abbr></term>
             <description>Software that executes on endpoints to collect a set of Operating System 
               data for analysis by the EDR Server service.</description>
           </entry>
@@ -1268,7 +1268,7 @@
         <f-component id="FTP_ITC.1(2)" name="Trusted Channel (Host Agent)">
           <f-element id="FTP_ITC.1.1(2)">
             <title>The <abbr linkend="TSF"/> shall use 
-              <selectables linebreak="yes">
+              <selectables>
               <selectable id="ITC_TLS_2">TLS</selectable>
               <selectable id="ITC_HTTPS_2">HTTPS</selectable>
             </selectables> to provide a trusted communication channel between itself and another
