@@ -136,7 +136,7 @@
 	  </section>
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       <subsection title="TOE Boundary" id="toeboundary">
-          The TOE boundary encompasses two primary components: the <abbr linkend="EDR"/> server 
+          The TOE boundary encompasses two primary components: the <abbr linkend="EDR"/> server  
           service and the Endpoint Host Agent. The <abbr linkend="EDR"/> server service and
           Endpoint Host Agent communicate over an untrusted network as pictured below.
           <figure entity="images/edr_overview.jpg" title="EDR Overview" id="toe"/>
@@ -144,23 +144,30 @@
       <subsection title="TOE Platform" id="TOEplatform">
         The TOE platform, which consists of the operating system or cloud environment on which 
         the EDR service executes, is outside the scope of evaluation.  At the same time, 
-        the security of the EDR relies upon it.
+        the security of the EDR relies upon it. Communications with trusted remote reputation 
+        or threat intelligence data servers is relevant to overall system security but are also 
+        outside the scope of evaluation.
        </subsection>
     </section>
     <section title="Use Cases" id="usecases">Requirements in this Protection Profile are designed to
-      address the security problems in at least the following use cases. 
-      An EDR system's functionality may be effectively extended by
-      addon applications or threat feeds installed onto it.  However, these are out of scope of this PP. 
+      address the security problems in at least the following use cases. An EDR system's functionality
+      may be extended by addons, plugins, threat feeds, or other reputation services.
+      These are out of scope of this PP. 
       <usecases>
         <usecase title="Detection of Potential Malware" id="detect">
-          <description>The detection of potentially malicious activity is enable by the collection
+          <description>The detection of potentially malicious software behavior is enabled by the collection
             of endpoint host data to a central EDR system where the data is analyzed.
           </description>
         </usecase>
         <usecase title="Remediation of Malware" id="response">
-          <description>The remediation of detected malicious activity is a key use case of EDR software
+          <description>The remediation of detected malicious software is a key use case of EDR software
             which enables a SOC Analyst to clean up and neutrealize malware by mechanisim offered by
             the EDR system.
+          </description>
+        </usecase>
+        <usecase title="Active Hunt" id="hunt">
+          <description>The capability to effectively browse, query, and export aggregated endpoint host data enables
+            a SOC analyst to hunt for and discover adversaries in post-compromise scenarios.
           </description>
         </usecase>
       </usecases>
