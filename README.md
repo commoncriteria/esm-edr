@@ -1,5 +1,8 @@
 Protection Profile for Endpoint Detection and Response (EDR) 
 ===============
+[![Build Status](https://travis-ci.org/commoncriteria/esm-edr.svg?branch=master)](https://travis-ci.org/commoncriteria/esm-edr)
+[![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/esm-edr.svg?maxAge=2592000)](https://github.com/commoncriteria/esm-edr/issues) 
+![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
 This repository hosts the draft version of the Protection Profile for Endpoint Detection and Response based on the 
 [Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/esm-edr/esm-edr-esr.html) for this technology class of 
