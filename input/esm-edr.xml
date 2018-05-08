@@ -123,14 +123,14 @@
               include desktops, servers, and mobile devices.</description>
           </entry>
           <entry>
-            <term><abbr title="Endpoint Detection and Response">EDR</abbr> Server Service</term>
+            <term><abbr title="Endpoint Detection and Response">EDR</abbr> System</term>
             <description>A system that analyzes collected EDR Agent data for detecting, 
               investigating, and mitigating suspicious activities on endpoints. 
               The terms <h:i>TOE</h:i> and <h:i>EDR</h:i> are interchangeable in this
               document. </description>
           </entry>
           <entry>
-            <term><abbr title="Host Agent"></abbr></term>
+            <term>Host Agent</term>
             <description>Software that executes on endpoints to collect a set of Operating System 
               data for analysis by the EDR Server service.</description>
           </entry>
@@ -1298,20 +1298,19 @@
             </title>
             <note role="application"> The intent of the above requirement
               is to use the cryptographic protocols identified in the requirement to establish and
-              maintain a trusted channel between the <abbr linkend="EDR"/> system and the <abbr
-                linkend="Host Agent"/>. Only TLS, or HTTPS can be used in this trusted
-              channel.
+              maintain a trusted channel between the <abbr linkend="EDR"/> system and the
+              Host Agent. Only TLS, or HTTPS can be used in this trusted channel.
               <h:br/><h:br/> 
               This requirement is to ensure that the transmission of any logs, process lists, system 
               information, etc, when commanded, or at configurable intervals, is properly protected.
               This trusted channel also protects any commands and policies sent by the <abbr
-              linkend="EDR"/> system to the <abbr linkend="Host Agent"/>. 
-              Either the <abbr linkend="Host Agent"/> or the <abbr linkend="EDR"/> System is able to 
+              linkend="EDR"/> system to the Host Agent. 
+              Either the Host Agent or the <abbr linkend="EDR"/> System is able to 
               initiate the connection.
               <h:br/><h:br/> 
               This trusted channel protects both the connection between an
-              enrolled <abbr linkend="Host Agent"/> and the <abbr linkend="EDR"/> system and the
-              connection between an unenrolled <abbr linkend="Host Agent"/> and the <abbr
+              enrolled Host Agent and the <abbr linkend="EDR"/> system and the
+              connection between an unenrolled Host Agent and the <abbr
                 linkend="EDR"/> system during the enrollment operation. Different protocols can be
               used for these two connections, and the description in the <abbr linkend="TSS"/>
               should make this difference clear.
@@ -1326,14 +1325,14 @@
             </note>
           </f-element>
           <f-element id="FTP_ITC.1.2(2)">
-            <title>The <abbr linkend="TSF"/> shall permit the <abbr linkend="EDR"/> and <abbr
-              linkend="Host Agent"/> to initiate communication via the trusted channel.
+            <title>The <abbr linkend="TSF"/> shall permit the <abbr linkend="EDR"/> and
+              Host Agent to initiate communication via the trusted channel.
             </title>
           </f-element>
           <f-element id="FTP_ITC.1.3(2)">
             <title>The <abbr linkend="TSF"/> shall initiate communication via the trusted channel
-              for all communication between the <abbr linkend="EDR"/> system and the <abbr
-                linkend="Host Agent"/>. 
+              for all communication between the <abbr linkend="EDR"/> system and the 
+              Host Agent. 
             </title>
             <aactivity>
               <tss>The evaluator shall examine the <abbr linkend="TSS"/> to determine that the
@@ -1344,8 +1343,8 @@
                 included in the requirements in the <abbr linkend="ST"/>.
               </tss>
               <guidance>The evaluator shall confirm that the operational guidance contains
-                instructions for configuring the communication channel between the <abbr
-                  linkend="Host Agent"/> and the <abbr linkend="EDR"/> system for each supported
+                instructions for configuring the communication channel between the
+                Host Agent and the <abbr linkend="EDR"/> system for each supported
                 method.
               </guidance>
               <tests>
