@@ -100,9 +100,22 @@
             </description>
           </entry>
           <entry>
+            <term><abbr title="Address Space Layout Randomization">ASLR</abbr></term>
+            <description>An anti-exploitation feature which loads memory mappings into unpredictable
+              locations. ASLR makes it more difficult for an attacker to redirect control to code
+              that they have introduced into the address space of a process.</description>
+          </entry>
+          <entry>
             <term>Dashboard</term>
             <description>A management interface for setting and viewing EDR policy and 
               visualizing collected endpoint alert data.</description>
+          </entry>
+          <entry>
+            <term><abbr title="Data Execution Prevention">DEP</abbr></term>
+            <description>An anti-exploitation feature of modern operating systems executing on
+              modern computer hardware, which enforces a non-execute permission on pages of memory.
+              DEP prevents pages of memory from containing both data and instructions, which makes
+              it more difficult for an attacker to introduce and execute code.</description>
           </entry>
           <entry>
             <term>Endpoint</term>
