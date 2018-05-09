@@ -15,10 +15,12 @@
 	</intro>
 
 	<section title="Background and Purpose" id="purpose">
-		This document describes a core set of security requirements for Endpoint Detection and Response management servers.
-		These requirements cover basic security characteristics and behaviors for management servers that are hosted in-cloud,
-		on-premises, or a hybrid. EDR host agent security requirements are addressed in the ESM-HostAgent Protection Profile.
-		Evaluation against the resulting EDR and ESM-HostAgent Protection Profile will ensure that a fundamental set of requirements is met. 
+		This document describes a core set of security requirements for Endpoint Detection and Response systems.
+		These requirements cover basic security characteristics and behaviors for an EDR management server or service
+		hosted in a cloud,
+		or on-premises. EDR Host Agent security requirements are addressed in the ESM-HostAgent Protection Profile.
+		Evaluation against the resulting ESM-EDR and ESM-HostAgent Protection Profile (PP) will ensure that a fundamental 
+		set of requirements are met. 
 		<br/>
 		The intent is that the remaining sections provide succinct statements that highlight the relevant aspects to be
 		addressed by the Technical Community (TC) constructing the PP. Here, the authors provide a narrative that introduces
@@ -29,9 +31,9 @@
 		The EDR management server collects data from endpoint devices to enable the detection and remediation of potentially
 		malicious endpoint system activity.
 		<ul>
-			<li>Continuously records significant events occurring on managed systems.</li>
-			<li>Automatically identifies, reports, and investigates potential malicious activity.</li>
-			<li>Enables access through a management dashboard query interface.</li>
+			<li>Detection of Potentially Unauthorized Activity, through the capture and analysis of host agent collected data.</li>
+			<li>Remediation of Malicous Activity, by enabling a SOC Analyst to clean up and remove malicous activity.</li>
+			<li>Discovery, enable access through a query interface to explore collected host data.</li>
 		</ul>
 	</section>
 
@@ -67,7 +69,7 @@
 			<li>The EDR management server shall ensure encryption of all data in transit to and from any host agents using TLS</li>
 			<li>THe EDR management server shall use secure TLS/HTTPS connections to and from the management dashboard</li>
 			<li>The EDR management server or underling platform shall encrypt all persistently stored data collected from endpoints.</li>
-			<li>The EDR management server shall cryptograpically assure the confidentiality and integrity of all commands sent to host agents.</li>
+			<li>The EDR management server shall cryptographically assure the confidentiality of all commands sent to host agents.</li>
 			<li>The EDR management server shall collect and store a minimum set of parameters and events
 			from endpoint systems, including:
 				<ul>
@@ -76,15 +78,13 @@
 					<li>All process creation and termination</li>
 					<li>All libraries and modules loaded by processes</li>
 					<li>All network connection activity, including destination URLs, IPs</li>
-					<li>All files created on persistant storage</li>
-					<li>All new hardware devices added to system (this might be an objective)</li>
+					<li>All files created on persistent storage</li>
 					<li>All executable memory regions running processes not backed by 
-						executable files on persistant storage (this might be an objective)</li>					
+						executable files on persistent storage (this might be an objective)</li>					
 				</ul>
 			</li>
 			<li>The EDR management server shall provide the ability to multi-label, tag, or categorize individual endpoint systems.</li>
-			<li>The EDR management server shall provide a visualization of an incident; include an incident timeline</li>
-			<li>The EDR management server shall generate and display an initial severity assessment for an incident</li>
+			<li>The EDR management server shall provide a visualization of an incident; including an incident timeline and severity assessment</li>
 			<li>The EDR management server shall support Role-Based Access Control 
 				for the delegation of, at least, the following roles:
 				<ul>
@@ -102,7 +102,8 @@
 			</li>
 			<li>The EDR management server shall provide an API or a data export mechanism using standards based formats
 			(e.g., STIX) for integration into custom or third-party reporting software.</li>
-			<li>The EDR management server shall provide a retention period configuration option for collected data.</li>
+			<li>The EDR management server shall provide a configuration option for the retention period of collected data.</li>
+			<li>The EDR management server shall provide a configuration option to suppress false positives by file, folder, hash.</li>
 			<li>The EDR management server shall implement a minimum set of modern anti-exploitation features, including:
 				<ul>
 					<li>Address Space Layer Randomization (ASLR)</li>
@@ -131,7 +132,7 @@
 			<li>Depending on configuration and capability, the product may or may not be:
 				<ul>
 					<li>Configuration-managed by the enterprise</li>
-					<li>Bound to directory services to support multi-user login</li>
+					<li>Bound to directory server or cloud to support multi-user login</li>
 				</ul>
 			</li>
 			<li>The product runs application software developed by a third-party. The applications are
@@ -150,8 +151,12 @@
 	<section title="Objective Requirements" id="objective">
 		<ul>
 			<li>
-				The EDR shall provide an automated remediation activities when configured to do so.
+				The EDR management server shall collect and store:
+				<ul>
+					<li>All new hardware devices added to system (this might be an objective)</li>					
+				</ul>
 			</li>
+	
 		</ul>
 	</section>
 
@@ -167,9 +172,9 @@
 		The following list contains items that are explicitly out-of-scope for any evaluation
 		against the product protection profile.
 		<ul>
-			<li>The hardware or firmware of the underlying platforms</li>
-			<li>The host operating system of the EDR management server</li>
-			<li>The underlying web server used by the EDR management server</li>		
+			<li>The hardware or firmware of the underlying platform</li>
+			<li>The host operating system or cloud environment of the EDR system</li>
+			<li>The underlying web server or cloud environment used by the EDR system</li>		
 		</ul>
 	</section>
 </ESR>
