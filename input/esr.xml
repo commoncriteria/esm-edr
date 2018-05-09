@@ -93,6 +93,7 @@
 					<li>Read Only, or someone who can only read data and cannot perform analysis actions</li>
 				</ul>
 			</li>
+			<li>The EDR management server shall protect dashboard credentials from harvesting and brute forcing</li>
 			<li>The EDR management server shall provide response and isolation capabilities, including at a minimum:
 				<ul>
 					<li>Endpoint network quarantine and isolation</li>
