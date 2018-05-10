@@ -107,8 +107,9 @@
           </entry>
           <entry>
             <term>Dashboard</term>
-            <description>A management interface for setting and viewing EDR policy and 
-              visualizing collected endpoint alert data.</description>
+            <description>A management interface for the configuration of EDR policy, 
+              visualization of collected endpoint alert data, and issuing of remediation
+              commands.</description>
           </entry>
           <entry>
             <term><abbr title="Data Execution Prevention">DEP</abbr></term>
@@ -124,15 +125,16 @@
           </entry>
           <entry>
             <term><abbr title="Endpoint Detection and Response">EDR</abbr> System</term>
-            <description>A system that analyzes collected EDR Agent data for detecting, 
-              investigating, and mitigating suspicious activities on endpoints. 
+            <description>A system that analyzes collected EDR Host Agent data for detecting, 
+              investigating, and remediating unauthorized activities on endpoints. 
               The terms <h:i>TOE</h:i> and <h:i>EDR</h:i> are interchangeable in this
               document. </description>
           </entry>
           <entry>
             <term>Host Agent</term>
             <description>Software that executes on endpoints to collect a set of Operating System 
-              data for analysis by the EDR system.</description>
+              data for analysis by the EDR system.
+            </description>
           </entry>
           <entry>
             <term><abbr title="Operating System">OS</abbr></term>
@@ -142,8 +144,8 @@
           <entry>
             <term>SOC Analyst</term>
             <description>Security Operations Center (SOC) Analyst is typically the person 
-              responsible for reviewing malicious alerts and performing remediation and 
-              clean up.</description>
+              responsible for reviewing potentially unauthorized activities via alerts 
+              and performing remediation and clean up.</description>
           </entry>
         </glossary>
 	  </section>
@@ -894,6 +896,7 @@
         </f-component>
         
         <f-component id="fcs_https_ext.1" name="HTTPS Protocol">
+          <selection-depends req="FTP_ITC.1(2)" ids="ITC_HTTPS_2"/>
           <f-element id="fcs_https_ext.1.1">
             <title>
               The  
@@ -991,12 +994,13 @@
               <h:br/>
               EDR are encouraged to use platform mechanisms for the secure storage of credentials.
               Depending on the platform that may include hardware-backed protection for credential storage. EDR products
-               must choose a selection, or multiple selections, based on all credentials that the application 
-              stores.
+               must choose a selection, or multiple selections, based on all credentials that the EDR stores. This
+               requirement does not apply to credential or secrets that are collected from host agent data. 
               <h:br/>
               If <h:i>invoke the functionality provided by the platform to securely store</h:i> is selected then the 
               EDR developer must closely review the AA and provide documentation indicating 
-              which platform mechanisms are used to store credentials. If <h:i>implement functionality to securely store credentials</h:i>
+              which platform mechanisms are used to store credentials. This can include the storage or credentials in a cloud
+              envirnoment. If <h:i>implement functionality to securely store credentials</h:i>
               is selected, then the following components must be included in the <abbr title="Security Target" linkend="ST">
               ST</abbr>: <linkref linkend="FCS_COP.1(1)"/>. 
               If other cryptographic operations are used to implement the secure storage of credentials, 
@@ -1082,6 +1086,51 @@
         
       </subsection>
       
+      <subsection title="Identification and Authentication (FIA)" id="fia">     
+      <f-component id="FIA_X509_EXT.1" name="X509 Certificate Authentication">
+        <f-element id="FIA_X509_EXT.1.1">
+          <title> The <selectables>
+            <selectable>EDR</selectable>
+            <selectable><abbr linkend="EDR"/> platform</selectable>
+          </selectables> shall use X.509v3 certificates as defined by RFC 5280 to support
+            authentication for <selectables>
+              <selectable>TLS</selectable>
+              <selectable>HTTPS</selectable>
+            </selectables>, and <selectables>
+              <selectable>code signing for integrity verification</selectable>
+              <selectable>Host Agent command signing</selectable>
+              <selectable><assignable>other uses</assignable></selectable>
+              <selectable>no additional uses</selectable>
+            </selectables></title>
+          <note role="application">
+          </note>
+        </f-element>
+       
+        <f-element id="FIA_X509_EXT.1.2" status="objective">
+          <title>The <selectables>
+            <selectable>EDR</selectable>
+            <selectable><abbr linkend="EDR"/> platform</selectable>
+          </selectables> shall require a unique certificate for each endpoint device running a Host 
+            Agent.</title>
+          <note role="application">Each endpoint device will have a unique X.509v3 certificate for
+            use by the Host Agent; the certificate is not to be reused among
+            endpoints. This requirement is to ensure that the <abbr linkend="EDR"/> system verifies
+            that each endpoint certificate is unique.</note>
+          <aactivity>
+            <tests>The evaluator shall initiate communications
+              between the <abbr linkend="EDR"/> system and a endpoint device with a Host Agent
+              over a trusted channel established using the device’s unique certificate, verifying that a successful
+              communication channel was established. The evaluator shall then attempt to initiate
+              communications between the <abbr linkend="EDR"/> Server and a second endpoint device
+              over a trusted channel established using the unique certificate from the first
+              device, verifying that the <abbr linkend="EDR"/> system rejects this attempt at
+              communication.
+            </tests>
+          </aactivity>
+        </f-element>
+      </f-component>
+      </subsection>
+            
       <subsection title="Security Management (FMT)" id="fmt">
         
         <f-component id="FMT_SMF.1(1)"
@@ -1092,11 +1141,15 @@
               <h:br/>
               <management-function-set default="O">
                 <manager id="a">Administrator</manager>
+                <manager id="s">SOC Analyst</manager>
                 <manager id="u">User</manager>
-                <management-function><text>
+                <management-function>
+                  <text>
                   Configure the time frame for sending host agent data to the EDR
                   <assignable>list of configurable time frames</assignable>
-                </text></management-function>
+                  </text>
+                  <M ref="a"/><O ref="s"/><_ ref="u"/>
+                </management-function>
                 </management-function-set>
             </title>
             <note role="application"> This requirement captures all the configuration functionality
@@ -1116,12 +1169,20 @@
               <h:br/>
               <management-function-set default="O">
                 <manager id="a">Administrator</manager>
+                <manager id="s">SOC Analyst</manager>
                 <manager id="u">User</manager>
                 <management-function>
                   <text>
                   Configure the amount of time to retain collected EDR data 
                   <assignable>time frame to retain data</assignable>
                 </text>
+                <M ref="a"/><O ref="s"/><_ ref="u"/>
+                </management-function>
+                <management-function>
+                  <text>
+                    Query the connectivity status of a Host Agent
+                  </text>
+                  <M ref="a"/><O ref="s"/><O ref="u"/>
                 </management-function>
                 <management-function>
                   <text>
@@ -1133,6 +1194,7 @@
                   </selectables> 
                   <assignable>other factors</assignable>
                 </text>
+                <O ref="a"/><M ref="s"/><_ ref="u"/>
                 </management-function>
               </management-function-set>
             </title>
@@ -1186,7 +1248,7 @@
           </f-element>
         </f-component>
                 
-        <f-component id="FMT_SRF.EXT.1(1)" name="Specification of Remediation Functions">
+        <f-component id="FMT_SRF.EXT.1(1)" name="Specification of Remediation Commands">
           <f-element id="FMT_SRF.EXT.1(1)">
             <title> The <abbr linkend="EDR"/> system shall be capable of performing the following
               remediation functions:
@@ -1216,6 +1278,21 @@
             </title>
             <note role="application"> This requirement captures all the remediation functionality
               the <abbr linkend="TSF"/> provides the administrator to configure the EDR system.
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+        </f-component>
+
+        <f-component id="FMT_TRM_EXT.1" name="Trusted Remediation Commands" status="objective">
+          <f-element id="FMT_TRM_EXT.1.1">
+            <title>The <abbr linkend="EDR"/> system shall provide digitally signed 
+              command updates to the Host Agent.
+            </title>
+            <note role="application">The intent of this requirement is to cryptographically 
+              tie a command sent to a Host Agent to the enterprise that mandated the command, not to
+              protect the commands in transit (as they are already protected by 
+              <linkref linkend="FTP_ITC.1(2)"/>). 
             </note>
             <aactivity>
             </aactivity>
