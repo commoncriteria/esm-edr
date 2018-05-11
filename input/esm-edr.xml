@@ -819,7 +819,7 @@
           </f-element>
         </f-component>
         
-        <f-component id="fcs_cop.1(3)" name="Cryptographic Operation - Signing"  status="sel-based">
+        <f-component id="fcs_cop.1(3)" name="Cryptographic Operation - Signing">
           <f-element id="fcs_cop.1.1(3)">
             <title>The EDR shall perform cryptographic signature services (generation and
               verification) in accordance with a specified cryptographic algorithm <selectables
@@ -1085,8 +1085,71 @@
         
       </subsection>
       
-      <subsection title="Identification and Authentication (FIA)" id="fia">     
-       <f-component id="FIA_X509_EXT.1" name="X509 Certificate Authentication" status="objective">
+      <subsection title="Identification and Authentication (FIA)" id="fia">  
+        
+       <f-component id="fia_uau.5" name="Dashboard Authentication Mechanisms (Refined)">
+          <f-element id="fia_uau.5.1">
+            <title>
+              The <h:b>EDR</h:b> shall provide the following authentication mechanisms
+              <h:b>
+              authentication based on user name and password
+              <selectables linebreak='yes'>
+                <selectable>authentication based an external Smartcard factor and a PIN</selectable>
+                <selectable>no other factors</selectable>
+              </selectables>
+              </h:b>
+              to support user dashboard authentication.
+            </title>
+            <note role="application">
+            </note>
+            <aactivity>
+            </aactivity>
+            
+          </f-element>
+          </f-component>
+       
+       <f-component id="fia_pwd_ext.1" name="Password Authentication">
+          <f-element id="fia_pwd_ext.1.1">
+            <title>The <abbr linkend="EDR"/> shall support the following for the Password Authentication Factor: 
+              <h:ol>
+                <h:li>Passwords shall be able to be composed of any combination of 
+                  <selectables>
+                    <selectable>upper and lower case letters</selectable>
+                    <selectable><assignable>a character set of at least 52 characters</assignable></selectable>
+                  </selectables>, numbers, and special characters: 
+                  <selectables>
+                    <selectable>"!"</selectable>
+                    <selectable>"@"</selectable>
+                    <selectable>"#"</selectable>
+                    <selectable>"$"</selectable>
+                    <selectable>"%"</selectable>
+                    <selectable>"^"</selectable>
+                    <selectable>"&#38;"</selectable>
+                    <selectable> "*"</selectable>
+                    <selectable>"("</selectable>
+                    <selectable>")"</selectable>
+                    <selectable><assignable>other characters</assignable></selectable>
+                  </selectables>
+                  </h:li>                   
+                <h:li>Password length up to 
+                  <assignable>an integer greater than or equal to 14</assignable> characters shall be supported. </h:li>
+              </h:ol>
+            </title>
+            <note role="application">
+              The <abbr linkend="ST"/> author selects the character set: either the upper and lower case 
+              Basic Latin letters or another assigned character set containing at least 52 characters. 
+              The assigned character set must be well defined: either according to an international encoding 
+              standard (such as Unicode) or defined in the assignment by the <abbr linkend="ST"/> author. The 
+              <abbr linkend="ST"/> author also selects the special characters that are supported by 
+              <abbr linkend="TOE"/>; they may optionally list additional special characters supported using 
+              the assignment. 
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+        </f-component>
+       
+        <f-component id="FIA_X509_EXT.1" name="X509 Certificate Authentication" status="objective">
         <f-element id="FIA_X509_EXT.1.1">
           <title> The <selectables>
             <selectable>EDR</selectable>
@@ -1128,6 +1191,7 @@
           </aactivity>
         </f-element>
       </f-component>
+      
       </subsection>
             
       <subsection title="Security Management (FMT)" id="fmt">

@@ -18,8 +18,8 @@
 		This document describes a core set of security requirements for Endpoint Detection and Response systems.
 		These requirements cover basic security characteristics and behaviors for an EDR management server or service
 		hosted in a cloud,
-		or on-premises. EDR Host Agent security requirements are addressed in the ESM-HostAgent Protection Profile.
-		Evaluation against the resulting ESM-EDR and ESM-HostAgent Protection Profile (PP) will ensure that a fundamental 
+		or on-premises. EDR Host Agent security requirements are addressed in the ESM-HostAgent Module Protection Profile.
+		Evaluation against the resulting ESM-EDR and ESM-HostAgent Module Protection Profile (PP) will ensure that a fundamental 
 		set of requirements are met. 
 		<br/>
 		The intent is that the remaining sections provide succinct statements that highlight the relevant aspects to be
@@ -120,29 +120,16 @@
 		Simply put, this section presents the aspects of the product and its intended environment that
 		can be assumed to hold true. This will provide additional scope on the resulting protection profile.
 		<br/>
-		The following assumptions are made for the operating system product and its operational
+		The following assumptions are made for the EDR product and its operational
 		environment:
 		<ul>
-			<li>The underlying platform is physically protected, to a large extent. The hardware
-				that the product manages is secured by defensive measures that make physical attacks
-				impractical for most attackers. At the same time, casual passersby might attempt to
-				trivially access the system.</li>
-			<li>The product implements some security-relevant functionality that does not require
-				evaluation (e.g., network time synchronization, process scheduling, and virtual
-				memory management including process separation).</li>
 			<li>Depending on configuration and capability, the product may or may not be:
 				<ul>
 					<li>Configuration-managed by the enterprise</li>
-					<li>Bound to directory server or cloud to support multi-user login</li>
+					<li>Bound to directory server or cloud environment to support multi-user login</li>
 				</ul>
 			</li>
-			<li>The product runs application software developed by a third-party. The applications are
-				not intentionally developed to be malicious, but can contain inadvertent coding
-				errors. These errors introduce risk that control of an application may be seized by
-				a malicious entity. The product shall confine these applications within the originally
-				designated operating environment.</li>
-			<li>The platform is connected to a network. For purposes of sending/receiving data, to
-				include software updates, the platform is connected to other entities. Other
+			<li>The EDR is connected to a network. For purposes of sending/receiving data host agent data. Other
 				entities on the network are not inherently trustable. </li>
 			<li>Administrators are not malicious in nature.</li>
 			<li>Users are not malicious in nature, though they may inadvertently or intentionally engage in risky behavior.</li>
@@ -157,16 +144,16 @@
 					<li>All new hardware devices added to system (this might be an objective)</li>					
 				</ul>
 			</li>
-	
+			<li>
+				The EDR management server shall provide digitally signed command updates to the Host Agent
+			</li>
+			<li>
+				The EDR shall perform client authentication to host agents using X.509v3 certificates.
+			</li>
 		</ul>
 	</section>
 
 	<section title="Optional Extensions" id="extensions"> 
-		<ul>
-			<li>
-				Client authentication to endpoint agents using X.509v3 certificates.
-			</li>
-		</ul>
 	</section>
 
 	<section title="Outside the TOE's Scope" id="outsidescope">
