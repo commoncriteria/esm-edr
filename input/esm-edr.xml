@@ -100,6 +100,11 @@
             </description>
           </entry>
           <entry>
+            <term>Alert</term>
+            <description>  
+            </description>
+          </entry>
+          <entry>
             <term><abbr title="Address Space Layout Randomization">ASLR</abbr></term>
             <description>An anti-exploitation feature which loads memory mappings into unpredictable
               locations. ASLR makes it more difficult for an attacker to redirect control to code
@@ -1090,7 +1095,7 @@
        <f-component id="fia_uau.5" name="Dashboard Authentication Mechanisms (Refined)">
           <f-element id="fia_uau.5.1">
             <title>
-              The <h:b>EDR</h:b> shall provide the following authentication mechanisms
+              The <abbr linkend="EDR"/> shall provide the following authentication mechanisms,
               <h:b>
               authentication based on user name and password
               <selectables linebreak='yes'>
@@ -1196,6 +1201,48 @@
             
       <subsection title="Security Management (FMT)" id="fmt">
         
+        <f-component id="FMT_SMR.1(1)" name="Security Management Roles">
+          <f-element id="FMT_SMR.1.1(1)">
+            <title>The 
+              <selectables>
+                <selectable>EDR</selectable>
+                <selectable>EDR platform</selectable>
+              </selectables> 
+              shall maintain the roles of administrator, 
+              SOC analyst, read-only user,
+              and <assignable>additional authorized identified roles</assignable>.
+            </title>
+            <note role="application">It is envisioned that the <abbr linkend="EDR"/> Server will be
+              configured, maintained, and used by different user roles. At a minimum, one
+              administrative role shall be supported, one SOC analyst who can issue remediation commands
+              to host agents, and one read-only user who can only view data.
+              <h:br />
+              The user accounts do not literally need to be named as above, but they must have 
+              the effect of those roles. The assignment is used by the <abbr linkend="ST"/> author to 
+              list any other roles that are supported. If no additional roles are supported, then “no
+              additional roles” is stated. 
+            </note>
+            <aactivity>
+              <tss>The evaluator shall examine the <abbr linkend="TSS"/> to verify that it describes
+                the roles and the powers granted to and limitations of the role.
+              </tss>
+              <guidance>The evaluator shall review the operational guidance to ensure that it
+                contains instructions for administering the <abbr linkend="EDR"/> and which
+                user roles are supported.
+              </guidance>
+              <tests>In the course of performing the testing activities for the evaluation, the
+                evaluator shall use all supported interfaces, although it is not necessary to repeat
+                each test involving an administrative action with each interface. The evaluator
+                shall ensure, however, that each supported method of administering the <abbr
+                  linkend="EDR"/> that conforms to the requirements of this <abbr linkend="PP"/> be
+                tested; for instance, if the <abbr linkend="EDR"/> can be administered through a
+                local hardware interface or TLS/HTTPS then both methods of administration must be
+                exercised during the evaluation team’s test activities.
+              </tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+        
         <f-component id="FMT_SMF.1(1)"
           name="Specification of Management Functions (Remote Configuration of Host Agent)">
           <f-element id="FMT_SMF.1.1(1)">
@@ -1268,86 +1315,45 @@
             </aactivity>
           </f-element>
         </f-component>
-        
-        <f-component id="FMT_SMR.1(1)" name="Security Management Roles">
-          <f-element id="FMT_SMR.1.1(1)">
-            <title>The 
-              <selectables>
-                <selectable>EDR</selectable>
-                <selectable>EDR platform</selectable>
-              </selectables> 
-              shall maintain the roles of administrator, 
-              SOC analyst, read-only user,
-              and <assignable>additional authorized identified roles</assignable>.
-            </title>
-            <note role="application">It is envisioned that the <abbr linkend="EDR"/> Server will be
-              configured, maintained, and used by different user roles. At a minimum, one
-              administrative role shall be supported, one SOC analyst who can issue remediation commands
-              to host agents, and one read-only user who can only view data.
-              <h:br />
-              The user accounts do not literally need to be named as above, but they must have 
-              the effect of those roles. The assignment is used by the <abbr linkend="ST"/> author to 
-              list any other roles that are supported. If no additional roles are supported, then “no
-              additional roles” is stated. 
-            </note>
-            <aactivity>
-              <tss>The evaluator shall examine the <abbr linkend="TSS"/> to verify that it describes
-                the roles and the powers granted to and limitations of the role.
-              </tss>
-              <guidance>The evaluator shall review the operational guidance to ensure that it
-                contains instructions for administering the <abbr linkend="EDR"/> and which
-                user roles are supported.
-              </guidance>
-              <tests>In the course of performing the testing activities for the evaluation, the
-                evaluator shall use all supported interfaces, although it is not necessary to repeat
-                each test involving an administrative action with each interface. The evaluator
-                shall ensure, however, that each supported method of administering the <abbr
-                  linkend="EDR"/> that conforms to the requirements of this <abbr linkend="PP"/> be
-                tested; for instance, if the <abbr linkend="EDR"/> can be administered through a
-                local hardware interface or TLS/HTTPS then both methods of administration must be
-                exercised during the evaluation team’s test activities.
-              </tests>
-            </aactivity>
-          </f-element>
-        </f-component>
                 
-        <f-component id="FMT_SRF.EXT.1(1)" name="Specification of Remediation Commands">
+        <f-component id="FMT_SRF.EXT.1(1)" name="Specification of Remediation Functions">
           <f-element id="FMT_SRF.EXT.1(1)">
             <title> The <abbr linkend="EDR"/> system shall be capable of performing the following
               remediation functions:
               <h:br/>
               <management-function-set default="O">
                 <manager id="a">Administrator</manager>
+                <manager id="s">SOC Analyst</manager>
                 <manager id="u">User</manager>
                 <management-function>
                   <text>
-                  Logically quarantine an endpoint
-                  <assignable>endpoint quarantine capability</assignable>
-                </text>
+                  Logically quarantine an endpoint from the network
+                  </text>
+                  <O ref="a"/><M ref="s"/><_ ref="u"/>
                 </management-function>
                 <management-function>
                   <text>
-                  Terminate processes on an endpoint
-                  <assignable>process termination capability</assignable>
-                </text>
+                  Terminate a running process on an endpoint
+                  </text>
+                  <O ref="a"/><M ref="s"/><_ ref="u"/>
                 </management-function>
                 <management-function>
                   <text>
                   Retrieve potentially unauthorized or affected files from an endpoint
-                  <assignable>retrieval of files capability</assignable>
-                </text>
+                  </text>
+                  <O ref="a"/><O ref="s"/><_ ref="u"/>
                 </management-function>
               </management-function-set>
             </title>
             <note role="application"> This requirement captures all the remediation functionality
-              the <abbr linkend="TSF"/> provides the administrator to configure the EDR system.
+              the <abbr linkend="EDR"/> provides the SOC Analyst and optionally the Administrator.
             </note>
             <aactivity>
             </aactivity>
           </f-element>
         </f-component>
 
-        <f-component id="FMT_TRM_EXT.1" name="Trusted Remediation Commands" status="objective">
+        <f-component id="FMT_TRM_EXT.1" name="Trusted Remediation Functions" status="objective">
           <f-element id="FMT_TRM_EXT.1.1">
             <title>The <abbr linkend="EDR"/> system shall provide digitally signed 
               command updates to the Host Agent.
