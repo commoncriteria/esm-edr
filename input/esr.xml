@@ -31,9 +31,9 @@
 		The EDR system collects data from endpoint devices to enable the detection and remediation of potentially
 		malicious endpoint system activity.
 		<ul>
-			<li>Detection of Potentially Unauthorized Activity, through the capture and analysis of host agent collected data.</li>
-			<li>Remediation of Malicous Activity, by enabling a SOC Analyst to clean up and remove malicous activity.</li>
-			<li>Discovery, enable access through a query interface to explore collected host data.</li>
+			<li>Detection of potentially unauthorized activity through the collection and analysis of endpoint data.</li>
+			<li>Remediation of malicous activity, automated or otherwise, enabling an authorized user to respond to malicous activity.</li>
+			<li>Discovery enabled through browse and query interfaces to explore collected host data and subsequent analyses.</li>
 		</ul>
 	</section>
 
