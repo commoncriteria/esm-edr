@@ -17,8 +17,8 @@
 	<section title="Background and Purpose" id="purpose">
 		This document describes a core set of security requirements for Endpoint Detection and Response systems.
 		These requirements cover basic security characteristics and behaviors for an EDR management server or service
-		hosted in a cloud,
-		or on-premises. EDR Host Agent security requirements are addressed in the ESM-HostAgent Module Protection Profile.
+		hosted in a cloud or on-premises (the EDR system).
+		EDR Host Agent security requirements are addressed in the ESM-HostAgent Module Protection Profile.
 		Evaluation against the resulting ESM-EDR and ESM-HostAgent Module Protection Profile (PP) will ensure that a fundamental 
 		set of requirements are met. 
 		<br/>
@@ -28,7 +28,7 @@
 		subtleties not apparent in the “bulleted” high level statements.
 	</section>
 	<section title="Use Cases" id="usecases">
-		The EDR management server collects data from endpoint devices to enable the detection and remediation of potentially
+		The EDR system collects data from endpoint devices to enable the detection and remediation of potentially
 		malicious endpoint system activity.
 		<ul>
 			<li>Detection of Potentially Unauthorized Activity, through the capture and analysis of host agent collected data.</li>
@@ -39,10 +39,10 @@
 
 	<section title="Resources to be protected" id="resourcesprotected">
     	<ul>
-			<li>Sensitive data stored on the EDR management server.</li>
-			<li>Credentials for authentication to or from the EDR management server.</li>
+			<li>Sensitive data stored by the EDR system.</li>
+			<li>Credentials for authentication to or from the EDR system.</li>
     		<li>Cryptographic key material used to perform secure communications with host agents.</li>
-    		<li>Sensitive data in transit to or from the EDR management server.</li>
+    		<li>Sensitive data in transit to or from the EDR system.</li>
 		</ul>
 	</section>
 
@@ -62,10 +62,10 @@
 	</section>
 	
 	<section title="Essential Security Requirements" id="requirements">
-		The following are the essential security requirements expected to be implemented by an EDR management server
+		The following are the essential security requirements expected to be implemented by an EDR system
 		within the established scope.
 		<ul>
-			<li>The EDR management server shall use established encryption techniques (hashing, signing, etc.):
+			<li>The EDR system shall use established encryption techniques (hashing, signing, etc.):
 				<ul>
 					<li>Sensitive data in transit to or from any host agents should be encrypted using TLS.</li>
 					<li>Secure TLS/HTTPS should be used for connections to or from the management dashboard.</li>
@@ -73,7 +73,7 @@
 					<li>Confidentiality of all commands sent to host agents should be assured.</li>
 				</ul>
 			</li>
-			<li>The EDR management server shall collect and store a minimum set of parameters and events
+			<li>The EDR system shall collect and store a minimum set of parameters and events
 			from endpoint systems, including:
 				<ul>
 					<li>Endpoint system architecture, operating system version, internal/external host IP addresses</li>
@@ -86,9 +86,9 @@
 						executable files on persistent storage (this might be an objective)</li>					
 				</ul>
 			</li>
-			<li>The EDR management server shall provide the ability to label, tag, or categorize individual endpoint systems.</li>
-			<li>The EDR management server shall provide a visualization of an incident; including an incident timeline and severity assessment</li>
-			<li>The EDR management server shall support Role-Based Access Control 
+			<li>The EDR system shall provide the ability to label, tag, or categorize individual endpoint systems.</li>
+			<li>The EDR system shall provide a visualization of an incident; including an incident timeline and severity assessment</li>
+			<li>The EDR system shall support Role-Based Access Control 
 				for the delegation of, at least, the following roles:
 				<ul>
 					<li>Administrator, or someone who fully exercises all EDR features</li>
@@ -96,19 +96,19 @@
 					<li>Read Only, or someone who can only read data and cannot perform analysis actions</li>
 				</ul>
 			</li>
-			<li>The EDR management server shall protect dashboard credentials from harvesting and brute forcing</li>
-			<li>The EDR management server shall provide response and isolation capabilities, including at a minimum:
+			<li>The EDR system shall protect dashboard credentials from harvesting and brute forcing</li>
+			<li>The EDR system shall provide response and isolation capabilities, including at a minimum:
 				<ul>
 					<li>Endpoint network quarantine and isolation</li>
 					<li>Endpoint process termination</li>
 					<li>Retrieval of remote endpoint files (malicious artifact capture)</li>
 				</ul>
 			</li>
-			<li>The EDR management server shall provide an API or a data export mechanism using standards based formats
+			<li>The EDR system shall provide an API or a data export mechanism using standards based formats
 			(e.g., STIX) for integration into custom or third-party reporting software.</li>
-			<li>The EDR management server shall provide a configuration option for the retention period of collected data.</li>
-			<li>The EDR management server shall provide a configuration option to suppress false positives by file, folder, hash.</li>
-			<li>The EDR management server shall implement a minimum set of modern anti-exploitation features, including:
+			<li>The EDR system shall provide a configuration option for the retention period of collected data.</li>
+			<li>The EDR system shall provide a configuration option to suppress false positives by file, folder, hash.</li>
+			<li>The EDR system shall implement a minimum set of modern anti-exploitation features, including:
 				<ul>
 					<li>Address Space Layer Randomization (ASLR)</li>
 					<li>Stack Canaries/Cookies</li>
@@ -132,7 +132,7 @@
 					<li>Bound to directory server or cloud environment to support multi-user login</li>
 				</ul>
 			</li>
-			<li>The EDR is connected to a network. For purposes of sending/receiving data host agent data. Other
+			<li>The EDR system is connected to a network. For purposes of sending/receiving data host agent data. Other
 				entities on the network are not inherently trustable. </li>
 			<li>Administrators are not malicious in nature.</li>
 			<li>Users are not malicious in nature, though they may inadvertently or intentionally engage in risky behavior.</li>
@@ -142,13 +142,13 @@
 	<section title="Objective Requirements" id="objective">
 		<ul>
 			<li>
-				The EDR management server shall collect and store:
+				The EDR system shall collect and store:
 				<ul>
 					<li>All new hardware devices added to system (this might be an objective)</li>					
 				</ul>
 			</li>
 			<li>
-				The EDR management server shall provide digitally signed command updates to the Host Agent
+				The EDR system shall provide digitally signed command updates to the Host Agent
 			</li>
 			<li>
 				The EDR shall perform client authentication to host agents using X.509v3 certificates.
