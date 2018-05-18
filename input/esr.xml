@@ -65,25 +65,28 @@
 		The following are the essential security requirements expected to be implemented by an EDR management server
 		within the established scope.
 		<ul>
-			<li>The EDR management server shall use established encryption techniques (hashing, signing, etc)</li>
-			<li>The EDR management server shall ensure encryption of all data in transit to and from any host agents using TLS</li>
-			<li>THe EDR management server shall use secure TLS/HTTPS connections to and from the management dashboard</li>
-			<li>The EDR management server or underling platform shall encrypt all persistently stored data collected from endpoints.</li>
-			<li>The EDR management server shall cryptographically assure the confidentiality of all commands sent to host agents.</li>
+			<li>The EDR management server shall use established encryption techniques (hashing, signing, etc.):
+				<ul>
+					<li>Sensitive data in transit to or from any host agents should be encrypted using TLS.</li>
+					<li>Secure TLS/HTTPS should be used for connections to or from the management dashboard.</li>
+					<li>All sensitive, persistently stored data collected from endpoints should be encrypted by the EDR system or underlying platform..</li>
+					<li>Confidentiality of all commands sent to host agents should be assured.</li>
+				</ul>
+			</li>
 			<li>The EDR management server shall collect and store a minimum set of parameters and events
 			from endpoint systems, including:
 				<ul>
 					<li>Endpoint system architecture, operating system version, internal/external host IP addresses</li>
-					<li>All privileged and unprivileged user account login activity</li>
-					<li>All process creation and termination</li>
-					<li>All libraries and modules loaded by processes</li>
-					<li>All network connection activity, including destination URLs, IPs</li>
-					<li>All files created on persistent storage</li>
-					<li>All executable memory regions running processes not backed by 
+					<li>Any privileged and unprivileged user account login activity</li>
+					<li>Any process creation and termination</li>
+					<li>Any libraries and modules loaded by processes</li>
+					<li>Any network connection activity, including destination URLs, IPs</li>
+					<li>Any files created on persistent storage</li>
+					<li>Any executable memory regions running processes with no associated  
 						executable files on persistent storage (this might be an objective)</li>					
 				</ul>
 			</li>
-			<li>The EDR management server shall provide the ability to multi-label, tag, or categorize individual endpoint systems.</li>
+			<li>The EDR management server shall provide the ability to label, tag, or categorize individual endpoint systems.</li>
 			<li>The EDR management server shall provide a visualization of an incident; including an incident timeline and severity assessment</li>
 			<li>The EDR management server shall support Role-Based Access Control 
 				for the delegation of, at least, the following roles:
