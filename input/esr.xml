@@ -65,12 +65,12 @@
 		The following are the essential security requirements expected to be implemented by an EDR system
 		within the established scope.
 		<ul>
-			<li>The EDR system shall use established encryption techniques (hashing, signing, etc.):
+			<li>The EDR system shall use established encryption techniques (hashing, signing, etc.) to assure:
 				<ul>
-					<li>Sensitive data in transit to or from any host agents should be encrypted using TLS.</li>
-					<li>Secure TLS/HTTPS should be used for connections to or from the management dashboard.</li>
-					<li>All sensitive, persistently stored data collected from endpoints should be encrypted by the EDR system or underlying platform..</li>
-					<li>Confidentiality of all commands sent to host agents should be assured.</li>
+					<li>Encryption of sensitive data in transit to or from any host agents (e.g., TLS)</li>
+					<li>Confidentiality of connections to or from the management dashboard (e.g., TLS/HTTPS)</li>
+					<li>Encryption, by the EDR system or underlying platform, of sensitive and persistently stored data collected from endpoints</li>
+					<li>Confidentiality of all commands sent to host agents</li>
 				</ul>
 			</li>
 			<li>The EDR system shall collect and store a minimum set of parameters and events
