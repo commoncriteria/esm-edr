@@ -330,7 +330,16 @@
   </chapter>
   <chapter title="Security Objectives" id="obj">
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
-      <!-- TODO -->
+      <SOs>
+        <SO id="O.PROTECTED_COMMS">
+          <description> To address both passive (eavesdropping) and active (packet modification)
+          network attack threats, conformant <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr>s will
+          use a trusted channel to protect all communications. 
+          </description>
+          <component-refer ref="FTP_TRP.1(1)"/>
+          <component-refer ref="FTP_ITC.1(2)"/>
+        </SO>
+      </SOs>
     </section>
     <section title="Security Objectives for the Operational Environment"
       id="SecurityObjectivesTOEorEnvironment">The following security objectives for the operational
@@ -1065,11 +1074,11 @@
             <title>The <abbr linkend="EDR"/> system shall collect the following minimum set of
               endpoint event data: <h:ol type="a">
                 <h:li>Operating System (OS) version, architecture, and IP Address</h:li>
-                <h:li>All privileged and unprivileged endpoint account login activity</h:li>
-                <h:li>All process creation</h:li>
-                <h:li>All libraries and modules loaded by processes</h:li>
-                <h:li>All network connection activity, including destination IP</h:li>
-                <h:li>All files created on persistant storage</h:li>
+                <h:li>Privileged and unprivileged endpoint account login activity</h:li>
+                <h:li>Process creation</h:li>
+                <h:li>Libraries and modules loaded by processes</h:li>
+                <h:li>Network connection activity, including destination IP</h:li>
+                <h:li>Files created on persistant storage</h:li>
                 <h:li><assignable>other host data</assignable></h:li>
               </h:ol>
             </title>
