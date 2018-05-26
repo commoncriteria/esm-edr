@@ -331,6 +331,23 @@
   <chapter title="Security Objectives" id="obj">
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
+        <SO id="O.MANAGEMENT">
+          <description>To facilitate management by the enterprise, conformant <abbr
+            linkend="TOE"/>s provide consistent and supported interfaces for their
+            security-relevant configuration and maintenance. 
+          </description>
+          <component-refer ref="FMT_SMF.1(1)"/> 
+          <component-refer ref="FMT_SMF.1(2)"/>       
+        </SO> 
+        <SO id="O.PROTECTED_STORAGE">
+          <description>
+            To address the issue of credential theft, conformant 
+            <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr>s will 
+            protect the storage of credentials in order to prevent unauthorized access to
+            the EDR.
+          </description>
+          <component-refer ref="fcs_sto_ext.1"/>
+        </SO>
         <SO id="O.PROTECTED_COMMS">
           <description> To address both passive (eavesdropping) and active (packet modification)
           network attack threats, conformant <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr>s will
