@@ -39,14 +39,14 @@
       <h:br />
       The security requirements for the host agent are addressed in the separate <cite linkend="bibHAGT"/> 
       Protection Profile. Evaluation of an EDR system will require evaluation against the ESM-EDR PP and 
-      the <cite linkend="bibHAGT"/>  PP.
+      the <cite linkend="bibHAGT"/> PP.
       <h:br />
       There are three primary architectural categories for an EDR system addressed by requirements in this PP and 
       as seen in the figure below. 
-      <h:li>Endpoints communicate over the Internet to an EDR cloud service. Often refered to as Software as a Service (SaaS)</h:li>
-      <h:li>Endpoints communicate with an on-premises EDR system in a hub and spoke network model. </h:li>
-      <h:li>Endpoints communicate with other Endpoints and ultimately an on-premises EDR system in a 
-        ring based network model (for example: peer-to-peer).</h:li>
+      <h:li>Endpoints communicate over the Internet to an EDR cloud service (Software as a Service).</h:li>
+      <h:li>Endpoints communicate with an on-premises EDR system in a hub and spoke network model.</h:li>
+      <h:li>Endpoints communicate with other endpoints, ultimately being orchestrated by an on-premises EDR system in a 
+        ring based network model (e.g., peer-to-peer).</h:li>
       <figure entity="images/edr_archi.jpg" title="EDR Architectures Overview" id="toe"/>
     </section>
     <section title="Terms" id="glossary"> The following sections provide both Common Criteria and
@@ -157,13 +157,14 @@
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       <subsection title="TOE Boundary" id="toeboundary">
           The TOE boundary encompasses two primary components: the <abbr linkend="EDR"/> system
-          and the endpoint host agent. The <abbr linkend="EDR"/> system and the
-          endpoint host agent communicate over an untrusted network as pictured below.
+          and the endpoint host agent. Communications or interaction between two or more endpoint host agents
+          are outside the scope of evaluation. The <abbr linkend="EDR"/> system and the
+          endpoint host agent communicate over an untrusted network as seen in the figure below.
           <figure entity="images/edr_overview.jpg" title="EDR Overview" id="toe"/>
         </subsection>
       <subsection title="TOE Platform" id="TOEplatform">
         The TOE platform, which consists of the operating system or cloud environment on which 
-        the EDR software executes, is outside the scope of evaluation.  At the same time, 
+        the EDR software executes, is outside the scope of evaluation. At the same time, 
         the security of the EDR relies upon it. Communications with trusted remote reputation 
         or threat intelligence data servers is relevant to overall system security but are also 
         outside the scope of evaluation.
@@ -1287,6 +1288,26 @@
                 check to make sure that every endpoint event data type selected in the ST
                 is included in the administrative guidance.
               </h:p>
+            </aactivity>
+          </f-element>
+        </f-component>
+
+        <f-component id="fau_log_ext.1" name="Activity Logging">
+          <f-element id="fau_log_ext.1.1">
+            <title>The <abbr linkend="EDR"/> system shall continuously log and make available to
+            authorized users the following minimum set of activities: <h:ol type="a">
+                <h:li>User authentication to <abbr linkend="EDR"/> system</h:li>
+                <h:li>Manual or automated remediation</h:li>
+                <h:li><abbr linkend="EDR"/> system configuration changes</h:li>
+                <h:li>Modification of users</h:li>
+                <h:li>Endpoint enrollment and disenrollment</h:li>
+                <h:li>Export of endpoint, threat, or alert data</h:li>
+              </h:ol>
+            </title>
+            <note role="application">The intent of this requirement is to specify the minimum
+              set of activities that the EDR system must be capable of logging.
+            </note>
+            <aactivity>
             </aactivity>
           </f-element>
         </f-component>
