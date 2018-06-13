@@ -101,7 +101,8 @@
           </entry>
           <entry>
             <term>Alert</term>
-            <description>  
+            <description>An event or notification on the management portal that highlights 
+              potentially unauthorized activity.
             </description>
           </entry>
           <entry>
@@ -111,7 +112,7 @@
               that they have introduced into the address space of a process.</description>
           </entry>
           <entry>
-            <term>Dashboard</term>
+            <term>Management Portal</term>
             <description>A management interface for the configuration of EDR policy, 
               visualization of collected endpoint alert data, and issuing of remediation
               commands.</description>
@@ -125,8 +126,10 @@
           </entry>
           <entry>
             <term>Endpoint</term>
-            <description>An computing device that runs an Operating System. Endpoints can 
-              include desktops, servers, and mobile devices.</description>
+            <description>A computing device that runs a General Purpose Operating System 
+              or a Mobile Device Operating System. Endpoints can 
+              include desktops, servers, and mobile devices.
+            </description>
           </entry>
           <entry>
             <term><abbr title="Endpoint Detection and Response">EDR</abbr> System</term>
@@ -598,13 +601,10 @@
               </selectables> 
 	      and 
 	      <selectables linebreak="yes">
-	        <selectable>AES-CCMP (as defined in FIPS PUB 197, NIST SP 800-38C and IEEE 802.11-2012)</selectable>
                 <selectable>AES Key Wrap (KW) (as defined in NIST SP 800-38F)</selectable>
                 <selectable>AES Key Wrap with Padding (KWP) (as defined in NIST SP 800-38F)</selectable>
                 <selectable>AES-GCM (as defined in NIST SP 800-38D)</selectable>
                 <selectable>AES-CCM (as defined in NIST SP 800-38C)</selectable>
-                <selectable>AES-CCMP-256 (as defined in NIST SP800-38C and IEEE 802.11ac-2013)</selectable>
-                <selectable>AES-GCMP-256 (as defined in NIST SP800-38D and IEEE 802.11ac-2013)</selectable>
                 <selectable exclusive="yes">no other modes</selectable>
               </selectables> 
               and cryptographic key sizes 
@@ -616,18 +616,10 @@
 	      .
 	    </title>
             <note role="application"> 
-	      <h:p>
-              AES CCMP (which uses AES in CCM as specified in SP 800-38C) becomes mandatory and must
-              be selected if the ST includes the WLAN Client <abbr linkend="PP-Module"/>
-	      </h:p>
-	      <h:p>
 	            For the second selection, the ST author should choose the mode
               or modes in which AES operates. For the third selection, the ST author should choose
-              the key sizes that are supported by this functionality. 128-bit key size is required
-              in order to comply with <linkref linkend="FCS_TLSC_EXT.1"/> and <linkref
-                linkend="FCS_CKM.1"/>, if those are selected. 
-	      </h:p>
-	    </note>
+              the key sizes that are supported by this functionality.
+	          </note>
             <aactivity> 
 	      <h:p>
 	      The evaluator will verify that the AGD documents contains instructions required 
@@ -935,7 +927,8 @@
         <f-component id="fcs_cop.1(2)" name="Cryptographic Operation - Hashing (Refined)">
           <f-element id="fcs_cop.1.1(2)">
             <title>The <h:b>EDR</h:b> shall perform cryptographic hashing services in accordance with a
-              specified cryptographic algorithm SHA-1 and <selectables linebreak="yes">
+              specified cryptographic algorithm
+              <selectables linebreak="yes">
                 <selectable>SHA-256</selectable>
                 <selectable>SHA-384</selectable>
                 <selectable>SHA-512</selectable>
@@ -951,13 +944,6 @@
                 Per NIST SP 800-131A, SHA-1 for generating digital signatures
                 is no longer allowed, and SHA-1 for verification of digital signatures is strongly
                 discouraged as there may be risk in accepting these signatures. 
-              </h:p>
-              <h:p>
-                SHA-1 is currently required in order to comply with <linkref linkend="FCS_TLSC_EXT.1"/>
-                and, depending on selections, <linkref linkend="FCS_DTLS_EXT.1"/>.
-                Vendors are strongly encouraged to implement updated protocols that support the SHA-2
-                family; until updated protocols are supported, this PP allows support for SHA-1
-                implementations in compliance with SP 800-131A. 
               </h:p>
               <h:p>
                 The intent of this requirement is to specify the hashing function. 
@@ -1036,8 +1022,9 @@
                 <selectable><h:b>RSA schemes</h:b> using cryptographic key sizes of 2048-bit or greater that meet the 
                   following: FIPS PUB 186-4, “Digital Signature Standard (DSS)”, Section 4
                 </selectable>
-                <selectable><h:b>ECDSA schemes</h:b> using “NIST curves” P-256, P-384 and 
+                <selectable><h:b>ECDSA schemes</h:b> using “NIST curves” P-384 and 
                   <selectables>
+                    <selectable>P-256</selectable>
                     <selectable>P-521</selectable>
                     <selectable>no other curves</selectable>
                   </selectables>
@@ -1052,7 +1039,7 @@
               to specify the functionality. For the algorithm chosen, the ST author should make the
               appropriate assignments/selections to specify the parameters that are implemented for that
               algorithm. RSA signature generation and verification is currently required in order to comply
-              with <linkref linkend="FCS_TLSC_EXT.1"/>.
+              with TLS and Digitial Signatures for Commands (FMT_TRM_EXT.1).
             </note>
             <aactivity>The evaluator shall perform the following activities based on the selections
               in the <abbr title="Security Target" linkend="ST">ST</abbr>.
