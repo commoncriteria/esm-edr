@@ -1295,28 +1295,7 @@
             </aactivity>
           </f-element>
         </f-component>
-
-        <f-component id="fau_log_ext.1" name="Activity Logging">
-          <f-element id="fau_log_ext.1.1">
-            <title>The <abbr linkend="EDR"/> system shall continuously log and make available to
-            authorized users the following minimum set of activities: <h:ol type="a">
-                <h:li>User authentication success and failure to <abbr linkend="EDR"/> system</h:li>
-                <h:li>Commands sent to endpoints or endpoint host agents</h:li>
-                <h:li>Manual or automated remediation</h:li>
-                <h:li><abbr linkend="EDR"/> system configuration changes</h:li>
-                <h:li>Modification of user roles or permissions</h:li>
-                <h:li>Endpoint enrollment and disenrollment</h:li>
-                <h:li>Export of endpoint, threat, or alert data</h:li>
-              </h:ol>
-            </title>
-            <note role="application">The intent of this requirement is to specify the minimum
-              set of activities that the EDR system must be capable of logging.
-            </note>
-            <aactivity>
-            </aactivity>
-          </f-element>
-        </f-component>
-        
+      
       </subsection>
       
       <subsection title="Identification and Authentication (FIA)" id="fia">  
