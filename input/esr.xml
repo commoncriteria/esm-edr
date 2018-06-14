@@ -54,6 +54,8 @@
 				and passively.</li>
 				<li>The platform on which the application is installed, though as an unprivileged
 				subject.</li>
+				<li>The endpoint (host agent) by planting crafted malicious artifacts on the Endpoint
+				 platform to be consumed by the EDR System.</li>
 			</ul>
 		</li>
 		<li>An attacker has an arbitrary amount of time to analyze the behavior of the application,
