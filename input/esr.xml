@@ -87,7 +87,7 @@
 				</ul>
 			</li>
 			<li>The EDR system shall provide the ability to label, tag, or categorize individual endpoint systems.</li>
-			<li>The EDR system shall provide a visualization of an incident; including an incident timeline and severity assessment</li>
+			<li>The EDR system shall provide a visualization of an alert; including an alert timeline and severity assessment</li>
 			<li>The EDR system shall support Role-Based Access Control 
 				for the delegation of, at least, the following roles:
 				<ul>
