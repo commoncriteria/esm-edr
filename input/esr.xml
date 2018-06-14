@@ -76,14 +76,12 @@
 			<li>The EDR system shall collect and store a minimum set of parameters and events
 			from endpoint systems, including:
 				<ul>
-					<li>Endpoint system architecture, operating system version, internal/external host IP addresses</li>
-					<li>Any privileged and unprivileged user account login activity</li>
-					<li>Any process creation and termination</li>
-					<li>Any libraries and modules loaded by processes</li>
-					<li>Any network connection activity, including destination URLs, IPs</li>
-					<li>Any files created on persistent storage</li>
-					<li>Any executable memory regions running processes with no associated  
-						executable files on persistent storage (this might be an objective)</li>					
+					<li>operating system version, internal/external host IP addresses</li>
+					<li>privileged and unprivileged user account login activity</li>
+					<li>process creation</li>
+					<li>libraries and modules loaded by a running processes</li>
+					<li>network connection activity, including destination URLs, IPs</li>
+					<li>files created on persistent storage</li>					
 				</ul>
 			</li>
 			<li>The EDR system shall provide the ability to label, tag, or categorize individual endpoint systems.</li>
