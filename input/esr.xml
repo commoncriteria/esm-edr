@@ -71,6 +71,7 @@
 					<li>Confidentiality of connections to or from the management dashboard (e.g., TLS/HTTPS)</li>
 					<li>Encryption, by the EDR system or underlying platform, of sensitive and persistently stored data collected from endpoints</li>
 					<li>Confidentiality of all commands sent to host agents</li>
+					<li>Integrity of all commands sent to host agents (tbd: objective or required)</li>
 				</ul>
 			</li>
 			<li>The EDR system shall collect and store a minimum set of parameters and events
