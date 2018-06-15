@@ -1489,7 +1489,7 @@
             </title>
             <note role="application"> This requirement captures all the configuration functionality
               the <abbr linkend="TSF"/> provides the administrator to configure the <abbr
-                linkend="EDR"/> Host Agent. 
+                linkend="EDR"/> Host Agent.
             </note>
             <aactivity>
             </aactivity>
@@ -1515,7 +1515,7 @@
                 </management-function>
                 <management-function>
                   <text>
-                    Query the connectivity status of a Host Agent
+                    Obtain or display the connectivity status of a Host Agent
                   </text>
                   <M ref="a"/><O ref="s"/><O ref="u"/>
                 </management-function>
