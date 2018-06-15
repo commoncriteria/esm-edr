@@ -1249,6 +1249,22 @@
             <aactivity>
             </aactivity>
           </f-element>
+          <f-element id="fau_alt_ext.1.3">
+            <title>The <abbr linkend="EDR"/> system shall provide a data export capability for a selected alert
+             with a specified standards-based format of  
+             <selectables linebreak="yes">
+              <selectable>STIX</selectable>
+              <selectable>CybOX</selectable>
+              <selectable>IODEF</selectable>
+             </selectables>.
+            </title>
+            <note role="application">
+              The intent of this requirement is to specify a selection of non-proprietary formats
+              the EDR system must provide for ingestion into other enterprise security management software.
+            </note>
+            <aactivity>
+            </aactivity>
+            </f-element>
         </f-component>
         
         <f-component id="fau_col_ext.1" name="Collected Audit">
@@ -1279,7 +1295,7 @@
           </f-element>
         </f-component>
 
-        <f-component id="fau_exp_ext.1" name="Export Audit Data">
+        <f-component id="fau_exp_ext.1" name="Export Data" status="objective">
           <f-element id="fau_exp_ext.1.1">
             <title>The <abbr linkend="EDR"/> system shall be capable of exporting
               <selectables>
