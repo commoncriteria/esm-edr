@@ -1221,7 +1221,7 @@
         <f-component id="fau_alt_ext.1" name="Server Alerts">
           <f-element id="fau_alt_ext.1.1">
             <title>The <abbr linkend="EDR"/> system shall alert authorized users on a 
-              dashboard in the event of any of the following: 
+              management protal in the event of any of the following: 
               <h:ol type="a">
                 <h:li>Change in endpoint agent enrollment status</h:li>
                 <h:li>Detection of potentially unauthorized endpoint activity</h:li>
@@ -1236,7 +1236,7 @@
           </f-element>
           <f-element id="fau_alt_ext.1.2">
             <title>The <abbr linkend="EDR"/> system shall provide a visualization of potentially
-            unauthorized incidents on a dashboard, including: 
+              unauthorized incidents on a management protal, including: 
               <h:ol type="a">
                 <h:li>An initial severity assessment categorization, score, or ranking</h:li>
                 <h:li>An incident timeline</h:li>
@@ -1245,23 +1245,6 @@
             <note role="application">
               The intent of this requirement is to specify the minimum set of incident visualizations
               the EDR must be capable of displaying to an authorized user of the EDR system.
-            </note>
-            <aactivity>
-            </aactivity>
-          </f-element>
-          <f-element id="fau_alt_ext.1.3">
-            <title>The <abbr linkend="EDR"/> system shall provide a data export or query-based capability for incident-related
-            data for import into custom or third-party reporting software with a specified standards-based format 
-	            <selectables linebreak="yes">
-	              <selectable>STIX</selectable>
-	              <selectable>TAXII</selectable>
-	              <selectable>CybOX</selectable>
-	              <selectable>IODEF</selectable>
-              </selectables>.
-            </title>
-            <note role="application">
-              The intent of this requirement is to specify a selection of non-proprietary formats
-              the EDR must provide incident data in for ingestion into unknown custom or third-party software.
             </note>
             <aactivity>
             </aactivity>
@@ -1292,6 +1275,34 @@
                 check to make sure that every endpoint event data type selected in the ST
                 is included in the administrative guidance.
               </h:p>
+            </aactivity>
+          </f-element>
+        </f-component>
+
+        <f-component id="fau_exp_ext.1" name="Export Audit Data">
+          <f-element id="fau_exp_ext.1.1">
+            <title>The <abbr linkend="EDR"/> system shall be capable of exporting
+              <selectables>
+                <selectable>Alert data</selectable>
+                <selectable>All data visable on the management portal</selectable>
+                <selectable>All collected data</selectable>
+              </selectables>
+              in the following formats 
+              <selectables>
+                <selectable>json</selectable>
+                <selectable>xml</selectable>
+              </selectables>
+            </title>
+            <note role="application">The intent of this requirement is to specify that a set of EDR collected
+              data must be available for export in a standard format for ingestion into other 
+              enterprise management systems. This requirement could be accomplished in many ways, like
+              a REST API for example, or a management option in the management portal to export
+              the selected data.
+            </note>
+            <aactivity>
+                The evaluator shall check the administrative guide and ensure
+                that it lists all the type of data available for export and the
+                format of the exported data. 
             </aactivity>
           </f-element>
         </f-component>
@@ -1465,6 +1476,12 @@
                   <text>
                   Configure the time frame for sending host agent data to the EDR
                   <assignable>list of configurable time frames</assignable>
+                  </text>
+                  <M ref="a"/><O ref="s"/><_ ref="u"/>
+                </management-function>
+                <management-function>
+                  <text>
+                    Assign a label or tag to categorize individual endpoint systems
                   </text>
                   <M ref="a"/><O ref="s"/><_ ref="u"/>
                 </management-function>
