@@ -381,8 +381,8 @@
       environment assist the <abbr linkend="EDR"/> in correctly providing its security functionality.
       These track with the assumptions about the environment. <SOEs>
         <SOE id="OE.PLATFORM">
-          <description>The <abbr linkend="EDR"/> relies on being installed on trusted
-            hardware.</description>
+          <description>The <abbr linkend="EDR"/> relies on a trusted Operating System or
+          Cloud platform</description>
         </SOE>
         <SOE id="OE.PROPER_USER">
           <description> The user of the <abbr linkend="EDR"/> is not willfully negligent or hostile,
@@ -1530,6 +1530,7 @@
           <f-element id="fcs_sto_ext.1.1">
             <title>The EDR shall 
               <selectables linebreak="yes">
+                <selectable exclusive="yes">not store any credentials</selectable>
                 <selectable>invoke the functionality provided by the platform to securely store 
                   <assignable>list of credentials</assignable>
                 </selectable>
@@ -1624,7 +1625,7 @@
         <f-component id="fau_col_ext.1" name="Collected Audit">
           <f-element id="fau_col_ext.1.1">
             <title>The <abbr linkend="EDR"/> system shall collect the following minimum set of
-              endpoint event data: <h:ol type="a">
+              endpoint event data from a Host Agent: <h:ol type="a">
                 <h:li>Operating System (OS) version, architecture, and IP Address</h:li>
                 <h:li>Privileged and unprivileged endpoint account login activity</h:li>
                 <h:li>Process creation</h:li>
@@ -1685,13 +1686,11 @@
           <f-element id="fia_uau.5.1">
             <title>
               The <abbr linkend="EDR"/> shall provide the following authentication mechanisms,
-              <h:b>
               authentication based on user name and password
               <selectables linebreak='yes'>
                 <selectable>authentication based an external Smartcard factor and a PIN</selectable>
                 <selectable>no other factors</selectable>
               </selectables>
-              </h:b>
               to support dashboard authentication.
             </title>
             <note role="application">
@@ -1835,7 +1834,12 @@
         <f-component id="FMT_SMF.1(1)"
           name="Specification of Management Functions (Remote Configuration of Host Agent)">
           <f-element id="FMT_SMF.1.1(1)">
-            <title>The <h:b>EDR, or EDR Platform</h:b> shall be capable of communicating the
+            <title>The 
+              <selectables>
+                <selectable>EDR</selectable>
+                <selectable>EDR platform</selectable>
+              </selectables> 
+              shall be capable of communicating the
               following management functions to the <abbr linkend="EDR"/> Host Agent:
               <h:br/>
               <management-function-set default="O">
@@ -2058,10 +2062,8 @@
               performed over this path. The data passed in this trusted communication channel are
               encrypted as defined the protocol chosen in the first selection. The <abbr
                 linkend="ST"/> author chooses the mechanism or mechanisms supported by the <abbr
-                  linkend="EDR"/>. If “SSH” is selected the Extended
-              Package for Secure Shell must be included in the <abbr linkend="ST"/>. If
-              “TLS/HTTPS” is selected the TLS Package must be included in the <abbr linkend="ST"/> 
-              </note>
+                  linkend="EDR"/>.
+            </note>
             <aactivity>
               <tss>The evaluator shall examine the <abbr linkend="TSS"/> to determine that the
                 methods of remote <abbr linkend="TOE"/> administration are indicated, along with how
