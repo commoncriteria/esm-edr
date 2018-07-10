@@ -32,7 +32,7 @@
     <section title="Overview" id="ppoverview">
       The scope of this Protection Profile (PP) is to describe the security functionality of Endpoint Detection and 
       Response (EDR) systems in terms of [CC], and to define functional and assurance requirements for such products.
-      An EDR system is enterprise managment software that collects endpoint host data for the purpose of detecting 
+      An EDR system is enterprise management software that collects endpoint host data for the purpose of detecting 
       potential unauthorized activity on endpoints
       and enabling response actions to remediate malicious behaviors. These requirements cover basic security 
       characteristics and behaviors for EDR management systems that are hosted in a cloud, on-premises, or a hybrid. 
@@ -180,7 +180,7 @@
           <figure entity="images/edr_overview.jpg" title="EDR Overview" id="toe"/>
         </subsection>
       <subsection title="TOE Platform" id="TOEplatform">
-        The TOE platform, which consists of the Operating System or Cloud platfrom on which 
+        The TOE platform, which consists of the Operating System or Cloud platform on which 
         the EDR software executes, is outside the scope of evaluation. At the same time, 
         the security of the EDR relies upon it. Any communications with trusted remote reputation 
         or threat intelligence services is relevant to the overall system security but is also 
@@ -306,7 +306,7 @@
           </objective-refer>
         </assumption>
         <assumption id="A.PLATFORM">
-          <description> The <abbr linkend="EDR"/> relies upon a trustworthy computing platform or cloud envirnment
+          <description> The <abbr linkend="EDR"/> relies upon a trustworthy computing platform or cloud environment
             for its execution. This underlying platform or cloud is out of scope of this PP. </description>
           <objective-refer ref="OE.PLATFORM">
             <rationale> The operational environment objective OE.PLATFORM is realized through
@@ -1550,7 +1550,7 @@
               If <h:i>invoke the functionality provided by the platform to securely store</h:i> is selected then the 
               EDR developer must closely review the AA and provide documentation indicating 
               which platform mechanisms are used to store credentials. This can include the storage or credentials in a cloud
-              envirnoment. If <h:i>implement functionality to securely store credentials</h:i>
+              environment. If <h:i>implement functionality to securely store credentials</h:i>
               is selected, then the following components must be included in the <abbr title="Security Target" linkend="ST">
               ST</abbr>: <linkref linkend="FCS_COP.1(1)"/>. 
               If other cryptographic operations are used to implement the secure storage of credentials, 
@@ -1576,7 +1576,7 @@
         <f-component id="fau_alt_ext.1" name="Server Alerts">
           <f-element id="fau_alt_ext.1.1">
             <title>The <abbr linkend="EDR"/> system shall alert authorized users on a 
-              management protal in the event of any of the following: 
+              management portal in the event of any of the following: 
               <h:ol type="a">
                 <h:li>Change in endpoint agent enrollment status</h:li>
                 <h:li>Detection of potentially unauthorized endpoint activity</h:li>
@@ -1631,7 +1631,7 @@
                 <h:li>Process creation</h:li>
                 <h:li>Libraries and modules loaded by processes</h:li>
                 <h:li>Network connection activity, including destination IP</h:li>
-                <h:li>Files created on persistant storage</h:li>
+                <h:li>Files created on persistent storage</h:li>
                 <h:li><assignable>other host data</assignable></h:li>
               </h:ol>
             </title>
@@ -1655,7 +1655,7 @@
             <title>The <abbr linkend="EDR"/> system shall be capable of exporting
               <selectables>
                 <selectable>Alert data</selectable>
-                <selectable>All data visable on the management portal</selectable>
+                <selectable>All data visible on the management portal</selectable>
                 <selectable>All collected data</selectable>
               </selectables>
               in the following formats 
