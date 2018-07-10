@@ -33,8 +33,8 @@
       The scope of this Protection Profile (PP) is to describe the security functionality of Endpoint Detection and 
       Response (EDR) systems in terms of [CC], and to define functional and assurance requirements for such products.
       An EDR system is enterprise managment software that collects endpoint host data for the purpose of detecting 
-      malicous activity on endpoints
-      and enabling response actions to remediate the malicious behaviors. These requirements cover basic security 
+      potential unauthorized activity on endpoints
+      and enabling response actions to remediate malicious behaviors. These requirements cover basic security 
       characteristics and behaviors for EDR management systems that are hosted in a cloud, on-premises, or a hybrid. 
       The platform on which the EDR system runs may be a physical or virtual Operating System (OS), 
       or a cloud environment.
@@ -167,17 +167,23 @@
 	  </section>
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
       <subsection title="TOE Boundary" id="toeboundary">
-          The TOE boundary encompasses two primary components: the <abbr linkend="EDR"/> system
-          and the endpoint host agent. Communications or interaction between two or more endpoint host agents
-          are outside the scope of evaluation. The <abbr linkend="EDR"/> system and the
-          endpoint host agent communicate over an untrusted network as seen in the figure below.
+          The TOE boundary for the EDR system encompasses all the software from the TOE vendor that represents
+          the server or enterprise management side of the EDR system. This will typically, but not always, be
+          software running on top of a Web Server, and possibly other software services to send and receive 
+          data with a Host Agent. The EDR system may also make use of a database to store collected
+          and analyzed data. The database software itself is outside the scope of the TOE, as is any Web Server,
+          and the underlying Operating System or Cloud platform. See the figure below showing EDR software on
+          the right communicating with a Host Agent on the left over an untrusted network.
+          <h:br />
+          The requirements for a Host Agent are not covered in this PP, however it is expected that 
+          an EDR will evaluate against both this EDR PP, and the <cite linkend="bibHAGT"/> EP. 
           <figure entity="images/edr_overview.jpg" title="EDR Overview" id="toe"/>
         </subsection>
       <subsection title="TOE Platform" id="TOEplatform">
-        The TOE platform, which consists of the operating system or cloud environment on which 
+        The TOE platform, which consists of the Operating System or Cloud platfrom on which 
         the EDR software executes, is outside the scope of evaluation. At the same time, 
-        the security of the EDR relies upon it. Communications with trusted remote reputation 
-        or threat intelligence data servers is relevant to overall system security but are also 
+        the security of the EDR relies upon it. Any communications with trusted remote reputation 
+        or threat intelligence services is relevant to the overall system security but is also 
         outside the scope of evaluation.
        </subsection>
     </section>
