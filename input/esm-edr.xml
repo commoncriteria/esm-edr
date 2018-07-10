@@ -12,7 +12,7 @@
       <PPPubDate>2018-07-16</PPPubDate>
       <PPCertificationID>unassigned</PPCertificationID>
       <CCVersion>3.1R4</CCVersion>
-      <Keywords>ESM, EDR, software, endpoint detection, response</Keywords>
+      <Keywords>esm, edr, software, endpoint detection, response</Keywords>
       <entry>
         <name>Registration</name>
         <description>National Information Assurance Partnership</description>
@@ -23,7 +23,7 @@
   <RevisionHistory>
     <entry>
       <version>1.0</version>
-      <date>2018-07-14</date>
+      <date>2018-07-16</date>
       <subject>Draft - first version released</subject>
     </entry>
   </RevisionHistory>
@@ -32,14 +32,19 @@
     <section title="Overview" id="ppoverview">
       The scope of this Protection Profile (PP) is to describe the security functionality of Endpoint Detection and 
       Response (EDR) systems in terms of [CC], and to define functional and assurance requirements for such products.
-      An EDR system is managment software that collects endpoint host data for the purpose of detecting malicous activity
+      An EDR system is enterprise managment software that collects endpoint host data for the purpose of detecting 
+      malicous activity on endpoints
       and enabling response actions to remediate the malicious behaviors. These requirements cover basic security 
       characteristics and behaviors for EDR management systems that are hosted in a cloud, on-premises, or a hybrid. 
-      The platform on which the EDR system runs may be physical, virtual, or part of a cloud environment.
+      The platform on which the EDR system runs may be a physical or virtual Operating System (OS), 
+      or a cloud environment.
       <h:br />
-      The security requirements for the host agent are addressed in the separate <cite linkend="bibHAGT"/> 
-      Protection Profile. Evaluation of an EDR system will require evaluation against the ESM-EDR PP and 
-      the <cite linkend="bibHAGT"/> PP.
+      <h:br />
+      The EDR system relies on additional software running on the endpoint, called the Host Agent. The 
+      security requirements for the host agent are addressed in the separate <cite linkend="bibHAGT"/> 
+      Extended Package. Evaluation of an EDR system will require evaluation against this ESM EDR PP and 
+      the <cite linkend="bibHAGT"/> EP.
+      <h:br />
       <h:br />
       There are three primary architectural categories for an EDR system addressed by requirements in this PP and 
       as seen in the figure below. 
@@ -2826,9 +2831,9 @@ evaluation and performs independent testing.
           12, 2006. </description>
       </entry>
       <entry id="bibHAGT">
-        <tag>ESM Host Agent Module</tag>
+        <tag>Host Agent</tag>
         <description>
-          <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?id=403">Protection Profile for
+          <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?id=403">Extended Package for
             ESM Host Agent, Version 1.0, July 2018</h:a>
         </description>
       </entry>
