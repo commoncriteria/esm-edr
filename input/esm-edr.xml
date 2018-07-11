@@ -198,8 +198,8 @@
           </description>
         </usecase>
         <usecase title="Remediation of Malicious Activity" id="response">
-          <description>The remediation of detected malicious activity is a key use case of EDR software. The capability
-            enables a SOC Analyst to clean up and neutralize malware or other artifacts.
+          <description>The ability to initiate remediation commands to attempt a clean up of detected malicious 
+            activity is a key use case of EDR software.
           </description>
         </usecase>
         <usecase title="Discovery" id="discovery">
@@ -2038,7 +2038,12 @@
             <title>The <selectables>
               <selectable>EDR</selectable>
               <selectable><abbr linkend="EDR"/> platform</selectable>
-            </selectables> shall use TLS/HTTPS to provide a trusted communication path between itself and remote
+            </selectables> shall use 
+            <selectables>
+                <selectable id="FTP_TLS_2">TLS</selectable>
+                <selectable id="FTP_HTTPS_2">HTTPS</selectable>
+            </selectables> 
+              to provide a trusted communication path between itself and remote
               administrators that is logically distinct from other communication paths and provides
               assured identification of its endpoints and protection of the communicated data from
               modification and disclosure.</title>
@@ -2051,7 +2056,8 @@
               trusted path.</title>
           </f-element>
           <f-element id="FTP_TRP.1.3(1)">
-            <title>The <selectables>
+            <title>The 
+            <selectables>
               <selectable>EDR</selectable>
               <selectable><abbr linkend="EDR"/> platform</selectable>
             </selectables> shall require the use of the trusted path for all remote
@@ -2093,7 +2099,12 @@
         
         <f-component id="FTP_ITC.1(2)" name="Trusted Channel (Host Agent)">
           <f-element id="FTP_ITC.1.1(2)">
-            <title>The <abbr linkend="TSF"/> shall use 
+            <title>The 
+              <selectables>
+                <selectable>EDR</selectable>
+                <selectable><abbr linkend="EDR"/> platform</selectable>
+              </selectables> 
+              shall use 
               <selectables>
               <selectable id="ITC_TLS_2">TLS</selectable>
               <selectable id="ITC_HTTPS_2">HTTPS</selectable>
@@ -2131,12 +2142,22 @@
             </note>
           </f-element>
           <f-element id="FTP_ITC.1.2(2)">
-            <title>The <abbr linkend="TSF"/> shall permit the <abbr linkend="EDR"/> and
+            <title>The 
+              <selectables>
+                <selectable>EDR</selectable>
+                <selectable><abbr linkend="EDR"/> platform</selectable>
+              </selectables>  
+              shall permit the <abbr linkend="EDR"/> and
               Host Agent to initiate communication via the trusted channel.
             </title>
           </f-element>
           <f-element id="FTP_ITC.1.3(2)">
-            <title>The <abbr linkend="TSF"/> shall initiate communication via the trusted channel
+            <title>The
+             <selectables>
+              <selectable>EDR</selectable>
+              <selectable><abbr linkend="EDR"/> platform</selectable>
+            </selectables> 
+              shall initiate communication via the trusted channel
               for all communication between the <abbr linkend="EDR"/> system and the 
               Host Agent. 
             </title>
