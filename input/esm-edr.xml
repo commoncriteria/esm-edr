@@ -2886,8 +2886,8 @@ evaluation and performs independent testing.
       <entry id="bibOMB">
         <tag>OMB</tag>
         <description>
-          <h:a href="https://www.whitehouse.gov/sites/default/files/omb/memoranda/fy2006/m06-19.pdf"
-            >Reporting Incidents Involving Personally Identifiable Information and Incorporating the
+          <h:a href="https://www.whitehouse.gov/sites/default/files/omb/memoranda/fy2006/m06-19.pdf">
+            Reporting Incidents Involving Personally Identifiable Information and Incorporating the
             Cost for Security in Agency Information Technology Investments</h:a>, OMB M-06-19, July
           12, 2006. </description>
       </entry>
@@ -2901,7 +2901,7 @@ evaluation and performs independent testing.
       <entry id="bibAPPSW">
         <tag>Application Software</tag>
         <description>
-          <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=394&id=394">Protection Profile for 
+          <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=394&amp;id=394">Protection Profile for 
             Application Software Version 1.2, April 2016</h:a>
         </description>
       </entry>
