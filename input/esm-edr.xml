@@ -1582,8 +1582,20 @@
             <title>The <abbr linkend="EDR"/> shall alert authorized users on a 
               management portal in the event of any of the following: 
               <h:ol type="a">
-                <h:li>Change in endpoint agent enrollment status</h:li>
-                <h:li>Detection of potentially unauthorized endpoint activity</h:li>
+                <h:li>Change in Host Agent enrollment status</h:li>
+                <h:li>Detection of potentially unauthorized activity on enrolled endpoints, including
+                  <h:ol type="a">
+                    <h:li>Survey or reconnaissance activity</h:li>
+                    <h:li>Unauthorized or anomalous network activity</h:li>
+                    <h:li>Establishment of remote access or malicious execution persistence</h:li>
+                    <h:li>Anomalous or suspicious user or process behavior</h:li>
+                    <h:li>Execution of known malicious software</h:li>
+                    <h:li>Unauthorized escalation of privileges</h:li>
+                    <h:li>Lateral movement to or from endpoints</h:li>
+                    <h:li>Data exfiltration</h:li>
+                    <h:li><assignable>Other potentially unauthorized activity</assignable></h:li>
+                  </h:ol>
+                </h:li>
               </h:ol>
             </title>
             <note role="application">
@@ -1595,9 +1607,16 @@
           </f-element>
           <f-element id="fau_alt_ext.1.2">
             <title>The <abbr linkend="EDR"/> shall provide a visualization of potentially
-              unauthorized incidents on a management protal, including: 
+              unauthorized incidents, including: 
               <h:ol type="a">
-                <h:li>An initial severity assessment categorization, score, or ranking</h:li>
+                <h:li>An initial severity
+                <selectables>
+                  <selectable>assessment</selectable>
+                  <selectable>categorization</selectable>
+                  <selectable>score</selectable>
+                  <selectable>ranking</selectable>
+                </selectables>.
+                </h:li>
                 <h:li>An incident timeline</h:li>
               </h:ol>
             </title>
@@ -1849,6 +1868,16 @@
                 <manager id="a">Administrator</manager>
                 <manager id="s">SOC Analyst</manager>
                 <manager id="u">User</manager>
+                <management-function>
+                  <text>
+                  Enroll or disenroll endpoints from host agent data reporting to EDR through 
+                  <selectables>
+                    <selectable>configuration</selectable>
+                    <selectable>installation/uninstallation</selectable>
+                  </selectables>
+                  </text>
+                  <M ref="a"/><O ref="s"/><_ ref="u"/>
+                </management-function>
                 <management-function>
                   <text>
                   Configure the time frame for sending host agent data to the EDR
