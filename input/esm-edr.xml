@@ -171,11 +171,11 @@
       <subsection title="TOE Boundary" id="toeboundary">
           The TOE boundary for the EDR encompasses all the software from the TOE vendor that represents
           the server or enterprise management side of the EDR System. This will typically, but not always, be
-          software running alongside a web server, and possibly with other software services to send and receive 
-          data with a Host Agent. The EDR may also make use of a database to store collected and analyzed data.
-          Database software itself is outside the scope of the TOE, as is any web server software,
-          and the underlying operating system or cloud platform. The figure below shows EDR (right) communicating
-          with its Host Agent (left) over an untrusted network.
+          software running behind a web application or dashboard, and possibly with other software services running
+          to send and receive data with a Host Agent. The EDR may also make use of a database to store collected
+          and analyzed data. Any database software itself is outside the scope of the TOE, as is any web server software
+          used to serve a web application or dashboard, and the underlying operating system or cloud platform.
+          The figure below shows EDR (right) communicating with its Host Agent (left) over an untrusted network.
           <h:br />
           The requirements for the Host Agent are not covered in this PP, however it is expected that 
           an EDR System will evaluate once against this ESM EDR PP for the EDR and at least once more
@@ -1246,7 +1246,6 @@
                 <selectable>no other algorithms</selectable>
               </selectables>
               and message digest sizes <selectables linebreak="yes">
-                <selectable>160</selectable>
                 <selectable>256</selectable>
                 <selectable>384</selectable>
                 <selectable>512</selectable>
@@ -1411,9 +1410,9 @@
               </h:ul>
               and
               <selectables linebreak="yes">
-                <selectable>SHA-1</selectable>
-                <selectable>SHA-384</selectable>
-                <selectable>SHA-512</selectable>
+                <selectable>HMAC-SHA-1</selectable>
+                <selectable>HMAC-SHA-384</selectable>
+                <selectable>HMAC-SHA-512</selectable>
                 <selectable>no other algorithms</selectable>
               </selectables>
               with key sizes <assignable>key size (in bits) used in HMAC</assignable> 
@@ -1584,8 +1583,9 @@
               <h:ol type="a">
                 <h:li>Change in Host Agent enrollment status</h:li>
                 <h:li>Detection of potentially unauthorized activity on enrolled endpoints, including
-                  <h:ol type="a">
+                  <h:ol>
                     <h:li>Survey or reconnaissance activity</h:li>
+                    <h:li>Unauthorized recovery or harvesting of credentials</h:li>
                     <h:li>Unauthorized or anomalous network activity</h:li>
                     <h:li>Establishment of remote access or malicious execution persistence</h:li>
                     <h:li>Anomalous or suspicious user or process behavior</h:li>
@@ -1606,16 +1606,16 @@
             </aactivity>
           </f-element>
           <f-element id="fau_alt_ext.1.2">
-            <title>The <abbr linkend="EDR"/> shall provide a visualization of potentially
-              unauthorized incidents, including: 
+            <title>The <abbr linkend="EDR"/> shall provide a visualization of detected alerts of potentially
+              unauthorized incidents, and shall include: 
               <h:ol type="a">
-                <h:li>An initial severity
+                <h:li>An initial incident severity
                 <selectables>
                   <selectable>assessment</selectable>
                   <selectable>categorization</selectable>
                   <selectable>score</selectable>
                   <selectable>ranking</selectable>
-                </selectables>.
+                </selectables>
                 </h:li>
                 <h:li>An incident timeline</h:li>
               </h:ol>
@@ -1628,8 +1628,8 @@
             </aactivity>
           </f-element>
           <f-element id="fau_alt_ext.1.3">
-            <title>The <abbr linkend="EDR"/> shall provide a data export capability for a selected alert
-             with a specified standards-based format of  
+            <title>The <abbr linkend="EDR"/> shall provide a data export to disk capability for a selected alert
+             with a specified standards-based format of 
              <selectables linebreak="yes">
               <selectable>STIX</selectable>
               <selectable>CybOX</selectable>
@@ -1647,13 +1647,34 @@
         
         <f-component id="fau_col_ext.1" name="Collected Audit">
           <f-element id="fau_col_ext.1.1">
+            <title>The <abbr linkend="EDR"/> shall generate audit log data for investigation
+            and remediation actions initiated automatically or by authorized users, including:
+            <h:ol type="a">
+                <h:li>EDR login activity</h:li>
+                <h:li>Commands triggered by analysis results sent to Host Agent, affected endpoint, or network devices</h:li>
+                <h:li>EDR configuration changes</h:li>
+                <h:li><assignable>Other auditable events</assignable></h:li>
+              </h:ol>
+            </title>
+            <note role="application">The intent of this requirement is to specify the minimum
+              set of endpoint data that the EDR must be capable of collecting.
+            </note>
+            <aactivity>
+              <h:p>
+                The evaluator shall check the administrative guide and ensure
+                that it lists all of the collectable types of endpoint event data.  
+                The evaluator shall check to make sure that every endpoint event
+                data type selected in the ST is included in the administrative guidance.
+              </h:p>
+            </aactivity>
+          </f-element>
+          <f-element id="fau_col_ext.1.2">
             <title>The <abbr linkend="EDR"/> shall collect the following minimum set of
               endpoint data from a Host Agent: <h:ol type="a">
                 <h:li>Operating System (OS) version, architecture, and IP Address</h:li>
                 <h:li>Privileged and unprivileged endpoint account login activity</h:li>
                 <h:li>Process creation</h:li>
                 <h:li>Libraries and modules loaded by processes</h:li>
-                <h:li>Network connection activity, including destination IP</h:li>
                 <h:li>Files created on persistent storage</h:li>
                 <h:li><assignable>Other host data</assignable></h:li>
               </h:ol>
@@ -1708,12 +1729,12 @@
           <f-element id="fia_uau.5.1">
             <title>
               The <abbr linkend="EDR"/> shall provide the following authentication mechanisms,
-              authentication based on user name and password
+              authentication based on username and password
               <selectables linebreak='yes'>
                 <selectable>authentication based an external Smartcard factor and a PIN</selectable>
                 <selectable>no other factors</selectable>
               </selectables>
-              to support dashboard authentication.
+              to support logins to any management portal, dashboard, or API.
             </title>
             <note role="application">
             </note>
@@ -1811,8 +1832,8 @@
             
       <subsection title="Security Management (FMT)" id="fmt">
         
-        <f-component id="FMT_SMR.1(1)" name="Security Management Roles">
-          <f-element id="FMT_SMR.1.1(1)">
+        <f-component id="FMT_SMR.1" name="Security Management Roles">
+          <f-element id="FMT_SMR.1.1">
             <title>The 
               <selectables>
                 <selectable>EDR</selectable>
@@ -1820,17 +1841,17 @@
               </selectables> 
               shall maintain the roles of administrator, 
               SOC analyst, read-only user,
-              and <assignable>additional authorized identified roles</assignable>.
+              and <assignable>additional authorized roles</assignable>.
             </title>
-            <note role="application">It is envisioned that the <abbr linkend="EDR"/> Server will be
+            <note role="application">The <abbr linkend="EDR"/> will be
               configured, maintained, and used by different user roles. At a minimum, one
               administrative role shall be supported, one SOC analyst who can issue remediation commands
               to host agents, and one read-only user who can only view data.
               <h:br />
-              The user accounts do not literally need to be named as above, but they must have 
-              the effect of those roles. The assignment is used by the <abbr linkend="ST"/> author to 
+              The user accounts need not be named literally, but they must have 
+              the implication of such roles. The assignment is used by the <abbr linkend="ST"/> author to 
               list any other roles that are supported. If no additional roles are supported, then “no
-              additional roles” is stated. 
+              additional roles” is stated.
             </note>
             <aactivity>
               <tss>The evaluator shall examine the <abbr linkend="TSS"/> to verify that it describes
@@ -1861,7 +1882,7 @@
                 <selectable>EDR</selectable>
                 <selectable>EDR platform</selectable>
               </selectables> 
-              shall be capable of communicating the
+              shall be capable of configuring the
               following management functions to the <abbr linkend="EDR"/> Host Agent:
               <h:br/>
               <management-function-set default="O">
@@ -1927,11 +1948,11 @@
                 </management-function>
                 <management-function>
                   <text>
-                  Configure the suppression of alerts based on
+                  Configure visual suppression of incident alerts based on a configurable blacklist of
                   <selectables>
-                    <selectable>filename</selectable>
-                    <selectable>folder</selectable>
-                    <selectable>hash</selectable>
+                    <selectable>filenames</selectable>
+                    <selectable>folders</selectable>
+                    <selectable>file hashes</selectable>
                   </selectables> 
                   <assignable>other factors</assignable>
                 </text>
@@ -2867,9 +2888,9 @@ evaluation and performs independent testing.
       <entry id="bibCEM">
         <tag>CEM</tag>
         <description>
-          <h:a href="https://www.commoncriteriaportal.org/files/ccfiles/CEMV3.1R4.pdf">Common
+          <h:a href="https://www.commoncriteriaportal.org/files/ccfiles/CEMV3.1R5.pdf">Common
             Evaluation Methodology for Information Technology Security - Evaluation Methodology</h:a>,
-          CCMB-2012-09-004, Version 3.1, Revision 4, September 2012. </description>
+          CCMB-2017-04-004, Version 3.1, Revision 5, April 2017. </description>
       </entry>
       <entry id="bibCESG">
         <tag>CESG</tag>
