@@ -30,16 +30,18 @@
 
   <chapter title="Introduction" id="int">
     <section title="Overview" id="ppoverview">
-      The scope of this Protection Profile (PP) is to describe the security functionality of Endpoint Detection and 
+      This Protection Profile (PP) describes the security functionality of Endpoint Detection and 
       Response (EDR) systems in terms of [CC], and to define functional and assurance requirements for such products.
-      EDR is enterprise management software that collects endpoint host data for the purpose of detecting 
-      potential unauthorized activity on endpoints and enabling response actions to remediate malicious behaviors.
-      These requirements cover basic security characteristics and behaviors for an EDR that is hosted
-      in a cloud, on-premises, or a hybrid infrastructure. The platform on which the EDR runs may
-      be a physical or virtual Operating System (OS), a cloud environment.
+      EDR is enterprise management software that collects endpoint host data to detect potentially
+      unauthorized activity on endpoints and to enable threat hunting and other incident
+      response actions to remediate malicious behaviors. These requirements cover basic security
+      characteristics and behaviors for an EDR that is hosted in a cloud, on-premises, or a hybrid
+      infrastructure. The platform on which the EDR runs may be a physical or virtual Operating System (OS)
+      on-premises or in a cloud environment.
       <h:br />
       <h:br />
-      EDR relies on additional software running on the endpoint, called the Host Agent. 
+      EDR relies on additional software running on the endpoint, called the Host Agent, to communicate
+      commands or policy changes to and to receive endpoint host data from. 
       Security requirements for the Host Agent are addressed in the separate <cite linkend="bibHAGT"/> 
       Extended Package. Evaluation of an EDR System will require multiple evaluations of different system components:
       one against this ESM EDR PP for the EDR server software and at least one other against the
