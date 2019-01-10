@@ -1645,7 +1645,135 @@
             </aactivity>
             </f-element>
         </f-component>
-        
+
+        <f-component id="fau_gen.1" name="Protected Audit Trail Storage">
+          <f-element id="fau_gen.1.1">
+            <title>The <abbr linkend="EDR"/> shall be able to generate an audit record of the following
+            auditable events:
+              <h:ol type="a">
+                <h:li>Start-up and shutdown of the audit functions</h:li>
+                <h:li>All auditable events for the 
+                  <selectables>
+                    <selection>minimum</selection>
+                    <selection>basic</selection>
+                    <selection>detailed</selection>
+                    <selection>not specified</selection>
+                  </selectables>
+                  level of audit
+                </h:li>
+                <h:li><assignable>other specifically-defined auditable events</assignable></h:li>
+              </h:ol>
+            </title>
+            <note role="application">The intent of this requirement is to specify the integrity
+            requirements of stored audit data.
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+          <f-element id="fau_gen.1.2">
+            <title>The <abbr linkend="EDR"/> shall record within each audit record at least the following
+            information:
+              <h:ol type="a">
+                <h:li>Date and time of the event, type of event, subject identity, and the outcome
+                (success or failure) of the event</h:li>
+                <h:li>For each audit event type, based on the auditable event definitions of the
+                functional components included in the PP, <assignable>other audit relevant information</assignable>. 
+                </h:li>
+              </h:ol>
+            </title>
+            <note role="application">The intent of this requirement is to specify the integrity
+            requirements of stored audit data.
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+        </f-component>
+
+        <f-component id="fau_gen.2" name="User Identity Association">
+          <f-element id="fau_gen.2.1">
+            <title>The <abbr linkend="EDR"/> shall be able to associate each auditable event
+            with the identity of the user that caused the event.
+            </title>
+            <note role="application">The intent of this requirement is to specify the accountability
+            requirements of stored audit data.
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+        </f-component>
+
+        <f-component id="fau_stg.1" name="Protected Audit Trail Storage">
+          <f-element id="fau_stg.1.1">
+            <title>The <abbr linkend="EDR"/> shall protect the stored audit records in the
+            audit trail from unauthorized deletion.
+            </title>
+            <note role="application">The intent of this requirement is to specify the integrity
+            requirements of stored audit data.
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+          <f-element id="fau_stg.1.2">
+            <title>The <abbr linkend="EDR"/> shall be able to prevent unauthorized modifications to
+            the stored audit records in the audit trail.
+            </title>
+            <note role="application">The intent of this requirement is to specify the integrity
+            requirements of stored audit data.
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+        </f-component>
+
+        <f-component id="fau_stg.2" name="Guarantees of Audit Data Availability">
+          <f-element id="fau_stg.2.1">
+            <title>The <abbr linkend="EDR"/> shall ensure that <assignable>metric for saving audit records</assignable>
+            audit records will be maintained when the following conditions occur: audit storage 
+                <selectables>
+                  <selectable>exhaustion</selectable>
+                  <selectable>failure</selectable>
+                  <selectable>attack</selectable>
+                </selectables>
+            </title>
+            <note role="application">The intent of this requirement is to specify the integrity
+            requirements of stored audit data.
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+        </f-component>
+
+        <f-component id="fau_stg.3" name="Action in Case of Possible Audit Data Loss">
+          <f-element id="fau_stg.3.1">
+            <title>The <abbr linkend="EDR"/> shall take <assignable>actions to be taken in case of possible audit 
+            storage failure</assignable> if the audit trail exceeds <assignable>pre-defined limit</assignable>.
+            </title>
+            <note role="application">The intent of this requirement is to specify the integrity
+            requirements of stored audit data.
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+        </f-component>
+
+        <f-component id="fau_stg.4" name="Prevention of Audit Data Loss">
+          <f-element id="fau_stg.4.1">
+            <title>The <abbr linkend="EDR"/> shall 
+            <selectables>
+              <selectable>ignore auditable events</selectable>
+              <selectable>prevent auditable events (except those taken by an authorized user with special rights)</selectable>
+              <selectable>overwrite the oldest stored audit records</selectable>
+            </selectables>
+            and <assignable>other actions to be taken in case of audit storage failure</assignable> if the audit trail is full.
+            </title>
+            <note role="application">The intent of this requirement is to specify the integrity
+            requirements of stored audit data.
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+        </f-component>
+
         <f-component id="fau_col_ext.1" name="Collected Audit">
           <f-element id="fau_col_ext.1.1">
             <title>The <abbr linkend="EDR"/> shall generate audit log data for investigation
@@ -1726,13 +1854,13 @@
       
       <subsection title="Identification and Authentication (FIA)" id="fia">  
         
-       <f-component id="fia_uau.5" name="Dashboard Authentication Mechanisms (Refined)">
-          <f-element id="fia_uau.5.1">
+       <f-component id="fia_uau_ext.5" name="Dashboard Authentication Mechanisms">
+          <f-element id="fia_uau_ext.5.1">
             <title>
               The <abbr linkend="EDR"/> shall provide the following authentication mechanisms,
-              authentication based on username and password
+              authentication based on username and password and 
               <selectables linebreak='yes'>
-                <selectable>authentication based an external Smartcard factor and a PIN</selectable>
+                <selectable>authentication with external Smartcard and PIN</selectable>
                 <selectable>no other factors</selectable>
               </selectables>
               to support logins to any management portal, dashboard, or API.
@@ -1741,9 +1869,18 @@
             </note>
             <aactivity>
             </aactivity>
-            
           </f-element>
-          </f-component>
+          <f-element id="fia_uau.5.2">
+            <title>
+              The <abbr linkend="EDR"/> shall authenticate any user's claimed identity according to the
+              <assignable>success of either authentication mechanism</assignable>.
+            </title>
+            <note role="application">
+            </note>
+            <aactivity>
+            </aactivity>
+          </f-element>
+        </f-component>
        
        <f-component id="fia_pwd_ext.1" name="Password Authentication">
           <f-element id="fia_pwd_ext.1.1">
@@ -1965,8 +2102,8 @@
           </f-element>
         </f-component>
                 
-        <f-component id="FMT_SRF.EXT.1" name="Specification of Remediation Functions">
-          <f-element id="FMT_SRF.EXT.1">
+        <f-component id="FMT_SRF_EXT.1" name="Specification of Remediation Functions">
+          <f-element id="FMT_SRF_EXT.1">
             <title> The <abbr linkend="EDR"/> shall be capable of performing the following
               remediation functions:
               <h:br/>
@@ -2023,7 +2160,7 @@
         
         <f-component id="fpt_aex_ext.1" name="Anti-Exploitation Capabilities">
           <f-element id="fpt_aex_ext.1.1">
-            <title> The EDR shall not request to map memory at an explicit address
+            <title>The <abbr linkend="EDR"/> shall not request to map memory at an explicit address
               except for <assignable>list of explicit exceptions</assignable>.
             </title>
             <note role="application"> Requesting a memory mapping at an explicit address
@@ -2062,7 +2199,7 @@
         
         <f-component id="fpt_lib_ext.1" name="Use of Third Party Libraries">
           <f-element id="fpt_lib_ext.1.1">
-            <title> The EDR shall be packaged with only
+            <title>The <abbr linkend="EDR"/> shall be packaged with only
               <assignable>list of third-party libraries</assignable>. 
             </title>
             <note role="application"> 
@@ -2075,6 +2212,19 @@
               dynamic libraries. 
               The evaluator shall verify that libraries found to be packaged with or employed by the 
               EDR are limited to those in the assignment.
+            </aactivity>
+          </f-element>
+        </f-component>
+
+        <f-component id="fpt_stm.1" name="Reliable Timestamps">
+          <f-element id="fpt_stm.1.1">
+            <title>The <abbr linkend="EDR"/> shall be able to provide reliable timestamps for its own use.
+            </title>
+            <note role="application"> 
+              The intention of this requirement is to ensure the integrity of audit and incident data captured
+              by the EDR in its execution of normal use cases.
+            </note>
+            <aactivity>
             </aactivity>
           </f-element>
         </f-component>
