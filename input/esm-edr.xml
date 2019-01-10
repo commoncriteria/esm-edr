@@ -1876,9 +1876,9 @@
           </f-element>
         </f-component>
         
-        <f-component id="FMT_SMF.1(1)"
-          name="Specification of Management Functions (Remote Configuration of Host Agent)">
-          <f-element id="FMT_SMF.1.1(1)">
+        <f-component id="FMT_SMF.1"
+          name="Specification of Management Functions">
+          <f-element id="FMT_SMF.1.1">
             <title>The 
               <selectables>
                 <selectable>EDR</selectable>
@@ -1923,11 +1923,7 @@
             <aactivity>
             </aactivity>
           </f-element>
-        </f-component>
-        
-        <f-component id="FMT_SMF.1(2)"
-          name="Specification of Management Functions (Configuration of Server)">
-          <f-element id="FMT_SMF.1.1(2)">
+          <f-element id="FMT_SMF.1.2">
             <title> The <abbr linkend="EDR"/> shall be capable of performing the following
               management functions:   
               <h:br/>
@@ -1970,8 +1966,8 @@
           </f-element>
         </f-component>
                 
-        <f-component id="FMT_SRF.EXT.1(1)" name="Specification of Remediation Functions">
-          <f-element id="FMT_SRF.EXT.1(1)">
+        <f-component id="FMT_SRF.EXT.1" name="Specification of Remediation Functions">
+          <f-element id="FMT_SRF.EXT.1">
             <title> The <abbr linkend="EDR"/> shall be capable of performing the following
               remediation functions:
               <h:br/>
