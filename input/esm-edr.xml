@@ -360,8 +360,7 @@
             linkend="TOE"/>s provide consistent and supported interfaces for their
             security-relevant configuration and maintenance. 
           </description>
-          <component-refer ref="FMT_SMF.1(1)"/> 
-          <component-refer ref="FMT_SMF.1(2)"/>       
+          <component-refer ref="FMT_SMF.1"/>      
         </SO> 
         <SO id="O.PROTECTED_STORAGE">
           <description>
@@ -377,8 +376,8 @@
           network attack threats, conformant <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr>s will
           use a trusted channel to protect all communications. 
           </description>
-          <component-refer ref="FTP_TRP.1(1)"/>
-          <component-refer ref="FTP_ITC.1(2)"/>
+          <component-refer ref="FTP_TRP.1"/>
+          <component-refer ref="FTP_ITC.1"/>
         </SO>
       </SOs>
     </section>
@@ -2084,8 +2083,8 @@
       
       <subsection title="Trusted Path/Channels (FTP)" id="ftp">
         
-        <f-component id="FTP_TRP.1(1)" name="Trusted Path for Remote Administration">
-          <f-element id="FTP_TRP.1.1(1)">
+        <f-component id="FTP_TRP.1" name="Trusted Path for Remote Administration">
+          <f-element id="FTP_TRP.1.1">
             <title>The <selectables>
               <selectable>EDR</selectable>
               <selectable><abbr linkend="EDR"/> platform</selectable>
@@ -2099,14 +2098,14 @@
               assured identification of its endpoints and protection of the communicated data from
               modification and disclosure.</title>
           </f-element>
-          <f-element id="FTP_TRP.1.2(1)">
+          <f-element id="FTP_TRP.1.2">
             <title>The <selectables>
               <selectable>EDR</selectable>
               <selectable><abbr linkend="EDR"/> platform</selectable>
             </selectables> shall permit remote administrators to initiate communication via the
               trusted path.</title>
           </f-element>
-          <f-element id="FTP_TRP.1.3(1)">
+          <f-element id="FTP_TRP.1.3">
             <title>The 
             <selectables>
               <selectable>EDR</selectable>
@@ -2148,8 +2147,8 @@
           </f-element>
         </f-component>
         
-        <f-component id="FTP_ITC.1(2)" name="Trusted Channel (Host Agent)">
-          <f-element id="FTP_ITC.1.1(2)">
+        <f-component id="FTP_ITC.1" name="Trusted Channel (Host Agent)">
+          <f-element id="FTP_ITC.1.1">
             <title>The 
               <selectables>
                 <selectable>EDR</selectable>
@@ -2192,7 +2191,7 @@
               with platform provided services.
             </note>
           </f-element>
-          <f-element id="FTP_ITC.1.2(2)">
+          <f-element id="FTP_ITC.1.2">
             <title>The 
               <selectables>
                 <selectable>EDR</selectable>
@@ -2202,7 +2201,7 @@
               Host Agent to initiate communication via the trusted channel.
             </title>
           </f-element>
-          <f-element id="FTP_ITC.1.3(2)">
+          <f-element id="FTP_ITC.1.3">
             <title>The
              <selectables>
               <selectable>EDR</selectable>
