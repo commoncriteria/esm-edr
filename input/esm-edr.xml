@@ -294,7 +294,7 @@
               provides for confidentiality of locally stored data.</rationale>
           </objective-refer>
           <objective-refer ref="O.PROTECTED_MEMORY">
-            <rationale>The threat T.CREDENTIAL_REUSE is countered by O.PROTECTED_COMMS as this
+            <rationale>The threat T.CREDENTIAL_REUSE is countered by O.PROTECTED_MEMORY as this
               provides for confidentiality of data in use.</rationale>
           </objective-refer>
         </threat>
@@ -363,21 +363,27 @@
           <component-refer ref="FMT_SMF.1"/>      
         </SO> 
         <SO id="O.PROTECTED_STORAGE">
-          <description>
-            To address the issue of credential theft, conformant 
+          <description>To address the issue of credential theft, conformant 
             <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr>s will 
-            protect the storage of credentials in order to prevent unauthorized access to
+            protect the storage of credentials, preventing unauthorized access to
             the EDR.
           </description>
           <component-refer ref="fcs_sto_ext.1"/>
         </SO>
         <SO id="O.PROTECTED_COMMS">
-          <description> To address both passive (eavesdropping) and active (packet modification)
+          <description>To address both passive (eavesdropping) and active (packet modification)
           network attack threats, conformant <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr>s will
           use a trusted channel to protect all communications. 
           </description>
           <component-refer ref="FTP_TRP.1"/>
           <component-refer ref="FTP_ITC.1"/>
+        </SO>
+        <SO id="O.PROTECTED_MEMORY">
+          <description>To address the issue of credential theft from volatile memory, conformant
+          <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr>s will safely remove credentials
+          no longer in use from volatile memory, preventing unauthorized access to the EDR.
+          </description>
+          <component-refer ref="FCS_CKM_EXT.4"/>
         </SO>
       </SOs>
     </section>
@@ -1060,6 +1066,67 @@
             </aactivity>
           </f-element>
         </f-component>
+
+        <f-component id="FCS_CKM_EXT.4" name="Cryptographic Key Destruction" >
+          <f-element id="FCS_CKM_EXT.4.1">
+            <title>The EDR shall destroy cryptographic keys and key material in accordance with a specified 
+            cryptographic key destruction method 
+              <selectables>
+                <selectable>For volatile memory, the destruction shall be executed by a 
+                  <selectables>
+                    <selectable>single overwrite consisting of
+                      <selectables>
+                        <selectable>a pseudo-random pattern using the TSF's RBG</selectable>
+                        <selectable>zeroes</selectable>
+                        <selectable>ones</selectable>
+                        <selectable>a new value of a key</selectable>
+                        <selectable><assignable> any value that does not contain any CSP</assignable></selectable>
+                      </selectables>
+                    </selectable>
+                    <selectable>removal of power to the memory</selectable>
+                    <selectable>destruction of reference to the key directly followed by a request for garbage collection</selectable>
+                  </selectables>
+                </selectable>
+                <selectable>For non-volatile memory that consists of the invocation of an interface provided by the underlying platform that
+                  <selectables>
+                    <selectable>logically addresses the storage location of the key and performs a
+                      <selectables>
+                        <selectable>single</selectable>
+                        <selectable><assignable>ST author defined multi-pass</assignable></selectable>
+                      </selectables> overwrite consisting of 
+                      <selectables>
+                        <selectable>zeroes</selectable>
+                        <selectable>ones</selectable>
+                        <selectable>pseudo-random pattern</selectable>
+                        <selectable>a new value of a key of the same size</selectable>
+                        <selectable><assignable>any value that does not contain any CSP</assignable></selectable>
+                      </selectables>
+                    </selectable>
+                    <selectable>instructs the underlying platform to destroy the abstraction that represents the key</selectable>
+                  </selectables>
+                </selectable>
+              </selectables>
+                .
+              </title>
+              <note role="application">
+                <h:p>
+                  The interface referenced in the requirement could take different forms, the most likely of which is an
+                  application programming interface to an OS kernel. There may be various levels of abstraction visible.
+                  For instance, in a given implementation, selection a, the application may have access to the file system
+                  details and may be able to logically address specific memory locations. In another implementation, selection
+                  b, the application may simply have a handle to a resource and can only ask the platform to delete the resource,
+                  as may be the case with a platforms secure key store. Selection b should only be used for the most restricted
+                  access. The level of detail to which the TOE has access will be reflected in the TSS section of the ST.
+                </h:p>
+                <h:p>
+                  Several selections allow assignment of a 'value that does not contain any CSP'. This means that the TOE uses
+                  some other specified data not drawn from a source that may contain key material or reveal information about 
+                  key material, and not being any of the particular values listed as other selection options. The point of the 
+                  phrase 'does not contain any CSP' is to ensure that the overwritten data is carefully selected, and not taken 
+                  from a general 'pool' that might contain current or residual data that itself requires confidentiality protection.
+                </h:p>
+              </note>
+            </f-element>
         
         <f-component id="fcs_cop.1(1)" name="Cryptographic Operation - Encryption/Decryption" status="sel-based">
           <selection-depends req="fcs_tlsc_ext.1.1" ids="sel_impl_tls"/>
