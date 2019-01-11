@@ -1127,7 +1127,8 @@
                 </h:p>
               </note>
             </f-element>
-        
+        </f-component>
+ 
         <f-component id="fcs_cop.1(1)" name="Cryptographic Operation - Encryption/Decryption" status="sel-based">
           <selection-depends req="fcs_tlsc_ext.1.1" ids="sel_impl_tls"/>
           <selection-depends req="fcs_sto_ext.1.1" ids="sel_impl_sto"/>
