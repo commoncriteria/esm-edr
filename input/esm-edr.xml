@@ -355,6 +355,20 @@
   <chapter title="Security Objectives" id="obj">
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
+        <SO id="O.INTEGRITY">
+          <description>Conformant <abbr linkend="TOE"/>s ensure the integrity of their
+          installation and update packages, and also leverage execution environment-based
+          mitigations. Software is seldom, if ever, shipped without errors. The ability to
+          deploy patches and updates to fielded software with integrity is critical to enterprise
+          network security. Processor manufacturers, compiler developers, execution environment vendors,
+          and operating system vendors have developed execution environment-based mitigations that
+          increase the cost to attackers by adding complexity to the task of compromising systems. Application
+          software can often taken advantage of these mechanisms by using
+          <abbr title="Application Programming Interface" linkend="API">API</abbr>s
+          provided by the runtime environment or by enabling the mechanism through compiler or linker options.
+          </description>
+          <component-refer ref="FMT_SMF.1"/>
+        </SO> 
         <SO id="O.MANAGEMENT">
           <description>To facilitate management by the enterprise, conformant <abbr
             linkend="TOE"/>s provide consistent and supported interfaces for their
@@ -1702,6 +1716,8 @@
               <selectable>STIX</selectable>
               <selectable>CybOX</selectable>
               <selectable>IODEF</selectable>
+              <selectable>CEF</selectable>
+              <selectable>LEEF</selectable>
              </selectables>.
             </title>
             <note role="application">
@@ -2075,6 +2091,87 @@
                 local hardware interface or TLS/HTTPS then both methods of administration must be
                 exercised during the evaluation team’s test activities.
               </tests>
+            </aactivity>
+          </f-element>
+        </f-component>
+
+        <f-component id="FMT_CFG_EXT.1" name="Secure by Default Configuration">
+          <f-element id="FMT_CFG_EXT.1.1">
+            <title>The 
+              <selectables>
+                <selectable>EDR</selectable>
+                <selectable>EDR platform</selectable>
+              </selectables> 
+              shall only provide enough functionality to set new credentials when
+              configured with default or no credentials.
+            </title>
+            <note role="application">Default credentials are credentials (e.g., passwords, keys)
+            that are automatically (without user interaction) loaded onto the platform during application
+            installation.
+            </note>
+            <aactivity>
+              <tss>The evaluator shall check the TSS to determine if the application requires any type
+             of credentials and if the application installs with default credentials. 
+              </tss>
+              <guidance>None.
+              </guidance>
+              <tests>If the
+             application uses any default credentials the evaluator shall run the following tests.
+              <testlist>
+                  <test>
+                    The evaluator shall install and run the application without generating or loading 
+                    new credentials and verify that only the minimal
+                    application functionality required to set new credentials is available.
+                  </test>
+                  <test>
+                    The evaluator shall attempt to clear all credentials and verify that only
+                    the minimal application functionality required to set new credentials is available.
+                  </test>
+                  <test>
+                    The evaluator shall run the application, establish new credentials and
+                    verify that the original default credentials no longer provide access to
+                    the application.
+                  </test>
+                </testlist>
+              </tests>
+            </aactivity>
+          </f-element>
+          <f-element id="fmt_cfg_ext.1.2">
+            <title>The application shall be configured by default with file permissions which protect
+              the application binaries and data files from modification by normal unprivileged users.</title>
+            <note role="application">
+            The precise expectations for file permissions vary per platform
+            but the general intention is that a trust boundary protects the application and its
+            data.
+	          </note>
+            <aactivity>
+              <tss>None.</tss>
+              <guidance>None.</guidance>
+              <tests>The evaluator shall install and run the application. The evaluator shall
+              inspect the filesystem of the platform (to the extent possible) for any files created
+              by the application and ensure that their permissions are adequate to protect them.
+              The method of doing so varies per platform.
+              </tests>
+              <subaactivity platform="windows">The evaluator shall run the SysInternals tools,
+                Process Monitor and Access Check (or tools of equivalent capability, like 
+                icacls.exe) for Classic Desktop applications to verify that files written to disk 
+                during an application's installation have the correct file permissions, such that a 
+                standard user cannot modify the application or its data files. For Windows Universal 
+                Applications the evaluator shall consider the requirement met because of the AppContainer 
+                sandbox.
+              </subaactivity>
+              <subaactivity platform="linux"> 
+            		The evaluator shall run the command 
+                <h:code>find . -perm /002</h:code> 
+            		inside the application's data directories to ensure that all files are 
+            		not world-writable.
+            		The command should not print any files.
+	            </subaactivity>
+              <subaactivity platform="mac">
+                The evaluator shall run the command <h:code>find . -perm +002</h:code> inside
+            		the application's data directories to ensure that all files are not world-writable.
+            		The command should not print any files.
+	            </subaactivity>
             </aactivity>
           </f-element>
         </f-component>
