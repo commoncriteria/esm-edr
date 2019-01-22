@@ -368,7 +368,7 @@
           provided by the runtime environment or by enabling the mechanism through compiler or linker options.
           </description>
           <component-refer ref="FMT_SMF.1"/>
-          <component-refer ref="fpt_aex_ext.1">
+          <component-refer ref="fpt_aex_ext.1"/>
         </SO> 
         <SO id="O.MANAGEMENT">
           <description>To facilitate management by the enterprise, conformant <abbr
