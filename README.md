@@ -4,18 +4,20 @@ Protection Profile Module for Endpoint Detection and Response (EDR)
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/esm-edr.svg?maxAge=2592000)](https://github.com/commoncriteria/esm-edr/issues) 
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
-This repository hosts the draft version of the Protection Profile for Endpoint Detection and Response based on the 
+This repository hosts the draft version of the Protection Profile Module for Endpoint Detection and Response based on the 
 [Essential Security Requirements (ESR)](https://commoncriteria.github.io/pp/esm-edr/esm-edr-esr.html) for this technology class of 
 products. This repository is used to facilitate collaboration and development on the draft document. 
 See the [release](#Release-Version) section if you are looking for the officially released version for evaluations. 
 
 ## Draft Version
 
-* [Protection Profile for Endpoint Detection and Response](https://commoncriteria.github.io/pp/esm-edr/esm-edr-release.html) (html)
-* [Protection Profile for Endpoint Detection and Response](https://commoncriteria.github.io/pp/esm-edr/esm-edr-release.pdf) (pdf)
+* [Protection Profile Module for Endpoint Detection and Response](https://commoncriteria.github.io/pp/esm-edr/esm-edr-release.html) (html)
+* [Supporting Document for Endpoint Detection and Response](https://commoncriteria.github.io/pp/esm-edr/esm-edr-sd.html) (html)
+* [Protection Profile Module for Endpoint Detection and Response](https://commoncriteria.github.io/pp/esm-edr/esm-edr-release.pdf) (pdf)
+* [Supporting Document for Endpoint Detection and Response](https://commoncriteria.github.io/pp/esm-edr/esm-edr-sd.pdf) (pdf)
 
 ## Release Version
-* Protection Profile for Endpoint Detection and Response (coming soon)
+* Protection Profile Module for Endpoint Detection and Response (coming soon)
 
 ## Contributing
 
