@@ -29,29 +29,30 @@
 
   <chapter title="Introduction" id="int">
     <section title="Overview" id="ppoverview">
-      This Protection Profile (PP) describes the security functionality of Endpoint Detection and 
-      Response (EDR) systems in terms of [CC], and to define functional and assurance requirements for such products.
+      This Protection Profile (PP) Module describes the security functionality of Endpoint Detection and 
+      Response (EDR) systems in terms of <abbr linkend="CC"/>, and defines functional and assurance requirements 
+      for such products.
       EDR is enterprise management software that collects endpoint host data to detect potentially
       unauthorized activity on endpoints and to enable threat hunting and other incident
       response actions to remediate malicious behaviors. These requirements cover basic security
-      characteristics and behaviors for an EDR that is hosted in a cloud, on-premises, or a hybrid
-      infrastructure. The platform on which the EDR runs may be a physical or virtual Operating System (OS)
+      characteristics and behaviors for EDR products that operate in either a cloud or on-premises scenerio.
+      The platform on which the EDR runs may be a physical or virtual Operating System (OS)
       on-premises or in a cloud environment.
       <h:br />
       <h:br />
-      EDR relies on additional software running on the endpoint, called the Host Agent, to communicate
-      commands or policy changes to and to receive endpoint host data from. 
+      EDR products rely on additional software running on the endpoint, called the Host Agent, to communicate
+      commands or policy changes and to receive endpoint host data. 
       Security requirements for the Host Agent are addressed in the separate <cite linkend="bibHAGT"/> 
-      Extended Package. Evaluation of an EDR System will require multiple evaluations of different system components:
-      one against this ESM EDR PP for the EDR server software and at least one other against the
-      <cite linkend="bibHAGT"/> EP with its base <cite linkend="bibAPPSW"/> PP.
+      Module. Evaluation of an EDR system will require multiple evaluations of different system components:
+      one against this ESM EDR Module for the EDR server software and at least one other against the
+      <cite linkend="bibHAGT"/> Module with its base <cite linkend="bibAppPP"/> PP.
       <h:br />
       <h:br />
-      There are three primary architectural categories addressed by requirements in this PP, as seen in the figure below. 
+      There are three primary architectural categories addressed by requirements in this PP-Module, as seen in the figure below. 
       <h:li>Endpoints communicate over the Internet to an EDR cloud service (Software as a Service).</h:li>
       <h:li>Endpoints communicate with an on-premises EDR in a hub and spoke network model.</h:li>
-      <h:li>Endpoints communicate with other endpoints, ultimately being orchestrated by an on-premises EDR in a 
-        ring based network model (e.g., peer-to-peer).</h:li>
+      <h:li>Endpoints communicate with other endpoints, ultimately being orchestrated by an on-premises EDR 
+        in a peer-to-peer network model.</h:li>
       <figure entity="images/edr_archi.jpg" title="EDR Architectures Overview" id="toe"/>
     </section>
     <section title="Terms" id="glossary">
@@ -121,23 +122,10 @@
             </description>
           </entry>
           <entry>
-            <term><abbr title="Address Space Layout Randomization">ASLR</abbr></term>
-            <description>An anti-exploitation feature which loads memory mappings into unpredictable
-              locations. ASLR makes it more difficult for an attacker to redirect control to code
-              that they have introduced into the address space of a process.</description>
-          </entry>
-          <entry>
             <term>Management Portal</term>
             <description>A management interface for the configuration of EDR policy, 
               visualization of collected endpoint alert data, and issuing of remediation
               commands.</description>
-          </entry>
-          <entry>
-            <term><abbr title="Data Execution Prevention">DEP</abbr></term>
-            <description>An anti-exploitation feature of modern operating systems executing on
-              modern computer hardware, which enforces a non-execute permission on pages of memory.
-              DEP prevents pages of memory from containing both data and instructions, which makes
-              it more difficult for an attacker to introduce and execute code.</description>
           </entry>
           <entry>
             <term>Endpoint</term>
@@ -164,11 +152,6 @@
           <entry>
             <term><abbr title="Endpoint Detection and Response">EDR</abbr> System</term>
             <description>EDR and its complementary Host Agent.</description>
-          </entry>
-          <entry>
-            <term><abbr title="Operating System">OS</abbr></term>
-            <description>Software that manages physical and logical resources and provides 
-              services for applications.</description>
           </entry>
           <entry>
             <term>SOC Analyst</term>
