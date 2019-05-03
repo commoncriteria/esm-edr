@@ -364,17 +364,6 @@
             This objective is consistent with <base-name/>.
           </consistency-rationale>
         </SO> 
-        <SO id="O.PROTECTED_STORAGE">
-          <description>To address the issue of credential theft, conformant 
-            <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr>s will 
-            protect the storage of credentials, preventing unauthorized access to
-            the EDR.
-          </description>
-          <component-refer ref="fcs_sto_ext.1"/>
-          <consistency-rationale>
-            This objective is consistent with <base-name/>.
-          </consistency-rationale>
-        </SO>
         <SO id="O.PROTECTED_COMMS">
           <description>To address both passive (eavesdropping) and active (packet modification)
           network attack threats, conformant <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr>s will
@@ -527,14 +516,14 @@
 
         <f-component id="FAU_DAS_ext.1" name="Management Dashboard Audit">
           <consistency-rationale>
-            This SFR defines the minimum event data that the EDR Server must record about authorizaed management dashboard activity.
+            This SFR defines the minimum event data that the EDR Server must record about authorized management portal activity.
             It does not impact the AppSoftware PP functionality.
           </consistency-rationale>
         <f-element id="FAU_DAS_ext.1.1">
           <title>The <abbr linkend="EDR"/> shall generate audit log data for investigation
             and remediation actions initiated automatically or by authorized users, including:
             <h:ol type="a">
-              <h:li>EDR management dashboard login activity</h:li>
+              <h:li>EDR management portal login activity</h:li>
               <h:li>Remediation Commands sent to a Host Agent, affected endpoint, or network devices</h:li>
               <h:li>EDR configuration changes</h:li>
               <h:li><assignable>Other auditable events</assignable></h:li>
@@ -1065,6 +1054,7 @@
     <opt-sfrs></opt-sfrs>
     
     <sel-sfrs></sel-sfrs>
+    
     <obj-sfrs>
       
      <subsection title="Security Management (FMT)" id="fmt">
@@ -1074,8 +1064,8 @@
           It does not impact the AppSoftware PP functionality.
         </consistency-rationale>
         <f-element id="FMT_TRM_EXT.1.1">
-          <title>The <abbr linkend="EDR"/> shall provide digitally signed 
-            commands to the Host Agent.
+          <title>The <abbr linkend="EDR"/> shall digitally signed 
+            commands or policies sent to the Host Agent.
           </title>
           <note role="application">The intent of this requirement is to cryptographically 
             tie a command sent to a Host Agent to the enterprise that mandated the command, not to
@@ -1085,7 +1075,23 @@
           <aactivity>
             <TSS/>
             <Guidance/>
-            <Tests/>
+            The evaluator shall check the administrative guide and ensure
+            that the EDR product under evaluations documents all the forms of remediation.
+            
+            <Tests>
+              <testlist>
+                <test>
+                  The evaluator shall pick any one remediation function documented in the 
+                  administrative guide (for example terminate process), and execute that command while
+                  capturing traffic. The evaluator saw review the collected traffic and verify that a digital
+                  signature was sent along with command or policy update.
+                  Note, The EDR may need to be configured in a manner to disable transport 
+                  encryption for this test, or the network capture tool may need to be configured with 
+                  the private key such that decrypted traffic is available in the network capture tool.
+                </test>
+              </testlist>
+            </Tests>
+            
           </aactivity>
         </f-element>
       </f-component>
