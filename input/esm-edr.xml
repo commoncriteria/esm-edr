@@ -433,10 +433,8 @@
       name="Application Software" short="AppSo" 
       url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=394&amp;id=394"
       xmlurl="https://raw.githubusercontent.com/commoncriteria/application/c51970161d3a47fe8a7c23552f372745a638ba7d/input/application.xml">
-      
       <modified-sfrs/>
       <additional-sfrs>
-
       
       <subsection title="Security Audit (FAU)" id="fau">
         
@@ -848,6 +846,70 @@
             
       <subsection title="Trusted Path/Channels (FTP)" id="ftp">
         
+        <!--  We may need to refine DIT_EXT.1.1
+        <f-component id="ftp_dit_ext.1(2)" name="Protection of Data in Transit">
+          <consistency-rationale> 
+            The <abbr linkend="Base-PP"/> defines FTP_DIT_EXT.1 to define the secure
+            protocols used for trusted path/channel communications. This <abbr linkend="PP-Module"/> 
+            iterates the SFR to specify a subset of those selections for communication.
+          </consistency-rationale>
+         
+          <f-element id="ftp_dit_ext.1.1(2)">
+            <title><h:b>Refinement:</h:b> The application shall 
+              <selectables linebreak="yes">
+               
+                <selectable>encrypt all transmitted 
+                  <selectables>
+                    <selectable>sensitive data</selectable>
+                    <selectable>data</selectable>
+                  </selectables> with
+                  <selectables>
+                    <selectable id="sel_all_https"><h:abbr title="Hypertext Transfer Protocol Secure">HTTPS</h:abbr> in accordance with FCS_HTTPS_EXT.1</selectable>
+                    <selectable id="sel_all_tlsc"><h:abbr title="Transport Layer Security">TLS</h:abbr> as defined in the <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439"><h:i>TLS Package</h:i></h:a></selectable>
+                    <selectable id="sel_all_dtls"><h:abbr title="Datagram Transport Layer Security">DTLS</h:abbr> as defined in the <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=439&amp;id=439"><h:i>TLS Package</h:i></h:a></selectable>
+                    <selectable>SSH as conforming to the Extended Package for <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=389&amp;id=389"><h:i>Secure Shell</h:i></h:a></selectable>
+                  </selectables>
+                </selectable>
+                
+                <selectable>invoke platform-provided functionality to encrypt all transmitted sensitive data with
+                  <selectables>
+                    <selectable><h:abbr title="Hypertext Transfer Protocol Secure">HTTPS</h:abbr></selectable>
+                    <selectable><h:abbr title="Transport Layer Security">TLS</h:abbr></selectable>
+                    <selectable><h:abbr title="Datagram Transport Layer Security">DTLS</h:abbr></selectable>
+                    <selectable>SSH</selectable>
+                  </selectables>
+                </selectable>	    
+                
+                <selectable>invoke platform-provided functionality to encrypt all transmitted data with
+                  <selectables>
+                    <selectable><h:abbr title="Hypertext Transfer Protocol Secure">HTTPS</h:abbr></selectable>
+                    <selectable><h:abbr title="Transport Layer Security">TLS</h:abbr></selectable>
+                    <selectable><h:abbr title="Datagram Transport Layer Security">DTLS</h:abbr></selectable>
+                    <selectable>SSH</selectable>
+                  </selectables>
+                </selectable>	    
+                
+              </selectables>
+              between itself and another trusted IT product.
+            </title>
+            <note role="application">
+              Encryption is not required for applications transmitting data that is not sensitive. 
+              <h:br/>
+              <h:p> If <h:i>encrypt all transmitted</h:i> is selected and <h:i>TLS</h:i> is selected, then evaluation of elements from either <linkref linkend="FCS_TLSC_EXT.1"/> or <linkref linkend="FCS_TLSS_EXT.1"/> is required.</h:p>
+              <h:p> If <h:i>encrypt all transmitted</h:i> is selected and <h:i>HTTPS</h:i> is selected, <linkref linkend="FCS_HTTPS_EXT.1"/> is required.</h:p> 
+              <h:p> If <h:i>encrypt all transmitted</h:i> is selected and <h:i>DTLS</h:i> is selected, <linkref linkend="FCS_DTLS_EXT.1"/> is required.</h:p>
+              <h:p> If <h:i>encrypt all transmitted</h:i> is selected and <h:i>SSH</h:i> is selected, the TSF shall be validated against the <h:i>Extended Package for <h:a href="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=389&amp;id=389">Secure Shell</h:a></h:i>.</h:p>
+              <h:p>
+                If <h:i>encrypt all transmitted</h:i> is selected the corresponding FCS_COP.1 requirements will be included.
+              </h:p>
+            </note>  
+            <aactivity>
+
+            </aactivity>
+          </f-element>
+        </f-component>
+        -->
+        
         <f-component id="FTP_TRP.1" name="Trusted Path for Remote Administration">
           <consistency-rationale>
             This SFR defines a specific set of functions for secure remote administration of the EDR.
@@ -1031,7 +1093,6 @@
         </f-component>
         
       </subsection>
-    
     
       </additional-sfrs>
       
