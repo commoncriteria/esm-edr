@@ -4,11 +4,11 @@
 <?xml-model href="../transforms/schemas/CCModule.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 
 <Module xmlns="https://niap-ccevs.org/cc/v1"
-  xmlns:h="http://www.w3.org/1999/xhtml"
-  name="Endpoint Detection and Response (EDR)"
-  boilerplate="yes"
-  target-products="Endpoint Detection and Response (EDR)">
-
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    name="Endpoint Detection and Response (EDR)"
+    boilerplate="yes"
+    target-products="Endpoint Detection and Response (EDR)">
+  
   <PPReference>
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
@@ -26,9 +26,9 @@
     </entry>
   </RevisionHistory>
   
-
+  
   <chapter title="Introduction" id="int">
-    <section title="Overview" id="ppoverview">
+    <section title="Overview" id="ppoverview"> 
       This Protection Profile (PP) Module describes the security functionality of Endpoint Detection and 
       Response (EDR) systems in terms of <abbr linkend="CC"/>, and defines functional and assurance requirements 
       for such products.
@@ -57,7 +57,7 @@
     </section>
     <section title="Terms" id="glossary">
       <subsection title="Common Criteria Terms">
-        <glossary>
+       <glossary>
           <entry>
             <term><abbr title="Common Criteria">CC</abbr></term>
             <description>Common Criteria for Information Technology Security
@@ -73,12 +73,12 @@
             <description>An implementation-independent set of security requirements for a category
               of products.</description>
           </entry>
-          <entry>
-            <term><abbr title="Protection Profile Module">PP-Module</abbr></term>
-            <description>An implementation-independent statement of security needs for a TOE type 
-              complementary to one or more Base Protection Profiles.
-            </description>
-          </entry>
+         <entry>
+           <term><abbr title="Protection Profile Module">PP-Module</abbr></term>
+           <description>An implementation-independent statement of security needs for a TOE type 
+             complementary to one or more Base Protection Profiles.
+           </description>
+         </entry>
           <entry>
             <term><abbr title="Security Target">ST</abbr></term>
             <description>A set of implementation-dependent security requirements for a specific
@@ -87,10 +87,10 @@
           <entry>
             <term><abbr title="Target of Evaluation">TOE</abbr></term>
             <description>
-              The product under evaluation. In this case, the Operating System as described in section 
-              <xref linkend="TOEboundary"/> and its
+	      The product under evaluation. In this case, the Operating System as described in section 
+	      <xref linkend="TOEboundary"/> and its
               supporting documentation.
-            </description>
+	    </description>
           </entry>
           <entry>
             <term><abbr title="TOE Security Functionality">TSF</abbr></term>
@@ -99,7 +99,7 @@
           <entry>
             <term><abbr title="TOE Summary Specification">TSS</abbr></term>
             <description>A description of how a <abbr linkend="TOE"/> satisfies the SFRs in a <abbr
-              linkend="ST"/>. </description>
+                linkend="ST"/>. </description>
           </entry>
           <entry>
             <term><abbr title="Security Functional Requirement">SFR</abbr></term>
@@ -111,7 +111,7 @@
             <description>A requirement to assure the security of the <abbr linkend="TOE"/>.
             </description>
           </entry>
-        </glossary>
+       </glossary>
       </subsection>
       <subsection title="Technical Terms">
         <glossary>
@@ -162,23 +162,23 @@
         </glossary>
       </subsection>
     </section>
-
+    
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
-      <subsection title="TOE Boundary" id="toeboundary">
-          The TOE boundary for the EDR encompasses all the software from the TOE vendor that represents
-          the server or enterprise management side of the EDR System. This will typically, but not always, be
-          software running behind a web application or dashboard, and possibly with other software services running
-          to send and receive data with a Host Agent. The EDR may also make use of a database to store collected
-          and analyzed data. Any database software itself is outside the scope of the TOE, as is any web server software
-          used to serve a web application or dashboard, and the underlying operating system or cloud platform.
-          The figure below shows EDR (right) communicating with its Host Agent (left) over an untrusted network.
-          <h:br />
-          The requirements for the Host Agent are not covered in this Module, however it is expected that 
-          an EDR System will evaluate once against this ESM EDR Module for the EDR and at least once more
-          against the <cite linkend="bibHAGT"/> Module with its base <cite linkend="bibAppPP"/> PP.
-          
-          <figure entity="images/edr_overview.jpg" title="EDR Overview" id="toe"/>
-        </subsection>
+      <subsection title="TOE Boundary" id="TOEboundary">
+        The TOE boundary for the EDR encompasses all the software from the TOE vendor that represents
+        the server or enterprise management side of the EDR System. This will typically, but not always, be
+        software running behind a web application or dashboard, and possibly with other software services running
+        to send and receive data with a Host Agent. The EDR may also make use of a database to store collected
+        and analyzed data. Any database software itself is outside the scope of the TOE, as is any web server software
+        used to serve a web application or dashboard, and the underlying operating system or cloud platform.
+        The figure below shows EDR (right) communicating with its Host Agent (left) over an untrusted network.
+        <h:br />
+        The requirements for the Host Agent are not covered in this Module, however it is expected that 
+        an EDR System will evaluate once against this ESM EDR Module for the EDR and at least once more
+        against the <cite linkend="bibHAGT"/> Module with its base <cite linkend="bibAppPP"/> PP.
+        
+        <figure entity="images/edr_overview.jpg" title="EDR Overview" id="toe"/>
+      </subsection>
       <subsection title="TOE Platform" id="TOEplatform">
         The TOE platform, which consists of the Operating System or Cloud platform on which 
         the EDR software executes and is outside the scope of evaluation. At the same time, 
@@ -186,10 +186,11 @@
         <h:br />
         Any communications with trusted remote file reputation or threat intelligence services
         is relevant to overall EDR System security but is also outside the scope of evaluation.
-       </subsection>
+      </subsection>
     </section>
-      
-    <section title="Use Cases" id="usecases">Requirements in this PP-Module are designed to
+    
+    <section title="Use Cases" id="usecases">
+      Requirements in this PP-Module are designed to
       address the security problems in at least the following use cases. An EDR's functionality
       may be extended by addons, plugins, threat feeds, or other reputation services.
       These are out of scope of this Module. 
@@ -245,7 +246,7 @@
       </cclaim>
     </cclaims>
   </chapter>
-  
+
   <chapter title="Security Problem Description" id="spd">
     The security problem is described in terms
     of the threats that the <abbr linkend="EDR"/> is expected to address, assumptions about the
@@ -295,41 +296,8 @@
         </threat>
       </threats>
     </section>
-    <section title="Assumptions" id="assumptions">
+    <section id="Assumptions" title="Assumptions">
       <assumptions>
-        <assumption id="A.CONNECTIVITY">
-          <description>The <abbr linkend="EDR"/> relies on network connectivity to carry out its
-            management and data collection activities. The <abbr linkend="EDR"/> will robustly 
-            handle instances when connectivity is unavailable or unreliable.</description>
-          <objective-refer ref="OE.CONNECTIVITY">
-            <rationale>The operational environment objective OE.CONNECTIVITY is realized through
-              A.CONNECTIVITY.</rationale>
-          </objective-refer>
-        </assumption>
-        <assumption id="A.PLATFORM">
-          <description> The <abbr linkend="EDR"/> relies upon a trustworthy computing platform or cloud environment
-            for its execution. This underlying platform or cloud is out of scope of this PP. </description>
-          <objective-refer ref="OE.PLATFORM">
-            <rationale> The operational environment objective OE.PLATFORM is realized through
-              A.PLATFORM. </rationale>
-          </objective-refer>
-        </assumption>
-        <assumption id="A.PROPER_ADMIN">
-          <description> The administrator of the EDR is not careless, willfully negligent or hostile,
-            and administers the EDR within compliance of the applied enterprise security policy. </description>
-          <objective-refer ref="OE.PROPER_ADMIN">
-            <rationale>The operational environment objective OE.PROPER_ADMIN is realized through
-              A.PROPER_ADMIN.</rationale>
-          </objective-refer>
-        </assumption>
-        <assumption id="A.PROPER_USER">
-          <description>The users of the EDR are not willfully negligent or hostile, and use the
-            EDR service within compliance of a reasonable enterprise security policy. </description>
-          <objective-refer ref="OE.PROPER_USER">
-            <rationale>The operational environment objective OE.PROPER_USER is realized through
-              A.PROPER_USER.</rationale>
-          </objective-refer>
-        </assumption>
       </assumptions>
     </section>
   </chapter>
@@ -366,8 +334,8 @@
         </SO> 
         <SO id="O.PROTECTED_COMMS">
           <description>To address both passive (eavesdropping) and active (packet modification)
-          network attack threats, conformant <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr>s will
-          use a trusted channel to protect all communications. 
+            network attack threats, conformant <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr>s will
+            use a trusted channel to protect all communications. 
           </description>
           <component-refer ref="FTP_TRP.1"/>
           <component-refer ref="FTP_ITC.1"/>
@@ -377,10 +345,10 @@
         </SO>
         <SO id="O.PROTECTED_MEMORY">
           <description>To address the issue of credential theft from volatile memory, conformant
-          <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr>s will safely remove credentials
-          no longer in use from volatile memory, preventing unauthorized access to the EDR.
+            <abbr title="Target of Evaluation" linkend="TOE">TOE</abbr>s will safely remove credentials
+            no longer in use from volatile memory, preventing unauthorized access to the EDR.
           </description>
-          <component-refer ref="FCS_CKM_EXT.4"/>
+          <component-refer ref="FMT_SMF.1"/>
           <consistency-rationale>
             This objective is consistent with <base-name/>.
           </consistency-rationale>
@@ -388,14 +356,13 @@
       </SOs>
     </section>
     <section title="Security Objectives for the Operational Environment"
-      id="SecurityObjectivesTOEorEnvironment">
-      The following security objectives for the operational
-      environment assist the <abbr linkend="EDR"/> in correctly providing its security functionality.
+      id="SecurityObjectivesTOEorEnvironment">The following security objectives for the operational
+      environment assist the EDR in correctly providing its security functionality.
       These track with the assumptions about the environment. 
       <SOEs>
         <SOE id="OE.PLATFORM">
           <description>The <abbr linkend="EDR"/> relies on a trusted Operating System or
-          Cloud platform</description>
+            Cloud platform</description>
           <consistency-rationale>
             This objective is inherited from the Base-PP. 
           </consistency-rationale>
@@ -420,7 +387,6 @@
         </SOE>
       </SOEs>
     </section>
-    
     <section id="secconrat" title="Security Objectives Rationale">
     </section>
   </chapter>
@@ -435,7 +401,8 @@
       xmlurl="https://raw.githubusercontent.com/commoncriteria/application/c51970161d3a47fe8a7c23552f372745a638ba7d/input/application.xml">
       <modified-sfrs/>
       <additional-sfrs>
-      
+
+            
       <subsection title="Security Audit (FAU)" id="fau">
         
         <f-component id="fau_alt_ext.1" name="Server Alerts">
@@ -1094,6 +1061,7 @@
         
       </subsection>
     
+      
       </additional-sfrs>
       
       <con-toe>
@@ -1101,65 +1069,66 @@
         Software-based Application. The TOE boundary is simply extended to include the EDR functionality 
         that is built into the Application so that additional security functionality is claimed within the scope of the TOE.
       </con-toe>
-      
+    
       <con-sec-prob/>
       <con-obj/>
       <con-op-en>
         This PP-Module does not define any objectives for the TOE's operational environment. 
       </con-op-en>
-      
+   
     </base-pp>
-
+    
     <man-sfrs/>
     
     <opt-sfrs></opt-sfrs>
     
-    <sel-sfrs></sel-sfrs>
+    <sel-sfrs>   
+    </sel-sfrs>
     
     <obj-sfrs>
-      
      <subsection title="Security Management (FMT)" id="fmt">
-      <f-component id="FMT_TRM_EXT.1" name="Trusted Remediation Functions">
-        <consistency-rationale>
-          This SFR defines protections for the integrity of commands sent to the Host Agent.
-          It does not impact the AppSoftware PP functionality.
-        </consistency-rationale>
-        <f-element id="FMT_TRM_EXT.1.1">
-          <title>The <abbr linkend="EDR"/> shall digitally signed 
-            commands or policies sent to the Host Agent.
-          </title>
-          <note role="application">The intent of this requirement is to cryptographically 
-            tie a command sent to a Host Agent to the enterprise that mandated the command, not to
-            protect the commands in transit (as they are already protected by 
-            <linkref linkend="FTP_ITC.1"/>). 
-          </note>
-          <aactivity>
-            <TSS/>
-            <Guidance/>
-            The evaluator shall check the administrative guide and ensure
-            that the EDR product under evaluations documents all the forms of remediation.
-            
-            <Tests>
-              <testlist>
-                <test>
-                  The evaluator shall pick any one remediation function documented in the 
-                  administrative guide (for example terminate process), and execute that command while
-                  capturing traffic. The evaluator saw review the collected traffic and verify that a digital
-                  signature was sent along with command or policy update.
-                  Note, The EDR may need to be configured in a manner to disable transport 
-                  encryption for this test, or the network capture tool may need to be configured with 
-                  the private key such that decrypted traffic is available in the network capture tool.
-                </test>
-              </testlist>
-            </Tests>
-            
-          </aactivity>
-        </f-element>
-      </f-component>
+     
+       <f-component id="FMT_TRM_EXT.1" name="Trusted Remediation Functions">
+         <consistency-rationale>
+           This SFR defines protections for the integrity of commands sent to the Host Agent.
+           It does not impact the AppSoftware PP functionality.
+         </consistency-rationale>
+         <f-element id="FMT_TRM_EXT.1.1">
+           <title>The <abbr linkend="EDR"/> shall digitally signed 
+             commands or policies sent to the Host Agent.
+           </title>
+           <note role="application">The intent of this requirement is to cryptographically 
+             tie a command sent to a Host Agent to the enterprise that mandated the command, not to
+             protect the commands in transit (as they are already protected by 
+             <linkref linkend="FTP_ITC.1"/>). 
+           </note>
+           <aactivity>
+             <TSS/>
+             <Guidance/>
+             The evaluator shall check the administrative guide and ensure
+             that the EDR product under evaluations documents all the forms of remediation.
+             
+             <Tests>
+               <testlist>
+                 <test>
+                   The evaluator shall pick any one remediation function documented in the 
+                   administrative guide (for example terminate process), and execute that command while
+                   capturing traffic. The evaluator saw review the collected traffic and verify that a digital
+                   signature was sent along with command or policy update.
+                   Note, The EDR may need to be configured in a manner to disable transport 
+                   encryption for this test, or the network capture tool may need to be configured with 
+                   the private key such that decrypted traffic is available in the network capture tool.
+                 </test>
+               </testlist>
+             </Tests>
+             
+           </aactivity>
+         </f-element>
+       </f-component>
+     
      </subsection>
-      
     </obj-sfrs>
- 
+    
   </chapter>
 
   <bibliography>
@@ -1194,251 +1163,250 @@
   </bibliography>
   
   <acronyms>
-      <entry>
-        <term>AES</term>
-        <description>Advanced Encryption Standard</description>
-      </entry>
-      <entry>
-        <term>ANSI</term>
-        <description>American National Standards Institute</description>
-      </entry>
-      <entry>
-        <term>API</term>
-        <description>Application Programming Interface</description>
-      </entry>
-      <entry>
-        <term>ASLR</term>
-        <description>Address Space Layout Randomization</description>
-      </entry>
-      <entry>
-        <term>CESG</term>
-        <description>Communications-Electronics Security Group</description>
-      </entry>
-      <entry>
-        <term>CMC</term>
-        <description>Certificate Management over CMS</description>
-      </entry>
-      <entry>
-        <term>CMS</term>
-        <description>Cryptographic Message Syntax</description>
-      </entry>
-      <entry>
-        <term>CN</term>
-        <description>Common Names</description>
-      </entry>
-      <entry>
-        <term>CRL</term>
-        <description>Certificate Revocation List</description>
-      </entry>
-      <entry>
-        <term>CSA</term>
-        <description>Computer Security Act</description>
-      </entry>
-      <entry>
-        <term>DEP</term>
-        <description>Data Execution Prevention</description>
-      </entry>
-      <entry>
-        <term>DES</term>
-        <description>Data Encryption Standard</description>
-      </entry>
-      <entry>
-        <term>DHE</term>
-        <description>Diffie-Hellman Ephemeral</description>
-      </entry>
-      <entry>
-        <term>DNS</term>
-        <description>Domain Name System</description>
-      </entry>
-      <entry>
-        <term>DRBG</term>
-        <description>Deterministic Random Bit Generator</description>
-      </entry>
-      <entry>
-        <term>DSS</term>
-        <description>Digital Signature Standard</description>
-      </entry>
-      <entry>
-        <term>DT</term>
-        <description>Date/Time Vector</description>
-      </entry>
-      <entry>
-        <term>DTLS</term>
-        <description>Datagram Transport Layer Security</description>
-      </entry>
-      <entry>
-        <term>EAP</term>
-        <description>Extensible Authentication Protocol</description>
-      </entry>
-      <entry>
-        <term>ECDHE</term>
-        <description>Elliptic Curve Diffie-Hellman Ephemeral</description>
-      </entry>
-      <entry>
-        <term>ECDSA</term>
-        <description>Elliptic Curve Digital Signature Algorithm</description>
-      </entry>
-      <entry>
-        <term>EDR</term>
-        <description>Endpoint Detection and Response</description>
-      </entry>
-      <entry>
-        <term>EST</term>
-        <description>Enrollment over Secure Transport</description>
-      </entry>
-      <entry>
-        <term>FIPS</term>
-        <description>Federal Information Processing Standards</description>
-      </entry>
-      <entry>
-        <term>DSS</term>
-        <description>Digital Signature Standard</description>
-      </entry>
-      <entry>
-        <term>HMAC</term>
-        <description>Hash-based Message Authentication Code</description>
-      </entry>
-      <entry>
-        <term>HTTP</term>
-        <description>Hypertext Transfer Protocol</description>
-      </entry>
-      <entry>
-        <term>HTTPS</term>
-        <description>Hypertext Transfer Protocol Secure</description>
-      </entry>
-      <entry>
-        <term>DSS</term>
-        <description>Digital Signature Standard</description>
-      </entry>
-      <entry>
-        <term>IETF</term>
-        <description>Internet Engineering Task Force</description>
-      </entry>
-      <entry>
-        <term>IP</term>
-        <description>Internet Protocol</description>
-      </entry>
-      <entry>
-        <term>ISO</term>
-        <description>International Organization for Standardization</description>
-      </entry>
-      <entry>
-        <term>IT</term>
-        <description>Information Technology</description>
-      </entry>
-      <entry>
-        <term>ITSEF</term>
-        <description>Information Technology Security Evaluation Facility</description>
-      </entry>
-      <entry>
-        <term>NFC</term>
-        <description>Near Field Communication</description>
-      </entry>
-      <entry>
-        <term>NIAP</term>
-        <description>National Information Assurance Partnership</description>
-      </entry>
-      <entry>
-        <term>NIST</term>
-        <description>National Institute of Standards and Technology</description>
-      </entry>
-      <entry>
-        <term>OCSP</term>
-        <description>Online Certificate Status Protocol</description>
-      </entry>
-      <entry>
-        <term>OID</term>
-        <description>Object Identifier</description>
-      </entry>
-      <entry>
-        <term>OMB</term>
-        <description>Office of Management and Budget</description>
-      </entry>
-      <entry>
-        <term>OS</term>
-        <description>Operating System</description>
-      </entry>
-      <entry>
-        <term>PII</term>
-        <description>Personally Identifiable Information</description>
-      </entry>
-      <entry>
-        <term>PKI</term>
-        <description>Public Key Infrastructure</description>
-      </entry>
-      <entry>
-        <term>PP</term>
-        <description>Protection Profile</description>
-      </entry>
-      <entry>
-        <term>RBG</term>
-        <description>Random Bit Generator</description>
-      </entry>
-      <entry>
-        <term>RFC</term>
-        <description>Request for Comment</description>
-      </entry>
-      <entry>
-        <term>RNG</term>
-        <description>Random Number Generator</description>
-      </entry>
-      <entry>
-        <term>RNGVS</term>
-        <description>Random Number Generator Validation System</description>
-      </entry>
-      <entry>
-        <term>SAN</term>
-        <description>Subject Alternative Name</description>
-      </entry>
-      <entry>
-        <term>SAR</term>
-        <description>Security Assurance Requirement</description>
-      </entry>
-      <entry>
-        <term>SFR</term>
-        <description>Security Functional Requirement</description>
-      </entry>
-      <entry>
-        <term>SHA</term>
-        <description>Secure Hash Algorithm</description>
-      </entry>
-      <entry>
-        <term>S/MIME</term>
-        <description>Secure/Multi-purpose Internet Mail Extensions</description>
-      </entry>
-      <entry>
-        <term>SIP</term>
-        <description>Session Initiation Protocol</description>
-      </entry>
-      <entry>
-        <term>SWID</term>
-        <description>Software Identification</description>
-      </entry>
-      <entry>
-        <term>TLS</term>
-        <description>Transport Layer Security</description>
-      </entry>
-      <entry>
-        <term>URI</term>
-        <description>Uniform Resource Identifier</description>
-      </entry>
-      <entry>
-        <term>URL</term>
-        <description>Uniform Resource Locator</description>
-      </entry>
-      <entry>
-        <term>USB</term>
-        <description>Universal Serial Bus</description>
-      </entry>
-      <entry>
-        <term>XCCDF</term>
-        <description>eXtensible Configuration Checklist Description Format</description>
-      </entry>
-      <entry>
-        <term>XOR</term>
-        <description>Exclusive Or</description>
-      </entry>
-    </acronyms>
-  
+    <entry>
+      <term>AES</term>
+      <description>Advanced Encryption Standard</description>
+    </entry>
+    <entry>
+      <term>ANSI</term>
+      <description>American National Standards Institute</description>
+    </entry>
+    <entry>
+      <term>API</term>
+      <description>Application Programming Interface</description>
+    </entry>
+    <entry>
+      <term>ASLR</term>
+      <description>Address Space Layout Randomization</description>
+    </entry>
+    <entry>
+      <term>CESG</term>
+      <description>Communications-Electronics Security Group</description>
+    </entry>
+    <entry>
+      <term>CMC</term>
+      <description>Certificate Management over CMS</description>
+    </entry>
+    <entry>
+      <term>CMS</term>
+      <description>Cryptographic Message Syntax</description>
+    </entry>
+    <entry>
+      <term>CN</term>
+      <description>Common Names</description>
+    </entry>
+    <entry>
+      <term>CRL</term>
+      <description>Certificate Revocation List</description>
+    </entry>
+    <entry>
+      <term>CSA</term>
+      <description>Computer Security Act</description>
+    </entry>
+    <entry>
+      <term>DEP</term>
+      <description>Data Execution Prevention</description>
+    </entry>
+    <entry>
+      <term>DES</term>
+      <description>Data Encryption Standard</description>
+    </entry>
+    <entry>
+      <term>DHE</term>
+      <description>Diffie-Hellman Ephemeral</description>
+    </entry>
+    <entry>
+      <term>DNS</term>
+      <description>Domain Name System</description>
+    </entry>
+    <entry>
+      <term>DRBG</term>
+      <description>Deterministic Random Bit Generator</description>
+    </entry>
+    <entry>
+      <term>DSS</term>
+      <description>Digital Signature Standard</description>
+    </entry>
+    <entry>
+      <term>DT</term>
+      <description>Date/Time Vector</description>
+    </entry>
+    <entry>
+      <term>DTLS</term>
+      <description>Datagram Transport Layer Security</description>
+    </entry>
+    <entry>
+      <term>EAP</term>
+      <description>Extensible Authentication Protocol</description>
+    </entry>
+    <entry>
+      <term>ECDHE</term>
+      <description>Elliptic Curve Diffie-Hellman Ephemeral</description>
+    </entry>
+    <entry>
+      <term>ECDSA</term>
+      <description>Elliptic Curve Digital Signature Algorithm</description>
+    </entry>
+    <entry>
+      <term>EDR</term>
+      <description>Endpoint Detection and Response</description>
+    </entry>
+    <entry>
+      <term>EST</term>
+      <description>Enrollment over Secure Transport</description>
+    </entry>
+    <entry>
+      <term>FIPS</term>
+      <description>Federal Information Processing Standards</description>
+    </entry>
+    <entry>
+      <term>DSS</term>
+      <description>Digital Signature Standard</description>
+    </entry>
+    <entry>
+      <term>HMAC</term>
+      <description>Hash-based Message Authentication Code</description>
+    </entry>
+    <entry>
+      <term>HTTP</term>
+      <description>Hypertext Transfer Protocol</description>
+    </entry>
+    <entry>
+      <term>HTTPS</term>
+      <description>Hypertext Transfer Protocol Secure</description>
+    </entry>
+    <entry>
+      <term>DSS</term>
+      <description>Digital Signature Standard</description>
+    </entry>
+    <entry>
+      <term>IETF</term>
+      <description>Internet Engineering Task Force</description>
+    </entry>
+    <entry>
+      <term>IP</term>
+      <description>Internet Protocol</description>
+    </entry>
+    <entry>
+      <term>ISO</term>
+      <description>International Organization for Standardization</description>
+    </entry>
+    <entry>
+      <term>IT</term>
+      <description>Information Technology</description>
+    </entry>
+    <entry>
+      <term>ITSEF</term>
+      <description>Information Technology Security Evaluation Facility</description>
+    </entry>
+    <entry>
+      <term>NFC</term>
+      <description>Near Field Communication</description>
+    </entry>
+    <entry>
+      <term>NIAP</term>
+      <description>National Information Assurance Partnership</description>
+    </entry>
+    <entry>
+      <term>NIST</term>
+      <description>National Institute of Standards and Technology</description>
+    </entry>
+    <entry>
+      <term>OCSP</term>
+      <description>Online Certificate Status Protocol</description>
+    </entry>
+    <entry>
+      <term>OID</term>
+      <description>Object Identifier</description>
+    </entry>
+    <entry>
+      <term>OMB</term>
+      <description>Office of Management and Budget</description>
+    </entry>
+    <entry>
+      <term>OS</term>
+      <description>Operating System</description>
+    </entry>
+    <entry>
+      <term>PII</term>
+      <description>Personally Identifiable Information</description>
+    </entry>
+    <entry>
+      <term>PKI</term>
+      <description>Public Key Infrastructure</description>
+    </entry>
+    <entry>
+      <term>PP</term>
+      <description>Protection Profile</description>
+    </entry>
+    <entry>
+      <term>RBG</term>
+      <description>Random Bit Generator</description>
+    </entry>
+    <entry>
+      <term>RFC</term>
+      <description>Request for Comment</description>
+    </entry>
+    <entry>
+      <term>RNG</term>
+      <description>Random Number Generator</description>
+    </entry>
+    <entry>
+      <term>RNGVS</term>
+      <description>Random Number Generator Validation System</description>
+    </entry>
+    <entry>
+      <term>SAN</term>
+      <description>Subject Alternative Name</description>
+    </entry>
+    <entry>
+      <term>SAR</term>
+      <description>Security Assurance Requirement</description>
+    </entry>
+    <entry>
+      <term>SFR</term>
+      <description>Security Functional Requirement</description>
+    </entry>
+    <entry>
+      <term>SHA</term>
+      <description>Secure Hash Algorithm</description>
+    </entry>
+    <entry>
+      <term>S/MIME</term>
+      <description>Secure/Multi-purpose Internet Mail Extensions</description>
+    </entry>
+    <entry>
+      <term>SIP</term>
+      <description>Session Initiation Protocol</description>
+    </entry>
+    <entry>
+      <term>SWID</term>
+      <description>Software Identification</description>
+    </entry>
+    <entry>
+      <term>TLS</term>
+      <description>Transport Layer Security</description>
+    </entry>
+    <entry>
+      <term>URI</term>
+      <description>Uniform Resource Identifier</description>
+    </entry>
+    <entry>
+      <term>URL</term>
+      <description>Uniform Resource Locator</description>
+    </entry>
+    <entry>
+      <term>USB</term>
+      <description>Universal Serial Bus</description>
+    </entry>
+    <entry>
+      <term>XCCDF</term>
+      <description>eXtensible Configuration Checklist Description Format</description>
+    </entry>
+    <entry>
+      <term>XOR</term>
+      <description>Exclusive Or</description>
+    </entry>    
+  </acronyms>
   
 </Module>
