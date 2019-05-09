@@ -426,17 +426,17 @@
             <aactivity>
               <TSS>
               </TSS>
-<Guidance>
+              <Guidance>
               </Guidance>
-<Tests>
-            </Tests>
+              <Tests>
+              </Tests>
 </aactivity>
           </f-element>
           <f-element id="fau_alt_ext.1.2">
             <title>The <abbr linkend="EDR"/> shall provide a visualization of detected alerts of potentially
               unauthorized incidents, and shall include:
               <h:ol type="a">
-                <h:li>An initial incident severity
+                <h:li>An initial incident severity and
                 <selectables>
                   <selectable>assessment</selectable>
                   <selectable>categorization</selectable>
@@ -456,10 +456,15 @@
             <aactivity>
               <TSS>
               </TSS>
-<Guidance>
+              <Guidance>
+                The evaluator shall review the operational guidance to ensure that it
+                contains documentation on using the management portal to visualize and view alerts. 
               </Guidance>
-<Tests>
-            </Tests>
+              <Tests>
+                The evaluator shall review an alert on the management portal and verify that the alert contains a severity field 
+                and the field(s) selected from the requirement selection. The evaluator will open or view the alert and verify
+                that a timeline of events is available for review. The timeline shall show a progression of events over time.
+              </Tests>
 </aactivity>
           </f-element>
           <f-element id="fau_alt_ext.1.3">
