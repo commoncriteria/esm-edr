@@ -485,11 +485,21 @@
             <aactivity>
               <TSS>
               </TSS>
-<Guidance>
+              <Guidance>
+                The evaluator shall review the operational guidance to ensure that it
+                contains documentation on the products support for exporting alerts in 
+                standards based formats. 
               </Guidance>
-<Tests>
+              <Tests>
+                The evaluator shall pick an alert on the management portal and export the alert
+                in every format possible. The evaluator shall review the operational guidance and 
+                the selection from the requirement and verify that export options exist for all 
+                the declared formats in the selection. After exporting one alert for each possible format 
+                the evaluator shall review the file contents of the exported alert and verify it is
+                the correct format for the selected export option (for example, an export of 
+                the IODEF type must contain 'IODEF-Document' in the first element of the exported file).
             </Tests>
-</aactivity>
+            </aactivity>
             </f-element>
         </f-component>
 
