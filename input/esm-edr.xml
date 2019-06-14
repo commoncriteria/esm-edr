@@ -503,9 +503,9 @@
                 standards-based formats the EDR must provide for the export of selected alerts. </note>
               <aactivity>
                 <TSS> </TSS>
-                <Guidance> The evaluator shall review the operational guidance to ensure that it
-                  contains documentation on the products support for exporting alerts in standards
-                  based formats. </Guidance>
+                <Guidance>The evaluator shall review the operational guidance to ensure that it
+                  contains documentation on the products supported for exporting alerts in standards
+                  based formats.</Guidance>
                 <Tests> The evaluator shall pick an alert on the management portal and export the
                   alert in every format possible. The evaluator shall review the operational
                   guidance and the selection from the requirement and verify that export options
@@ -527,7 +527,7 @@
                 remediation actions initiated automatically or by authorized users, including: <h:ol
                   type="a">
                   <h:li>EDR management portal login activity</h:li>
-                  <h:li>Remediation Commands sent to a Host Agent, affected endpoint, or network
+                  <h:li>Remediation commands sent to a Host Agent, affected endpoint, or network
                     devices</h:li>
                   <h:li>EDR configuration changes</h:li>
                   <h:li><assignable>Other auditable events</assignable></h:li>
@@ -540,8 +540,18 @@
                 <Guidance> The evaluator shall check the administrative guide and ensure that it
                   lists all of the collectable types of endpoint event data. The evaluator shall
                   check to make sure that every endpoint event data type selected in the ST is
-                  included in the administrative guidance. </Guidance>
-                <Tests> </Tests>
+                  included in the administrative guidance.</Guidance>
+                <Tests>The evaluator shall perform the following tests:
+                  <testlist>
+                    <test>The evaluator shall login to the EDR management dashboard and verify that audit
+                    log data describing the activity is recorded.</test>
+                    <test>The evaluator shall issue a valid remediation command provided by the EDR to
+                    a Host Agent and verify that audit log data describing the activity is recorded.</test>
+                    <test>The evaluator shall change a non-destructive EDR configuration option within the EDR management
+                    dashboard, change it back to the original setting, and verify that the audit log data describing
+                    the activity is recorded.</test>
+                  </testlist>                
+                </Tests>
               </aactivity>
             </f-element>
           </f-component>
@@ -569,7 +579,20 @@
                   lists all of the collectable types of endpoint event data. The evaluator shall
                   check to make sure that every endpoint event data type selected in the ST is
                   included in the administrative guidance. </Guidance>
-                <Tests> </Tests>
+                <Tests>The evaluator shall perform the following tests:
+                  <testlist>
+                    <test>The evaluator shall verify the OS version, architecture, and IP address of
+                    a system managed by a Host Agent against the data reported to the EDR management
+                    dashboard.</test>
+                    <test>The evaluator shall login to a system managed by a Host Agent with two separate
+                    accounts and verify that the activity is accurately reported to the EDR management dashboard.</test>
+                    <test>The evaluator shall run a known user application provided on the platform OS and verify
+                    that subsequent process creation and module loading is accurately reported to the EDR management
+                    dashboard.</test>
+                    <test>The evaluator shall create a new non-empty document within persistent storage and verify
+                    that the activity is accurately reported to the EDR management dashboard.</test>
+                  </testlist>
+                </Tests>
               </aactivity>
             </f-element>
           </f-component>
@@ -591,8 +614,13 @@
               <note role="application"> </note>
               <aactivity>
                 <TSS> </TSS>
-                <Guidance> </Guidance>
-                <Tests> </Tests>
+                <Guidance>The evaluator shall review the operational guidance to ensure that it
+                  contains documentation on configuring any supported multi-factor authentication
+                  mechanisms.</Guidance>
+                <Tests>The evaluator shall create an account with a username and password, verifying
+                that login authentication is case-sensitive. If additional factors are provided, each
+                factor shall be tested for login access with strictly unanimous authentication for those
+                enabled.</Tests>
               </aactivity>
             </f-element>
           </f-component>
@@ -635,8 +663,18 @@
                 using the assignment. </note>
               <aactivity>
                 <TSS> </TSS>
-                <Guidance> </Guidance>
-                <Tests> </Tests>
+                <Guidance>The evaluator shall review the operational guidance to ensure that it
+                  contains documentation on default password policy.</Guidance>
+                <Tests>The evaluator shall perform the following tests:
+                  <testlist>
+                    <test>The evaluator shall attempt to modify a user's password to be less than 14 characters
+                    in length.</test>
+                    <test> The evaluator shall verify that password composition rules present in operational guidance
+                      are enforced. While the evaluator is not required (nor is it feasible) to test all possible
+                      composition rules, the evaluator shall ensure that all characters, and rule characteristics
+                      listed in the requirement are supported.</test>
+                  </testlist>
+                </Tests>
               </aactivity>
             </f-element>
           </f-component>
