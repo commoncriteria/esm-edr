@@ -705,56 +705,70 @@
                   describes the roles and the powers granted to and limitations of the role. </TSS>
                 <Guidance> The evaluator shall review the operational guidance to ensure that it
                   contains instructions for administering the <abbr linkend="EDR"/> and which user
-                  roles are supported. <Tests>
+                  roles are supported and which permissions each default role has.</Guidance>
+                  <Tests>
                     <testlist>
-                      <test> In the course of performing the testing activities for the evaluation,
+                      <test>The evaluator shall verify that the roles of administrator, SOC analyst, and
+                        read-only user are available by default, creating individual accounts with each
+                        role assigned.</test>
+                      <test>The evaluator shall verify that non-administrator roles are not able to modify
+                      the roles of their own account or those of others.</test>
+                      <test>In the course of performing the testing activities for the evaluation,
                         the evaluator shall use all supported interfaces, although it is not
                         necessary to repeat each test involving an administrative action with each
                         interface. The evaluator shall ensure, however, that each supported method
                         of administering the <abbr linkend="EDR"/> that conforms to the requirements
                         of this <abbr linkend="PP"/> be tested; for instance, if the <abbr
-                          linkend="EDR"/> can be administered through a local hardware interface or
+                        linkend="EDR"/> can be administered through a local hardware interface or
                         TLS/HTTPS then both methods of administration must be exercised during the
-                        evaluation team’s test activities. </test>
+                        evaluation team’s test activities.</test>
                     </testlist>
                   </Tests>
-                </Guidance>
               </aactivity>
             </f-element>
           </f-component>
 
           <f-component id="FMT_SMF.1" name="Specification of Management Functions">
-            <consistency-rationale> This SFR defines a specific set of management functions for an
-              EDR. It does not impact the AppSoftware PP functionality. </consistency-rationale>
+            <consistency-rationale>This SFR defines a specific set of management functions for an
+              EDR. It does not impact the AppSoftware PP functionality.</consistency-rationale>
             <f-element id="FMT_SMF.1.1">
               <title>The <selectables>
                   <selectable>EDR</selectable>
                   <selectable>EDR platform</selectable>
                 </selectables> shall be capable of configuring the following functions that control
-                behavior of the <abbr linkend="EDR"/> Host Agent: <h:br/>
+                behavior of the <abbr linkend="EDR"/>Host Agent:<h:br/>
                 <management-function-set default="O">
                   <manager id="a">Administrator</manager>
                   <manager id="s">SOC Analyst</manager>
                   <manager id="u">User</manager>
                   <management-function>
-                    <text> Configure the time frame for sending host agent data to the EDR
+                    <text>Configure the time frame for sending Host Agent data to the EDR
                         <assignable>list of configurable time frames</assignable>
                     </text>
                     <M ref="a"/><O ref="s"/><_ ref="u"/>
                   </management-function>
                   <management-function>
-                    <text> Assign a label or tag to categorize or group individual endpoint systems </text>
+                    <text>Assign a label or tag to categorize or group individual endpoint systems </text>
                     <M ref="a"/><O ref="s"/><_ ref="u"/>
                   </management-function>
                 </management-function-set>
               </title>
-              <note role="application"> This requirement captures all the configuration
+              <note role="application">This requirement captures all the configuration
                 functionality the <abbr linkend="TSF"/> provides the administrator to configure the
                   <abbr linkend="EDR"/> Host Agent. </note>
               <aactivity>
                 <TSS> </TSS>
-                <Guidance> </Guidance>
-                <Tests> </Tests>
+                <Guidance>The evaluator shall review the operational guidance to verify that the EDR has
+                documented capabilities to perform the management functions.</Guidance>
+                <Tests>The evaluator shall perform the below tests:
+                 <testlist>
+                   <test>The evaluator shall modify the time frame for sending Host Agent data to the EDR
+                   and verify that an affected Host Agent is sending data at the intended interval.</test>
+                   <test>The evaluator shall tag or categorize a group of individual endpoint systems and
+                   verify that the tag or categorization persists within the EDR management dashboard for
+                   other users.</test>
+                 </testlist>
+                </Tests>
               </aactivity>
             </f-element>
             <f-element id="FMT_SMF.1.2">
@@ -765,7 +779,7 @@
                   <manager id="s">SOC Analyst</manager>
                   <manager id="u">User</manager>
                   <management-function>
-                    <text> Configure the amount of time to retain collected EDR data
+                    <text>Configure the amount of time to retain collected EDR data
                         <assignable>time frame to retain data</assignable>
                     </text>
                     <M ref="a"/><O ref="s"/><_ ref="u"/>
@@ -792,8 +806,23 @@
                 EDR. </note>
               <aactivity>
                 <TSS> </TSS>
-                <Guidance> </Guidance>
-                <Tests> </Tests>
+                <Guidance>The evaluator shall review the operational guidance to verify that the EDR has
+                  documented capabilities to perform the management functions.</Guidance>
+                <Tests>The evaluator shall perform the below tests:
+                  <testlist>
+                    <test>The evaluator shall configure the amount of time to retain collected EDR data
+                    to a time frame in which existing data will be made unavailable and verify that the
+                    data is no longer accessible through the EDR management dashboard.</test>
+                    <test>The evaluator shall logically or physically inhibit the network communications
+                    between a managed endpoint system and the EDR server and verify that the inhibited or halted
+                    connectivity status of the Host Agent is recognized on the EDR management dashboard.</test>
+                    <test>The evaluator shall use a file that triggers an incident alert to test the suppression
+                    of such alerts for that specific file. Upon confirming the creation of incident alerts on access
+                    to the file, the evaluator shall configure suppression of the alert for each available
+                    suppression blacklist file or metadata characteristic and verify that incident alerts are
+                    categorized as suppressed, hidden, unavailable, or never created.</test>
+                  </testlist>
+                </Tests>
               </aactivity>
             </f-element>
           </f-component>
@@ -826,8 +855,20 @@
                 the <abbr linkend="EDR"/> provides the SOC Analyst and optionally the Administrator. </note>
               <aactivity>
                 <TSS> </TSS>
-                <Guidance> </Guidance>
-                <Tests> </Tests>
+                <Guidance>The evaluator shall review the operational guidance to verify that the EDR has
+                  documented capabilities to perform the management functions.</Guidance>
+                <Tests>The evaluator shall perform the below tests:
+                  <testlist>
+                    <test>The evaluator shall logically quarantine a managed endpoint system from the
+                    network and verify that the system is unable to access network addresses or resources
+                    outside of a whitelist.</test>
+                    <test>The evaluator shall run an executable on a managed endpoint system and terminate
+                    its process from the EDR management dashboard before verifying that the process is no
+                    longer running on the system.</test>
+                    <test>The evaluator shall place use a file that triggers and incident alert to do so
+                    before retrieving the content of the file from the EDR management dashboard.</test>
+                  </testlist>
+                </Tests>
               </aactivity>
             </f-element>
           </f-component>
