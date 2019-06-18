@@ -604,11 +604,10 @@
               <note role="application">The intent of this requirement is to specify the minimum set
                 of endpoint data that the EDR must be capable of collecting. </note>
               <aactivity>
-                <TSS>There are no TSS activities for this requirement.</TSS>
-                <Guidance> The evaluator shall check the administrative guide and ensure that it
-                  lists all of the collectable types of endpoint event data. The evaluator shall
-                  check to make sure that every endpoint event data type selected in the ST is
-                  included in the administrative guidance. </Guidance>
+                <TSS>The evaluator shall verify that all endpoint event data types selected in the ST is
+                  listed in the operational guidance.</TSS>
+                <Guidance>The evaluator shall review the operational guidance and ensure that it
+                  lists all of the collectable types of endpoint event data.</Guidance>
                 <Tests>The evaluator shall perform the following tests:
                   <testlist>
                     <test>The evaluator shall verify the OS version, architecture, and IP address of
@@ -650,7 +649,8 @@
                 <Tests>The evaluator shall create an account with a username and password, verifying
                 that login authentication is case-sensitive. If additional factors are provided, each
                 factor shall be tested for login access with strictly unanimous authentication for those
-                enabled.</Tests>
+                enabled. The evaluator shall verify that login access is granted for correct credentials
+                and denied in cases of incorrect credentials across available factors.</Tests>
               </aactivity>
             </f-element>
           </f-component>
@@ -766,7 +766,7 @@
                   <selectable>EDR</selectable>
                   <selectable>EDR platform</selectable>
                 </selectables> shall be capable of configuring the following functions that control
-                behavior of the <abbr linkend="EDR"/>Host Agent:<h:br/>
+                behavior of the Host Agent:<h:br/>
                 <management-function-set default="O">
                   <manager id="a">Administrator</manager>
                   <manager id="s">SOC Analyst</manager>
