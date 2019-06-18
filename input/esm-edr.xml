@@ -485,7 +485,7 @@
                   </testlist>
                   
                   The evaluator shall follow guidance to unenroll a Host Agent from the
-                  EDr and verify that the unenrollment action is recorded in an auditable and
+                  EDR and verify that the unenrollment action is recorded in an auditable and
                   timestamped activity log. </Tests>
               </aactivity>
             </f-element>
