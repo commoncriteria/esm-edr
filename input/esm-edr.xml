@@ -33,7 +33,7 @@
       unauthorized activity on endpoints and to enable threat hunting and other incident response
       actions to remediate malicious behaviors. These requirements cover basic security
       characteristics and behaviors for EDR products that operate in either a cloud or on-premises
-      scenerio. The platform on which the EDR runs may be a physical or virtual Operating System
+      scenario. The platform on which the EDR runs may be a physical or virtual Operating System
       (OS) on-premises or in a cloud environment. <h:br/>
       <h:br/> EDR products rely on additional software running on the endpoint, called the Host
       Agent, to communicate commands or policy changes and to receive endpoint host data. Security
@@ -431,7 +431,7 @@
                 of management dashboard alert capabilities the <abbr linkend="EDR"/> must be capable
                 of displaying to an authorized user. </note>
               <aactivity>
-                <TSS> </TSS>
+                <TSS>There are no TSS activities for this requirement.</TSS>
                 <Guidance> The evaluator shall review operational guidance to ensure that it
                   contains documentation on enrolling and unenrolling Host Agents from the
                   EDR.<h:br/><h:br/> The evaluator shall review operational guidance to identify a
@@ -508,7 +508,7 @@
                 data to an authorized user on the management dashboard. The visualization is not
                 required to be interactive. </note>
               <aactivity>
-                <TSS> </TSS>
+                <TSS>There are no TSS activities for this requirement.</TSS>
                 <Guidance> The evaluator shall review the operational guidance to ensure that it
                   contains documentation on using the management portal to visualize and view
                   alerts. </Guidance>
@@ -532,7 +532,7 @@
               <note role="application"> The intent of this requirement is to specify a selection of
                 standards-based formats the EDR must provide for the export of selected alerts. </note>
               <aactivity>
-                <TSS> </TSS>
+                <TSS>There are no TSS activities for this requirement.</TSS>
                 <Guidance>The evaluator shall review the operational guidance to ensure that it
                   contains documentation on the products supported for exporting alerts in standards
                   based formats.</Guidance>
@@ -548,11 +548,11 @@
             </f-element>
           </f-component>
 
-          <f-component id="FAU_DAS_ext.1" name="Management Dashboard Audit">
+          <f-component id="fau_das_ext.1" name="Management Dashboard Audit">
             <consistency-rationale> This SFR defines the minimum event data that the EDR Server must
               record about authorized management portal activity. It does not impact the AppSoftware
               PP functionality. </consistency-rationale>
-            <f-element id="FAU_DAS_ext.1.1">
+            <f-element id="fau_das_ext.1.1">
               <title>The <abbr linkend="EDR"/> shall generate audit log data for investigation and
                 remediation actions initiated automatically or by authorized users, including: <h:ol
                   type="a">
@@ -566,7 +566,7 @@
               <note role="application">The intent of this requirement is to specify the minimum set
                 of audit records collected about actions on the management dashboard. </note>
               <aactivity>
-                <TSS> </TSS>
+                <TSS>There are no TSS activities for this requirement.</TSS>
                 <Guidance> The evaluator shall check the administrative guide and ensure that it
                   lists all of the collectable types of endpoint event data. The evaluator shall
                   check to make sure that every endpoint event data type selected in the ST is
@@ -604,7 +604,7 @@
               <note role="application">The intent of this requirement is to specify the minimum set
                 of endpoint data that the EDR must be capable of collecting. </note>
               <aactivity>
-                <TSS> </TSS>
+                <TSS>There are no TSS activities for this requirement.</TSS>
                 <Guidance> The evaluator shall check the administrative guide and ensure that it
                   lists all of the collectable types of endpoint event data. The evaluator shall
                   check to make sure that every endpoint event data type selected in the ST is
@@ -643,7 +643,7 @@
                 </selectables> to support logins to any management portal, dashboard, or API. </title>
               <note role="application"> </note>
               <aactivity>
-                <TSS> </TSS>
+                <TSS>There are no TSS activities for this requirement.</TSS>
                 <Guidance>The evaluator shall review the operational guidance to ensure that it
                   contains documentation on configuring any supported multi-factor authentication
                   mechanisms.</Guidance>
