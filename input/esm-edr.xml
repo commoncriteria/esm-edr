@@ -47,7 +47,7 @@
       <h:li>Endpoints communicate with an on-premises EDR in a hub and spoke network model.</h:li>
       <h:li>Endpoints communicate with other endpoints, ultimately being orchestrated by an
         on-premises EDR in a peer-to-peer network model.</h:li>
-      <figure entity="images/edr_archi.jpg" title="EDR Architectures Overview" id="toe"/>
+      <figure entity="images/edr_archi.png" title="EDR Architectures Overview" id="toe"/>
     </section>
     <section title="Terms" id="glossary">
       <subsection title="Common Criteria Terms">
@@ -186,7 +186,7 @@
         are not covered in this Module, however it is expected that an EDR System will evaluate once
         against this ESM EDR Module for the EDR and at least once more against the <cite
           linkend="bibHAGT"/> Module with its base <cite linkend="bibAppPP"/> PP. <figure
-          entity="images/edr_overview.jpg" title="EDR Overview" id="toe"/>
+          entity="images/edr_overview.png" title="EDR Overview" id="toe"/>
       </subsection>
       <subsection title="TOE Platform" id="TOEplatform"> The TOE platform, which consists of the
         Operating System or Cloud platform on which the EDR software executes and is outside the
