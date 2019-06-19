@@ -835,7 +835,7 @@
                 functionality the <abbr linkend="TSF"/> provides the administrator to configure the
                 EDR. </note>
               <aactivity>
-                <TSS> </TSS>
+                <TSS>There are no TSS activities for this requirement.</TSS>
                 <Guidance>The evaluator shall review the operational guidance to verify that the EDR has
                   documented capabilities to perform the management functions.</Guidance>
                 <Tests>The evaluator shall perform the below tests:
@@ -884,7 +884,7 @@
               <note role="application"> This requirement captures all the remediation functionality
                 the <abbr linkend="EDR"/> provides the SOC Analyst and optionally the Administrator. </note>
               <aactivity>
-                <TSS> </TSS>
+                <TSS>There are no TSS activities for this requirement.</TSS>
                 <Guidance>The evaluator shall review the operational guidance to verify that the EDR has
                   documented capabilities to perform the management functions.</Guidance>
                 <Tests>The evaluator shall perform the below tests:
