@@ -257,6 +257,9 @@
     <section title="Threats" id="threats">
       <threats>
         <threat id="T.NETWORK_ATTACK">
+          <description>An attacker is positioned on a communications channel or elsewhere on the network infrastructure. 
+            Attackers may engage in communications with the application software or alter communications between the 
+            application software and other endpoints in order to compromise it.</description>
           <objective-refer ref="O.PROTECTED_TRANSIT">
             <rationale>The threat T.NETWORK_ATTACK is countered by O.PROTECTED_TRANSIT as this
               provides for confidentiality of transmitted data between the EDR and enrolled Host
@@ -264,6 +267,8 @@
           </objective-refer>
         </threat>
         <threat id="T.NETWORK_EAVESDROP">
+          <description>An attacker is positioned on a communications channel or elsewhere on the network infrastructure. 
+            Attackers may monitor and gain access to data exchanged between the application and other endpoints.</description>
           <objective-refer ref="O.PROTECTED_TRANSIT">
             <rationale>The threat T.NETWORK_EAVESDROP is countered by O.PROTECTED_TRANSIT as this
               provides for confidentiality of transmitted data between the EDR and enrolled Host
@@ -271,6 +276,7 @@
           </objective-refer>
         </threat>
         <threat id="T.PHYSICAL_ACCESS">
+          <description>An attacker may try to access sensitive data at rest.</description>
           <objective-refer ref="O.ACCOUNTABILITY">
             <rationale>The threat T.PHYSICAL_ACCESS is countered by O.ACCOUNTABILITY as this
             provides the capability to log attempts by unauthorized personnel to access
