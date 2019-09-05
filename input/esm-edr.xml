@@ -528,8 +528,8 @@
               </aactivity>
             </f-element>
             <f-element id="fau_alt_ext.1.3">
-              <title>The <abbr linkend="EDR"/> shall provide a data export capability <h:b>for
-                  selected alerts</h:b> with a specified standards-based format of <selectables
+              <title>The <abbr linkend="EDR"/> shall provide a data export capability for
+                  selected alerts with a specified standards-based format of <selectables
                   linebreak="yes">
                   <selectable>Structured Threat Information eXpression (STIX)</selectable>
                   <selectable>Cyber Observable eXpression (CybOX)</selectable>
