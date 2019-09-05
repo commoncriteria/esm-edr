@@ -301,7 +301,7 @@
               provides for confidentiality of transmitted data.</rationale>
           </objective-refer>
           <objective-refer ref="O.PROTECTED_STORAGE">
-            <rationale>The threat T.CREDENTIAL_REUSE is countered by O.PROTECTED_STORAGE as this
+            <rationale>The threat T.CREDENTIAL_REUSE is countered by O.PROTECTED_STORAGE (from AppPP) as this
               provides for confidentiality of locally stored credentials.</rationale>
           </objective-refer>
           <objective-refer ref="O.PROTECTED_MEMORY">
