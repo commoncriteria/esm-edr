@@ -429,13 +429,15 @@
               <title>The <abbr linkend="EDR"/> shall alert authorized users on a management portal
                 in the event of any of the following: <h:ol type="a">
                   <h:li>Change in Host Agent enrollment status</h:li>
-                  <h:li>Detection of potentially unauthorized activity on enrolled endpoints (for
-                    example; anomalous activity, escalation of privileges, lateral movement)</h:li>
+                  <h:li>Detection of potentially unauthorized activity on enrolled endpoints</h:li>
                 </h:ol>
               </title>
               <note role="application"> The intent of this requirement is to specify the minimum set
                 of management dashboard alert capabilities the <abbr linkend="EDR"/> must be capable
-                of displaying to an authorized user. </note>
+                of displaying to an authorized user. <h:br/><h:br/>
+                Examples of Detection of potentially unauthorized activity on enrolled endpoints include;
+                anomalous activity, escalation of privileges, and lateral movemen.
+              </note>
               <aactivity>
                 <TSS>There are no TSS activities for this requirement.</TSS>
                 <Guidance> The evaluator shall review operational guidance to ensure that it
