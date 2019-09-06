@@ -728,7 +728,8 @@
                   <selectable>EDR</selectable>
                   <selectable>EDR platform</selectable>
                 </selectables> shall maintain the roles of administrator, SOC analyst, read-only
-                user, and <selectables><selectable><<assignable>additional authorized roles</assignable>.</selectable><selectable>no other roles</selectable></selectables> </title>
+                user, and <selectables><selectable><assignable>additional authorized roles</assignable>
+                </selectable><selectable>no other roles</selectable></selectables>.</title>
               <note role="application">The <abbr linkend="EDR"/> will be configured, maintained, and
                 used by different user roles. At a minimum, one administrative role shall be
                 supported, one SOC analyst who can issue remediation commands to host agents, and
