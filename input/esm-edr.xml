@@ -784,7 +784,7 @@ The evaluator shall examine the TSS to ensure that it describes all events that 
                 <management-function-set default="O">
                   <manager id="a">Administrator</manager>
                   <manager id="s">SOC Analyst</manager>
-                  <manager id="u">User</manager>
+                  <manager id="u">Read-Only User</manager>
                   <management-function>
                     <text>Configure the time frame for sending Host Agent data to the EDR
                         <assignable>list of configurable time frames</assignable>
@@ -821,7 +821,7 @@ The evaluator shall examine the TSS to ensure that it describes all events that 
                 <management-function-set default="O">
                   <manager id="a">Administrator</manager>
                   <manager id="s">SOC Analyst</manager>
-                  <manager id="u">User</manager>
+                  <manager id="u">Read-Only User</manager>
                   <management-function>
                     <text>Configure the amount of time to retain collected EDR data
                         <assignable>time frame to retain data</assignable>
