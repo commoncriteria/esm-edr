@@ -546,7 +546,7 @@ The evaluator shall examine the TSS to ensure that it describes how visualizatio
               <note role="application"> The intent of this requirement is to specify a selection of
                 standards-based formats the EDR must provide for the export of selected alerts. </note>
               <aactivity>
-                <TSS>TSS
+                <TSS>
 The evaluator shall examine the TSS to ensure that it describes what formats are supported.</TSS>
                 <Guidance>The evaluator shall review the operational guidance to ensure that it
                   contains documentation on the products supported for exporting alerts in standards
