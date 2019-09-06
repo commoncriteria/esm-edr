@@ -619,8 +619,7 @@ The evaluator shall examine the TSS to ensure that it describes all events that 
               <note role="application">The intent of this requirement is to specify the minimum set
                 of endpoint data that the EDR must be capable of collecting. </note>
               <aactivity>
-                <TSS>The evaluator shall verify that all endpoint event data types selected in the ST is
-                  listed in the operational guidance.</TSS>
+                <TSS>The evaluator shall verify that all supported endpoint event data types are described.</TSS>
                 <Guidance>The evaluator shall review the operational guidance and ensure that it
                   lists all of the collectable types of endpoint event data.</Guidance>
                 <Tests>The evaluator shall perform the following tests:
