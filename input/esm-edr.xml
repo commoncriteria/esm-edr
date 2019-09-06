@@ -771,7 +771,7 @@
               <title>The <selectables>
                   <selectable>EDR</selectable>
                   <selectable>EDR platform</selectable>
-                </selectables> shall be capable of configuring the following functions that control
+                </selectables> shall be capable of performing the following functions that control
                 behavior of the Host Agent:<h:br/>
                 <management-function-set default="O">
                   <manager id="a">Administrator</manager>
