@@ -1136,14 +1136,14 @@ The evaluator shall examine the TSS to ensure that it describes all events that 
           <consistency-rationale>This SFR defines protections for the integrity of commands sent to
             the Host Agent. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
           <f-element id="FMT_TRM_EXT.1.1">
-            <title>The <abbr linkend="EDR"/> shall digitally signed commands or policies sent to the
+            <title>The <abbr linkend="EDR"/> shall digitally sign commands and policies sent to the
               Host Agent. </title>
             <note role="application">The intent of this requirement is to cryptographically tie a
               command sent to a Host Agent to the enterprise that mandated the command, not to
               protect the commands in transit (as they are already protected by <linkref
                 linkend="FTP_ITC.1"/>). </note>
             <aactivity>
-              <TSS></TSS>
+              <TSS>The evaluator shall check to ensure that the TSS describes how all commands and policies are signed.</TSS>
               <Guidance>The evaluator shall review the operational guidance and ensure that the
                 <abbr linkend="EDR"/> implements all documented forms of remediation.
               </Guidance>
