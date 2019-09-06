@@ -439,18 +439,23 @@
                 anomalous activity, escalation of privileges, and lateral movemen.
               </note>
               <aactivity>
-                <TSS>There are no TSS activities for this requirement.</TSS>
+                <TSS>The evaluator shall examine the TSS to ensure that it describes how alerts for changes in Host Agent
+                  enrollment status and potentially unauthorized activities are detected and displayed.
+                </TSS>
                 <Guidance> The evaluator shall review operational guidance to ensure that it
                   contains documentation on enrolling and unenrolling Host Agents from the
                   EDR.<h:br/><h:br/> The evaluator shall review operational guidance to identify a
                   list of unauthorized activity types categorized or labeled by the EDR upon
-                  detection. </Guidance>
+                  detection. <h:br/><h:br/> 
+                The evaluator shall ensure guidance includes any needed configuration information for displaying alerts 
+                  in relation to for changes in Host Agent enrollment status and potentially unauthorized activities.
+                </Guidance>
                 <Tests>The evaluator shall perform the following tests:<h:br/><h:br/> The evaluator
                   shall follow guidance to enroll a Host Agent to the EDR and verify that the
                   enrollment action is recorded in an auditable and timestamped activity log.<h:br/><h:br/>
                   <h:b>For Windows,</h:b> the evaluator shall test the EDR's ability to detect
-                  anomalous activity by performing the following sub-tests enrolled Host Agent's
-                  system based on the platform of the system, verifying for each that corresponding
+                  anomalous activity by performing the following sub-tests on an enrolled Host Agent's
+                  system for each platform list that is supported, verifying for each that corresponding
                   alerts were generated in the management dashboard:<h:br/>
                   <testlist>
                     <test>The evaluator shall open a Windows command prompt as a user and run the
