@@ -658,8 +658,8 @@ The evaluator shall examine the TSS to ensure that it describes all events that 
               <aactivity>
                 <TSS>There are no TSS activities for this requirement.</TSS>
                 <Guidance>The evaluator shall review the operational guidance to ensure that it
-                  contains documentation on configuring any supported multi-factor authentication
-                  mechanisms.</Guidance>
+                  contains documentation on configuring any supported authentication mechanisms and any support for 
+                  multi-factor authentication.</Guidance>
                 <Tests>The evaluator shall create an account with a username and password, verifying
                 that login authentication is case-sensitive. If additional factors are provided, each
                 factor shall be tested for login access with strictly unanimous authentication for those
