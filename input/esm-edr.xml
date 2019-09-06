@@ -764,10 +764,10 @@
             </f-element>
           </f-component>
 
-          <f-component id="FMT_SMF_EXT.1" name="Specification of Management Functions">
+          <f-component id="FMT_SMF.1(1)" name="Specification of Management Functions">
             <consistency-rationale>This SFR defines a specific set of management functions for an
               EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
-            <f-element id="FMT_SMF_EXT.1.1">
+            <f-element id="FMT_SMF.1.1(1)">
               <title>The <selectables>
                   <selectable>EDR</selectable>
                   <selectable>EDR platform</selectable>
@@ -807,7 +807,7 @@
                 </Tests>
               </aactivity>
             </f-element>
-            <f-element id="FMT_SMF_EXT.1.2">
+            <f-element id="FMT_SMF.1.2(1)">
               <title> The <abbr linkend="EDR"/> shall be capable of performing the following
                 management functions: <h:br/>
                 <management-function-set default="O">
