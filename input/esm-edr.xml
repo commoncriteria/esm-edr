@@ -898,7 +898,8 @@ The evaluator shall examine the TSS to ensure that it describes all events that 
               <note role="application"> This requirement captures all the remediation functionality
                 the <abbr linkend="EDR"/> provides the SOC Analyst and optionally the Administrator. </note>
               <aactivity>
-                <TSS>There are no TSS activities for this requirement.</TSS>
+                <TSS>The evaluator shall check to ensure that the TSS describes what roles can perform what 
+                  remediation actions and how each remediation action is performed.</TSS>
                 <Guidance>The evaluator shall review the operational guidance to verify that the EDR has
                   documented capabilities to perform the management functions.</Guidance>
                 <Tests>The evaluator shall perform the below tests:
