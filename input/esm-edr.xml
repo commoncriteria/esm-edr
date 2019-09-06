@@ -728,14 +728,13 @@
                   <selectable>EDR</selectable>
                   <selectable>EDR platform</selectable>
                 </selectables> shall maintain the roles of administrator, SOC analyst, read-only
-                user, and <assignable>additional authorized roles</assignable>. </title>
+                user, and <selectables><selectable><<assignable>additional authorized roles</assignable>.</selectable><selectable>no other roles</selectable></selectables> </title>
               <note role="application">The <abbr linkend="EDR"/> will be configured, maintained, and
                 used by different user roles. At a minimum, one administrative role shall be
                 supported, one SOC analyst who can issue remediation commands to host agents, and
                 one read-only user who can only view data. <h:br/> The user accounts need not be
                 named literally, but they must have the implication of such roles. The assignment is
-                used by the <abbr linkend="ST"/> author to list any other roles that are supported.
-                If no additional roles are supported, then “no additional roles” is stated. </note>
+                used by the <abbr linkend="ST"/> author to list any other roles that are supported.</note>
               <aactivity>
 
                 <TSS> The evaluator shall examine the <abbr linkend="TSS"/> to verify that it
