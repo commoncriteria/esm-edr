@@ -1278,7 +1278,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
           <management>No specific management functions are identified.</management>
           <audit>There are no auditable events foreseen.</audit>
           <dependencies>No dependencies.</dependencies>
-          <!-- SME: note that FCS_COP.1 could be considered for a dependency here but was not included since an EDR TOE may rely on the platform to provide the digital signature service. -->
+          <!-- SME: note that FCS_COP.1 could also be considered for a dependency here but was not included since an EDR TOE may rely on the platform to provide the digital signature service. -->
           
           <f-element id="FMT_TRM_EXT.1.1">
             <title>The <abbr linkend="EDR"/> shall digitally sign commands and policies sent to the
