@@ -324,7 +324,7 @@
           </objective-refer>
         </assumption>
         
-        <assumption id="PLATFORM">
+        <assumption id="A.PLATFORM">
           <description>The TOE relies upon a trustworthy computing platform for its execution. 
             This includes the underlying platform and whatever runtime environment it provides to the TOE.</description>
           <objective-refer ref="OE.PLATFORM">
