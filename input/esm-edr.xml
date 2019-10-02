@@ -301,7 +301,7 @@
               provides for confidentiality of transmitted data.</rationale>
           </objective-refer>
           <objective-refer ref="O.PROTECTED_STORAGE">
-            <rationale>The threat T.CREDENTIAL_REUSE is countered by O.PROTECTED_STORAGE (from AppPP) as this
+            <rationale>The threat T.CREDENTIAL_REUSE is countered by O.PROTECTED_STORAGE (from <cite linkend="bibAppPP"/>) as this
               provides for confidentiality of locally stored credentials.</rationale>
           </objective-refer>
           <!-- 
@@ -333,7 +333,7 @@
           </objective-refer>
         </assumption>
         
-        <assumption id="A.PROPER_USERY">
+        <assumption id="A.PROPER_USER">
           <description>The user of the application software is not willfully negligent or hostile, 
             and uses the software in compliance with the applied enterprise security policy.</description>
           <objective-refer ref="OE.PROPER_USER">
@@ -466,7 +466,7 @@
       <con-mod id="T.NETWORK_EAVESDROP">This threat is the same as the T.NETWORK_EAVESDROP threat defined in the Base-PP.
         It is consistent with the Base-PP because it is applying the same threat to the network functionality that is specific to EDR applications.</con-mod>
       <con-mod id="T.PHYSICAL_ACCESS">This threat is the same as the T.PHYSICAL_ACCESS threat defined in the Base-PP.
-        It is consistent with the Base-PP because the entire TOE exists in the same physical location(s).</con-mod>
+        It is consistent with the Base-PP because the entire TOE exists in the same physical location.</con-mod>
       <con-mod id="T.MISCONFIGURATION">This threat applies to management functionality that is introduced in this PP-Module and does not affect the functionality described by the Base-PP.</con-mod>
       <con-mod id="T.CREDENTIAL_REUSE">This threat applies to authentication functionality that is introduced in this PP-Module and does not affect the functionality described by the Base-PP.</con-mod>
 
@@ -689,7 +689,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
           </ext-comp-def>
           
           <f-component id="fau_das_ext.1" name="Management Dashboard Audit">
-            <consistency-rationale> This SFR defines the minimum event data that the EDR Server must
+            <consistency-rationale> This SFR defines the minimum event data that the EDR server must
               record about authorized management portal activity. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
             
             <comp-lev> defines audiable events for the use of the EDR management functionality.</comp-lev>
@@ -738,12 +738,12 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
 
   
           
-          <ext-comp-def fam-id="FAU_PWD_EXT" title="Password Authentication">
-            <mod-def>Components in this family define requirements for the composition of password authentication factors.</mod-def>
+          <ext-comp-def fam-id="FIA_PWD_EXT" title="Password Authentication">
+            <mod-def>Components in this family define requirements for password authentication criteria.</mod-def>
           </ext-comp-def>
 
           <f-component id="fia_pwd_ext.1" name="Password Authentication">
-            <consistency-rationale> This SFR defines specific authentication functions for
+            <consistency-rationale> This SFR defines specific authentication criteria for
               passwords. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
             
             <comp-lev> defines the length and character set requirements for password authentication factors.</comp-lev>
@@ -993,10 +993,10 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
           
           
           <ext-comp-def fam-id="FMT_SRF_EXT" title="Specification of Remediation Functions">
-            <mod-def>Components in this family define requirements for functions that an EDR can perform to affect the behavior of an endpoint system.</mod-def>
+            <mod-def>Components in this family define requirements for remediation functions that an EDR can perform to affect the behavior of an endpoint system.</mod-def>
           </ext-comp-def>
 
-          <f-component id="FMT_SRF_EXT.1" name="Specification of Remediation Functions">
+          <f-component id="fmt_srf_ext.1" name="Specification of Remediation Functions">
             <consistency-rationale> This SFR defines a specific set of remediation functions for an
               EDR. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
             
@@ -1119,7 +1119,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
           
           
           <f-component id="FTP_ITC.1" name="Trusted Channel (Host Agent)">
-            <consistency-rationale> This SFR defines a specific set of functions for secure
+            <consistency-rationale> This SFR defines a specific set of functions for logically distinct secure
               communication with a Host Agent. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
             <f-element id="FTP_ITC.1.1">
               <title>The <selectables>
@@ -1266,10 +1266,10 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
       <subsection title="Security Management (FMT)" id="fmt">
         
         <ext-comp-def fam-id="FMT_TRM_EXT" title="Trusted Remediation Functions">
-          <mod-def>Components in this family define how the TOE can assert the authenticity of the actions it requests from Host Agents.</mod-def>
+          <mod-def>Components in this family define how the TOE can assert the authenticity of the remediation actions it requests from Host Agents.</mod-def>
         </ext-comp-def>
 
-        <f-component id="FMT_TRM_EXT.1" name="Trusted Remediation Functions">
+        <f-component id="fmt_trm_ext.1" name="Trusted Remediation Functions">
           <consistency-rationale>This SFR defines protections for the integrity of commands sent to
             the Host Agent. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
           
