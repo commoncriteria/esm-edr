@@ -1053,7 +1053,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
 
         <subsection title="Trusted Path/Channels (FTP)" id="ftp">
 
-          <!--  We may need to refine DIT_EXT.1.1
+          <!--  we may need to refine DIT_EXT.1.1
         <f-component id="ftp_dit_ext.1(2)" name="Protection of Data in Transit">
           <consistency-rationale>
             The <abbr linkend="Base-PP"/> defines FTP_DIT_EXT.1 to define the secure
