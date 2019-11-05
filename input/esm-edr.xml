@@ -95,7 +95,7 @@
         the Host Agent is required part of the TOE (EDR).
       </term>
       <term full="Endpoint Detection and Response" abbr="EDR">EDR and its complementary Host Agent.</term>
-        
+      <term full="Potentially Unauthorized Activity">This refers to the set of activities detected by the TOE, specific items detected may be unique to the TOE</term>
       <term full="SOC Analyst">Security Operations Center (SOC) Analyst is typically the person
         responsible for reviewing potentially unauthorized activities via alerts and
         performing remediation and clean up.
@@ -440,7 +440,7 @@
                   <h:b>For Windows,</h:b> the evaluator shall test the EDR's ability to detect
                   anomalous activity by performing the following sub-tests on an enrolled Host Agent's
                   system for each platform list that is supported, verifying for each that corresponding
-                  alerts were generated in the management dashboard:<h:br/>
+                  alerts were generated in the management dashboard, the test passes if an alert is generated:<h:br/>
                   <testlist>
                     <test>The evaluator shall open a Windows command prompt as a user and run the
                       command <h:code>cmd /c certutil -urlcache -split -f &#60;remote file&#62;
@@ -690,7 +690,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                     </selectables>
                   </h:li>
                   <h:li>Password length up to <assignable>an integer greater than or equal to
-                      14</assignable> characters shall be supported. </h:li>
+                      64</assignable> characters shall be supported. </h:li>
                 </h:ol>
               </title>
               <note role="application"> The <abbr linkend="ST"/> author selects the character set:
@@ -786,7 +786,8 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
               </title>
               <note role="application">This requirement captures all the configuration
                 functionality the <abbr linkend="TSF"/> provides the administrator to configure the
-                  <abbr linkend="EDR"/> Host Agent. </note>
+                <abbr linkend="EDR"/> Host Agent. <h:br/><h:br/>
+              Chart legend: X = Mandatory, O = Optional, - = N/A</note>
               <aactivity>
                 <TSS>There are no TSS activities for this requirement.</TSS>
                 <Guidance>The evaluator shall review the operational guidance to verify that the EDR has
@@ -824,6 +825,17 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                     <M ref="a"/><O ref="s"/><O ref="u"/>
                   </management-function>
                   <management-function>
+                    <text> Define a configurable
+                      blacklist of <selectables>
+                        <selectable>filenames</selectable>
+                        <selectable>folders</selectable>
+                        <selectable>file hashes</selectable>
+                        <selectable><assignable>other factors</assignable></selectable>
+                      </selectables>
+                    </text>
+                    <O ref="a"/><M ref="s"/><_ ref="u"/>
+                  </management-function>
+                  <management-function>
                     <text> Configure visual suppression of incident alerts based on a configurable
                       blacklist of <selectables>
                         <selectable>filenames</selectable>
@@ -838,7 +850,10 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
               </title>
               <note role="application"> This requirement captures all the configuration
                 functionality the <abbr linkend="TSF"/> provides the administrator to configure the
-                EDR. </note>
+                EDR. 
+              
+                <h:br/><h:br/>
+                Chart legend: X = Mandatory, O = Optional, - = N/A</note>
               <aactivity>
                 <TSS>There are no TSS activities for this requirement.</TSS>
                 <Guidance>The evaluator shall review the operational guidance to verify that the EDR has
@@ -944,7 +959,11 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                 </management-function-set>
               </title>
               <note role="application"> This requirement captures all the remediation functionality
-                the <abbr linkend="EDR"/> provides the SOC Analyst and optionally the Administrator. </note>
+                the <abbr linkend="EDR"/> provides the SOC Analyst and optionally the Administrator.
+                <h:br/><h:br/>Logically quarentine from the network refers to restricting communications from the endpoint to the rest of the network.
+               
+                <h:br/><h:br/>
+                Chart legend: X = Mandatory, O = Optional, - = N/A</note>
               <aactivity>
                 <TSS>The evaluator shall check to ensure that the TSS describes what roles can perform what 
                   remediation actions and how each remediation action is performed.</TSS>
@@ -958,8 +977,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                     <test>The evaluator shall run an executable on a managed endpoint system and terminate
                     its process from the EDR management dashboard before verifying that the process is no
                     longer running on the system.</test>
-                    <test>The evaluator shall place use a file that triggers and incident alert to do so
-                    before retrieving the content of the file from the EDR management dashboard.</test>
+                    <test>The evaluator shall place a file known to trigger an incident alert on the file system then retrieve the contents of the file from the EDR management dashboard.</test>
                   </testlist>
                 </Tests>
               </aactivity>
