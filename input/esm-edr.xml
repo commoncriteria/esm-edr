@@ -62,7 +62,7 @@
       <term full="Security Target" abbr="ST">A set of implementation-dependent security requirements for a specific
         product.
       </term>
-      <term full="Target of Evaluation" abbr="TOE">The product under evaluation. In this case, the Operating System as
+      <term full="Target of Evaluation" abbr="TOE">The product under evaluation. In this case, the EDR as
         described in section <xref linkend="TOEboundary"/> and its supporting documentation.
       </term>
       <term full="TOE Security Functionality" abbr="TSF">The security functionality of the product under evaluation.
@@ -80,8 +80,8 @@
       <term full="Management Portal">A management interface for the configuration of EDR policy, visualization
         of collected endpoint alert data, and issuing of remediation commands.
       </term>
-      <term full="Endpoint">A computing device that runs a General Purpose Operating System or a Mobile
-        Device Operating System. Endpoints can include desktops, servers, and mobile devices.
+      <term full="Endpoint">A computing device that runs a general purpose OS, a mobile
+        device OS network device OS. Endpoints can include desktops, servers, and mobile devices.
       </term>
       <term full="Endpoint Detection and Response" abbr="EDR">Server software that analyzes collected EDR Host Agent data for detecting,
         investigating, and remediating unauthorized activities on endpoints. The terms
@@ -89,9 +89,9 @@
         document.
       </term>
       <term full="Host Agent">Complementary software that executes on endpoints to collect data about the
-        endpoint, execute commands sent to the endpoint from an Enterprise Security Management
+        endpoint and executes commands sent to the endpoint from an Enterprise Security Management
         (ESM) server or service. An example command sent to an endpoint could be to enforce a
-        policy from an ESM, or to collect some files, or to run an OS command. For this PP,
+        policy from an ESM, to collect some files, or to run an OS command. For this PP,
         the Host Agent is required part of the TOE (EDR).
       </term>
       <term full="Endpoint Detection and Response" abbr="EDR">EDR and its complementary Host Agent.</term>
@@ -167,8 +167,8 @@
           In order to be conformant to this PP-Module, the ST must include all components
           in this PP-Module and the associated <cite linkend="bibAppPP"/> that are:
           <h:ol>
-            <h:li>unconditional (always required)</h:li>
-            <h:li>selection-based (required when certain selections are chosen in the unconditional requirements)</h:li>
+            <h:li>Unconditional (always required)</h:li>
+            <h:li>Selection-based (required when certain selections are chosen in the unconditional requirements)</h:li>
           </h:ol>
           and may include optional and/or objective components that are desirable but not required for conformance.
         </description>
@@ -505,7 +505,7 @@
                 data to an authorized user on the management dashboard. The visualization is not
                 required to be interactive. </note>
               <aactivity>
-                <TSS>TSS
+                <TSS>
 The evaluator shall examine the TSS to ensure that it describes how visualizations are displayed, what content is included, and what ingormation is presented.</TSS>
                 <Guidance> The evaluator shall review the operational guidance to ensure that it
                   contains documentation on using the management portal to visualize and view
@@ -628,7 +628,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
               <note role="application">The intent of this requirement is to specify the minimum set
                 of audit records collected about actions on the management dashboard. </note>
               <aactivity>
-                <TSS>TSS
+                <TSS>
                   The evaluator shall examine the TSS to ensure that it describes all events that generate log data.</TSS>
                 <Guidance> The evaluator shall check the administrative guide and ensure that it
                   lists all of the collectable types of endpoint event data. The evaluator shall
@@ -702,7 +702,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                   linkend="TOE"/>; they may optionally list additional special characters supported
                 using the assignment. </note>
               <aactivity>
-                <TSS> </TSS>
+                <TSS>There are no TSS activities for this requirement. </TSS>
                 <Guidance>The evaluator shall review the operational guidance to ensure that it
                   contains documentation on default password policy.</Guidance>
                 <Tests>The evaluator shall perform the following tests:
@@ -944,8 +944,13 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                   <manager id="a">Administrator</manager>
                   <manager id="s">SOC Analyst</manager>
                   <manager id="u">User</manager>
+                  
                   <management-function>
-                    <text> Logically quarantine an endpoint from the network </text>
+                    <text> Quarantine an endpoint by 
+                      <selectables>
+                        <selectable>logically quarantining the endpoint from the network</selectable>
+                        <selectable>quarantining the malicious file on the endpoint </selectable>
+                    </selectables> </text>
                     <O ref="a"/><M ref="s"/><_ ref="u"/>
                   </management-function>
                   <management-function>
@@ -971,9 +976,12 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                   documented capabilities to perform the management functions.</Guidance>
                 <Tests>The evaluator shall perform the below tests:
                   <testlist>
-                    <test>The evaluator shall logically quarantine a managed endpoint system from the
+                    <test>Conditional: If logically quarantining the endpoint from the network is selected 
+                      the evaluator shall logically quarantine a managed endpoint system from the
                     network and verify that the system is unable to access network addresses or resources
                     outside of a whitelist.</test>
+                    <test>Conditional: If quarantining the malicious file on the endpoint is selected 
+                      the evaluator shall verify the functionality to quarantine potentially unauthorized files on the endpoint.</test>
                     <test>The evaluator shall run an executable on a managed endpoint system and terminate
                     its process from the EDR management dashboard before verifying that the process is no
                     longer running on the system.</test>
@@ -1061,8 +1069,8 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                 <selectable>EDR</selectable>
                 <selectable><abbr linkend="EDR"/> platform</selectable>
               </selectables> shall use <selectables>
-                <selectable id="ITC_TLS_2">TLS</selectable>
-                <selectable id="ITC_HTTPS_2">HTTPS</selectable>
+                <selectable id="ITC_TLS_2">TLS as defined in the TLS Package</selectable>
+                <selectable id="ITC_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
               </selectables> to provide a trusted communication channel between itself and another
                 trusted IT product that is logically distinct from other communication channels,
                 provides assured identification of its end points, protects channel data from
@@ -1133,8 +1141,8 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                   <selectable>EDR</selectable>
                   <selectable><abbr linkend="EDR"/> platform</selectable>
                 </selectables> shall use <selectables>
-                  <selectable id="FTP_TLS_2">TLS</selectable>
-                  <selectable id="FTP_HTTPS_2">HTTPS</selectable>
+                  <selectable id="FTP_TLS_2">TLS as defined in the TLS Package</selectable>
+                  <selectable id="FTP_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
                 </selectables> to provide a trusted communication path between itself and remote
                 administrators that is logically distinct from other communication paths and
                 provides assured identification of its endpoints and protection of the communicated
@@ -1260,20 +1268,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
           >Module for ESM Host Agent, Version 1.0, July 2019</h:a>
       </description>
     </entry>
-    <entry id="bibCC">
-      <tag>CC</tag>
-      <description>Common Criteria for Information Technology Security Evaluation - <h:ul>
-          <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART1V3.1R5.pdf">Part
-              1: Introduction and General Model</h:a>, CCMB-2012-09-001, Version 3.1 Revision 5,
-            September 2012.</h:li>
-          <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART2V3.1R5.pdf">Part
-              2: Security Functional Components</h:a>, CCMB-2012-09-002, Version 3.1 Revision 5,
-            September 2012.</h:li>
-          <h:li><h:a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R5.pdf">Part
-              3: Security Assurance Components</h:a>, CCMB-2012-09-003, Version 3.1 Revision 5,
-            September 2012.</h:li>
-        </h:ul></description>
-    </entry>
+    
   </bibliography>
 
   <acronyms>
