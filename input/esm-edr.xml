@@ -50,36 +50,32 @@
       <figure entity="images/edr_archi.png" title="Primary EDR Architectures" id="toe"/>
     </section>
     <tech-terms>
-      <term full="Common Criteria" abbr="CC"> Common Criteria for Information Technology Security Evaluation.
-            </term>
-      <term full="Common Evaluation Methodology" abbr="CEM">Common Evaluation Methodology for Information Technology Security
-        Evaluation.</term>
-      <term full="Protection Profile" abbr="PP">An implementation-independent set of security requirements for a category
-        of products.</term>
-      <term full="Protection Profile Module" abbr="PP-Module">An implementation-independent statement of security needs for a TOE type
-        complementary to one or more Base Protection Profiles. 
-      </term>
-      <term full="Security Target" abbr="ST">A set of implementation-dependent security requirements for a specific
-        product.
-      </term>
-      <term full="Target of Evaluation" abbr="TOE">The product under evaluation. In this case, the EDR as
-        described in section <xref linkend="TOEboundary"/> and its supporting documentation.
-      </term>
-      <term full="TOE Security Functionality" abbr="TSF">The security functionality of the product under evaluation.
-      </term>
-      <term full="TOE Summary Specification" abbr="TSS">A description of how a <abbr linkend="TOE"/> satisfies the SFRs in a <abbr
-        linkend="ST"/>. 
-      </term>
-      <term full="Security Functional Requirement" abbr="SFR">A requirement for security enforcement by the <abbr linkend="TOE"/>.
-      </term>            
-      <term full="Security Assurance Requirement" abbr="SAR">A requirement to assure the security of the <abbr linkend="TOE"/>.
-      </term>
+      <term abbr="AES" full="Advanced Encryption Standard"/>
+      <term abbr="ANSI" full="American National Standards Institute"/>
+      <term abbr="API" full="Application Programming Interface"/>
+      <term abbr="ASLR" full="Address Space Layout Randomization"/>
       <term full="Alert">An event or notification on the management portal that highlights
         potentially unauthorized activity. 
       </term>
-      <term full="Management Portal">A management interface for the configuration of EDR policy, visualization
-        of collected endpoint alert data, and issuing of remediation commands.
-      </term>
+      <term abbr="CESG" full="Communications-Electronics Security Group"/>
+      <term abbr="CMC" full="Certificate Management over CMS"/>
+      <term abbr="CMS" full="Cryptographic Message Syntax"/>
+      <term abbr="CN" full="Common Names"/>
+      <term abbr="CRL" full="Certificate Revocation List"/>
+      <term abbr="CSA" full="Computer Security Act"/>
+      <term abbr="DEP" full="Data Execution Prevention"/>
+      <term abbr="DES" full="Data Encryption Standard"/>
+      <term abbr="DHE" full="Diffie-Hellman Ephemeral"/>
+      <term abbr="DNS" full="Domain Name System"/>
+      <term abbr="DRBG" full="Deterministic Random Bit Generator"/>
+      <term abbr="DSS" full="Digital Signature Standard"/>
+      <term abbr="DT" full="Date/Time Vector"/>
+      <term abbr="DTLS" full="Datagram Transport Layer Security"/>
+      <term abbr="EAP" full="Extensible Authentication Protocol"/>
+      <term abbr="ECDHE" full="Elliptic Curve Diffie-Hellman Ephemeral"/>
+      <term abbr="ECDSA" full="Elliptic Curve Digital Signature Algorithm"/>
+      <term abbr="EDR" full="Endpoint Detection and Response"/>
+      <term abbr="EST" full="Enrollment over Secure Transport"/>
       <term full="Endpoint">A computing device that runs a general purpose OS, a mobile
         device OS network device OS. Endpoints can include desktops, servers, and mobile devices.
       </term>
@@ -88,18 +84,59 @@
         <h:i>TOE</h:i> and <h:i>EDR</h:i> are interchangeable in this
         document.
       </term>
+      <term full="Endpoint Detection and Response" abbr="EDR">EDR and its complementary Host Agent.</term>
+      <term abbr="FIPS" full="Federal Information Processing Standards"/>
+      <term abbr="DSS" full="Digital Signature Standard"/>
+      <term abbr="HMAC" full="Hash-based Message Authentication Code"/>
       <term full="Host Agent">Complementary software that executes on endpoints to collect data about the
         endpoint and executes commands sent to the endpoint from an Enterprise Security Management
         (ESM) server or service. An example command sent to an endpoint could be to enforce a
         policy from an ESM, to collect some files, or to run an OS command. For this PP,
         the Host Agent is required part of the TOE (EDR).
       </term>
-      <term full="Endpoint Detection and Response" abbr="EDR">EDR and its complementary Host Agent.</term>
+      <term abbr="HTTP" full="Hypertext Transfer Protocol"/>
+      <term abbr="HTTPS" full="Hypertext Transfer Protocol Secure"/>
+      <term abbr="DSS" full="Digital Signature Standard"/>
+      <term abbr="IETF" full="Internet Engineering Task Force"/>
+      <term abbr="IP" full="Internet Protocol"/>
+      <term abbr="ISO" full="International Organization for Standardization"/>
+      <term abbr="IT" full="Information Technology"/>
+      <term abbr="ITSEF" full="Information Technology Security Evaluation Facility"/>
+      <term full="Management Portal">A management interface for the configuration of EDR policy, visualization
+        of collected endpoint alert data, and issuing of remediation commands.
+      </term>
+      <term abbr="NFC" full="Near Field Communication"/>
+      <term abbr="NIAP" full="National Information Assurance Partnership"/>
+      <term abbr="NIST" full="National Institute of Standards and Technology"/>
+      <term abbr="OCSP" full="Online Certificate Status Protocol"/>
+      <term abbr="OID" full="Object Identifier"/>
+      <term abbr="OMB" full="Office of Management and Budget"/>
+      <term abbr="OS" full="Operating System"/>
+      <term abbr="PII" full="Personally Identifiable Information"/>
+      <term abbr="PKI" full="Public Key Infrastructure"/>
+      <term abbr="PP" full="Protection Profile"/>
       <term full="Potentially Unauthorized Activity">This refers to the set of activities detected by the TOE, specific items detected may be unique to the TOE</term>
+      <term abbr="RBG" full="Random Bit Generator"/>
+      <term abbr="RFC" full="Request for Comment"/>
+      <term abbr="RNG" full="Random Number Generator"/>
+      <term abbr="RNGVS" full="Random Number Generator Validation System"/>
+      <term abbr="SAN" full="Subject Alternative Name"/>
+      <term abbr="SAR" full="Security Assurance Requirement"/>
+      <term abbr="SFR" full="Security Functional Requirement"/>
+      <term abbr="SHA" full="Secure Hash Algorithm"/>
+      <term abbr="S/MIME" full="Secure/Multi-purpose Internet Mail Extensions"/>
+      <term abbr="SIP" full="Session Initiation Protocol"/>
+      <term abbr="SWID" full="Software Identification"/>
       <term full="SOC Analyst">Security Operations Center (SOC) Analyst is typically the person
         responsible for reviewing potentially unauthorized activities via alerts and
         performing remediation and clean up.
       </term>
+      <term abbr="TLS" full="Transport Layer Security"/>
+      <term abbr="URI" full="Uniform Resource Identifier"/>
+      <term abbr="URL" full="Uniform Resource Locator"/>
+      <term abbr="USB" full="Universal Serial Bus"/>
+      <term abbr="XCCDF" full="eXtensible Configuration Checklist Description Format"/>
+      <term abbr="XOR" full="Exclusive Or"/>
     </tech-terms>
 
     <section title="Compliant Targets of Evaluation" id="TOEdescription">
@@ -409,7 +446,7 @@
             <dependencies>No dependencies.</dependencies>
             
             
-            <f-element id="fau_alt_ext.1.1">
+            <f-element>
               <title>The <abbr linkend="EDR"/> shall alert authorized users on a management portal
                 in the event of any of the following: <h:ol type="a">
                   <h:li>Change in Host Agent enrollment status</h:li>
@@ -486,7 +523,7 @@
                   timestamped activity log. </Tests>
               </aactivity>
             </f-element>
-            <f-element id="fau_alt_ext.1.2">
+            <f-element>
               <title>The <abbr linkend="EDR"/> shall provide a visualization of detected alerts of
                 potentially unauthorized incidents, and shall include: <h:ol type="a">
                   <h:li>An initial incident severity and <selectables>
@@ -517,8 +554,8 @@ The evaluator shall examine the TSS to ensure that it describes how visualizatio
                   over time. </Tests>
               </aactivity>
             </f-element>
-            <f-element id="fau_alt_ext.1.3">
-              <title>The <abbr linkend="EDR"/> shall provide a data export capability for
+            <f-element>
+              <title>The EDR shall provide a data export capability for
                   selected alerts with a specified standards-based format of <selectables
                   linebreak="yes">
                   <selectable>Structured Threat Information eXpression (STIX)</selectable>
@@ -565,7 +602,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <audit>There are no auditable events foreseen.</audit>
             <dependencies>No dependencies.</dependencies>
 
-            <f-element id="fau_col_ext.1.1">
+            <f-element>
               <title>The <abbr linkend="EDR"/> shall collect the following minimum set of endpoint
                 data from a Host Agent: <h:ol type="a">
                   <h:li>Operating System (OS) version, architecture, and IP Address</h:li>
@@ -614,7 +651,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <audit>There are no auditable events foreseen.</audit>
             <dependencies>FMT_SMF.1 Specification of Management Functions</dependencies>
             
-            <f-element id="fau_das_ext.1.1">
+            <f-element>
               <title>The <abbr linkend="EDR"/> shall generate audit log data for investigation and
                 remediation actions initiated automatically or by authorized users, including: <h:ol
                   type="a">
@@ -668,7 +705,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <audit>There are no auditable events foreseen.</audit>
             <dependencies>FIA_UAU_EXT.1 Dashboard Authentication Mechanisms</dependencies>
             
-            <f-element id="fia_pwd_ext.1.1">
+            <f-element>
               <title>The <abbr linkend="EDR"/> shall support the following for the Password
                 Authentication Factor: <h:ol>
                   <h:li>Passwords shall be able to be composed of any combination of <selectables>
@@ -732,7 +769,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <audit>There are no auditable events foreseen.</audit>
             <dependencies>No dependencies.</dependencies>
             
-            <f-element id="fia_uau_ext.1.1">
+            <f-element>
               <title> The <abbr linkend="EDR"/> shall provide the following authentication
                 mechanisms, authentication based on username and password and <selectables
                   linebreak="yes">
@@ -759,10 +796,10 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
         <subsection title="Security Management (FMT)" id="fmt">
           
   
-          <f-component id="FMT_SMF.1(1)" name="Specification of Management Functions (EDR Management of Host Agent)">
+          <f-component id="fmt_smf.1" iteration="HOST" name="Specification of Management Functions (EDR Management of Host Agent)">
             <consistency-rationale>This SFR defines a specific set of management functions for an
               EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
-            <f-element id="FMT_SMF.1.1(1)">
+            <f-element>
               <title>The <selectables>
                   <selectable>EDR</selectable>
                   <selectable>EDR platform</selectable>
@@ -804,10 +841,10 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
               </aactivity>
             </f-element>
           </f-component>
-          <f-component name="Specification of Management Functions (EDR Management of EDR)" id="FMT_SMF.1(2)">
+          <f-component name="Specification of Management Functions (EDR Management of EDR)" id="fmt_smf.1" iteration="ENDPOINT">
             <consistency-rationale>This SFR defines a specific set of management functions for an
               EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
-          <f-element id="FMT_SMF.1.1(2)">
+          <f-element>
               <title> The <abbr linkend="EDR"/> shall be capable of performing the following
                 management functions: <h:br/>
                 <management-function-set default="O">
@@ -877,11 +914,11 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             </f-element>
           </f-component>
           
-          <f-component id="FMT_SMR.1" name="Security Management Roles">
+          <f-component id="fmt_smr.1" name="Security Management Roles">
             <consistency-rationale> This SFR defines a specific set of management roles for an EDR.
               It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>        
             
-            <f-element id="FMT_SMR.1.1">
+            <f-element>
               <title>The <selectables>
                 <selectable>EDR</selectable>
                 <selectable>EDR platform</selectable>
@@ -937,7 +974,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <audit>There are no auditable events foreseen.</audit>
             <dependencies>FMT_SMR.1 Security Management Roles</dependencies>
             
-            <f-element id="FMT_SRF_EXT.1.1">
+            <f-element>
               <title> The <abbr linkend="EDR"/> shall be capable of performing the following
                 remediation functions: <h:br/>
                 <management-function-set default="O">
@@ -1004,7 +1041,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             iterates the SFR to specify a subset of those selections for communication.
           </consistency-rationale>
 
-          <f-element id="ftp_dit_ext.1.1(2)">
+          <f-element>
             <title><h:b>Refinement:</h:b> The application shall
               <selectables linebreak="yes">
 
@@ -1061,10 +1098,10 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
         -->
           
           
-          <f-component id="FTP_ITC.1" name="Trusted Channel (Host Agent)">
+          <f-component id="ftp_itc.1" name="Trusted Channel (Host Agent)">
             <consistency-rationale> This SFR defines a specific set of functions for logically distinct secure
               communication with a Host Agent. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
-            <f-element id="FTP_ITC.1.1">
+            <f-element>
               <title>The <selectables>
                 <selectable>EDR</selectable>
                 <selectable><abbr linkend="EDR"/> platform</selectable>
@@ -1095,14 +1132,14 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                       linkend="ST"/> if not already present. Protocol, RBG, Certificate validation,
                 algorithm, and similar services may be met with platform provided services. </note>
             </f-element>
-            <f-element id="FTP_ITC.1.2">
+            <f-element>
               <title>The <selectables>
                 <selectable>EDR</selectable>
                 <selectable><abbr linkend="EDR"/> platform</selectable>
               </selectables> shall permit the <abbr linkend="EDR"/> and Host Agent to initiate
                 communication via the trusted channel. </title>
             </f-element>
-            <f-element id="FTP_ITC.1.3">
+            <f-element>
               <title>The <selectables>
                 <selectable>EDR</selectable>
                 <selectable><abbr linkend="EDR"/> platform</selectable>
@@ -1133,10 +1170,10 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             </f-element>
           </f-component>
 
-          <f-component id="FTP_TRP.1" name="Trusted Path (for Remote Administration)">
+          <f-component id="ftp_trp.1" name="Trusted Path (for Remote Administration)">
             <consistency-rationale>This SFR defines a specific set of functions for secure remote
               administration of the EDR. It does not impact <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
-            <f-element id="FTP_TRP.1.1">
+            <f-element>
               <title><h:b>Refinement:</h:b> The <selectables>
                   <selectable>EDR</selectable>
                   <selectable><abbr linkend="EDR"/> platform</selectable>
@@ -1148,14 +1185,14 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                 provides assured identification of its endpoints and protection of the communicated
                 data from modification and disclosure.</title>
             </f-element>
-            <f-element id="FTP_TRP.1.2">
+            <f-element>
               <title><h:b>Refinement:</h:b> The <selectables>
                   <selectable>EDR</selectable>
                   <selectable><abbr linkend="EDR"/> platform</selectable>
                 </selectables> shall permit remote administrators to initiate communication via the
                 trusted path.</title>
             </f-element>
-            <f-element id="FTP_TRP.1.3">
+            <f-element>
               <title><h:b>Refinement:</h:b> The <selectables>
                   <selectable>EDR</selectable>
                   <selectable><abbr linkend="EDR"/> platform</selectable>
@@ -1223,7 +1260,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
           <dependencies>No dependencies.</dependencies>
           <!-- SME: note that FCS_COP.1 could also be considered for a dependency here but was not included since an EDR TOE may rely on the platform to provide the digital signature service. -->
           
-          <f-element id="FMT_TRM_EXT.1.1">
+          <f-element>
             <title>The <abbr linkend="EDR"/> shall digitally sign commands and policies sent to the
               Host Agent. </title>
             <note role="application">The intent of this requirement is to cryptographically tie a
@@ -1270,252 +1307,5 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
     </entry>
     
   </bibliography>
-
-  <acronyms>
-    <entry>
-      <term>AES</term>
-      <description>Advanced Encryption Standard</description>
-    </entry>
-    <entry>
-      <term>ANSI</term>
-      <description>American National Standards Institute</description>
-    </entry>
-    <entry>
-      <term>API</term>
-      <description>Application Programming Interface</description>
-    </entry>
-    <entry>
-      <term>ASLR</term>
-      <description>Address Space Layout Randomization</description>
-    </entry>
-    <entry>
-      <term>CESG</term>
-      <description>Communications-Electronics Security Group</description>
-    </entry>
-    <entry>
-      <term>CMC</term>
-      <description>Certificate Management over CMS</description>
-    </entry>
-    <entry>
-      <term>CMS</term>
-      <description>Cryptographic Message Syntax</description>
-    </entry>
-    <entry>
-      <term>CN</term>
-      <description>Common Names</description>
-    </entry>
-    <entry>
-      <term>CRL</term>
-      <description>Certificate Revocation List</description>
-    </entry>
-    <entry>
-      <term>CSA</term>
-      <description>Computer Security Act</description>
-    </entry>
-    <entry>
-      <term>DEP</term>
-      <description>Data Execution Prevention</description>
-    </entry>
-    <entry>
-      <term>DES</term>
-      <description>Data Encryption Standard</description>
-    </entry>
-    <entry>
-      <term>DHE</term>
-      <description>Diffie-Hellman Ephemeral</description>
-    </entry>
-    <entry>
-      <term>DNS</term>
-      <description>Domain Name System</description>
-    </entry>
-    <entry>
-      <term>DRBG</term>
-      <description>Deterministic Random Bit Generator</description>
-    </entry>
-    <entry>
-      <term>DSS</term>
-      <description>Digital Signature Standard</description>
-    </entry>
-    <entry>
-      <term>DT</term>
-      <description>Date/Time Vector</description>
-    </entry>
-    <entry>
-      <term>DTLS</term>
-      <description>Datagram Transport Layer Security</description>
-    </entry>
-    <entry>
-      <term>EAP</term>
-      <description>Extensible Authentication Protocol</description>
-    </entry>
-    <entry>
-      <term>ECDHE</term>
-      <description>Elliptic Curve Diffie-Hellman Ephemeral</description>
-    </entry>
-    <entry>
-      <term>ECDSA</term>
-      <description>Elliptic Curve Digital Signature Algorithm</description>
-    </entry>
-    <entry>
-      <term>EDR</term>
-      <description>Endpoint Detection and Response</description>
-    </entry>
-    <entry>
-      <term>EST</term>
-      <description>Enrollment over Secure Transport</description>
-    </entry>
-    <entry>
-      <term>FIPS</term>
-      <description>Federal Information Processing Standards</description>
-    </entry>
-    <entry>
-      <term>DSS</term>
-      <description>Digital Signature Standard</description>
-    </entry>
-    <entry>
-      <term>HMAC</term>
-      <description>Hash-based Message Authentication Code</description>
-    </entry>
-    <entry>
-      <term>HTTP</term>
-      <description>Hypertext Transfer Protocol</description>
-    </entry>
-    <entry>
-      <term>HTTPS</term>
-      <description>Hypertext Transfer Protocol Secure</description>
-    </entry>
-    <entry>
-      <term>DSS</term>
-      <description>Digital Signature Standard</description>
-    </entry>
-    <entry>
-      <term>IETF</term>
-      <description>Internet Engineering Task Force</description>
-    </entry>
-    <entry>
-      <term>IP</term>
-      <description>Internet Protocol</description>
-    </entry>
-    <entry>
-      <term>ISO</term>
-      <description>International Organization for Standardization</description>
-    </entry>
-    <entry>
-      <term>IT</term>
-      <description>Information Technology</description>
-    </entry>
-    <entry>
-      <term>ITSEF</term>
-      <description>Information Technology Security Evaluation Facility</description>
-    </entry>
-    <entry>
-      <term>NFC</term>
-      <description>Near Field Communication</description>
-    </entry>
-    <entry>
-      <term>NIAP</term>
-      <description>National Information Assurance Partnership</description>
-    </entry>
-    <entry>
-      <term>NIST</term>
-      <description>National Institute of Standards and Technology</description>
-    </entry>
-    <entry>
-      <term>OCSP</term>
-      <description>Online Certificate Status Protocol</description>
-    </entry>
-    <entry>
-      <term>OID</term>
-      <description>Object Identifier</description>
-    </entry>
-    <entry>
-      <term>OMB</term>
-      <description>Office of Management and Budget</description>
-    </entry>
-    <entry>
-      <term>OS</term>
-      <description>Operating System</description>
-    </entry>
-    <entry>
-      <term>PII</term>
-      <description>Personally Identifiable Information</description>
-    </entry>
-    <entry>
-      <term>PKI</term>
-      <description>Public Key Infrastructure</description>
-    </entry>
-    <entry>
-      <term>PP</term>
-      <description>Protection Profile</description>
-    </entry>
-    <entry>
-      <term>RBG</term>
-      <description>Random Bit Generator</description>
-    </entry>
-    <entry>
-      <term>RFC</term>
-      <description>Request for Comment</description>
-    </entry>
-    <entry>
-      <term>RNG</term>
-      <description>Random Number Generator</description>
-    </entry>
-    <entry>
-      <term>RNGVS</term>
-      <description>Random Number Generator Validation System</description>
-    </entry>
-    <entry>
-      <term>SAN</term>
-      <description>Subject Alternative Name</description>
-    </entry>
-    <entry>
-      <term>SAR</term>
-      <description>Security Assurance Requirement</description>
-    </entry>
-    <entry>
-      <term>SFR</term>
-      <description>Security Functional Requirement</description>
-    </entry>
-    <entry>
-      <term>SHA</term>
-      <description>Secure Hash Algorithm</description>
-    </entry>
-    <entry>
-      <term>S/MIME</term>
-      <description>Secure/Multi-purpose Internet Mail Extensions</description>
-    </entry>
-    <entry>
-      <term>SIP</term>
-      <description>Session Initiation Protocol</description>
-    </entry>
-    <entry>
-      <term>SWID</term>
-      <description>Software Identification</description>
-    </entry>
-    <entry>
-      <term>TLS</term>
-      <description>Transport Layer Security</description>
-    </entry>
-    <entry>
-      <term>URI</term>
-      <description>Uniform Resource Identifier</description>
-    </entry>
-    <entry>
-      <term>URL</term>
-      <description>Uniform Resource Locator</description>
-    </entry>
-    <entry>
-      <term>USB</term>
-      <description>Universal Serial Bus</description>
-    </entry>
-    <entry>
-      <term>XCCDF</term>
-      <description>eXtensible Configuration Checklist Description Format</description>
-    </entry>
-    <entry>
-      <term>XOR</term>
-      <description>Exclusive Or</description>
-    </entry>
-  </acronyms>
-
+  <acronyms/>
 </Module>
