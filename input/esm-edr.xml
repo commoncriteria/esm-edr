@@ -11,7 +11,7 @@
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2019-05-20</PPPubDate>
+      <PPPubDate>2019-11-50</PPPubDate>
       <Keywords>EDR, ESM</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -19,7 +19,7 @@
   <RevisionHistory>
     <entry>
       <version>1.0</version>
-      <date>2019-05-20</date>
+      <date>2019-11-25</date>
       <subject>Draft - first version released</subject>
     </entry>
   </RevisionHistory>
@@ -212,6 +212,9 @@
             <h:li>Selection-based (required when certain selections are chosen in the unconditional requirements)</h:li>
           </h:ol>
           and may include optional and/or objective components that are desirable but not required for conformance.
+          <h:br/><h:br/>
+          If claiming compliance to a PP-Configuration that includes multiple PP-Modules, the ST author must ensure any duplicative SFRs are iterated using unique identifiers. This will allow the reader to easily determine which iteration applies to each TOE component.
+          
         </description>
       </cclaim>
       <cclaim title="Package Claims">
@@ -324,6 +327,9 @@
         
       </assumptions>
     </section>
+    <section title="Organizational Security Policies" id="OSPs">
+      This PP-Module defines no additional organizational security policies beyond those defined in the Base-PP.
+    </section>
   </chapter>
 
   <chapter title="Security Objectives" id="obj">
@@ -342,7 +348,7 @@
           <description>The TOE must provide logging facilities which record
             management actions undertaken by identified and authenticated management users.</description>
           <addressed-by>
-            FAU_DAS_EXT.1, FIA_PWD_EXT.1, FIA_UAU_EXT.1
+            FAU_GEN.1, FIA_PWD_EXT.1, FIA_AUT_EXT.1
           </addressed-by>
           <consistency-rationale>This objective relates to the ability of the TOE to identify and authenticate users, and
             to record the behavior of these users. The Base-PP does not define an authentication mechanism so this objective
@@ -647,11 +653,9 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
           </f-component>
           
           
-          <ext-comp-def fam-id="FAU_DAS_EXT" title="Dashboard Audit">
-            <mod-def>Components in this family define requirements for the generation of audit events that relate specifically to usage of EDR management functionality.</mod-def>
-          </ext-comp-def>
+        
           
-          <f-component id="fau_das_ext.1" name="Management Dashboard Audit">
+          <f-component id="fau_gen.1" name="EDR Audit Generation">
             <consistency-rationale> This SFR defines the minimum event data that the EDR server must
               record about authorized management portal activity. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
             
@@ -659,25 +663,38 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <management>There are no specific management functions identified.</management>
             <audit>There are no auditable events foreseen.</audit>
             <dependencies>FMT_SMF.1 Specification of Management Functions</dependencies>
-            
+
+         
             <f-element>
-              <title>The EDR shall generate audit log data for investigation and
-                remediation actions initiated automatically or by authorized users, including: <h:ol
-                  type="a">
+              <title>The EDR shall generate an audit record of the following auditable events: 
                   <h:li>EDR management portal login activity</h:li>
                   <h:li>Remediation commands sent to a Host Agent, affected endpoint, or network
                     devices</h:li>
                   <h:li>EDR configuration changes</h:li>
                   <h:li><assignable>Other auditable events</assignable></h:li>
-                </h:ol>
+                
               </title>
+             
+              
+              
               <note role="application">The intent of this requirement is to specify the minimum set
-                of audit records collected about actions on the management dashboard. </note>
+                of audit records collected about actions on the EDR. </note>
+              
               <aactivity>
-                <TSS>
-                  The evaluator shall examine the TSS to ensure that it describes all events that generate log data and that those events include those listed in the SFR.</TSS>
-                <Guidance> The evaluator shall check the administrative guide and ensure that it
-                  lists any configuration information related to auditable events.</Guidance>
+                <TSS>The evaluator shall check the TSS and ensure that it lists all of the auditable events. 
+                  The evaluator shall check to make sure that every audit event type mandated by the SFR is described in the TSS. 
+                  The evaluator shall verify that for every audit event described in the TSS.</TSS>                            
+                 
+                  <Guidance> The evaluator shall check the administrative guide and ensure that it lists all of the auditable events. 
+                    The evaluator shall check to make sure that every audit event type mandated by the SFR is described.<h:br/><h:br/> 
+                  The evaluator shall examine the administrative guide and make a determination of which 
+                   commands are related to the configuration (including enabling or disabling) 
+                  of the mechanisms implemented in the EDR that are necessary to enforce the 
+                    requirements specified in the PP-Module. The evaluator shall document the methodology or 
+                    approach taken while determining which actions in the administrative guide are security relevant with 
+                    respect to this PP-Module. The evaluator may perform this activity as part of the activities 
+                    associated with ensuring the AGD_OPE guidance  satisfies the requirements.<h:br/><h:br/>
+                </Guidance>
                 <Tests>The evaluator shall perform the following tests:
                   <testlist>
                     <test>The evaluator shall login to the EDR management dashboard and verify that audit
@@ -691,7 +708,45 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                 </Tests>
               </aactivity>
             </f-element>
+            
+            <f-element>
+            <title> The EDR shall record within each audit record at least the following information: <h:ul>
+              <h:li>date and time of the event</h:li>
+              <h:li>type of event</h:li>
+              <h:li>subject identity</h:li>
+              <h:li>(if relevant) the outcome (success or failure) of the event</h:li>
+              <h:li><assignable>other audit relevant information</assignable>.</h:li>
+            </h:ul>
+            </title>
+            <note role="application"> This requirement outlines the information to be included in audit records. All audits must 
+              contain at least the information mentioned in FAU_GEN.1.2, but may contain more information 
+              which can be assigned. 
+              </note>
+            <aactivity>
+              <TSS>The evaluator shall check the TSS and ensure that it provides a format for audit records. 
+                Each audit record format type must be covered, along with a brief description of each field.<h:br/><h:br/>
+	      </TSS>
+              <Guidance>The evaluator shall check the administrative guide and ensure that it provides a format for audit records. 
+                Each audit record format type must be covered, along with a brief description of each field. The evaluator shall 
+                check to make sure that the description of the fields contains the information required in FAU_GEN.1.2.<h:br/><h:br/>
+	      </Guidance>
+              <Tests> When verifying the test results from FAU_GEN.1.1, the evaluator shall ensure the audit records generated during 
+                testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries.
+                <h:br/><h:br/> 
+                Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
+                For example, testing performed to ensure that the administrative guidance provided is correct verifies that AGD_OPE.1 
+                is satisfied and should address the invocation of the administrative actions that are needed to verify the audit records 
+                are generated as expected.<h:br/><h:br/> 
+              </Tests>
+            </aactivity>
+          </f-element>
           </f-component>
+
+
+
+
+
+
 
         </subsection>
 
@@ -710,7 +765,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <comp-lev> defines the length and character set requirements for password authentication factors.</comp-lev>
             <management>No specific management functions are identified.</management>
             <audit>There are no auditable events foreseen.</audit>
-            <dependencies>FIA_UAU_EXT.1 Dashboard Authentication Mechanisms</dependencies>
+            <dependencies>FIA_AUT_EXT.1 Dashboard Authentication Mechanisms</dependencies>
             
             <f-element>
               <title>The EDR shall support the following for the Password
@@ -762,11 +817,11 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             </f-element>
           </f-component>
           
-          <ext-comp-def fam-id="FIA_UAU_EXT" title="Dashboard Authentication Mechanisms">
+          <ext-comp-def fam-id="FIA_AUT_EXT" title="Dashboard Authentication Mechanisms">
             <mod-def>Components in this family define requirements for authentication behavior that is unique to an EDR TOE.</mod-def>
           </ext-comp-def>
           
-          <f-component id="fia_uau_ext.1" name="Dashboard Authentication Mechanisms">
+          <f-component id="fia_aut_ext.1" name="Dashboard Authentication Mechanisms">
             <consistency-rationale> This SFR defines authentication mechanisms for the EDR. It does
               not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
             
@@ -806,10 +861,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <consistency-rationale>This SFR defines a specific set of management functions for an
               EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
             <f-element>
-              <title>The <selectables>
-                  <selectable>EDR</selectable>
-                  <selectable>EDR platform</selectable>
-                </selectables> shall be capable of performing the following functions that control
+              <title>The EDR shall be capable of performing the following functions that control
                 behavior of the Host Agent:<h:br/>
                 <management-function-set default="O">
                   <manager id="a">Administrator</manager>
@@ -828,8 +880,8 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                 </management-function-set>
               </title>
               <note role="application">This requirement captures all the configuration
-                functionality the TSF provides the administrator to configure the
-                EDR Host Agent. <h:br/><h:br/>
+                functionality the EDR provides the administrator to configure the
+                EDR Host Agents. <h:br/><h:br/>
               Chart legend: X = Mandatory, O = Optional, - = N/A</note>
               <aactivity>
                 <TSS>There are no TSS activities for this requirement.</TSS>
@@ -925,10 +977,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
               It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>        
             
             <f-element>
-              <title>The <selectables>
-                <selectable>EDR</selectable>
-                <selectable>EDR platform</selectable>
-              </selectables> shall maintain the roles of administrator, SOC analyst, read-only
+              <title>The EDR shall maintain the roles of administrator, SOC analyst, read-only
                 user, and <selectables><selectable><assignable>additional authorized roles</assignable>
                 </selectable><selectable>no other roles</selectable></selectables>.</title>
               <note role="application">The EDR will be configured, maintained, and
