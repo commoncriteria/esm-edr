@@ -27,8 +27,8 @@
 
   <chapter title="Introduction" id="int">
     <section title="Overview" id="ppoverview"> This Protection Profile (PP) Module describes the
-      security functionality of Endpoint Detection and Response (EDR) systems in terms of <abbr
-        linkend="CC"/>, and defines functional and assurance requirements for such products. EDR is
+      security functionality of Endpoint Detection and Response (EDR) systems in terms of 
+      CC, and defines functional and assurance requirements for such products. EDR is
       enterprise management software that collects endpoint host data to detect potentially
       unauthorized activity on endpoints and to enable threat hunting and other incident response
       actions to remediate malicious behaviors. These requirements cover basic security characteristics 
@@ -192,19 +192,19 @@
     <cclaims>
       <cclaim title="Conformance Statement">
         <description>
-          <h:p>This <abbr linkend="PP-Module"/> inherits exact conformance as required from the
-            Application Software PP <cite linkend="bibAppPP"/> and as defined in the <abbr linkend="CC"/>
-            and <abbr linkend="CEM"/> addenda for Exact Conformance, Selection-Based SFRs, and Optional
+          <h:p>This PP-Module inherits exact conformance as required from the
+            Application Software PP <cite linkend="bibAppPP"/> and as defined in the CC
+            and CEM addenda for Exact Conformance, Selection-Based SFRs, and Optional
             SFRs (dated May 2017).<h:br/><h:br/>
-            This <abbr linkend="PP-Module"/> extends the baseline Security Functional Requirements (SFRs)
+            This PP-Module extends the baseline Security Functional Requirements (SFRs)
             and Security Assurance Requirements (SARs) for application software products.
             Evaluation Activities are the actions that the evaluator performs in
             order to determine an EDR's compliance to the SFRs. </h:p>
         </description>
       </cclaim>
       <cclaim title="CC Conformance Claims">
-        <description>This <abbr linkend="PP-Module"/> is conformant to Parts 2 (extended) and 3 
-          (conformant) of Common Criteria Version 3.1, Release 5 [<abbr linkend="CC"/>].
+        <description>This PP-Module is conformant to Parts 2 (extended) and 3 
+          (conformant) of Common Criteria Version 3.1, Release 5 [CC].
           In order to be conformant to this PP-Module, the ST must include all components
           in this PP-Module and the associated <cite linkend="bibAppPP"/> that are:
           <h:ol>
@@ -215,14 +215,14 @@
         </description>
       </cclaim>
       <cclaim title="Package Claims">
-        <description>This <abbr linkend="PP-Module"/> is TLS Package Version 1.1 Conformant.</description>
+        <description>This PP-Module is TLS Package Version 1.1 Conformant.</description>
       </cclaim>
     </cclaims>
   </chapter>
 
   <chapter title="Security Problem Description" id="spd"> The security problem is described in terms
-    of the threats that the <abbr linkend="EDR"/> is expected to address, assumptions about the
-    operational environment, and any organizational security policies that the <abbr linkend="EDR"/>
+    of the threats that the EDR is expected to address, assumptions about the
+    operational environment, and any organizational security policies that the EDR
     is expected to enforce.
     <section title="Threats" id="threats">
       <threats>
@@ -255,7 +255,7 @@
         </threat>
         <threat id="T.MISCONFIGURATION">
           <description>An attacker is a legitimate privileged user with access to change
-            the configuration of the <abbr linkend="EDR"/>'s security capabilities. Attackers may
+            the configuration of the EDR's security capabilities. Attackers may
             attempt to hide malicious activities from other privileged users.</description>
           <objective-refer ref="O.MANAGEMENT">
             <rationale>The threat T.MISCONFIGURATION is countered by O.MANAGEMENT as this
@@ -285,9 +285,9 @@
     <section id="Assumptions" title="Assumptions">
       <assumptions>
         <assumption id="A.CONNECTIVITY">
-          <description>The <abbr linkend="EDR"/> relies on network connectivity to carry out its
-          management activities. The OE will provide reliable network connectivity for the <abbr linkend="EDR"/> to operate.
-            The <abbr linkend="EDR"/> will robustly handle occasional instances when
+          <description>The EDR relies on network connectivity to carry out its
+          management activities. The OE will provide reliable network connectivity for the EDR to operate.
+            The EDR will robustly handle occasional instances when
           connectivity is unavailable or unreliable.</description>
           <objective-refer ref="OE.RELIABLE_TRANSIT">
             <rationale>The Operational Environment objective OE.RELIABLE_TRANSIT is realized through
@@ -330,16 +330,16 @@
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
         <SO id="O.MANAGEMENT">
-          <description>The <abbr linkend="TOE"/> must facilitate management by the enterprise,
+          <description>The TOE must facilitate management by the enterprise,
             providing consistent and supported interfaces for their security-relevant configuration,
             maintenance, and operation.</description>
           <addressed-by>FAU_ALT_EXT.1, FAU_COL_EXT.1, FMT_SMF.1(1), FMT_SMF.1(2), FMT_SMR.1, FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)</addressed-by>
           <consistency-rationale>This objective extends the Base-PP's O.MANAGEMENT
-            objective by supporting the management functions that are specific to the <abbr linkend="EDR"/> TOE type.
+            objective by supporting the management functions that are specific to the EDR TOE type.
           </consistency-rationale>
         </SO>
         <SO id="O.ACCOUNTABILITY">
-          <description>The <abbr linkend="TOE"/> must provide logging facilities which record
+          <description>The TOE must provide logging facilities which record
             management actions undertaken by identified and authenticated management users.</description>
           <addressed-by>
             FAU_DAS_EXT.1, FIA_PWD_EXT.1, FIA_UAU_EXT.1
@@ -351,15 +351,15 @@
         </SO>
         <SO id="O.PROTECTED_TRANSIT">
           <description>To address both passive (eavesdropping) and active (packet modification)
-            network attack threats, conformant <abbr title="Target of Evaluation" linkend="TOE"
-              >TOE</abbr>s will use a trusted channel to protect all communications. Sensitive data
+            network attack threats, conformant TOE
+              s will use a trusted channel to protect all communications. Sensitive data
             includes cryptographic keys, passwords, and any other data specific to the application
             that should not be exposed outside of the application or to unauthenticated users.</description>
           <addressed-by>FCS_DTLSS_EXT.1 (from TLS Package), FCS_DTLSC_EXT.1 (from TLS Package), FCS_HTTPS_EXT.1 (from Base-PP), 
             FCS_TLSC_EXT.1 (from TLS Package), FCS_TLSC_EXT.2 (from TLS Package), FCS_TLSS_EXT.1 (from TLS Package), 
             FCS_TLSS_EXT.2 (from TLS Package), FTP_ITC.1, FTP_TRP.1</addressed-by>
           <consistency-rationale>This objective extends the Base-PP's O.COMMS
-            objective by ensuring that the communications related to the <abbr linkend="EDR"/> and
+            objective by ensuring that the communications related to the EDR and
             enrolled Host Agents are secured in the same manner as other sensitive data.
           </consistency-rationale>
         </SO>
@@ -370,12 +370,12 @@
       environment assist the EDR in correctly providing its security functionality. These track with
       the assumptions about the environment. <SOEs>
         <SOE id="OE.PLATFORM">
-          <description>The <abbr linkend="EDR"/> relies on a trusted Operating System or Cloud
+          <description>The EDR relies on a trusted Operating System or Cloud
             platform.</description>
           <consistency-rationale> This objective is inherited from the Base-PP.</consistency-rationale>
         </SOE>
         <SOE id="OE.PROPER_USER">
-          <description>The user of the <abbr linkend="EDR"/> is not willfully negligent or hostile,
+          <description>The user of the EDR is not willfully negligent or hostile,
             and uses the software within compliance of the applied enterprise security policy.
             Standard user accounts are provisioned in accordance with the least privilege model.
             Users requiring higher levels of access should have a separate account dedicated for
@@ -383,13 +383,13 @@
           <consistency-rationale> This objective is inherited from the Base-PP.</consistency-rationale>
         </SOE>
         <SOE id="OE.PROPER_ADMIN">
-          <description>The administrator of the <abbr linkend="EDR"/> is not careless, willfully
+          <description>The administrator of the EDR is not careless, willfully
             negligent or hostile, and administers the EDR within compliance of the applied
             enterprise security policy. </description>
           <consistency-rationale> This objective is inherited from the Base-PP.</consistency-rationale>
         </SOE>
         <SOE id="OE.RELIABLE_TRANSIT">
-          <description>Wired or wireless network traffic between the <abbr linkend="EDR"/> and
+          <description>Wired or wireless network traffic between the EDR and
             host agents will be consistently and always available unless specific in evaluation
             activity tests.</description>
           <consistency-rationale> This objective relates to an external interface that does not exist in the Base-PP
@@ -457,14 +457,14 @@ This section describes any modifications that the ST author must make to the Bas
             
             
             <f-element>
-              <title>The <abbr linkend="EDR"/> shall alert authorized users on a management portal
+              <title>The EDR shall alert authorized users on a management portal
                 in the event of any of the following: <h:ol type="a">
                   <h:li>Change in Host Agent enrollment status</h:li>
                   <h:li>Detection of potentially unauthorized activity on enrolled endpoints</h:li>
                 </h:ol>
               </title>
               <note role="application"> The intent of this requirement is to specify the minimum set
-                of management dashboard alert capabilities the <abbr linkend="EDR"/> must be capable
+                of management dashboard alert capabilities the EDR must be capable
                 of displaying to an authorized user. <h:br/><h:br/>
                 Examples of Detection of potentially unauthorized activity on enrolled endpoints include;
                 anomalous activity, escalation of privileges, and lateral movement.
@@ -534,7 +534,7 @@ This section describes any modifications that the ST author must make to the Bas
               </aactivity>
             </f-element>
             <f-element>
-              <title>The <abbr linkend="EDR"/> shall provide a visualization of detected alerts of
+              <title>The EDR shall provide a visualization of detected alerts of
                 potentially unauthorized incidents, and shall include: <h:ol type="a">
                   <h:li>An initial incident severity and <selectables>
                       <selectable>assessment</selectable>
@@ -547,7 +547,7 @@ This section describes any modifications that the ST author must make to the Bas
                 </h:ol>
               </title>
               <note role="application"> The intent of this requirement is to specify the minimum set
-                of incident visualizations the <abbr linkend="EDR"/> must be capable of displaying
+                of incident visualizations the EDR must be capable of displaying
                 to an authorized user. Visualization is broadly defined as the display of incident
                 data to an authorized user on the management dashboard. The visualization is not
                 required to be interactive. </note>
@@ -612,7 +612,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <dependencies>No dependencies.</dependencies>
 
             <f-element>
-              <title>The <abbr linkend="EDR"/> shall collect the following minimum set of endpoint
+              <title>The EDR shall collect the following minimum set of endpoint
                 data from a Host Agent: <h:ol type="a">
                   <h:li>Operating System (OS) version, architecture, and IP Address</h:li>
                   <h:li>Privileged and unprivileged endpoint account login activity</h:li>
@@ -661,7 +661,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <dependencies>FMT_SMF.1 Specification of Management Functions</dependencies>
             
             <f-element>
-              <title>The <abbr linkend="EDR"/> shall generate audit log data for investigation and
+              <title>The EDR shall generate audit log data for investigation and
                 remediation actions initiated automatically or by authorized users, including: <h:ol
                   type="a">
                   <h:li>EDR management portal login activity</h:li>
@@ -713,7 +713,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <dependencies>FIA_UAU_EXT.1 Dashboard Authentication Mechanisms</dependencies>
             
             <f-element>
-              <title>The <abbr linkend="EDR"/> shall support the following for the Password
+              <title>The EDR shall support the following for the Password
                 Authentication Factor: <h:ol>
                   <h:li>Passwords shall be able to be composed of any combination of <selectables>
                       <selectable>upper and lower case letters</selectable>
@@ -737,13 +737,13 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                       64</assignable> characters shall be supported. </h:li>
                 </h:ol>
               </title>
-              <note role="application"> The <abbr linkend="ST"/> author selects the character set:
+              <note role="application"> The ST author selects the character set:
                 either the upper and lower case Basic Latin letters or another assigned character
                 set containing at least 52 characters. The assigned character set must be well
                 defined: either according to an international encoding standard (such as Unicode) or
-                defined in the assignment by the <abbr linkend="ST"/> author. The <abbr linkend="ST"
-                /> author also selects the special characters that are supported by <abbr
-                  linkend="TOE"/>; they may optionally list additional special characters supported
+                defined in the assignment by the ST author. The ST
+                 author also selects the special characters that are supported by TOE
+                 they may optionally list additional special characters supported
                 using the assignment. </note>
               <aactivity>
                 <TSS>The evaluator shall verify the TSS includes all the supported characters, rules, and limitations used by the EDR and that they meet the reuqirements of the SFR.</TSS>
@@ -776,7 +776,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <dependencies>No dependencies.</dependencies>
             
             <f-element>
-              <title> The <abbr linkend="EDR"/> shall provide the following authentication
+              <title> The EDR shall provide the following authentication
                 mechanisms, authentication based on username and password and <selectables
                   linebreak="yes">
                   <selectable>authentication with external Smartcard and PIN</selectable>
@@ -828,8 +828,8 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                 </management-function-set>
               </title>
               <note role="application">This requirement captures all the configuration
-                functionality the <abbr linkend="TSF"/> provides the administrator to configure the
-                <abbr linkend="EDR"/> Host Agent. <h:br/><h:br/>
+                functionality the TSF provides the administrator to configure the
+                EDR Host Agent. <h:br/><h:br/>
               Chart legend: X = Mandatory, O = Optional, - = N/A</note>
               <aactivity>
                 <TSS>There are no TSS activities for this requirement.</TSS>
@@ -851,7 +851,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <consistency-rationale>This SFR defines a specific set of management functions for an
               EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
           <f-element>
-              <title> The <abbr linkend="EDR"/> shall be capable of performing the following
+              <title> The EDR shall be capable of performing the following
                 management functions: <h:br/>
                 <management-function-set default="O">
                   <manager id="a">Administrator</manager>
@@ -892,7 +892,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                 </management-function-set>
               </title>
               <note role="application"> This requirement captures all the configuration
-                functionality the <abbr linkend="TSF"/> provides the administrator to configure the
+                functionality the TSF provides the administrator to configure the
                 EDR. 
               
                 <h:br/><h:br/>
@@ -931,18 +931,18 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
               </selectables> shall maintain the roles of administrator, SOC analyst, read-only
                 user, and <selectables><selectable><assignable>additional authorized roles</assignable>
                 </selectable><selectable>no other roles</selectable></selectables>.</title>
-              <note role="application">The <abbr linkend="EDR"/> will be configured, maintained, and
+              <note role="application">The EDR will be configured, maintained, and
                 used by different user roles. At a minimum, one administrative role shall be
                 supported, one SOC analyst who can issue remediation commands to host agents, and
                 one read-only user who can only view data. <h:br/> The user accounts need not be
                 named literally, but they must have the implication of such roles. The assignment is
-                used by the <abbr linkend="ST"/> author to list any other roles that are supported.</note>
+                used by the ST author to list any other roles that are supported.</note>
               <aactivity>
                 
-                <TSS> The evaluator shall examine the <abbr linkend="TSS"/> to verify that it
+                <TSS> The evaluator shall examine the TSS to verify that it
                   describes the roles and the powers granted to and limitations of the role. </TSS>
                 <Guidance> The evaluator shall review the operational guidance to ensure that it
-                  contains instructions for administering the <abbr linkend="EDR"/>, which user
+                  contains instructions for administering the EDR, which user
                   roles are supported, and which permissions each default role has.</Guidance>
                 <Tests>
                   <testlist>
@@ -955,9 +955,8 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                       the evaluator shall use all supported interfaces, although it is not
                       necessary to repeat each test involving an administrative action with each
                       interface. The evaluator shall ensure, however, that each supported method
-                      of administering the <abbr linkend="EDR"/> that conforms to the requirements
-                      of this <abbr linkend="PP"/> be tested; for instance, if the <abbr
-                        linkend="EDR"/> can be administered through a local hardware interface or
+                      of administering the EDR that conforms to the requirements
+                      of this PP be tested; for instance, if the EDR can be administered through a local hardware interface or
                       TLS/HTTPS then both methods of administration must be exercised during the
                       evaluation team’s test activities.</test>
                   </testlist>
@@ -981,7 +980,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <dependencies>FMT_SMR.1 Security Management Roles</dependencies>
             
             <f-element>
-              <title> The <abbr linkend="EDR"/> shall be capable of performing the following
+              <title> The EDR shall be capable of performing the following
                 remediation functions: <h:br/>
                 <management-function-set default="O">
                   <manager id="a">Administrator</manager>
@@ -1007,7 +1006,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                 </management-function-set>
               </title>
               <note role="application"> This requirement captures all the remediation functionality
-                the <abbr linkend="EDR"/> provides the SOC Analyst and optionally the Administrator.
+                the EDR provides the SOC Analyst and optionally the Administrator.
                 <h:br/><h:br/>Logically quarentine from the network refers to restricting communications from the endpoint to the rest of the network, it may include a restricted whitelist.
                
                 <h:br/><h:br/>
@@ -1042,8 +1041,8 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
           <!--  we may need to refine DIT_EXT.1.1
         <f-component id="ftp_dit_ext.1(2)" name="Protection of Data in Transit">
           <consistency-rationale>
-            The <abbr linkend="Base-PP"/> defines FTP_DIT_EXT.1 to define the secure
-            protocols used for trusted path/channel communications. This <abbr linkend="PP-Module"/>
+            The Base-PP defines FTP_DIT_EXT.1 to define the secure
+            protocols used for trusted path/channel communications. This PP-Module
             iterates the SFR to specify a subset of those selections for communication.
           </consistency-rationale>
 
@@ -1110,7 +1109,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <f-element>
               <title>The <selectables>
                 <selectable>EDR</selectable>
-                <selectable><abbr linkend="EDR"/> platform</selectable>
+                <selectable>EDR platform</selectable>
               </selectables> shall use <selectables>
                 <selectable id="ITC_TLS_2">TLS as defined in the TLS Package</selectable>
                 <selectable id="ITC_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
@@ -1120,48 +1119,47 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                 disclosure, and detects modification of the channel data. </title>
               <note role="application"> The intent of the above requirement is to use the
                 cryptographic protocols identified in the requirement to establish and maintain a
-                trusted channel between the <abbr linkend="EDR"/> and the Host Agent. Only TLS or
+                trusted channel between the EDR and the Host Agent. Only TLS or
                 HTTPS can be used in this trusted channel. <h:br/><h:br/> This requirement is to
                 ensure that the transmission of any logs, process lists, system information, etc,
                 when commanded, or at configurable intervals, is properly protected. This trusted
-                channel also protects any commands and policies sent by the <abbr linkend="EDR"/> to
-                the Host Agent. Either the Host Agent or the <abbr linkend="EDR"/> System is able to
+                channel also protects any commands and policies sent by the EDR to
+                the Host Agent. Either the Host Agent or the EDR System is able to
                 initiate the connection. <h:br/><h:br/> This trusted channel protects both the
-                connection between an enrolled Host Agent and the <abbr linkend="EDR"/> and the
-                connection between an unenrolled Host Agent and the <abbr linkend="EDR"/> during the
+                connection between an enrolled Host Agent and the EDR and the
+                connection between an unenrolled Host Agent and the EDR during the
                 enrollment operation. Different protocols can be used for these two connections, and
-                the description in the <abbr linkend="TSS"/> should make this difference clear.
+                the description in the TSS should make this difference clear.
                 <h:br/><h:br/> The trusted channel uses TLS, or HTTPS as the protocol that preserves
-                the confidentiality and integrity of <abbr linkend="EDR"/> communications. The <abbr
-                  linkend="ST"/> author chooses the mechanism or mechanisms supported by the <abbr
-                    linkend="EDR"/>, and then ensures the correct requirements are included the <abbr
-                      linkend="ST"/> if not already present. Protocol, RBG, Certificate validation,
+                the confidentiality and integrity of EDR communications. The ST author chooses the mechanism 
+                or mechanisms supported by the EDR, and then ensures the correct requirements are included the 
+                ST if not already present. Protocol, RBG, Certificate validation,
                 algorithm, and similar services may be met with platform provided services. </note>
             </f-element>
             <f-element>
               <title>The <selectables>
                 <selectable>EDR</selectable>
-                <selectable><abbr linkend="EDR"/> platform</selectable>
-              </selectables> shall permit the <abbr linkend="EDR"/> and Host Agent to initiate
+                <selectable>EDR platform</selectable>
+              </selectables> shall permit the EDR and Host Agent to initiate
                 communication via the trusted channel. </title>
             </f-element>
             <f-element>
               <title>The <selectables>
                 <selectable>EDR</selectable>
-                <selectable><abbr linkend="EDR"/> platform</selectable>
+                <selectable>EDR platform</selectable>
               </selectables> shall initiate communication via the trusted channel for all
-                communication between the <abbr linkend="EDR"/> and the Host Agent. </title>
+                communication between the EDR and the Host Agent. </title>
               <aactivity>
                 
-                <TSS> The evaluator shall examine the <abbr linkend="TSS"/> to determine that the
+                <TSS> The evaluator shall examine the TSS to determine that the
                   methods of Agent-Server communication are indicated, along with how those
                   communications are protected. The evaluator shall also confirm that all protocols
-                  listed in the <abbr linkend="TSS"/> in support of remote <abbr linkend="TOE"/>
+                  listed in the TSS in support of remote TOE
                   administration are consistent with those specified in the requirement, and are
                   included in the requirements in the ST. </TSS>
                 <Guidance> The evaluator shall confirm that the operational guidance contains
                   instructions for configuring the communication channel between the Host Agent and
-                  the <abbr linkend="EDR"/> for each supported method. 
+                  the EDR for each supported method. 
                 </Guidance>
                 <Tests>
                   <testlist>
@@ -1183,7 +1181,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <f-element>
               <title><h:b>Refinement:</h:b> The <selectables>
                   <selectable>EDR</selectable>
-                  <selectable><abbr linkend="EDR"/> platform</selectable>
+                  <selectable>EDR platform</selectable>
                 </selectables> shall use <selectables>
                   <selectable id="FTP_TLS_2">TLS as defined in the TLS Package</selectable>
                   <selectable id="FTP_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
@@ -1195,31 +1193,31 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
             <f-element>
               <title><h:b>Refinement:</h:b> The <selectables>
                   <selectable>EDR</selectable>
-                  <selectable><abbr linkend="EDR"/> platform</selectable>
+                  <selectable>EDR platform</selectable>
                 </selectables> shall permit remote administrators to initiate communication via the
                 trusted path.</title>
             </f-element>
             <f-element>
               <title><h:b>Refinement:</h:b> The <selectables>
                   <selectable>EDR</selectable>
-                  <selectable><abbr linkend="EDR"/> platform</selectable>
+                  <selectable>EDR platform</selectable>
                 </selectables> shall require the use of the trusted path for all remote
                 administration actions.</title>
               <note role="application">This requirement ensures that authorized remote
-                administrators initiate all communication with the <abbr linkend="EDR"/> via a
-                trusted path, and that all communications with the <abbr linkend="EDR"/> by remote
+                administrators initiate all communication with the EDR via a
+                trusted path, and that all communications with the EDR by remote
                 administrators is performed over this path. The data passed in this trusted
                 communication channel are encrypted as defined the protocol chosen in the first
-                selection. The <abbr linkend="ST"/> author chooses the mechanism or mechanisms
-                supported by the <abbr linkend="EDR"/>. </note>
+                selection. The ST author chooses the mechanism or mechanisms
+                supported by the EDR. </note>
               <aactivity>
 
-                <TSS> The evaluator shall examine the <abbr linkend="TSS"/> to determine that the
-                  methods of remote <abbr linkend="TOE"/> administration are indicated, along with
+                <TSS> The evaluator shall examine the TSS to determine that the
+                  methods of remote TOE administration are indicated, along with
                   how those communications are protected. The evaluator shall also confirm that all
-                  protocols listed in the <abbr linkend="TSS"/> in support of <abbr linkend="TOE"/>
+                  protocols listed in the TSS in support of TOE
                   administration are consistent with those specified in the requirement, and are
-                  included in the requirements in the <abbr linkend="ST"/>. </TSS>
+                  included in the requirements in the ST. </TSS>
                 <Guidance> The evaluator shall confirm that the operational guidance contains
                   instructions for establishing the remote administrative sessions for each
                   supported method. <Tests>
@@ -1268,22 +1266,21 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
           <!-- SME: note that FCS_COP.1 could also be considered for a dependency here but was not included since an EDR TOE may rely on the platform to provide the digital signature service. -->
           
           <f-element>
-            <title>The <abbr linkend="EDR"/> shall digitally sign commands and policies sent to the
+            <title>The EDR shall digitally sign commands and policies sent to the
               Host Agent. </title>
             <note role="application">The intent of this requirement is to cryptographically tie a
               command sent to a Host Agent to the enterprise that mandated the command, not to
-              protect the commands in transit (as they are already protected by <linkref
-                linkend="FTP_ITC.1"/>). </note>
+              protect the commands in transit (as they are already protected by FTP_ITC.1. </note>
             <aactivity>
               <TSS>The evaluator shall check to ensure that the TSS describes how all commands and policies are signed.</TSS>
               <Guidance>The evaluator shall review the operational guidance and ensure that the
-                <abbr linkend="EDR"/> any configuration information for policy signing is included.
+                EDR any configuration information for policy signing is included.
               </Guidance>
               <Tests>The evaluator shall select any one remediation function documented in the
                 administrative guide (e.g., terminate process), and execute that command
                 while capturing traffic. The evaluator shall review captured network traffic and
                 verify that a digital signature was sent along with the coinciding command or policy update.
-                The <abbr linkend="EDR"/> may need to be configured in a manner to disable transport
+                The EDR may need to be configured in a manner to disable transport
                 encryption for this test or the network capture tool may need to be
                 configured with the private key such that decrypted traffic can be made
                 available to the evaluator.
