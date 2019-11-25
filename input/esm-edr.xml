@@ -1156,17 +1156,18 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
                   included in the requirements in the ST. </TSS>
                 <Guidance> The evaluator shall confirm that the operational guidance contains
                   instructions for configuring the communication channel between the Host Agent and
-                  the <abbr linkend="EDR"/> for each supported method. <Tests>
-                    <testlist>
-                      <test> The evaluators shall ensure that communications using each specified
+                  the <abbr linkend="EDR"/> for each supported method. 
+                </Guidance>
+                <Tests>
+                  <testlist>
+                    <test> The evaluators shall ensure that communications using each specified
                         (in the operational guidance) Agent-Server communication method is tested
                         during the course of the evaluation, setting up the connections as described
                         in the operational guidance and ensuring that communication is successful. </test>
-                      <test> The evaluator shall ensure, for each method of Agent-Server
+                    <test> The evaluator shall ensure, for each method of Agent-Server
                         communication, the channel data is not sent in plaintext. </test>
                     </testlist>
                   </Tests>
-                </Guidance>
               </aactivity>
             </f-element>
           </f-component>
