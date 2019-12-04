@@ -189,36 +189,22 @@
   </chapter>
 
   <chapter title="Conformance Claims" id="conf">
-    <cclaims>
+     <cclaims>
       <cclaim title="Conformance Statement">
-        <description>
-          <h:p>This PP-Module inherits exact conformance as required from the
-            Application Software PP <cite linkend="bibAppPP"/> and as defined in the CC
-            and CEM addenda for Exact Conformance, Selection-Based SFRs, and Optional
-            SFRs (dated May 2017).<h:br/><h:br/>
-            This PP-Module extends the baseline Security Functional Requirements (SFRs)
-            and Security Assurance Requirements (SARs) for application software products.
-            Evaluation Activities are the actions that the evaluator performs in
-            order to determine an EDR's compliance to the SFRs. </h:p>
+        <description> This <abbr linkend="PP-Module"/> inherits exact conformance as required from
+          the specified <abbr linkend="Base-PP"/> and as defined in the <abbr linkend="CC"/> and
+            <abbr linkend="CEM"/> addenda for Exact Conformance, Selection-Based SFRs, and Optional
+          SFRs (dated May 2017).<htm:br/><htm:br/> 
         </description>
       </cclaim>
       <cclaim title="CC Conformance Claims">
-        <description>This PP-Module is conformant to Parts 2 (extended) and 3 
-          (conformant) of Common Criteria Version 3.1, Release 5 [CC].
-          In order to be conformant to this PP-Module, the ST must include all components
-          in this PP-Module and the associated <cite linkend="bibAppPP"/> that are:
-          <h:ol>
-            <h:li>Unconditional (always required)</h:li>
-            <h:li>Selection-based (required when certain selections are chosen in the unconditional requirements)</h:li>
-          </h:ol>
-          and may include optional and/or objective components that are desirable but not required for conformance.
-          <h:br/><h:br/>
-          If claiming compliance to a PP-Configuration that includes multiple PP-Modules, the ST author must ensure any duplicative SFRs are iterated using unique identifiers. This will allow the reader to easily determine which iteration applies to each TOE component.
-          
+        <description>This <abbr linkend="PP-Module"/> is conformant to Parts 2 (extended) and 3
+          (conformant) of Common Criteria Version 3.1, Release 5 [<abbr linkend="CC"/>].
         </description>
       </cclaim>
       <cclaim title="Package Claims">
-        <description>This PP-Module is TLS Package Version 1.1 Conformant.</description>
+        <description>This <abbr linkend="PP-Module"/> is TLS Package Version 1.1
+          Conformant.</description>
       </cclaim>
     </cclaims>
   </chapter>
