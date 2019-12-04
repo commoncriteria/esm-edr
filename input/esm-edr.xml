@@ -770,7 +770,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
   
           <f-component id="fmt_smf.1" iteration="HOST" name="Specification of Management Functions (EDR Management of Host Agent)">
             <consistency-rationale>This SFR defines a specific set of management functions for an
-              EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
+              Host Agent by an EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
             <f-element>
               <title>The EDR shall be capable of performing the following functions that control
                 behavior of the Host Agent:<h:br/>
@@ -812,7 +812,7 @@ The evaluator shall examine the TSS to ensure that it describes what formats are
           </f-component>
           <f-component name="Specification of Management Functions (EDR Management of EDR)" id="fmt_smf.1" iteration="ENDPOINT">
             <consistency-rationale>This SFR defines a specific set of management functions for an
-              EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
+              EDR by an EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
           <f-element>
               <title> The EDR shall be capable of performing the following
                 management functions: <h:br/>
