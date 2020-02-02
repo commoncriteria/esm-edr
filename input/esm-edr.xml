@@ -805,9 +805,9 @@ This section describes any modifications that the ST author must make to the Bas
               <title>The EDR shall be capable of performing the following functions that control
                 behavior of the Host Agent:<h:br/>
                 <management-function-set default="O">
-                  <manager id="a">Administrator</manager>
-                  <manager id="s">SOC Analyst</manager>
-                  <manager id="u">Read-Only User</manager>
+                  <manager cid="a">Administrator</manager>
+                  <manager cid="s">SOC Analyst</manager>
+                  <manager cid="u">Read-Only User</manager>
                   <management-function>
                     <text>Configure the time frame for sending Host Agent data to the EDR
                         <assignable>list of configurable time frames</assignable>
@@ -851,9 +851,9 @@ This section describes any modifications that the ST author must make to the Bas
               <title> The EDR shall be capable of performing the following
                 management functions: <h:br/>
                 <management-function-set default="O">
-                  <manager id="a">Administrator</manager>
-                  <manager id="s">SOC Analyst</manager>
-                  <manager id="u">Read-Only User</manager>
+                  <manager cid="a">Administrator</manager>
+                  <manager cid="s">SOC Analyst</manager>
+                  <manager cid="u">Read-Only User</manager>
                   <management-function>
                     <text>Configure the amount of time to retain data collected by the EDR
                         <assignable>time frame to retain data</assignable>
@@ -980,9 +980,9 @@ This section describes any modifications that the ST author must make to the Bas
               <title> The EDR shall be capable of performing the following
                 remediation functions: <h:br/>
                 <management-function-set default="O">
-                  <manager id="a">Administrator</manager>
-                  <manager id="s">SOC Analyst</manager>
-                  <manager id="u">User</manager>
+                  <manager cid="a">Administrator</manager>
+                  <manager cid="s">SOC Analyst</manager>
+                  <manager cid="u">User</manager>
                   
                   <management-function>
                     <text> Quarantine an endpoint by 
@@ -1106,17 +1106,24 @@ This section describes any modifications that the ST author must make to the Bas
             <consistency-rationale> This SFR defines a specific set of functions for logically distinct secure
               communication with a Host Agent. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
             <f-element>
-              <title>The <selectables>
-                <selectable>EDR 
-			</selectables> shall use <selectables>
-				<selectable id="ITC_TLS_2">TLS as defined in the TLS Package</selectable>
-				<selectable id="ITC_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
-			      </selectables> </selectable>
-                <selectable>EDR platform </selectables> shall use <selectables>
-				<selectable id="ITC_TLS_2">TLS</selectable>
-				<selectable id="ITC_HTTPS_2">HTTPS</selectable>
-			      </selectables> </selectable></selectable>
-              to provide a trusted communication channel between itself and another
+              <title>The 
+                <selectables>
+                  <selectable>EDR 
+             			 shall use 
+                    <selectables>
+              				<selectable id="ITC_TLS_2">TLS as defined in the TLS Package</selectable>
+              				<selectable id="ITC_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
+                    </selectables> 
+                  </selectable>
+                 <selectable>EDR platform 
+                    shall use 
+                   <selectables>
+              			<selectable id="ITC_TLS_2">TLS</selectable>
+              			<selectable id="ITC_HTTPS_2">HTTPS</selectable>
+                  </selectables> 
+                 </selectable>
+                </selectables>
+                to provide a trusted communication channel between itself and another
                 trusted IT product that is logically distinct from other communication channels,
                 provides assured identification of its endpoints, protects channel data from
                 disclosure, and detects modification of the channel data. </title>
@@ -1190,16 +1197,23 @@ This section describes any modifications that the ST author must make to the Bas
             <consistency-rationale>This SFR defines a specific set of functions for secure remote
               administration of the EDR. It does not impact <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
             <f-element>
-              <title><h:b>Refinement:</h:b>The <selectables>
-                <selectable>EDR 
-			</selectables> shall use <selectables>
-				<selectable id="ITC_TLS_2">TLS as defined in the TLS Package</selectable>
-				<selectable id="ITC_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
-			      </selectables> </selectable>
-                <selectable>EDR platform </selectables> shall use <selectables>
-				<selectable id="ITC_TLS_2">TLS</selectable>
-				<selectable id="ITC_HTTPS_2">HTTPS</selectable>
-			      </selectables> </selectable></selectable> to provide a trusted communication path between itself and remote
+              <title><h:b>Refinement:</h:b>The 
+                <selectables>
+                  <selectable>EDR 
+                    shall use 
+                    <selectables>
+                      <selectable id="ITC_TLS_2">TLS as defined in the TLS Package</selectable>
+                      <selectable id="ITC_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
+                    </selectables> 
+                  </selectable>
+                  <selectable>EDR platform 
+                    shall use 
+                    <selectables>
+                      <selectable id="ITC_TLS_2">TLS</selectable>
+                      <selectable id="ITC_HTTPS_2">HTTPS</selectable>
+                    </selectables> 
+                  </selectable>
+                </selectables> to provide a trusted communication path between itself and remote
                 administrators that is logically distinct from other communication paths,
                 provides assured identification of its endpoints, and protects the communicated
                 data from modification and disclosure.</title>
