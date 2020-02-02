@@ -1115,8 +1115,7 @@ This section describes any modifications that the ST author must make to the Bas
               				<selectable id="ITC_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
                     </selectables> 
                   </selectable>
-                 <selectable>EDR platform 
-                    shall use 
+                 <selectable>EDR shall leverage the platform for
                    <selectables>
               			<selectable id="ITC_TLS_2">TLS</selectable>
               			<selectable id="ITC_HTTPS_2">HTTPS</selectable>
@@ -1156,19 +1155,19 @@ This section describes any modifications that the ST author must make to the Bas
             </f-element>
             <f-element>
               <title>The <selectables>
-                <selectable>EDR</selectable>
-                <selectable>EDR platform</selectable>
-              </selectables> shall provide functionality to permit the EDR and Host Agent to initiate
+                <selectable>EDR shall</selectable>
+                <selectable>EDR shall leverage the platform to</selectable>
+              </selectables> provide functionality to permit the EDR and Host Agent to initiate
                 communication via the trusted channel. </title>
             </f-element>
             <f-element>
               <title>The <selectables>
-                <selectable>EDR</selectable>
-                <selectable>EDR platform</selectable>
-              </selectables> shall provide functionality to initiate communication via the trusted channel for <assignable>list of service for which the EDR is able to initiate communications</assignable></title>
+                <selectable>EDR shall</selectable>
+                <selectable>EDR shall leverage the platform to</selectable>
+              </selectables> provide functionality to initiate communication via the trusted channel for <assignable>list of service for which the EDR is able to initiate communications</assignable></title>
               <aactivity>
                 
-                <TSS> If EDR platform was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.<h:br/><h:br/> 
+                <TSS> If EDR shall leverage the platform was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.<h:br/><h:br/> 
 	
 			
 			If EDR was selected, the evaluator shall examine the TSS to verify how Agent-Server communications are protected is described and conforms to the SFR. 
@@ -1206,8 +1205,7 @@ This section describes any modifications that the ST author must make to the Bas
                       <selectable id="ITC_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
                     </selectables> 
                   </selectable>
-                  <selectable>EDR platform 
-                    shall use 
+                  <selectable>EDR shall leverage the platform for
                     <selectables>
                       <selectable id="ITC_TLS_2">TLS</selectable>
                       <selectable id="ITC_HTTPS_2">HTTPS</selectable>
@@ -1220,16 +1218,16 @@ This section describes any modifications that the ST author must make to the Bas
             </f-element>
             <f-element>
               <title><h:b>Refinement:</h:b> The <selectables>
-                  <selectable>EDR</selectable>
-                  <selectable>EDR platform</selectable>
-                </selectables> shall permit remote administrators to initiate communication via the
+                  <selectable>EDR shall</selectable>
+                  <selectable>EDR shall leverage the platform to</selectable>
+                </selectables> permit remote administrators to initiate communication via the
                 trusted path.</title>
             </f-element>
             <f-element>
               <title><h:b>Refinement:</h:b> The <selectables>
-                  <selectable>EDR</selectable>
-                  <selectable>EDR platform</selectable>
-                </selectables> shall require the use of the trusted path for all remote
+                  <selectable>EDR shall</selectable>
+                  <selectable>EDR shall leverage the platform to</selectable>
+                </selectables> require the use of the trusted path for all remote
                 administration actions.</title>
               <note role="application">This requirement ensures that authorized remote
                 administrators initiate all communication with the EDR via a
@@ -1248,7 +1246,7 @@ This section describes any modifications that the ST author must make to the Bas
                   administration are consistent with those specified in the requirement, and are
                   included in the requirements in the ST.
 		      
-		      <h:br/><h:br/> If EDR platform was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.
+		      <h:br/><h:br/> If EDR shall leverage the platform was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.
 	</TSS>
                 <Guidance> The evaluator shall confirm that the operational guidance contains
                   instructions for establishing the remote administrative sessions for each
