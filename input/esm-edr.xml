@@ -219,7 +219,7 @@
       <threats>
         
         
-        <threat id="T.MISCONFIGURATION">
+        <threat name="T.MISCONFIGURATION">
           <description>An attacker is a legitimate privileged user with access to change
             the configuration of the EDR's security capabilities. Attackers may
             attempt to hide malicious activities from other privileged users.</description>
@@ -228,7 +228,7 @@
             provides for management and audit of administrative activities.</rationale>
           </objective-refer>
         </threat>
-        <threat id="T.CREDENTIAL_REUSE">
+        <threat name="T.CREDENTIAL_REUSE">
           <description>An attacker is positioned on a communications channel or elsewhere on the
             network infrastructure. Attackers may guess or harvest legitimate credentials from the
             EDR, endpoints, or insecure network activity.</description>
@@ -250,7 +250,7 @@
     </section>
     <section id="Assumptions" title="Assumptions">
       <assumptions>
-        <assumption id="A.CONNECTIVITY">
+        <assumption name="A.CONNECTIVITY">
           <description>The EDR relies on network connectivity to carry out its
           management activities. The OE will provide reliable network connectivity for the EDR to operate.
             The EDR will robustly handle occasional instances when
@@ -272,27 +272,29 @@
   <chapter title="Security Objectives" id="obj">
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
-        <SO id="O.MANAGEMENT">
+        <SO name="O.MANAGEMENT">
           <description>The TOE must facilitate management by the enterprise,
             providing consistent and supported interfaces for their security-relevant configuration,
             maintenance, and operation.</description>
           <addressed-by>FAU_ALT_EXT.1, FAU_COL_EXT.1, FMT_SMF.1(1), FMT_SMF.1(2), FMT_SMR.1, FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)</addressed-by>
+          <rationale>PUT IN SOMETHING QQQQ</rationale>
           <consistency-rationale>This objective extends the Base-PP's O.MANAGEMENT
             objective by supporting the management functions that are specific to the EDR TOE type.
           </consistency-rationale>
         </SO>
-        <SO id="O.ACCOUNTABILITY">
+        <SO name="O.ACCOUNTABILITY">
           <description>The TOE must provide logging facilities which record
             management actions undertaken by identified and authenticated management users.</description>
           <addressed-by>
             FAU_GEN.1, FIA_PWD_EXT.1, FIA_AUT_EXT.1
           </addressed-by>
+          <rationale>PUT IN SOMETHING QQQQ</rationale>
           <consistency-rationale>This objective relates to the ability of the TOE to identify and authenticate users, and
             to record the behavior of these users. The Base-PP does not define an authentication mechanism so this objective
             does not affect the enforcement of the Base-PP's SFRs.
           </consistency-rationale>
         </SO>
-        <SO id="O.PROTECTED_TRANSIT">
+        <SO name="O.PROTECTED_TRANSIT">
           <description>To address both passive (eavesdropping) and active (packet modification)
             network attack threats, conformant TOE
               s will use a trusted channel to protect all communications. Sensitive data
@@ -301,6 +303,7 @@
           <addressed-by>FCS_DTLSS_EXT.1 (from TLS Package), FCS_DTLSC_EXT.1 (from TLS Package), FCS_HTTPS_EXT.1 (from Base-PP), 
             FCS_TLSC_EXT.1 (from TLS Package), FCS_TLSC_EXT.2 (from TLS Package), FCS_TLSS_EXT.1 (from TLS Package), 
             FCS_TLSS_EXT.2 (from TLS Package), FTP_ITC.1, FTP_TRP.1</addressed-by>
+          <rationale>PUT IN SOMETHING QQQQ</rationale>
           <consistency-rationale>This objective extends the Base-PP's O.COMMS
             objective by ensuring that the communications related to the EDR and
             enrolled Host Agents are secured in the same manner as other sensitive data.
@@ -313,7 +316,7 @@
       environment assist the EDR in correctly providing its security functionality. These track with
       the assumptions about the environment. <SOEs>
         
-        <SOE id="OE.RELIABLE_TRANSIT">
+        <SOE name="OE.RELIABLE_TRANSIT">
           <description>Wired or wireless network traffic between the EDR and
             host agents will be consistently and always available unless specific in evaluation
             activity tests.</description>
