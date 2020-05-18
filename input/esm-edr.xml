@@ -241,13 +241,11 @@
           <description>The TOE must facilitate management by the enterprise,
             providing consistent and supported interfaces for their security-relevant configuration,
             maintenance, and operation.</description>
-<<<<<<< HEAD
-          <addressed-by>FAU_ALT_EXT.1, FAU_COL_EXT.1, FIA_AUT_EXT.1, FIA_PWD_EXT.1, FMT_SMF.1/ENDPOINT, FMT_SMF.1/HOST, 
-            FMT_SMR.1, FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)</addressed-by>
-=======
-          <addressed-by>FAU_ALT_EXT.1, FAU_COL_EXT.1, FMT_SMF.1(1), FMT_SMF.1(2), FMT_SMR.1, FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)</addressed-by>
+
+          <addressed-by>FAU_ALT_EXT.1, FAU_COL_EXT.1, FMT_SMF.1(1), FMT_SMF.1(2), FMT_SMR.1, 
+            FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)</addressed-by>
           <rationale>PUT IN SOMETHING QQQQ</rationale>
->>>>>>> 556d9d55fc32ea586b4ed2c2165e6f5c19a62dcf
+
           <consistency-rationale>This objective extends the Base-PP's O.MANAGEMENT
             objective by supporting the management functions that are specific to the EDR TOE type.
           </consistency-rationale>
@@ -273,12 +271,11 @@
           <addressed-by>FCS_DTLSS_EXT.1 (from TLS Package), FCS_DTLSC_EXT.1 (from TLS Package), FCS_HTTPS_EXT.1 (from Base-PP), 
             FCS_TLSC_EXT.1 (from TLS Package), FCS_TLSC_EXT.2 (from TLS Package), FCS_TLSS_EXT.1 (from TLS Package), 
             FCS_TLSS_EXT.2 (from TLS Package), FTP_ITC.1, FTP_TRP.1</addressed-by>
-<<<<<<< HEAD
-          <consistency-rationale>This objective extends the Base-PP's O.PROTECTED_COMMS
-=======
+
+
           <rationale>PUT IN SOMETHING QQQQ</rationale>
-          <consistency-rationale>This objective extends the Base-PP's O.COMMS
->>>>>>> 556d9d55fc32ea586b4ed2c2165e6f5c19a62dcf
+            <consistency-rationale>This objective extends the Base-PP's O.PROTECTED_COMMS
+
             objective by ensuring that the communications related to the EDR and
             enrolled Host Agents are secured in the same manner as other sensitive data.
           </consistency-rationale>
@@ -1143,11 +1140,10 @@ This section describes any modifications that the ST author must make to the Bas
               </selectables> provide functionality to initiate communication via the trusted channel for <assignable>list of service for which the EDR is able to initiate communications</assignable></title>
               <aactivity>
                 
-<<<<<<< HEAD
-                <TSS> If "EDR platform" was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.<h:br/><h:br/> 
-=======
+
+             
                 <TSS> If EDR shall leverage the platform was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.<h:br/><h:br/> 
->>>>>>> 556d9d55fc32ea586b4ed2c2165e6f5c19a62dcf
+
 	
 			
 			If "EDR" was selected, the evaluator shall examine the TSS to verify how Agent-Server communications are protected is described and conforms to the SFR. 
@@ -1226,11 +1222,10 @@ This section describes any modifications that the ST author must make to the Bas
                   administration are consistent with those specified in the requirement, and are
                   included in the requirements in the ST.
 		      
-<<<<<<< HEAD
-		      <h:br/><h:br/> If "EDR platform" was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.
-=======
+
+		    
 		      <h:br/><h:br/> If EDR shall leverage the platform was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.
->>>>>>> 556d9d55fc32ea586b4ed2c2165e6f5c19a62dcf
+
 	</TSS>
                 <Guidance> The evaluator shall confirm that the operational guidance contains
                   instructions for establishing the remote administrative sessions for each
