@@ -40,7 +40,7 @@
       requirements for the Host Agent are addressed in the separate <cite linkend="bibHAGT"/>
       Module. Evaluation of an EDR system will require evaluations of different system components 
       consisting of EDR and <cite linkend="bibHAGT"/>. Each evaluation must satisfy the requirements 
-      in both the [MOD_EDR_V1.0] or [MOD_HA_V1.0] in addition its Base-PP [PP APP V1.3].
+      in both the [MOD_EDR_V1.0] or [MOD_HA_V1.0] in addition to its Base-PP [PP APP V1.3].
       
       
       Evaluation of an EDR system will require multiple evaluations of different system
@@ -55,22 +55,11 @@
       <figure entity="images/edr_archi.png" title="Primary EDR Architectures" id="toe"/>
     </section>
     <tech-terms>
-      <term abbr="AES" full="Advanced Encryption Standard"/>
-      <term abbr="ANSI" full="American National Standards Institute"/>
       <term abbr="API" full="Application Programming Interface"/>
-      <term abbr="ASLR" full="Address Space Layout Randomization"/>
       <term full="Alert">An event or notification on the management dashboard that highlights
         potentially unauthorized activity. 
       </term>
-      <term abbr="CESG" full="Communications-Electronics Security Group"/>
-      <term abbr="CMC" full="Certificate Management over CMS"/>
-      <term abbr="CMS" full="Cryptographic Message Syntax"/>
-      <term abbr="CN" full="Common Names"/>
-      <term abbr="CRL" full="Certificate Revocation List"/>
       <term abbr="CSA" full="Computer Security Act"/>
-      <term abbr="DEP" full="Data Execution Prevention"/>
-      <term abbr="DES" full="Data Encryption Standard"/>
-      <term abbr="DHE" full="Diffie-Hellman Ephemeral"/>
       <term abbr="DNS" full="Domain Name System"/>
       <term abbr="DRBG" full="Deterministic Random Bit Generator"/>
       <term abbr="DSS" full="Digital Signature Standard"/>
@@ -78,9 +67,7 @@
       <term abbr="DTLS" full="Datagram Transport Layer Security"/>
       <term abbr="EAP" full="Extensible Authentication Protocol"/>
       <term abbr="ECDHE" full="Elliptic Curve Diffie-Hellman Ephemeral"/>
-      <term abbr="ECDSA" full="Elliptic Curve Digital Signature Algorithm"/>
       <term abbr="EDR" full="Endpoint Detection and Response"/>
-      <term abbr="EST" full="Enrollment over Secure Transport"/>
       <term full="Endpoint">A computing device that runs a general purpose OS, a mobile
         device OS, or network device OS. Endpoints can include desktops, servers, and mobile devices.
       </term>
@@ -89,58 +76,31 @@
         <h:i>TOE</h:i> and <h:i>EDR</h:i> are interchangeable in this
         document.
       </term>
-      <term full="Endpoint Detection and Response System" abbr="EDR">The EDR server and the Host Agents they operate with.
+      <term full="Endpoint Detection and Response System">The EDR server and the Host Agents they operate with.
       </term>
       <term full="Enroll">The act of registering a HA endpoint with the EDR.</term>
-      <term abbr="FIPS" full="Federal Information Processing Standards"/>
-      <term abbr="DSS" full="Digital Signature Standard"/>
-      <term abbr="HMAC" full="Hash-based Message Authentication Code"/>
       <term full="Host Agent">Complementary software that executes on endpoints to collect data about the
         endpoint and executes commands sent to the endpoint from an Enterprise Security Management
         (ESM) server or service. An example command sent to an endpoint could be to enforce a
         policy from an ESM, to collect some files, or to run an OS command. 
       </term>
-      <term abbr="HTTP" full="Hypertext Transfer Protocol"/>
       <term abbr="HTTPS" full="Hypertext Transfer Protocol Secure"/>
-      <term abbr="DSS" full="Digital Signature Standard"/>
-      <term abbr="IETF" full="Internet Engineering Task Force"/>
       <term abbr="IP" full="Internet Protocol"/>
-      <term abbr="ISO" full="International Organization for Standardization"/>
       <term abbr="IT" full="Information Technology"/>
-      <term abbr="ITSEF" full="Information Technology Security Evaluation Facility"/>
       <term full="Management Dashboard">A management interface for the configuration of EDR policy, visualization
         of collected endpoint alert data, and issuing of remediation commands.
       </term>
-      <term abbr="NFC" full="Near Field Communication"/>
-      <term abbr="NIAP" full="National Information Assurance Partnership"/>
-      <term abbr="NIST" full="National Institute of Standards and Technology"/>
-      <term abbr="OCSP" full="Online Certificate Status Protocol"/>
-      <term abbr="OID" full="Object Identifier"/>
-      <term abbr="OMB" full="Office of Management and Budget"/>
       <term abbr="OS" full="Operating System"/>
-      <term abbr="PII" full="Personally Identifiable Information"/>
-      <term abbr="PKI" full="Public Key Infrastructure"/>
       <term abbr="PP" full="Protection Profile"/>
       <term full="Potentially Unauthorized Activity">This refers to the set of activities detected by the TOE, specific items detected may be unique to the TOE</term>
       <term abbr="RBG" full="Random Bit Generator"/>
-      <term abbr="RFC" full="Request for Comment"/>
-      <term abbr="RNG" full="Random Number Generator"/>
-      <term abbr="RNGVS" full="Random Number Generator Validation System"/>
-      <term abbr="SAN" full="Subject Alternative Name"/>
       <term abbr="SAR" full="Security Assurance Requirement"/>
       <term abbr="SFR" full="Security Functional Requirement"/>
-      <term abbr="SHA" full="Secure Hash Algorithm"/>
-      <term abbr="S/MIME" full="Secure/Multi-purpose Internet Mail Extensions"/>
-      <term abbr="SIP" full="Session Initiation Protocol"/>
-      <term abbr="SWID" full="Software Identification"/>
       <term full="SOC Analyst">Security Operations Center (SOC) Analyst is typically the person
         responsible for reviewing potentially unauthorized activities via alerts and
         performing remediation and clean up.
       </term>
       <term abbr="TLS" full="Transport Layer Security"/>
-      <term abbr="URI" full="Uniform Resource Identifier"/>
-      <term abbr="URL" full="Uniform Resource Locator"/>
-      <term abbr="USB" full="Universal Serial Bus"/>
       <term abbr="XCCDF" full="eXtensible Configuration Checklist Description Format"/>
       <term abbr="XOR" full="Exclusive Or"/>
     </tech-terms>
@@ -183,7 +143,7 @@
         </usecase>
         <usecase title="Discovery" id="discovery">
           <description>The capability to effectively browse, query, and export aggregated host-based
-            endpoint data enables a SOC analyst to discover adversaries in post-compromise
+            endpoint data enables an SOC analyst to discover adversaries in post-compromise
             scenarios. </description>
         </usecase>
       </usecases>
@@ -193,19 +153,19 @@
   <chapter title="Conformance Claims" id="conf">
      <cclaims>
       <cclaim title="Conformance Statement">
-        <description> This <abbr linkend="PP-Module"/> inherits exact conformance as required from
-          the specified <abbr linkend="Base-PP"/> and as defined in the <abbr linkend="CC"/> and
-            <abbr linkend="CEM"/> addenda for Exact Conformance, Selection-Based SFRs, and Optional
+        <description> This PP-Module inherits exact conformance as required from
+          the specified Base-PP and as defined in the CC and
+          CEM addenda for Exact Conformance, Selection-Based SFRs, and Optional
           SFRs (dated May 2017).<h:br/><h:br/> 
         </description>
       </cclaim>
       <cclaim title="CC Conformance Claims">
-        <description>This <abbr linkend="PP-Module"/> is conformant to Parts 2 (extended) and 3
-          (conformant) of Common Criteria Version 3.1, Release 5 [<abbr linkend="CC"/>].
+        <description>This PP-Module is conformant to Parts 2 (extended) and 3
+          (conformant) of Common Criteria Version 3.1, Release 5 [CC].
         </description>
       </cclaim>
       <cclaim title="Package Claims">
-        <description>This <abbr linkend="PP-Module"/> is TLS Package Version 1.1
+        <description>This PP-Module is TLS Package Version 1.1
           Conformant.</description>
       </cclaim>
     </cclaims>
@@ -213,7 +173,7 @@
 
   <chapter title="Security Problem Description" id="spd"> The security problem is described in terms
     of the threats that the EDR is expected to address, assumptions about the
-    operational environment, and any organizational security policies that the EDR
+    OE, and any organizational security policies that the EDR
     is expected to enforce.
     <section title="Threats" id="threats">
       <threats>
@@ -221,11 +181,16 @@
         
         <threat id="T.MISCONFIGURATION">
           <description>An attacker is a legitimate privileged user with access to change
-            the configuration of the EDR's security capabilities. Attackers may
+            the configuration of the EDR's security capabilities or is not a legitimate 
+            privileged user trying to access without proper authorization.. Attackers may
             attempt to hide malicious activities from other privileged users.</description>
           <objective-refer ref="O.MANAGEMENT">
             <rationale>The threat T.MISCONFIGURATION is countered by O.MANAGEMENT as this
             provides for management and audit of administrative activities.</rationale>
+          </objective-refer>
+          <objective-refer ref="O.ACCOUNTABILITY">
+            <rationale>The threat T.MISCONFIGURATION is countered by O.ACCOUNTABILITY as this
+              provides for identity, authentication, and audit of administrative activities.</rationale>
           </objective-refer>
         </threat>
         <threat id="T.CREDENTIAL_REUSE">
@@ -256,7 +221,7 @@
             The EDR will robustly handle occasional instances when
           connectivity is unavailable or unreliable.</description>
           <objective-refer ref="OE.RELIABLE_TRANSIT">
-            <rationale>The Operational Environment objective OE.RELIABLE_TRANSIT is realized through
+            <rationale>The OE objective OE.RELIABLE_TRANSIT is realized through
             A.CONNECTIVITY.</rationale>
           </objective-refer>
         </assumption>
@@ -276,7 +241,8 @@
           <description>The TOE must facilitate management by the enterprise,
             providing consistent and supported interfaces for their security-relevant configuration,
             maintenance, and operation.</description>
-          <addressed-by>FAU_ALT_EXT.1, FAU_COL_EXT.1, FMT_SMF.1(1), FMT_SMF.1(2), FMT_SMR.1, FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)</addressed-by>
+          <addressed-by>FAU_ALT_EXT.1, FAU_COL_EXT.1, FIA_AUT_EXT.1, FIA_PWD_EXT.1, FMT_SMF.1/ENDPOINT, FMT_SMF.1/HOST, 
+            FMT_SMR.1, FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)</addressed-by>
           <consistency-rationale>This objective extends the Base-PP's O.MANAGEMENT
             objective by supporting the management functions that are specific to the EDR TOE type.
           </consistency-rationale>
@@ -285,7 +251,7 @@
           <description>The TOE must provide logging facilities which record
             management actions undertaken by identified and authenticated management users.</description>
           <addressed-by>
-            FAU_GEN.1, FIA_PWD_EXT.1, FIA_AUT_EXT.1
+            FAU_GEN.1, FIA_AUT_EXT.1
           </addressed-by>
           <consistency-rationale>This objective relates to the ability of the TOE to identify and authenticate users, and
             to record the behavior of these users. The Base-PP does not define an authentication mechanism so this objective
@@ -301,7 +267,7 @@
           <addressed-by>FCS_DTLSS_EXT.1 (from TLS Package), FCS_DTLSC_EXT.1 (from TLS Package), FCS_HTTPS_EXT.1 (from Base-PP), 
             FCS_TLSC_EXT.1 (from TLS Package), FCS_TLSC_EXT.2 (from TLS Package), FCS_TLSS_EXT.1 (from TLS Package), 
             FCS_TLSS_EXT.2 (from TLS Package), FTP_ITC.1, FTP_TRP.1</addressed-by>
-          <consistency-rationale>This objective extends the Base-PP's O.COMMS
+          <consistency-rationale>This objective extends the Base-PP's O.PROTECTED_COMMS
             objective by ensuring that the communications related to the EDR and
             enrolled Host Agents are secured in the same manner as other sensitive data.
           </consistency-rationale>
@@ -315,8 +281,7 @@
         
         <SOE id="OE.RELIABLE_TRANSIT">
           <description>Wired or wireless network traffic between the EDR and
-            host agents will be consistently and always available unless specific in evaluation
-            activity tests.</description>
+            host agents will provide reasonable relatible connectivity.</description>
           <consistency-rationale> This objective relates to an external interface that does not exist in the Base-PP
           and does not affect Base-PP functionality.</consistency-rationale>
         </SOE>
@@ -331,7 +296,7 @@
       url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=394&amp;id=394"
       xmlurl="https://raw.githubusercontent.com/commoncriteria/application/c51970161d3a47fe8a7c23552f372745a638ba7d/input/application.xml">
       <sec-func-req-dir>
-In a PP-Configuration that includes App PP, the TOE is expected to rely on some of the security functions implemented by the application as a whole and evaluated against the Base-PP.
+        In a PP-Configuration that includes <cite linkend="bibAppPP"/>, the TOE is expected to rely on some of the security functions implemented by the application as a whole and evaluated against the Base-PP.
 The SFRs listed in this section are defined in the Base-PP and relevant to the secure operation of the EDR.
 This section describes any modifications that the ST author must make to the Base-PP SFRs to satisfy the required EDR functionality.
       </sec-func-req-dir>
@@ -345,8 +310,7 @@ This section describes any modifications that the ST author must make to the Bas
 
       <con-sec-prob/>
       <con-obj/>
-      <con-op-en> This PP-Module does not define any objectives for the TOE's operational
-        environment. </con-op-en>
+      <con-op-en/>
       
       
       
@@ -463,10 +427,9 @@ This section describes any modifications that the ST author must make to the Bas
                   shall follow guidance to enroll a Host Agent to the EDR and verify that the
                   enrollment action is recorded in an auditable and timestamped activity log.<h:br/><h:br/>
                   <h:b>For Windows,</h:b> the evaluator shall test the EDR's ability to detect
-                  anomalous activity by performing the following sub-tests on an enrolled Host Agent's
-                  system for each platform list that is supported, verifying for each that corresponding
-                  alerts were generated in the management dashboard, the test passes if an alert of the appropriate type is generated:<h:br/>
-                  <testlist>
+                  anomalous activity by performing the following subtests based on the platform of
+                  the enrolled Host Agent's system, verifying for each that, corresponding alerts
+                  were generated in the management dashboard:<h:br/><testlist>
                     <test>The evaluator shall open a Windows command prompt as a user and run the
                       command <h:code>cmd /c certutil -urlcache -split -f &#60;remote file&#62;
                         &#60;download directory&#62;</h:code>, where the remote file is a valid file path
@@ -486,8 +449,8 @@ This section describes any modifications that the ST author must make to the Bas
                   </testlist>
                   <h:b>For Linux,</h:b> the evaluator shall test the EDR's ability to detect
                   anomalous activity by performing the following subtests based on the platform of
-                  the enrolled Host Agent's system, verifying for each that corresponding alerts
-                  were generated in the management dashboard::<h:br/>
+                  the enrolled Host Agent's system, verifying for each that, corresponding alerts
+                  were generated in the management dashboard:<h:br/>
                   <testlist>
                     <test>The evaluator shall open a terminal and run the command <h:code>scp
                       &#60;remote user&#62;@&#60;remote host&#62;:&#60;remote path&#62;
@@ -551,7 +514,7 @@ This section describes any modifications that the ST author must make to the Bas
                   <h:li>Privileged and unprivileged endpoint account login activity</h:li>
                   <h:li>Process creation</h:li>
                   <h:li>Libraries and modules loaded by processes</h:li>
-                  <h:li>Filenames and <assignable>other metadata</assignable> of files created and <assignable>other activities performed to files</assignable>on persistent storage</h:li>
+                  <h:li>Filenames and <assignable>other metadata</assignable> of files created and <assignable>other activities performed to files</assignable> on persistent storage</h:li>
                   <h:li><assignable>Other host data</assignable></h:li>
                 </h:ol>
               </title>
@@ -565,7 +528,7 @@ This section describes any modifications that the ST author must make to the Bas
                   <testlist>
                     <test>The evaluator shall verify the OS version, architecture, and IP address of
                     a system managed by a Host Agent against the data reported to the EDR.</test>
-                    <test>The evaluator shall login to a system managed by a Host Agent with two separate
+                    <test>The evaluator shall log in to a system managed by a Host Agent with two separate
                     accounts and verify that the activity is accurately reported to the EDR.</test>
                     <test>The evaluator shall run a known user application provided on the platform OS and verify
                     that subsequent process creation and module loading is accurately reported to the EDR.</test>
@@ -594,7 +557,7 @@ This section describes any modifications that the ST author must make to the Bas
          
             <f-element>
               <title>The EDR shall generate an audit record of the following auditable events: 
-                  <h:li>EDR management dashboard login activity</h:li>
+                  <h:li>EDR management dashboard log in activity</h:li>
                   <h:li>Remediation commands sent to a Host Agent, affected endpoint, or network
                     devices</h:li>
                   <h:li>EDR configuration changes</h:li>
@@ -675,6 +638,56 @@ This section describes any modifications that the ST author must make to the Bas
         </subsection>
 
         <subsection title="Identification and Authentication (FIA)" id="fia">
+          <ext-comp-def fam-id="FIA_AUT_EXT" title="Dashboard Authentication Mechanisms">
+            <mod-def>Components in this family define requirements for authentication behavior that is unique to an EDR TOE.</mod-def>
+          </ext-comp-def>
+          <f-component id="fia_aut_ext.1" name="Dashboard Authentication Mechanisms">
+            <consistency-rationale> This SFR defines authentication mechanisms for the EDR. It does
+              not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
+            
+            <comp-lev> identifies the only authentication factors that may be used for authentication to a management interface of an EDR.</comp-lev>
+            <management>No specific management functions are identified.</management>
+            <audit>There are no auditable events foreseen.</audit>
+            <dependencies>No dependencies.</dependencies>
+            
+            <f-element>
+              <title> The EDR shall 
+                <selectables>
+                  <selectable>leverage the platform for authentication</selectable>
+                  <selectable>provide the following authentication
+                    mechanisms, authentication based on username and password and <selectables
+                      linebreak="yes">
+                      <selectable>authentication with external Smartcard and PIN</selectable>
+                      <selectable>invocation of platform-provided functionality</selectable>
+                      <selectable>no other factors</selectable>
+                    </selectables></selectable>
+                </selectables> to support logins to any management dashboard or API. </title>
+              <note role="application">The selection specifies if Smartcards are also supported, one selection must be made.</note>
+              <aactivity>
+                <TSS>The evaluation shall examine the TSS to ensure that it describes how user authentication is performed.  
+                The evaluator shall verify that the authorization methods listed in the TSS are specified and included in the requirements in the ST.</TSS>
+                <Guidance>The evaluator shall review the operational guidance to ensure that it
+                  contains documentation on configuring any supported authentication mechanisms and any support for 
+                  multifactor authentication.</Guidance>
+                <Tests>
+                  <testlist>
+                    <test>Conditional: If "provide the following authentication mechanisms" is selected, 
+                      the evaluator shall create an account with a username and password, verifying
+                      that login authentication is case-sensitive. If additional factors are provided, each
+                      factor shall be tested for login access with strictly unanimous authentication for those
+                      enabled. The evaluator shall verify that login access is granted for correct credentials
+                      and denied in cases of incorrect credentials across available factors.</test>
+                    <test>
+                      Conditional: If "leverage the platform" is selected, the evaluator shall create an account following the platform rules. 
+                      If additional factors are provided, each
+                      factor shall be tested for login access with strictly unanimous authentication for those
+                      enabled. The evaluator shall verify that login access is granted for correct credentials
+                      and denied in cases of incorrect credentials across available factors.</test>
+                  </testlist>
+                </Tests>
+              </aactivity>
+            </f-element>
+          </f-component>
 
   
           
@@ -741,109 +754,11 @@ This section describes any modifications that the ST author must make to the Bas
             </f-element>
           </f-component>
           
-          <ext-comp-def fam-id="FIA_AUT_EXT" title="Dashboard Authentication Mechanisms">
-            <mod-def>Components in this family define requirements for authentication behavior that is unique to an EDR TOE.</mod-def>
-          </ext-comp-def>
           
-          <f-component id="fia_aut_ext.1" name="Dashboard Authentication Mechanisms">
-            <consistency-rationale> This SFR defines authentication mechanisms for the EDR. It does
-              not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
-            
-            <comp-lev> identifies the only authentication factors that may be used for authentication to a management interface of an EDR.</comp-lev>
-            <management>No specific management functions are identified.</management>
-            <audit>There are no auditable events foreseen.</audit>
-            <dependencies>No dependencies.</dependencies>
-            
-            <f-element>
-              <title> The EDR shall 
-                <selectables>
-                  <selectable>leverage the platform for authentication</selectable>
-                  <selectable>provide the following authentication
-                    mechanisms, authentication based on username and password and <selectables
-                      linebreak="yes">
-                      <selectable>authentication with external Smartcard and PIN</selectable>
-                      <selectable>invocation of platform-provided functionality</selectable>
-                      <selectable>no other factors</selectable>
-                    </selectables></selectable>
-                </selectables> to support logins to any management dashboard or API. </title>
-              <note role="application">The selection specifies if Smartcards are also supported, one selection must be made.</note>
-              <aactivity>
-                <TSS>The evaluation shall examine the TSS to ensure that it describes how user authentication is performed.  
-                The evaluator shall verify that the authorization methods listed in the TSS are specified and included in the requirements in the ST.</TSS>
-                <Guidance>The evaluator shall review the operational guidance to ensure that it
-                  contains documentation on configuring any supported authentication mechanisms and any support for 
-                  multifactor authentication.</Guidance>
-                <Tests>
-                  <testlist>
-                    <test>Conditional: If "provide the following authentication mechanisms" is selected, 
-                      the evaluator shall create an account with a username and password, verifying
-                      that login authentication is case-sensitive. If additional factors are provided, each
-                      factor shall be tested for login access with strictly unanimous authentication for those
-                      enabled. The evaluator shall verify that login access is granted for correct credentials
-                      and denied in cases of incorrect credentials across available factors.</test>
-                    <test>
-                      Conditional: If "leverage the platform" is selected, the evaluator shall create an account following the platform rules. 
-                      If additional factors are provided, each
-                      factor shall be tested for login access with strictly unanimous authentication for those
-                      enabled. The evaluator shall verify that login access is granted for correct credentials
-                      and denied in cases of incorrect credentials across available factors.</test>
-                  </testlist>
-                </Tests>
-              </aactivity>
-            </f-element>
-          </f-component>
 
         </subsection>
 
         <subsection title="Security Management (FMT)" id="fmt">
-          
-  
-          <f-component id="fmt_smf.1" iteration="HOST" name="Specification of Management Functions (EDR Management of Host Agent)">
-            <consistency-rationale>This SFR defines a specific set of management functions for an
-              Host Agent by an EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
-            <f-element>
-              <title>The EDR shall be capable of performing the following functions that control
-                behavior of the Host Agent:<h:br/>
-                <management-function-set default="O">
-                  <manager cid="a">Administrator</manager>
-                  <manager cid="s">SOC Analyst</manager>
-                  <manager cid="u">Read-Only User</manager>
-                  <management-function>
-                    <text>Configure the time frame for sending Host Agent data to the EDR
-                        <assignable>list of configurable time frames</assignable>
-                    </text>
-                    <M ref="a"/><O ref="s"/><_ ref="u"/>
-                  </management-function>
-                  <management-function>
-                    <text>Assign a label or tag to categorize or group individual endpoint systems </text>
-                    <M ref="a"/><O ref="s"/><_ ref="u"/>
-                  </management-function>
-                </management-function-set>
-              </title>
-              <note role="application">This requirement captures all the configuration
-                functionality the EDR provides the administrator to configure the
-                EDR Host Agents. <h:br/><h:br/>
-              Chart legend: X = Mandatory, O = Optional, - = N/A</note>
-              <aactivity>
-                <TSS>The evaluator shall verify the ST contains a list of roles and what functions they can perform.  
-                  The evaluator shall verify the list matches the chart in the requirement.</TSS>
-                <Guidance>The evaluator shall review the operational guidance to verify that the EDR has
-                documented capabilities to perform the management functions.</Guidance>
-                <Tests>The evaluator shall perform the below tests:
-                 <testlist>
-                   <test>The evaluator shall modify the time frame for sending Host Agent data to the EDR
-                   and verify that an affected Host Agent is sending data at the intended interval.</test>
-                   <test>The evaluator shall tag or categorize a group of individual endpoint systems and
-                   verify that the tag or categorization persists within the EDR management dashboard for
-                   other users.</test>
-                   <test>The evaluator shall attempt each function with each role and verify access conforms with the chart in the requirement.</test>
-                 </testlist>
-                </Tests>
-              </aactivity>
-            </f-element>
-          </f-component>
-          
-          
           <f-component name="Specification of Management Functions (EDR Management of EDR)" id="fmt_smf.1" iteration="ENDPOINT">
             <consistency-rationale>This SFR defines a specific set of management functions for an
               EDR by an EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
@@ -920,6 +835,54 @@ This section describes any modifications that the ST author must make to the Bas
             </f-element>
           </f-component>
           
+  
+          <f-component id="fmt_smf.1" iteration="HOST" name="Specification of Management Functions (EDR Management of Host Agent)">
+            <consistency-rationale>This SFR defines a specific set of management functions for an
+              Host Agent by an EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
+            <f-element>
+              <title>The EDR shall be capable of performing the following functions that control
+                behavior of the Host Agent:<h:br/>
+                <management-function-set default="O">
+                  <manager cid="a">Administrator</manager>
+                  <manager cid="s">SOC Analyst</manager>
+                  <manager cid="u">Read-Only User</manager>
+                  <management-function>
+                    <text>Configure the time frame for sending Host Agent data to the EDR
+                        <assignable>list of configurable time frames</assignable>
+                    </text>
+                    <M ref="a"/><O ref="s"/><_ ref="u"/>
+                  </management-function>
+                  <management-function>
+                    <text>Assign a label or tag to categorize or group individual endpoint systems </text>
+                    <M ref="a"/><O ref="s"/><_ ref="u"/>
+                  </management-function>
+                </management-function-set>
+              </title>
+              <note role="application">This requirement captures all the configuration
+                functionality the EDR provides the administrator to configure the
+                EDR Host Agents. <h:br/><h:br/>
+              Chart legend: X = Mandatory, O = Optional, - = N/A</note>
+              <aactivity>
+                <TSS>The evaluator shall verify the ST contains a list of roles and what functions they can perform.  
+                  The evaluator shall verify the list matches the chart in the requirement.</TSS>
+                <Guidance>The evaluator shall review the operational guidance to verify that the EDR has
+                documented capabilities to perform the management functions.</Guidance>
+                <Tests>The evaluator shall perform the below tests:
+                 <testlist>
+                   <test>The evaluator shall modify the time frame for sending Host Agent data to the EDR
+                   and verify that an affected Host Agent is sending data at the intended interval.</test>
+                   <test>The evaluator shall tag or categorize a group of individual endpoint systems and
+                   verify that the tag or categorization persists within the EDR management dashboard for
+                   other users.</test>
+                   <test>The evaluator shall attempt each function with each role and verify access conforms with the chart in the requirement.</test>
+                 </testlist>
+                </Tests>
+              </aactivity>
+            </f-element>
+          </f-component>
+          
+          
+          
           
           <f-component id="fmt_smr.1" name="Security Management Roles">
             <consistency-rationale> This SFR defines a specific set of management roles for an EDR.
@@ -982,7 +945,7 @@ This section describes any modifications that the ST author must make to the Bas
                 <management-function-set default="O">
                   <manager cid="a">Administrator</manager>
                   <manager cid="s">SOC Analyst</manager>
-                  <manager cid="u">User</manager>
+                  <manager cid="u">Read-Only User</manager>
                   
                   <management-function>
                     <text> Quarantine an endpoint by 
@@ -1014,7 +977,9 @@ This section describes any modifications that the ST author must make to the Bas
                   remediation actions and how each remediation action is performed.</TSS>
                 <Guidance>The evaluator shall review the operational guidance to verify that the EDR has
                   documented capabilities to perform the management functions.</Guidance>
-                <Tests>The evaluator shall perform the below tests:
+                <Tests>For each role The evaluator shall perform the below tests, verifying that each role in the chart can 
+                  perform their permitted functions and are restricted from performing they do not have access too peSr the 
+                  legend (Chart legend: X = Mandatory, O = Optional, - = N/A):
                   <testlist>
                     <test>Conditional: If logically quarantining the endpoint from the network is selected 
                       the evaluator shall logically quarantine a managed endpoint system from the
@@ -1022,8 +987,8 @@ This section describes any modifications that the ST author must make to the Bas
                     outside of a whitelist.</test>
                     <test>Conditional: If quarantining the malicious file on the endpoint is selected 
                       the evaluator shall verify the functionality to quarantine potentially unauthorized files on the endpoint.</test>
-                    <test>The evaluator shall run an executable on a managed endpoint system and terminate
-                    its process from the EDR management dashboard before verifying that the process is no
+                    <test>The evaluator shall run an executable on a managed endpoint system, terminate
+                    its process from the EDR management dashboard, and then verify that the process is no
                     longer running on the system.</test>
                     <test>The evaluator shall place a file known to trigger an incident alert on the file system then retrieve the 
                       contents of the file from the EDR management dashboard.</test>
@@ -1112,8 +1077,8 @@ This section describes any modifications that the ST author must make to the Bas
              			 shall use 
                     <selectables>
               				<selectable id="ITC_TLS_2">TLS as defined in the TLS Package</selectable>
-              				<selectable id="ITC_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
-                    </selectables> 
+                      <selectable id="ITC_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
+                    </selectables>
                   </selectable>
                  <selectable>EDR platform 
                     shall use 
@@ -1146,9 +1111,9 @@ This section describes any modifications that the ST author must make to the Bas
                 the description in the TSS should make this difference clear.
                 <h:br/><h:br/> 
 		      
-		      The trusted channel uses TLS, or HTTPS as the protocol that preserves
+		      The trusted channel uses TLS or HTTPS as the protocol that preserves
                 the confidentiality and integrity of EDR communications. The ST author chooses the mechanism 
-                or mechanisms supported by the EDR, and then ensures the correct requirements are included the 
+                or mechanisms supported by the EDR, and then ensures the correct requirements are included in the 
                 ST if not already present. Protocol, RBG, Certificate validation,
                 algorithm, and similar services may be met with platform provided services. 
         
@@ -1168,10 +1133,10 @@ This section describes any modifications that the ST author must make to the Bas
               </selectables> shall provide functionality to initiate communication via the trusted channel for <assignable>list of service for which the EDR is able to initiate communications</assignable></title>
               <aactivity>
                 
-                <TSS> If EDR platform was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.<h:br/><h:br/> 
+                <TSS> If "EDR platform" was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.<h:br/><h:br/> 
 	
 			
-			If EDR was selected, the evaluator shall examine the TSS to verify how Agent-Server communications are protected is described and conforms to the SFR. 
+			If "EDR" was selected, the evaluator shall examine the TSS to verify how Agent-Server communications are protected is described and conforms to the SFR. 
                   The evaluator shall also confirm that all protocols
                   listed in the TSS are consistent with those specified in the requirement, and are
                   included in the requirements in the ST. </TSS>
@@ -1235,7 +1200,7 @@ This section describes any modifications that the ST author must make to the Bas
                 administrators initiate all communication with the EDR via a
                 trusted path, and that all communications with the EDR by remote
                 administrators is performed over this path. The data passed in this trusted
-                communication channel are encrypted as defined the protocol chosen in the first
+                communication channel are encrypted as defined in the protocol chosen in the first
                 selection. The ST author chooses the mechanism or mechanisms
                 supported by the EDR. </note>
               <aactivity>
@@ -1248,7 +1213,7 @@ This section describes any modifications that the ST author must make to the Bas
                   administration are consistent with those specified in the requirement, and are
                   included in the requirements in the ST.
 		      
-		      <h:br/><h:br/> If EDR platform was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.
+		      <h:br/><h:br/> If "EDR platform" was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.
 	</TSS>
                 <Guidance> The evaluator shall confirm that the operational guidance contains
                   instructions for establishing the remote administrative sessions for each
@@ -1341,7 +1306,7 @@ This section describes any modifications that the ST author must make to the Bas
       <tag>Host Agent</tag>
       <description>
         <h:a href="https://commoncriteria.github.io/pp/esm-hostagent/esm-hostagent-release.html"
-          >Module for ESM Host Agent, Version 1.0, July 2019</h:a>
+          >Module for ESM Host Agent</h:a>
       </description>
     </entry>
     
