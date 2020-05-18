@@ -179,7 +179,7 @@
       <threats>
         
         
-        <threat id="T.MISCONFIGURATION">
+        <threat name="T.MISCONFIGURATION">
           <description>An attacker is a legitimate privileged user with access to change
             the configuration of the EDR's security capabilities or is not a legitimate 
             privileged user trying to access without proper authorization.. Attackers may
@@ -193,7 +193,7 @@
               provides for identity, authentication, and audit of administrative activities.</rationale>
           </objective-refer>
         </threat>
-        <threat id="T.CREDENTIAL_REUSE">
+        <threat name="T.CREDENTIAL_REUSE">
           <description>An attacker is positioned on a communications channel or elsewhere on the
             network infrastructure. Attackers may guess or harvest legitimate credentials from the
             EDR, endpoints, or insecure network activity.</description>
@@ -215,7 +215,7 @@
     </section>
     <section id="Assumptions" title="Assumptions">
       <assumptions>
-        <assumption id="A.CONNECTIVITY">
+        <assumption name="A.CONNECTIVITY">
           <description>The EDR relies on network connectivity to carry out its
           management activities. The OE will provide reliable network connectivity for the EDR to operate.
             The EDR will robustly handle occasional instances when
@@ -237,28 +237,34 @@
   <chapter title="Security Objectives" id="obj">
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
-        <SO id="O.MANAGEMENT">
+        <SO name="O.MANAGEMENT">
           <description>The TOE must facilitate management by the enterprise,
             providing consistent and supported interfaces for their security-relevant configuration,
             maintenance, and operation.</description>
+<<<<<<< HEAD
           <addressed-by>FAU_ALT_EXT.1, FAU_COL_EXT.1, FIA_AUT_EXT.1, FIA_PWD_EXT.1, FMT_SMF.1/ENDPOINT, FMT_SMF.1/HOST, 
             FMT_SMR.1, FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)</addressed-by>
+=======
+          <addressed-by>FAU_ALT_EXT.1, FAU_COL_EXT.1, FMT_SMF.1(1), FMT_SMF.1(2), FMT_SMR.1, FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)</addressed-by>
+          <rationale>PUT IN SOMETHING QQQQ</rationale>
+>>>>>>> 556d9d55fc32ea586b4ed2c2165e6f5c19a62dcf
           <consistency-rationale>This objective extends the Base-PP's O.MANAGEMENT
             objective by supporting the management functions that are specific to the EDR TOE type.
           </consistency-rationale>
         </SO>
-        <SO id="O.ACCOUNTABILITY">
+        <SO name="O.ACCOUNTABILITY">
           <description>The TOE must provide logging facilities which record
             management actions undertaken by identified and authenticated management users.</description>
           <addressed-by>
             FAU_GEN.1, FIA_AUT_EXT.1
           </addressed-by>
+          <rationale>PUT IN SOMETHING QQQQ</rationale>
           <consistency-rationale>This objective relates to the ability of the TOE to identify and authenticate users, and
             to record the behavior of these users. The Base-PP does not define an authentication mechanism so this objective
             does not affect the enforcement of the Base-PP's SFRs.
           </consistency-rationale>
         </SO>
-        <SO id="O.PROTECTED_TRANSIT">
+        <SO name="O.PROTECTED_TRANSIT">
           <description>To address both passive (eavesdropping) and active (packet modification)
             network attack threats, conformant TOE
               s will use a trusted channel to protect all communications. Sensitive data
@@ -267,7 +273,12 @@
           <addressed-by>FCS_DTLSS_EXT.1 (from TLS Package), FCS_DTLSC_EXT.1 (from TLS Package), FCS_HTTPS_EXT.1 (from Base-PP), 
             FCS_TLSC_EXT.1 (from TLS Package), FCS_TLSC_EXT.2 (from TLS Package), FCS_TLSS_EXT.1 (from TLS Package), 
             FCS_TLSS_EXT.2 (from TLS Package), FTP_ITC.1, FTP_TRP.1</addressed-by>
+<<<<<<< HEAD
           <consistency-rationale>This objective extends the Base-PP's O.PROTECTED_COMMS
+=======
+          <rationale>PUT IN SOMETHING QQQQ</rationale>
+          <consistency-rationale>This objective extends the Base-PP's O.COMMS
+>>>>>>> 556d9d55fc32ea586b4ed2c2165e6f5c19a62dcf
             objective by ensuring that the communications related to the EDR and
             enrolled Host Agents are secured in the same manner as other sensitive data.
           </consistency-rationale>
@@ -279,7 +290,7 @@
       environment assist the EDR in correctly providing its security functionality. These track with
       the assumptions about the environment. <SOEs>
         
-        <SOE id="OE.RELIABLE_TRANSIT">
+        <SOE name="OE.RELIABLE_TRANSIT">
           <description>Wired or wireless network traffic between the EDR and
             host agents will provide reasonable relatible connectivity.</description>
           <consistency-rationale> This objective relates to an external interface that does not exist in the Base-PP
@@ -1080,8 +1091,7 @@ This section describes any modifications that the ST author must make to the Bas
                       <selectable id="ITC_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
                     </selectables>
                   </selectable>
-                 <selectable>EDR platform 
-                    shall use 
+                 <selectable>EDR shall leverage the platform for
                    <selectables>
               			<selectable id="ITC_TLS_2">TLS</selectable>
               			<selectable id="ITC_HTTPS_2">HTTPS</selectable>
@@ -1121,19 +1131,23 @@ This section describes any modifications that the ST author must make to the Bas
             </f-element>
             <f-element>
               <title>The <selectables>
-                <selectable>EDR</selectable>
-                <selectable>EDR platform</selectable>
-              </selectables> shall provide functionality to permit the EDR and Host Agent to initiate
+                <selectable>EDR shall</selectable>
+                <selectable>EDR shall leverage the platform to</selectable>
+              </selectables> provide functionality to permit the EDR and Host Agent to initiate
                 communication via the trusted channel. </title>
             </f-element>
             <f-element>
               <title>The <selectables>
-                <selectable>EDR</selectable>
-                <selectable>EDR platform</selectable>
-              </selectables> shall provide functionality to initiate communication via the trusted channel for <assignable>list of service for which the EDR is able to initiate communications</assignable></title>
+                <selectable>EDR shall</selectable>
+                <selectable>EDR shall leverage the platform to</selectable>
+              </selectables> provide functionality to initiate communication via the trusted channel for <assignable>list of service for which the EDR is able to initiate communications</assignable></title>
               <aactivity>
                 
+<<<<<<< HEAD
                 <TSS> If "EDR platform" was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.<h:br/><h:br/> 
+=======
+                <TSS> If EDR shall leverage the platform was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.<h:br/><h:br/> 
+>>>>>>> 556d9d55fc32ea586b4ed2c2165e6f5c19a62dcf
 	
 			
 			If "EDR" was selected, the evaluator shall examine the TSS to verify how Agent-Server communications are protected is described and conforms to the SFR. 
@@ -1171,8 +1185,7 @@ This section describes any modifications that the ST author must make to the Bas
                       <selectable id="ITC_HTTPS_2">HTTPS as defined in the Base-PP</selectable>
                     </selectables> 
                   </selectable>
-                  <selectable>EDR platform 
-                    shall use 
+                  <selectable>EDR shall leverage the platform for
                     <selectables>
                       <selectable id="ITC_TLS_2">TLS</selectable>
                       <selectable id="ITC_HTTPS_2">HTTPS</selectable>
@@ -1185,16 +1198,16 @@ This section describes any modifications that the ST author must make to the Bas
             </f-element>
             <f-element>
               <title><h:b>Refinement:</h:b> The <selectables>
-                  <selectable>EDR</selectable>
-                  <selectable>EDR platform</selectable>
-                </selectables> shall permit remote administrators to initiate communication via the
+                  <selectable>EDR shall</selectable>
+                  <selectable>EDR shall leverage the platform to</selectable>
+                </selectables> permit remote administrators to initiate communication via the
                 trusted path.</title>
             </f-element>
             <f-element>
               <title><h:b>Refinement:</h:b> The <selectables>
-                  <selectable>EDR</selectable>
-                  <selectable>EDR platform</selectable>
-                </selectables> shall require the use of the trusted path for all remote
+                  <selectable>EDR shall</selectable>
+                  <selectable>EDR shall leverage the platform to</selectable>
+                </selectables> require the use of the trusted path for all remote
                 administration actions.</title>
               <note role="application">This requirement ensures that authorized remote
                 administrators initiate all communication with the EDR via a
@@ -1213,7 +1226,11 @@ This section describes any modifications that the ST author must make to the Bas
                   administration are consistent with those specified in the requirement, and are
                   included in the requirements in the ST.
 		      
+<<<<<<< HEAD
 		      <h:br/><h:br/> If "EDR platform" was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.
+=======
+		      <h:br/><h:br/> If EDR shall leverage the platform was selected, the evaluator shall verify the TSS contains the calls to the platform that TOE is leveraging to invoke the functionality.
+>>>>>>> 556d9d55fc32ea586b4ed2c2165e6f5c19a62dcf
 	</TSS>
                 <Guidance> The evaluator shall confirm that the operational guidance contains
                   instructions for establishing the remote administrative sessions for each
