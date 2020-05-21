@@ -11,7 +11,7 @@
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2020-05-18</PPPubDate>
+      <PPPubDate>2020-05-21</PPPubDate>
       <Keywords>EDR, ESM</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -19,7 +19,7 @@
   <RevisionHistory>
     <entry>
       <version>1.0</version>
-      <date>2020-05-18</date>
+      <date>2020-05-21</date>
       <subject>Draft - first version released</subject>
     </entry>
   </RevisionHistory>
