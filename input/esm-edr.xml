@@ -237,29 +237,40 @@
   <chapter title="Security Objectives" id="obj">
     <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
       <SOs>
-        <SO name="O.MANAGEMENT">
-          <description>The TOE must facilitate management by the enterprise,
-            providing consistent and supported interfaces for their security-relevant configuration,
-            maintenance, and operation.</description>
-
-          <addressed-by>FAU_ALT_EXT.1, FAU_COL_EXT.1, FMT_SMF.1(1), FMT_SMF.1(2), FMT_SMR.1, 
-            FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)</addressed-by>
-          <rationale>PUT IN SOMETHING QQQQ</rationale>
-
-          <consistency-rationale>This objective extends the Base-PP's O.MANAGEMENT
-            objective by supporting the management functions that are specific to the EDR TOE type.
-          </consistency-rationale>
-        </SO>
         <SO name="O.ACCOUNTABILITY">
           <description>The TOE must provide logging facilities which record
             management actions undertaken by identified and authenticated management users.</description>
           <addressed-by>
             FAU_GEN.1, FIA_AUT_EXT.1
           </addressed-by>
-          <rationale>PUT IN SOMETHING QQQQ</rationale>
+          <rationale>The PP-Module includes FAU_GEN.1 to ensure that the TOE provides accountability through the generation of audit records for security-relevant events.
+            <h:br/><h:br/>The PP-Module includes FIA_AUT_EXT.1 to provide a mechanism to authenticate management users so that they can be associated with their actions.</rationale>
           <consistency-rationale>This objective relates to the ability of the TOE to identify and authenticate users, and
             to record the behavior of these users. The Base-PP does not define an authentication mechanism so this objective
             does not affect the enforcement of the Base-PP's SFRs.
+          </consistency-rationale>
+        </SO>
+        <SO name="O.MANAGEMENT">
+          <description>The TOE must facilitate management by the enterprise,
+            providing consistent and supported interfaces for their security-relevant configuration,
+            maintenance, and operation.</description>
+
+          <addressed-by>FAU_ALT_EXT.1, FAU_COL_EXT.1, FIA_AUT_EXT.1, FIA_PWD_EXT.1, FMT_SMF.1/ENDPOINT, FMT_SMF.1/HOST, FMT_SMR.1, 
+            FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)</addressed-by>
+          <rationale>
+            The PP-Module includes FAU_ALT_EXT.1 to facilitate management by providing a function for authorized users to interact with security-relevant data that is provided to the TSF.
+            <h:br/><h:br/>The PP-Module includes FAU_COL_EXT.1 to facilitate management by defining the security-relevant data that is collected by the TSF.
+            <h:br/><h:br/>The PP-Module includes FIA_AUT_EXT.1 to define how management users are authenticated by the TSF to limit the subjects that can execute management functions on the TOE.
+            <h:br/><h:br/>The PP-Module includes FIA_PWD_EXT.1 to define composition requirements for the Password Authentication Factor to ensure that an authorized user cannot access protected management functions without authorization.
+            <h:br/><h:br/>The PP-Module includes FMT_SMF.1/ENDPOINT to define the management functions that can be performed to control the behavior of the TSF and the management roles that are authorized to perform those functions.
+            <h:br/><h:br/>The PP-Module includes FMT_SMF.1/HOST to define the management functions that can be performed to control the behavior of Host Agents that are connected to the TOE and the management roles that are authorized to perform those functions.
+            <h:br/><h:br/>The PP-Module includes FMT_SMR.1 to define the management roles that the TSF supports so that its management functions can be separated by role.
+            <h:br/><h:br/>The PP-Module includes FMT_SRF_EXT.1 to define the remediation functions that are available to authorized users to issue corrective actions on a system that has a connected Host Agent.
+            <h:br/><h:br/>The PP-Module includes FMT_TRM_EXT.1 to provide an optional capability to ensure the integrity of management commands and policies issued to external Host Agents through use of a digital signature
+          </rationale>
+
+          <consistency-rationale>This objective extends the Base-PP's O.MANAGEMENT
+            objective by supporting the management functions that are specific to the EDR TOE type.
           </consistency-rationale>
         </SO>
         <SO name="O.PROTECTED_TRANSIT">
@@ -273,7 +284,16 @@
             FCS_TLSS_EXT.2 (from TLS Package), FTP_ITC.1, FTP_TRP.1</addressed-by>
 
 
-          <rationale>PUT IN SOMETHING QQQQ</rationale>
+          <rationale>The PP-Module references FCS_HTTPS_EXT.1 from the Base-PP for cases when HTTPS is used as a trusted communications channel.
+            <h:br/><h:br/>The PP-Module references FCS_DTLSC_EXT.1 from the TLS Package for cases when DTLS as a client is used as a trusted communications channel.
+            <h:br/><h:br/>The PP-Module references FCS_DTLSS_EXT.1 from the TLS Package for cases when DTLS as a server is used as a trusted communications channel.
+            <h:br/><h:br/>The PP-Module references FCS_TLSC_EXT.1 from the TLS Package for cases when TLS as a client is used as a trusted communications channel.
+            <h:br/><h:br/>The PP-Module references FCS_TLSC_EXT.2 from the TLS Package for cases when the TOE uses a TLS client implementation that supports mutual authentication.
+            <h:br/><h:br/>The PP-Module references FCS_TLSS_EXT.1 from the TLS Package for cases when TLS as a server is used as a trusted communications channel.
+            <h:br/><h:br/>The PP-Module references FCS_TLSS_EXT.2 from the TLS Package for cases when the TOE uses a TLS client implementation that supports mutual authentication.
+            <h:br/><h:br/> The PP-Module includes FTP_ITC.1 to define the external entities that the TSF must establish trusted channels with as well as the communications protocols used to establish these trusted channels.
+            <h:br/><h:br/> The PP-Module includes FTP_TRP.1 to define the communications protocols used to support secure remote administration of the TSF.
+          </rationale>
             <consistency-rationale>This objective extends the Base-PP's O.PROTECTED_COMMS
 
             objective by ensuring that the communications related to the EDR and
