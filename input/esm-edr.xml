@@ -43,9 +43,9 @@
       in both the [MOD_EDR_V1.0] or [MOD_HA_V1.0] in addition to its Base-PP [PP APP V1.3].
       
       
-      Evaluation of an EDR system will require multiple evaluations of different system
-      components: one against this ESM EDR Module for the EDR and at least one other
-      against the <cite linkend="bibHAGT"/> Module with its base <cite linkend="bibAppPP"/>. <h:br/>
+      Evaluation of an EDR system will require evaluation of different system components consisting of one EDR 
+      and at least one Host Agent. Therefore, the evaluation must claim conformance to a PP-Configuration that 
+      includes the PP-Module for Endpoint Detection and Response (EDR) and the PP-Module for Host Agent.<h:br/>
       <h:br/> There are two primary architectural categories addressed by requirements in this
       PP-Module, as seen in Figure 1.
       <h:ul>
@@ -930,11 +930,11 @@ This section describes any modifications that the ST author must make to the Bas
                   describes the roles and the powers granted to and limitations of the role. </TSS>
                 <Guidance> The evaluator shall review the operational guidance to ensure that it
                   contains instructions for administering the EDR, which user
-                  roles are supported, and which permissions each default role has.</Guidance>
+                  roles are supported, and which permissions each role has.</Guidance>
                 <Tests>
                   <testlist>
                     <test>The evaluator shall verify that the roles of administrator, SOC analyst, and
-                      read-only user are available by default, creating individual accounts with each
+                      read-only user are available, creating individual accounts with each
                       role assigned.</test>
                     <test>The evaluator shall verify that non-administrator roles are not able to modify
                       the roles of their own account or those of others.</test>
