@@ -354,7 +354,7 @@ This section describes any modifications that the ST author must make to the Bas
             <mod-def>Components in this family define requirements for system activity that causes the TSF to generate an alert of the activity and for the contents of these alerts.</mod-def>
           </ext-comp-def>
 
-          <f-component id="fau_alt_ext.1" name="Server Alerts">
+          <f-component cc-id="fau_alt_ext.1" name="Server Alerts">
             
             <consistency-rationale> This SFR defines auditable alerts for the EDR. It does not
               impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
@@ -523,7 +523,7 @@ This section describes any modifications that the ST author must make to the Bas
           </ext-comp-def>
           
 
-          <f-component id="fau_col_ext.1" name="Collected Endpoint Data">
+          <f-component cc-id="fau_col_ext.1" name="Collected Endpoint Data">
             <consistency-rationale> This SFR defines the minimum event data that the EDR collects
               from a Host Agent. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
 
@@ -573,7 +573,7 @@ This section describes any modifications that the ST author must make to the Bas
           
         
           
-          <f-component id="fau_gen.1" name="EDR Audit Generation">
+          <f-component cc-id="fau_gen.1" name="EDR Audit Generation">
             <consistency-rationale> This SFR defines the minimum event data that the EDR server must
               record about authorized management dashboard activity. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
             
@@ -669,7 +669,7 @@ This section describes any modifications that the ST author must make to the Bas
           <ext-comp-def fam-id="FIA_AUT_EXT" title="Dashboard Authentication Mechanisms">
             <mod-def>Components in this family define requirements for authentication behavior that is unique to an EDR TOE.</mod-def>
           </ext-comp-def>
-          <f-component id="fia_aut_ext.1" name="Dashboard Authentication Mechanisms">
+          <f-component cc-id="fia_aut_ext.1" name="Dashboard Authentication Mechanisms">
             <consistency-rationale> This SFR defines authentication mechanisms for the EDR. It does
               not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
             
@@ -723,7 +723,7 @@ This section describes any modifications that the ST author must make to the Bas
             <mod-def>Components in this family define requirements for password authentication criteria.</mod-def>
           </ext-comp-def>
 
-          <f-component id="fia_pwd_ext.1" name="Password Authentication">
+          <f-component cc-id="fia_pwd_ext.1" name="Password Authentication">
             <consistency-rationale> This SFR defines specific authentication criteria for
               passwords. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
             
@@ -787,7 +787,7 @@ This section describes any modifications that the ST author must make to the Bas
         </subsection>
 
         <subsection title="Security Management (FMT)" id="fmt">
-          <f-component name="Specification of Management Functions (EDR Management of EDR)" id="fmt_smf.1" iteration="ENDPOINT">
+          <f-component name="Specification of Management Functions (EDR Management of EDR)" cc-id="fmt_smf.1" iteration="ENDPOINT">
             <consistency-rationale>This SFR defines a specific set of management functions for an
               EDR by an EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
           <f-element>
@@ -864,7 +864,7 @@ This section describes any modifications that the ST author must make to the Bas
           </f-component>
           
   
-          <f-component id="fmt_smf.1" iteration="HOST" name="Specification of Management Functions (EDR Management of Host Agent)">
+          <f-component cc-id="fmt_smf.1" iteration="HOST" name="Specification of Management Functions (EDR Management of Host Agent)">
             <consistency-rationale>This SFR defines a specific set of management functions for an
               Host Agent by an EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
             <f-element>
@@ -912,7 +912,7 @@ This section describes any modifications that the ST author must make to the Bas
           
           
           
-          <f-component id="fmt_smr.1" name="Security Management Roles">
+          <f-component cc-id="fmt_smr.1" name="Security Management Roles">
             <consistency-rationale> This SFR defines a specific set of management roles for an EDR.
               It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>        
             
@@ -958,7 +958,7 @@ This section describes any modifications that the ST author must make to the Bas
             <mod-def>Components in this family define requirements for remediation functions that an EDR can perform to affect the behavior of an endpoint system.</mod-def>
           </ext-comp-def>
 
-          <f-component id="fmt_srf_ext.1" name="Specification of Remediation Functions">
+          <f-component cc-id="fmt_srf_ext.1" name="Specification of Remediation Functions">
             <consistency-rationale> This SFR defines a specific set of remediation functions for an
               EDR. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
             
@@ -1095,7 +1095,7 @@ This section describes any modifications that the ST author must make to the Bas
         -->
           
           
-          <f-component id="ftp_itc.1" name="Trusted Channel (Host Agent)">
+          <f-component cc-id="ftp_itc.1" name="Trusted Channel (Host Agent)">
             <consistency-rationale> This SFR defines a specific set of functions for logically distinct secure
               communication with a Host Agent. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
             <f-element>
@@ -1188,7 +1188,7 @@ This section describes any modifications that the ST author must make to the Bas
             </f-element>
           </f-component>
 
-          <f-component id="ftp_trp.1" name="Trusted Path (for Remote Administration)">
+          <f-component cc-id="ftp_trp.1" name="Trusted Path (for Remote Administration)">
             <consistency-rationale>This SFR defines a specific set of functions for secure remote
               administration of the EDR. It does not impact <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
             <f-element>
@@ -1283,7 +1283,7 @@ This section describes any modifications that the ST author must make to the Bas
           <mod-def>Components in this family define how the TOE can assert the authenticity of the remediation actions it requests from Host Agents.</mod-def>
         </ext-comp-def>
 
-        <f-component id="fmt_trm_ext.1" name="Trusted Remediation Functions">
+        <f-component cc-id="fmt_trm_ext.1" name="Trusted Remediation Functions">
           <consistency-rationale>This SFR defines protections for the integrity of commands sent to
             the Host Agent. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
           
