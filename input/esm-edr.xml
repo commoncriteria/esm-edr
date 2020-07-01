@@ -40,7 +40,7 @@
       requirements for the Host Agent are addressed in the separate <cite linkend="bibHAGT"/>
       Module. Evaluation of an EDR system will require evaluations of different system components 
       consisting of EDR and <cite linkend="bibHAGT"/>. Each evaluation must satisfy the requirements 
-      in both the [MOD_EDR_V1.0] or [MOD_HA_V1.0] in addition to its Base-PP [PP APP V1.3].
+      in both the EDR or HA in addition to its Base-PP Application Software.
       
       
       Evaluation of an EDR system will require evaluation of different system components consisting of one EDR 
