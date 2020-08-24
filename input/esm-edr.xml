@@ -1157,7 +1157,7 @@ This section describes any modifications that the ST author must make to the Bas
             <consistency-rationale> This SFR defines a specific set of functions for logically distinct secure
               communication with a Host Agent. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
             <f-element>
-              <title>The <h:b> EDR</h:b><h:b> shall
+              <title>The <h:b> EDR</h:b> shall<h:b>
                 <selectables>
                   <selectable>
                     implement 
@@ -1234,7 +1234,7 @@ This section describes any modifications that the ST author must make to the Bas
             <consistency-rationale>This SFR defines a specific set of functions for secure remote
               administration of the EDR. It does not impact <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
             <f-element>
-              <title>The <h:b>EDR</h:b><h:b> shall
+              <title>The <h:b>EDR</h:b> shall<h:b>
                 <selectables> 
                   <selectable>
                     implement
@@ -1252,17 +1252,17 @@ This section describes any modifications that the ST author must make to the Bas
                 data from [<h:i>modification, disclosure</h:i>].</title>
             </f-element>
             <f-element>
-              <title>The <h:b>EDR</h:b><h:b> shall <selectables>
+              <title>The <h:b>EDR</h:b> shall<h:b> <selectables>
                   <selectable>implement functionality</selectable>
                   <selectable>invoke platform-provided functionality</selectable>
               </selectables> to</h:b> permit [<h:i>remote <h:b>administrators</h:b></h:i>] to initiate communication via the
                 trusted path.</title>
             </f-element>
             <f-element>
-              <title>The <h:b>EDR</h:b><h:b> shall <selectables>
+              <title>The <h:b>EDR</h:b> shall<h:b> <selectables>
                   <selectable>implement functionality</selectable>
                   <selectable>invoke platform-provided functionality</selectable>
-              </selectables> to</h:b> require the use of the trusted path for [<h:i>[all remote
+              </selectables> to </h:b>require the use of the trusted path for [<h:i>[all remote
                 administration actions]</h:i>].</title>
               <note role="application">This requirement ensures that authorized remote
                 administrators initiate all communication with the EDR via a
