@@ -193,7 +193,7 @@ and so it is recommended that the intro text and associated table heading be upd
           SFRs (dated May 2017).<h:p/> 
           The following PPs and PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module:
           <h:ul>
-            <h:li>Protection Profile for Application Software, Version 1.3.</h:li>
+         
             <h:li>PP-Module for Host Agents, Version 1.0.</h:li>
           </h:ul><h:p/>
         </description>
@@ -213,7 +213,7 @@ and so it is recommended that the intro text and associated table heading be upd
   <chapter title="Security Problem Description" id="spd"> The security problem is described in terms
     of the threats that the EDR is expected to address, assumptions about the
     OE, and any organizational security policies that the EDR
-    is expected to enforce.
+    is expected to enforce.  These extend any threats, assumptions, and organizational security policies defined by the Base-PP.
     <section title="Threats" id="threats">
       <threats>
         
@@ -629,7 +629,7 @@ This section describes any modifications that the ST author must make to the Bas
 
          
             <f-element>
-              <title>The <h:b>EDR</h:b> shall generate an audit record of the following auditable events: 
+              <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall generate an audit record of the following auditable events: 
                 <h:ol type="a">
                   <h:li><h:del>Start-up and shutdown of the audit functions;</h:del></h:li>
                   <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit; and</h:li>
@@ -653,12 +653,12 @@ This section describes any modifications that the ST author must make to the Bas
             </f-element>
             
             <f-element>
-              <title> The <h:b>EDR</h:b> shall record within each audit record at least the following information: 
+              <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall record within each audit record at least the following information: 
                 <h:ol type='a'>
                   <h:li>Date and time of the event,</h:li>
                   <h:li>Type of event,</h:li>
                   <h:li>Subject identity,</h:li>
-                  <h:li>Outcome (success or failure) of the event, <h:b>if relevant</h:b>,</h:li>
+                  <h:li>Outcome (success or failure) of the event,</h:li>
                   <h:li>For each audit type, based on the auditable event definitions of the functional components included in the PP/ST, <assignable>Other audit relevant information</assignable>.</h:li>
                 </h:ol>
             </title>
@@ -843,7 +843,7 @@ This section describes any modifications that the ST author must make to the Bas
             <consistency-rationale>This SFR defines a specific set of management functions for an
               EDR by an EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
           <f-element>
-            <title> The <h:b>EDR</h:b> shall be capable of performing the following
+            <title><h:b>Refinement:</h:b>  The <h:b>EDR</h:b> shall be capable of performing the following
                 management functions: <h:br/>
                 <management-function-set default="O">
                   <manager cid="a">Administrator</manager>
@@ -920,7 +920,7 @@ This section describes any modifications that the ST author must make to the Bas
             <consistency-rationale>This SFR defines a specific set of management functions for a
               Host Agent by an EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
             <f-element>
-              <title>The <h:b>EDR</h:b> shall be capable of performing the following functions <h:b>that control
+              <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall be capable of performing the following functions <h:b>that control
                 behavior of the Host Agent</h:b>:<h:br/>
                 <management-function-set default="O">
                   <manager cid="a">Administrator</manager>
@@ -969,11 +969,11 @@ This section describes any modifications that the ST author must make to the Bas
               It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>        
             
             <f-element>
-              <title>The <h:b>EDR</h:b> shall maintain the roles [<h:i>administrator, SOC analyst, read-only
+              <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall maintain the roles [<h:i>administrator, SOC analyst, read-only
                 user</h:i>].</title>
             </f-element>
             <f-element>
-              <title>The <h:b>EDR</h:b> shall be able to associate users with roles.</title>
+              <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall be able to associate users with roles.</title>
             
             <note role="application">The EDR will be configured, maintained, and
                 used by different user roles. At a minimum, one administrative role shall be
@@ -1157,7 +1157,7 @@ This section describes any modifications that the ST author must make to the Bas
             <consistency-rationale> This SFR defines a specific set of functions for logically distinct secure
               communication with a Host Agent. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
             <f-element>
-              <title>The <h:b> EDR</h:b> shall<h:b>
+              <title><h:b>Refinement:</h:b> The <h:b> EDR</h:b> shall<h:b>
                 <selectables>
                   <selectable>
                     implement 
@@ -1234,7 +1234,7 @@ This section describes any modifications that the ST author must make to the Bas
             <consistency-rationale>This SFR defines a specific set of functions for secure remote
               administration of the EDR. It does not impact <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
             <f-element>
-              <title>The <h:b>EDR</h:b> shall<h:b>
+              <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall<h:b>
                 <selectables> 
                   <selectable>
                     implement
@@ -1252,18 +1252,18 @@ This section describes any modifications that the ST author must make to the Bas
                 data from [<h:i>modification, disclosure</h:i>].</title>
             </f-element>
             <f-element>
-              <title>The <h:b>EDR</h:b> shall<h:b> <selectables>
+              <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall<h:b> <selectables>
                   <selectable>implement functionality</selectable>
                   <selectable>invoke platform-provided functionality</selectable>
               </selectables> to</h:b> permit [<h:i>remote <h:b>administrators</h:b></h:i>] to initiate communication via the
                 trusted path.</title>
             </f-element>
             <f-element>
-              <title>The <h:b>EDR</h:b> shall<h:b> <selectables>
+              <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall<h:b> <selectables>
                   <selectable>implement functionality</selectable>
                   <selectable>invoke platform-provided functionality</selectable>
-              </selectables> to </h:b>require the use of the trusted path for [<h:i>[all remote
-                administration actions]</h:i>].</title>
+              </selectables> to </h:b>require the use of the trusted path for [<h:i>all remote
+                administration actions</h:i>].</title>
               <note role="application">This requirement ensures that authorized remote
                 administrators initiate all communication with the EDR via a
                 trusted path, and that all communications with the EDR by remote
