@@ -222,6 +222,7 @@ and so it is recommended that the intro text and associated table heading be upd
             the configuration of the EDR's security capabilities or is not a legitimate 
             privileged user trying to access without proper authorization.. Attackers may
             attempt to hide malicious activities from other privileged users.</description>
+          <consistency-rationale>TESTTEXT</consistency-rationale>
           <objective-refer ref="O.MANAGEMENT">
             <rationale>The threat T.MISCONFIGURATION is countered by O.MANAGEMENT as this
             provides for authorized management of administrative activities.</rationale>
@@ -235,6 +236,7 @@ and so it is recommended that the intro text and associated table heading be upd
           <description>An attacker is positioned on a communications channel or elsewhere on the
             network infrastructure. Attackers may guess or harvest legitimate credentials from the
             EDR, endpoints, or insecure network activity.</description>
+          <consistency-rationale>TESTTEXT</consistency-rationale>
           <objective-refer ref="O.PROTECTED_TRANSIT">
             <rationale>The threat T.CREDENTIAL_REUSE is countered by O.PROTECTED_TRANSIT as this
               provides for confidentiality of transmitted data.</rationale>
@@ -258,6 +260,7 @@ and so it is recommended that the intro text and associated table heading be upd
           management activities. The OE will provide reliable network connectivity for the EDR to operate.
             The EDR will robustly handle occasional instances when
           connectivity is unavailable or unreliable.</description>
+          <consistency-rationale>TESTTEXT</consistency-rationale>
           <objective-refer ref="OE.RELIABLE_TRANSIT">
             <rationale>The OE objective OE.RELIABLE_TRANSIT is realized through
             A.CONNECTIVITY.</rationale>
@@ -280,15 +283,16 @@ and so it is recommended that the intro text and associated table heading be upd
             management actions undertaken by identified and authenticated management users.<h:p/>
             Addressed by: FAU_GEN.1/EDR, FIA_AUT_EXT.1
           </description>
+          <consistency-rationale>This objective relates to the ability of the TOE to identify and authenticate users, and
+            to record the behavior of these users. The Base-PP does not define an authentication mechanism so this objective
+            does not affect the enforcement of the Base-PP's SFRs.
+          </consistency-rationale>
           <addressed-by>
             FAU_GEN.1/EDR, FIA_AUT_EXT.1
           </addressed-by>
           <rationale>The PP-Module includes FAU_GEN.1/EDR to ensure that the TOE provides accountability through the generation of audit records for security-relevant events.
             <h:br/><h:br/>The PP-Module includes FIA_AUT_EXT.1 to provide a mechanism to authenticate management users so that they can be associated with their actions.</rationale>
-          <consistency-rationale>This objective relates to the ability of the TOE to identify and authenticate users, and
-            to record the behavior of these users. The Base-PP does not define an authentication mechanism so this objective
-            does not affect the enforcement of the Base-PP's SFRs.
-          </consistency-rationale>
+          
         </SO>
         <SO name="O.MANAGEMENT">
           <description>The TOE must facilitate authorized management by the enterprise,
@@ -296,7 +300,9 @@ and so it is recommended that the intro text and associated table heading be upd
             maintenance, and operation.<h:p/>
             Addressed by: FAU_ALT_EXT.1, FAU_COL_EXT.1, FIA_AUT_EXT.1, FIA_PWD_EXT.1, FMT_SMF.1/ENDPOINT, FMT_SMF.1/HOST, FMT_SMR.1, FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)
           </description>
-
+          <consistency-rationale>This objective extends the Base-PP's O.MANAGEMENT
+            objective by supporting the management functions that are specific to the EDR TOE type.
+          </consistency-rationale>
           <addressed-by>FAU_ALT_EXT.1, FAU_COL_EXT.1, FIA_AUT_EXT.1, FIA_PWD_EXT.1, FMT_SMF.1/ENDPOINT, FMT_SMF.1/HOST, FMT_SMR.1, 
             FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)</addressed-by>
           <rationale>
@@ -311,9 +317,7 @@ and so it is recommended that the intro text and associated table heading be upd
             <h:br/><h:br/>The PP-Module includes FMT_TRM_EXT.1 to provide an optional capability to ensure the integrity of management commands and policies issued to external Host Agents through use of a digital signature
           </rationale>
 
-          <consistency-rationale>This objective extends the Base-PP's O.MANAGEMENT
-            objective by supporting the management functions that are specific to the EDR TOE type.
-          </consistency-rationale>
+          
         </SO>
         <SO name="O.PROTECTED_TRANSIT">
           <description>To address both passive (eavesdropping) and active (packet modification)
@@ -325,6 +329,11 @@ and so it is recommended that the intro text and associated table heading be upd
             FCS_TLSC_EXT.1 (from TLS Package), FCS_TLSC_EXT.2 (from TLS Package), FCS_TLSS_EXT.1 (from TLS Package), 
             FCS_TLSS_EXT.2 (from TLS Package), FPT_ITT.1, FTP_TRP.1
           </description>
+          <consistency-rationale>This objective extends the Base-PP's O.PROTECTED_COMMS
+            
+            objective by ensuring that the communications related to the EDR and
+            enrolled Host Agents are secured in the same manner as other sensitive data.
+          </consistency-rationale>
           <addressed-by>FCS_DTLSS_EXT.1 (from TLS Package), FCS_DTLSC_EXT.1 (from TLS Package), FCS_HTTPS_EXT.1 (from Base-PP), 
             FCS_TLSC_EXT.1 (from TLS Package), FCS_TLSC_EXT.2 (from TLS Package), FCS_TLSS_EXT.1 (from TLS Package), 
             FCS_TLSS_EXT.2 (from TLS Package), FPT_ITT.1, FTP_TRP.1</addressed-by>
@@ -340,11 +349,7 @@ and so it is recommended that the intro text and associated table heading be upd
             <h:br/><h:br/> The PP-Module includes FPT_ITT.1 to define the internal trusted channel that the TSF uses to communicate with connected Host Agents as well as the communications protocols used to establish these trusted channels.
             <h:br/><h:br/> The PP-Module includes FTP_TRP.1 to define the communications protocols used to support secure remote administration of the TSF.
           </rationale>
-            <consistency-rationale>This objective extends the Base-PP's O.PROTECTED_COMMS
-
-            objective by ensuring that the communications related to the EDR and
-            enrolled Host Agents are secured in the same manner as other sensitive data.
-          </consistency-rationale>
+            
         </SO>
       </SOs>
     </section>
