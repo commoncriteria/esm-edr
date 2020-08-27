@@ -222,7 +222,8 @@ and so it is recommended that the intro text and associated table heading be upd
             the configuration of the EDR's security capabilities or is not a legitimate 
             privileged user trying to access without proper authorization.. Attackers may
             attempt to hide malicious activities from other privileged users.</description>
-          <consistency-rationale>TESTTEXT</consistency-rationale>
+          <consistency-rationale>This threat is consistent with the Base-PP because it is a specific example of the T.LOCAL_ATTACK threat defined there. 
+          In this case, the local attack is to maliciously alter the behavior of the application itself rather than to use the application as a method to attack the OS platform.</consistency-rationale>
           <objective-refer ref="O.MANAGEMENT">
             <rationale>The threat T.MISCONFIGURATION is countered by O.MANAGEMENT as this
             provides for authorized management of administrative activities.</rationale>
@@ -236,7 +237,7 @@ and so it is recommended that the intro text and associated table heading be upd
           <description>An attacker is positioned on a communications channel or elsewhere on the
             network infrastructure. Attackers may guess or harvest legitimate credentials from the
             EDR, endpoints, or insecure network activity.</description>
-          <consistency-rationale>TESTTEXT</consistency-rationale>
+          <consistency-rationale>This threat is a specific example of T.NETWORK_EAVESDROP defined in the Base-PP.</consistency-rationale>
           <objective-refer ref="O.PROTECTED_TRANSIT">
             <rationale>The threat T.CREDENTIAL_REUSE is countered by O.PROTECTED_TRANSIT as this
               provides for confidentiality of transmitted data.</rationale>
@@ -260,7 +261,8 @@ and so it is recommended that the intro text and associated table heading be upd
           management activities. The OE will provide reliable network connectivity for the EDR to operate.
             The EDR will robustly handle occasional instances when
           connectivity is unavailable or unreliable.</description>
-          <consistency-rationale>TESTTEXT</consistency-rationale>
+          <consistency-rationale>This assumption is consistent with the Base-PP because assuming network availability is consistent with the A.PLATFORM
+          assumption defined by the Base-PP, which expects the TOE to have a trustworthy computing platform.</consistency-rationale>
           <objective-refer ref="OE.RELIABLE_TRANSIT">
             <rationale>The OE objective OE.RELIABLE_TRANSIT is realized through
             A.CONNECTIVITY.</rationale>
