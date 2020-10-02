@@ -267,9 +267,7 @@ and so it is recommended that the intro text and associated table heading be upd
             <rationale>The OE objective OE.RELIABLE_TRANSIT is realized through
             A.CONNECTIVITY.</rationale>
           </objective-refer>
-        </assumption>
-        
-       
+        </assumption>     
       </assumptions>
     </section>
     <section title="Organizational Security Policies" id="OSPs">
@@ -454,14 +452,21 @@ This section describes any modifications that the ST author must make to the Bas
             </f-element>
             <f-element>
               <title>The EDR shall provide a data export capability for
-                  selected alerts with a specified standards-based format of <selectables
-                  linebreak="yes">
-                  <selectable>Structured Threat Information eXpression (STIX)</selectable>
-                  <selectable>Cyber Observable eXpression (CybOX)</selectable>
-                  <selectable>Incident Object Description Exchange Format (IODEF)</selectable>
-                  <selectable>Common Event Format (CEF)</selectable>
-                  <selectable>Log Event Extended Format (LEEF)</selectable>
-                </selectables>. </title>
+                  selected alerts with a specified standards-based format of 
+				  <selectables linebreak="yes">
+                    <selectable>Structured Threat Information eXpression (STIX)</selectable>
+                    <selectable>Cyber Observable eXpression (CybOX)</selectable>
+                    <selectable>Incident Object Description Exchange Format (IODEF)</selectable>
+                    <selectable>Common Event Format (CEF)</selectable>
+                    <selectable>Log Event Extended Format (LEEF)</selectable>
+                  </selectables>
+				  . </title>	
+			  <ext-comp-def-title>
+                 <title>The EDR shall provide a data export capability for
+                    selected alerts with a specified standards-based format of 
+                    <assignable>alert format</assignable>.
+                 </title>
+              </ext-comp-def-title>
               <note role="application"> The intent of this requirement is to specify a selection of
                 standards-based formats the EDR must provide for the export of selected alerts, at least one must be selected. </note>
               <aactivity>
