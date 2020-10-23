@@ -19,7 +19,7 @@ This is done using the 'status' parameter in the f-component tag. However, this 
 4. There is currently a glitch of some sort that is preventing the 'consistency of security problem definition' table from rendering. The TOE/OE objectives are also not displaying in their respective consistency
 tables though the rationales do display correctly. This will need to be updated in the build script. Also note that the security problem definition technically includes all of threats/assumptions/OSPs
 and so it is recommended that the intro text and associated table heading be updated accordingly (as well as any schema updates that would be needed to include assumptions and OSPs in the existing table).
- 
+
 -->
 
 <Module xmlns="https://niap-ccevs.org/cc/v1" xmlns:h="http://www.w3.org/1999/xhtml"
