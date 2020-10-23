@@ -30,7 +30,7 @@ and so it is recommended that the intro text and associated table heading be upd
     <ReferenceTable>
       <PPVersion>1.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2020-10-13</PPPubDate>
+      <PPPubDate>2020-10-23</PPPubDate>
       <Keywords>EDR, ESM</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -38,8 +38,8 @@ and so it is recommended that the intro text and associated table heading be upd
   <RevisionHistory>
     <entry>
       <version>1.0</version>
-      <date>2020-10-13</date>
-      <subject>Draft - first version released</subject>
+      <date>2020-10-23</date>
+      <subject>First version released</subject>
     </entry>
   </RevisionHistory>
 
@@ -148,15 +148,15 @@ and so it is recommended that the intro text and associated table heading be upd
         web server software used to serve a web application or dashboard, and the underlying
         operating system or cloud platform. The figure below shows EDR (right) communicating with
         its Host Agent (left) over an untrusted network. <h:p/> 
-        The requirements for the Host Agent
-        are not covered in this PP-Module, however it is expected that an ESM system will evaluate
-        against this ESM EDR PP-Module for the EDR and the <cite
-          linkend="bibHAGT"/> PP-Module with its Base-PP, which is the <cite linkend="bibAppPP"/>. <figure
+	
+	The requirements for the Host Agent are not covered in this PP-Module, however it is expected that an ESM 
+	system will evaluate against a PP-Configuration that includes both the EDR PP-Module  and the <cite
+        linkend="bibHAGT"/> PP-Module. <figure
           entity="images/edr_overview.png" title="EDR and Host Agent Communications" id="toe"/>
       </subsection>
-      <subsection title="TOE Platform" id="TOEplatform"> The TOE platform, which consists of the
-        OS or Cloud platform on which the EDR software executes and is outside the
-        scope of evaluation. However, the security of the EDR relies upon it. <h:p/> Any
+      <subsection title="TOE Platform" id="TOEplatform"> The TOE platform, which consists of the OS or 
+	      Cloud platform on which the EDR software executes,  is outside the scope of evaluation. 
+	      However, the security of the EDR relies upon it. <h:p/> Any
         communications with trusted remote file reputation or threat intelligence services is
         relevant to overall EDR system security but is also outside the scope of evaluation.
       </subsection>
@@ -200,7 +200,7 @@ and so it is recommended that the intro text and associated table heading be upd
       </cclaim>
       <cclaim title="CC Conformance Claims">
         <description>This PP-Module is conformant to Parts 2 (extended) and 3
-          (conformant) of Common Criteria Version 3.1, Release 5 [CC].
+          (extended) of Common Criteria Version 3.1, Release 5 [CC].
         </description>
       </cclaim>
       <cclaim title="Package Claims">
@@ -900,7 +900,7 @@ This section describes any modifications that the ST author must make to the Bas
                 EDR. 
               
                 <h:p/>
-                Chart legend: X = Mandatory, O = Optional, - = N/A</note>
+                Chart legend: M = Mandatory, O = Optional, - = N/A</note>
               <aactivity>
                 <TSS>The evaluator shall verify the TSS contains a list of roles and what functions they can perform.  
                   The evaluator shall verify the list matches the chart in the requirement.<h:p/></TSS>
@@ -953,7 +953,7 @@ This section describes any modifications that the ST author must make to the Bas
               <note role="application">This requirement captures all the configuration
                 functionality the EDR provides the administrator to configure the
                 EDR Host Agents. <h:p/>
-              Chart legend: X = Mandatory, O = Optional, - = N/A</note>
+              Chart legend: M = Mandatory, O = Optional, - = N/A</note>
               <aactivity>
                 <TSS>The evaluator shall verify the TSS contains a list of roles and what functions they can perform.  
                   The evaluator shall verify the list matches the chart in the requirement.<h:p/></TSS>
@@ -1069,7 +1069,7 @@ This section describes any modifications that the ST author must make to the Bas
                 it may include a restricted allowlist.
                
                 <h:p/>
-                Chart legend: X = Mandatory, O = Optional, - = N/A</note>
+                Chart legend: M = Mandatory, O = Optional, - = N/A</note>
               <aactivity>
                 <TSS>The evaluator shall check to ensure that the TSS describes what roles can perform what 
                   remediation actions and how each remediation action is performed.<h:p/></TSS>
@@ -1415,14 +1415,14 @@ This section describes any modifications that the ST author must make to the Bas
       <tag>AppPP</tag>
       <description>
         <h:a href="https://www.niap-ccevs.org/MMO/PP/-429-/">Protection Profile for Application
-          Software</h:a>, Version 1.3, March 1, 2020
+          Software</h:a>, Version 1.3, March 1, 2019
       </description>
     </entry>
     <entry id="bibHAGT">
       <tag>Host Agent</tag>
       <description>
         <h:a href="https://commoncriteria.github.io/pp/esm-hostagent/esm-hostagent-release.html"
-          >PP-Module for ESM Host Agent</h:a>, Version 1.0, TBD 2020
+          >PP-Module for Host Agent</h:a>, Version 1.0, October 23rd 2020
       </description>
     </entry>
     
