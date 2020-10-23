@@ -224,8 +224,8 @@ and so it is recommended that the intro text and associated table heading be upd
             attempt to hide malicious activities from other privileged users.</description>
           <consistency-rationale>This threat is consistent with the Base-PP because it is a specific example of the T.LOCAL_ATTACK threat defined there. 
           In this case, the local attack is to maliciously alter the behavior of the application itself rather than to use the application as a method to attack the OS platform.</consistency-rationale>
-          <objective-refer ref="O.MANAGEMENT">
-            <rationale>The threat T.MISCONFIGURATION is countered by O.MANAGEMENT as this
+          <objective-refer ref="O.EDR.MANAGEMENT">
+            <rationale>The threat T.MISCONFIGURATION is countered by O.EDR.MANAGEMENT as this
             provides for authorized management of administrative activities.</rationale>
           </objective-refer>
           <objective-refer ref="O.ACCOUNTABILITY">
@@ -294,13 +294,13 @@ and so it is recommended that the intro text and associated table heading be upd
             <h:br/><h:br/>The PP-Module includes FIA_AUT_EXT.1 to provide a mechanism to authenticate management users so that they can be associated with their actions.</rationale>
           
         </SO>
-        <SO name="O.MANAGEMENT">
+        <SO name="O.EDR.MANAGEMENT">
           <description>The TOE must facilitate authorized management by the enterprise,
             providing consistent and supported interfaces for their security-relevant configuration,
             maintenance, and operation.<h:p/>
             Addressed by: FAU_ALT_EXT.1, FAU_COL_EXT.1, FIA_AUT_EXT.1, FIA_PWD_EXT.1, FMT_SMF.1/ENDPOINT, FMT_SMF.1/HOST, FMT_SMR.1, FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)
           </description>
-          <consistency-rationale>This objective extends the Base-PP's O.MANAGEMENT
+          <consistency-rationale>This objective extends the Base-PP's O.EDR.MANAGEMENT
             objective by supporting the management functions that are specific to the EDR TOE type.
           </consistency-rationale>
           <addressed-by>FAU_ALT_EXT.1, FAU_COL_EXT.1, FIA_AUT_EXT.1, FIA_PWD_EXT.1, FMT_SMF.1/ENDPOINT, FMT_SMF.1/HOST, FMT_SMR.1, 
