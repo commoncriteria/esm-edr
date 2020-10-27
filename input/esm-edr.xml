@@ -137,7 +137,7 @@ and so it is recommended that the intro text and associated table heading be upd
         <h:li>Endpoints communicate over the Internet to an EDR hosted by a cloud service provider (Software as a Service).</h:li>
         <h:li>Endpoints communicate with an on-premises EDR in a hub and spoke network model.</h:li>
       </h:ul>
-      <figure entity="images/edr_archi.png" title="Primary EDR Architectures" id="toe"/>
+      <figure entity="images/edr_archi.png" title="Primary EDR Architectures" id="toe_arch"/>
       
       <subsection title="TOE Boundary" id="TOEboundary"> The TOE boundary for the EDR encompasses
         all the software from the TOE vendor that represents the server or enterprise management
@@ -152,7 +152,7 @@ and so it is recommended that the intro text and associated table heading be upd
 	The requirements for the Host Agent are not covered in this PP-Module, however it is expected that an ESM 
 	system will evaluate against a PP-Configuration that includes both the EDR PP-Module  and the <cite
         linkend="bibHAGT"/> PP-Module. <figure
-          entity="images/edr_overview.png" title="EDR and Host Agent Communications" id="toe"/>
+          entity="images/edr_overview.png" title="EDR and Host Agent Communications" id="toe_overview"/>
       </subsection>
       <subsection title="TOE Platform" id="TOEplatform"> The TOE platform, which consists of the OS or 
 	      Cloud platform on which the EDR software executes,  is outside the scope of evaluation. 
@@ -224,8 +224,8 @@ and so it is recommended that the intro text and associated table heading be upd
             attempt to hide malicious activities from other privileged users.</description>
           <consistency-rationale>This threat is consistent with the Base-PP because it is a specific example of the T.LOCAL_ATTACK threat defined there. 
           In this case, the local attack is to maliciously alter the behavior of the application itself rather than to use the application as a method to attack the OS platform.</consistency-rationale>
-          <objective-refer ref="O.EDR.MANAGEMENT">
-            <rationale>The threat T.MISCONFIGURATION is countered by O.EDR.MANAGEMENT as this
+          <objective-refer ref="O.EDR_MANAGEMENT">
+            <rationale>The threat T.MISCONFIGURATION is countered by O.EDR_MANAGEMENT as this
             provides for authorized management of administrative activities.</rationale>
           </objective-refer>
           <objective-refer ref="O.ACCOUNTABILITY">
@@ -294,7 +294,7 @@ and so it is recommended that the intro text and associated table heading be upd
             <h:br/><h:br/>The PP-Module includes FIA_AUT_EXT.1 to provide a mechanism to authenticate management users so that they can be associated with their actions.</rationale>
           
         </SO>
-        <SO name="O.EDR.MANAGEMENT">
+        <SO name="O.EDR_MANAGEMENT">
           <description>The TOE must facilitate authorized management by the enterprise,
             providing consistent and supported interfaces for their security-relevant configuration,
             maintenance, and operation.<h:p/>
@@ -1174,11 +1174,11 @@ This section describes any modifications that the ST author must make to the Bas
                   <selectable>
                     implement 
                     <selectables>
-              				<selectable id="ITC_TLS_2">TLS as defined in the TLS Package</selectable>
-                      <selectable id="ITC_HTTPS_2">HTTPS as defined in the Base-PP</selectable></selectables></selectable><selectable>invoke platform-provided functionality for
+              				<selectable id="tls-from-package">TLS as defined in the TLS Package</selectable>
+                      <selectable id="https-from-package">HTTPS as defined in the Base-PP</selectable></selectables></selectable><selectable>invoke platform-provided functionality for
                    <selectables>
-              			<selectable id="ITC_TLS_2">TLS</selectable>
-              			<selectable id="ITC_HTTPS_2">HTTPS</selectable>
+              			<selectable>TLS</selectable>
+              			<selectable>HTTPS</selectable>
                   </selectables> 
                  </selectable>
                 </selectables>
@@ -1254,8 +1254,8 @@ This section describes any modifications that the ST author must make to the Bas
                       <selectable id="ITC_TLS_2">TLS as defined in the TLS Package</selectable>
                       <selectable id="ITC_HTTPS_2">HTTPS as defined in the Base-PP</selectable></selectables></selectable><selectable>invoke platform-provided functionality for
                     <selectables>
-                      <selectable id="ITC_TLS_2">TLS</selectable>
-                      <selectable id="ITC_HTTPS_2">HTTPS</selectable>
+                      <selectable>TLS</selectable>
+                      <selectable>HTTPS</selectable>
                     </selectables> 
                   </selectable>
                 </selectables> to</h:b> provide a communication path between itself and [<h:i>remote</h:i>]
@@ -1322,13 +1322,11 @@ This section describes any modifications that the ST author must make to the Bas
       </subsection>
         
     </man-sfrs>
-
     <opt-sfrs/>
-
-    <sel-sfrs> </sel-sfrs>
+    <sel-sfrs/>
 
     <obj-sfrs>
-      <subsection title="Security Management (FMT)" id="fmt">
+      <subsection title="Security Management (FMT)" id="fmt_obj">
         
         <ext-comp-def fam-id="FMT_TRM_EXT" title="Trusted Remediation Functions">
           <mod-def>Components in this family define how the TOE can assert the authenticity of the remediation actions it requests from Host Agents.</mod-def>
