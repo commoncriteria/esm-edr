@@ -125,7 +125,7 @@ and so it is recommended that the intro text and associated table heading be upd
       requirements for the Host Agent are addressed in the separate <cite linkend="bibHAGT"/>
       PP-Module. Evaluation of an EDR system will require evaluations of different system components 
       consisting of EDR and <cite linkend="bibHAGT"/>. Each evaluation must satisfy the requirements 
-      in both the EDR or HA in addition to its Base-PP Application Software.
+      in both the EDR and HA in addition to its Base-PP Application Software.
       
       
       Evaluation of an EDR system will require evaluation of different system components consisting of one EDR 
