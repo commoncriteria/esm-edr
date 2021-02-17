@@ -1,6 +1,6 @@
 Protection Profile Module for Endpoint Detection and Response (EDR) 
 ===============
-[![Build Status](https://travis-ci.com/commoncriteria/esm-edr.svg?branch=master)](https://travis-ci.com/commoncriteria/esm-edr)
+![Build](https://github.com/commoncriteria/esm-edr/workflows/Build/badge.svg)
 [![GitHub issues Open](https://img.shields.io/github/issues/commoncriteria/esm-edr.svg?maxAge=2592000)](https://github.com/commoncriteria/esm-edr/issues) 
 ![license](https://img.shields.io/badge/license-Unlicensed-blue.svg)
 
