@@ -1,0 +1,8 @@
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:27:59: error: element "Module" missing required attribute "target-product"
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:47:42: error: element "chapter" not allowed here; expected element "RevisionHistory", "include-pkg", "pp-preferences", "release-notes" or "section" or an element from another namespace
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:187:49: error: element "chapter" not allowed here; expected element "RevisionHistory", "include-pkg", "pp-preferences", "release-notes" or "section" or an element from another namespace
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:213:58: error: element "chapter" not allowed here; expected element "RevisionHistory", "include-pkg", "pp-preferences", "release-notes" or "section" or an element from another namespace
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:278:49: error: element "chapter" not allowed here; expected element "RevisionHistory", "include-pkg", "pp-preferences", "release-notes" or "section" or an element from another namespace
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:372:51: error: element "chapter" not allowed here; expected element "RevisionHistory", "include-pkg", "pp-preferences", "release-notes" or "section" or an element from another namespace
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:1386:74: error: element "appendix" not allowed yet; expected element "RevisionHistory", "include-pkg", "pp-preferences", "release-notes" or "section" or an element from another namespace
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:1428:14: error: element "acronyms" not allowed here; expected the element end-tag
