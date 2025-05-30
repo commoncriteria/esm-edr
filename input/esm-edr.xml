@@ -221,6 +221,7 @@ and so it is recommended that the intro text and associated table heading be upd
 		<cc-pkg-claim>
           <FP-cc-ref conf="conformant">Functional Package for TLS Version 2.0<comment>confirm version</comment></FP-cc-ref>
         </cc-pkg-claim>
+  </CClaimsInfo></section>
 
   <section title="Security Problem Description" id="spd"> The security problem is described in terms
     of the threats that the EDR is expected to address, assumptions about the
