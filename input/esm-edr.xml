@@ -57,7 +57,7 @@ and so it is recommended that the intro text and associated table heading be upd
       and to define functional and assurance requirements for such products. This PP-Module is intended for use with the following Base-PPs:
       
       <h:ul>
-        <h:li>Protection Profile for Application Software <xref g="bibAppPP"/>, Version 1.3.</h:li>
+        <h:li>Protection Profile for Application Software <xref g="bibAppPP"/>, Version 2.0. <comment>Please update the URL/Date accordingly(within the bib)</comment></h:li>
       </h:ul>
       
       This Base-PP is valid because an EDR is deployed as a software application on a general-purpose operating system.
@@ -146,7 +146,7 @@ and so it is recommended that the intro text and associated table heading be upd
       </h:ul>
       <figure entity="images/edr_archi.png" title="Primary EDR Architectures" id="toe_arch"/>
       
-      <subsection title="TOE Boundary" id="TOEboundary"> The TOE boundary for the EDR encompasses
+      <section title="TOE Boundary" id="TOEboundary"> The TOE boundary for the EDR encompasses
         all the software from the TOE vendor that represents the server or enterprise management
         side of the EDR system. This will typically, but not always, be software running behind a
         web application or dashboard, and possibly with other software services running to send and
@@ -160,13 +160,13 @@ and so it is recommended that the intro text and associated table heading be upd
 	system will evaluate against a PP-Configuration that includes both the EDR PP-Module  and the <cite
         linkend="bibHAGT"/> PP-Module. <figure
           entity="images/edr_overview.png" title="EDR and Host Agent Communications" id="toe_overview"/>
-      </subsection>
-      <subsection title="TOE Platform" id="TOEplatform"> The TOE platform, which consists of the OS or 
+      </section>
+      <section title="TOE Platform" id="TOEplatform"> The TOE platform, which consists of the OS or 
 	      Cloud platform on which the EDR software executes,  is outside the scope of evaluation. 
 	      However, the security of the EDR relies upon it. <h:p/> Any
         communications with trusted remote file reputation or threat intelligence services is
         relevant to overall EDR system security but is also outside the scope of evaluation.
-      </subsection>
+      </section>
     </section>
 
     <section title="Use Cases" id="usecases"> Requirements in this PP-Module are designed to address
@@ -333,7 +333,10 @@ This section describes any modifications that the ST author must make to the Bas
     </base-pp>
 
     <man-sfrs>
-        <subsection title="Security Audit (FAU)" id="fau">
+      <section id="sec-sel-audit-table" title="Auditable Events for Mandatory SFRs">
+			<audit-table id="at-Man" table="mandatory"/>
+	 </section>
+        <section title="Security Audit (FAU)" id="fau">
 
           <ext-comp-def fam-id="FAU_ALT_EXT" title="Server Alerts">
             <mod-def>Components in this family define requirements for system activity that causes the TSF to generate an alert of the activity and for the contents of these alerts.</mod-def>
@@ -349,15 +352,12 @@ This section describes any modifications that the ST author must make to the Bas
               <h:li>Configure visual suppression of alerts.</h:li>
             </h:ul></management>
             <audit>There are no auditable events foreseen.</audit>
-            <dependencies>No dependencies.</dependencies>
+            <dependencies/>
             
             
-            <f-element>
+            <f-element id="fau-alt-ext-1-1">
               <title>The EDR shall alert authorized users on a management dashboard
-                in the event of any of the following: <h:ol type="a">
-                  <h:li>Change in Host Agent enrollment status,</h:li>
-                  <h:li>Detection of potentially unauthorized activity on enrolled endpoints.</h:li>
-                </h:ol>
+                in the event of: detection of potentially unauthorized activity on enrolled endpoints.
               </title>
               <note role="application"> The intent of this requirement is to specify the minimum set
                 of management dashboard alert capabilities the EDR must be capable
@@ -366,7 +366,7 @@ This section describes any modifications that the ST author must make to the Bas
                 anomalous activity, escalation of privileges, and lateral movement.
               </note>
             </f-element>
-            <f-element>
+            <f-element id="fau-alt-ext-1-2">
               <title>The EDR shall provide a visualization of detected alerts of
                 potentially unauthorized incidents, and shall include: <h:ol type="a">
                   <h:li>An initial incident severity and <selectables>
@@ -384,7 +384,7 @@ This section describes any modifications that the ST author must make to the Bas
                 data to an authorized user on the management dashboard. The visualization is not
                 required to be interactive. </note>
             </f-element>
-            <f-element>
+            <f-element id="fau-alt-ext-1-3">
               <title>The EDR shall provide a data export capability for
                   selected alerts with a specified standards-based format of 
 				  <selectables linebreak="yes">
@@ -406,7 +406,7 @@ This section describes any modifications that the ST author must make to the Bas
               <aactivity>
                   <TSS>
                     The evaluator shall examine the TSS to ensure that it describes how alerts for changes in Host Agent
-                    enrollment status and potentially unauthorized activities on enrolled endpoints are detected and displayed. 
+                    enrollment status and potentially unauthorized activities on enrolled endpoints are detected and displayed.
                     The evaluator shall examine the TSS to ensure it contains the
                     list of unauthorized activity types categorized or labeled by the EDR upon
                     detection.<h:br/><h:br/>
@@ -505,6 +505,7 @@ This section describes any modifications that the ST author must make to the Bas
                 </testlist></Tests>
               </aactivity>
             </f-element>
+            <audit-event/>
           </f-component>
 
           
@@ -523,8 +524,7 @@ This section describes any modifications that the ST author must make to the Bas
               <h:li>Configuration of label or tag information to associate collected data with individual endpoint systems or groups of systems.</h:li>
             </h:ul></management>
             <audit>There are no auditable events foreseen.</audit>
-            <dependencies>No dependencies.</dependencies>
-
+            <dependencies/>
             <f-element>
               <title>The EDR shall collect the following minimum set of endpoint
                 data from a Host Agent: <h:ol type="a">
@@ -532,12 +532,12 @@ This section describes any modifications that the ST author must make to the Bas
                   <h:li>Privileged and unprivileged endpoint account login activity,</h:li>
                   <h:li>Process creation,</h:li>
                   <h:li>Libraries and modules loaded by processes,</h:li>
-                  <h:li>Filenames and <assignable>other metadata</assignable> of files created and <assignable>other activities performed to files</assignable> on persistent storage,</h:li>
-                  <h:li><assignable>Other host data</assignable>.</h:li>
+                  <h:li>Filenames and <selectables><selectable><assignable>other metadata</assignable></selectable><selectable>no other metadata</selectable></selectables> of files created and <selectables><selectable><assignable>other activities performed to files</assignable></selectable><selectable>not other activities</selectable></selectables> on persistent storage,</h:li>
+                  <h:li><selectables><selectable><assignable>Other host data</assignable></selectable><sekectable>no other host data</sekectable></selectables>.</h:li>
                 </h:ol>
               </title>
               <note role="application">The intent of this requirement is to specify the minimum set
-                of endpoint data that the EDR must be capable of collecting. The assignments may be empty, a single item, or multiple items.</note>
+                of endpoint data that the EDR must be capable of collecting. The assignments may be a single item, or multiple items.</note>
               <aactivity>
                 <TSS>The evaluator shall verify that all supported endpoint event data types are described.<h:p/></TSS>
                 <Guidance>The evaluator shall review the operational guidance and ensure that it
@@ -550,22 +550,26 @@ This section describes any modifications that the ST author must make to the Bas
                     accounts and verify that the activity is accurately reported to the EDR.</test>
                     <test>The evaluator shall run a known user application provided on the platform OS and verify
                     that subsequent process creation and module loading is accurately reported to the EDR.</test>
-                    <test>The evaluator shall create a new non-empty document within persistent storage and verify
-                    that the activity is accurately reported to the EDR.</test>
-                    <test>The evaluator shall perform an action that causes an event 
-                      to occur for all items in the assignment and verify the activity is reported to the EDR.</test>
+                    <test> 
+                      <testlist>
+                        <test>The evaluator shall create a new non-empty file within persistent storage and verify that the activity is accurately reported to the EDR based on filename and any other metadata indicated in bullet e.</test>
+                        <test>(Conditional): If other activities performed on files are indicated in bullet e, the evaluator shall perform them on a non-empty file within persistent storage and verify that the activity is accurately reported to the EDR based on filename and any other metadata indicated in bullet e.</test>
+                      
+                      </testlist></test>
+                
+                    <test>(Conditional): If other host data is indicated in the assignment in bullet f, the evaluator shall perform an action that causes an event to occur for all items in the assignment and verify the activity is reported to the EDR.</test>
                   </testlist>
                 </Tests>
               </aactivity>
             </f-element>
+            <audit-event/>
           </f-component>
           
           
         
           
           <f-component cc-id="fau_gen.1" name="Audit Data Generation" iteration="EDR">
-            <consistency-rationale> This SFR defines the minimum event data that the EDR server must
-              record about authorized management dashboard activity. It does not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>
+            <consistency-rationale> This SFR defines the minimum event data that the EDR server must record about authorized management dashboard activity. It does not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>
             
             <comp-lev> defines audiable events for the use of the EDR management functionality.</comp-lev>
             <management>There are no specific management functions identified.</management>
@@ -574,7 +578,7 @@ This section describes any modifications that the ST author must make to the Bas
 
          
             <f-element>
-              <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall generate an audit record of the following auditable events: 
+              <title>The <h:b>EDR</h:b> shall generate an audit data of the following auditable events: 
                 <h:ol type="a">
                   <h:li><h:del>Start-up and shutdown of the audit functions;</h:del></h:li>
                   <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit; and</h:li>
@@ -593,12 +597,12 @@ This section describes any modifications that the ST author must make to the Bas
               
               
               <note role="application">The intent of this requirement is to specify the minimum set
-                of audit records generated about actions on the EDR. </note>
+                of audit records generated about actions on the EDR. Changes made to configuration files at the OS level will be audited by the OS and are not covered by this requirement.</note>
               
             </f-element>
             
             <f-element>
-              <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall record within each audit record at least the following information: 
+              <title>The <h:b>EDR</h:b> shall record within each audit data at least the following information: 
                 <h:ol type='a'>
                   <h:li>Date and time of the event,</h:li>
                   <h:li>Type of event,</h:li>
@@ -654,6 +658,7 @@ This section describes any modifications that the ST author must make to the Bas
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
           </f-component>
 
 
@@ -662,9 +667,9 @@ This section describes any modifications that the ST author must make to the Bas
 
 
 
-        </subsection>
+        </section>
 
-        <subsection title="Identification and Authentication (FIA)" id="fia">
+        <section title="Identification and Authentication (FIA)" id="fia">
           <ext-comp-def fam-id="FIA_AUT_EXT" title="Dashboard Authentication Mechanisms">
             <mod-def>Components in this family define requirements for authentication behavior that is unique to an EDR TOE.</mod-def>
           </ext-comp-def>
@@ -673,9 +678,9 @@ This section describes any modifications that the ST author must make to the Bas
               not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>
             
             <comp-lev> identifies the only authentication factors that may be used for authentication to a management interface of an EDR.</comp-lev>
-            <management>No specific management functions are identified.</management>
-            <audit>There are no auditable events foreseen.</audit>
-            <dependencies>No dependencies.</dependencies>
+            <management/>
+            <audit/>
+            <dependencies/>
             
             <f-element>
               <title> The EDR shall 
@@ -696,22 +701,19 @@ This section describes any modifications that the ST author must make to the Bas
                   multifactor authentication.<h:p/></Guidance>
                 <Tests>
                   <testlist>
-                    <test>Conditional: If "provide the following authentication mechanisms" is selected, 
+                    <test>Conditional: If "provide authentication" is selected, 
                       the evaluator shall create an account with a username and password, verifying
                       that login authentication is case-sensitive. If additional factors are provided, each
-                      factor shall be tested for login access with strictly unanimous authentication for those
-                      enabled. The evaluator shall verify that login access is granted for correct credentials
+                      factor shall be tested for login access. The evaluator shall verify that login access is granted for correct credentials
                       and denied in cases of incorrect credentials across available factors.</test>
                     <test>
-                      Conditional: If "leverage the platform" is selected, the evaluator shall create an account following the platform rules. 
-                      If additional factors are provided, each
-                      factor shall be tested for login access with strictly unanimous authentication for those
-                      enabled. The evaluator shall verify that login access is granted for correct credentials
+                      Conditional: If "leverage the platform" is selected, the evaluator shall create an account following the platform rules. The evaluator shall verify that login access is granted for correct credentials
                       and denied in cases of incorrect credentials across available factors.</test>
                   </testlist>
                 </Tests>
               </aactivity>
             </f-element>
+            <audit-event/>
           </f-component>
 
   
@@ -725,8 +727,8 @@ This section describes any modifications that the ST author must make to the Bas
               passwords. It does not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>
             
             <comp-lev> defines the length and character set requirements for password authentication factors.</comp-lev>
-            <management>No specific management functions are identified.</management>
-            <audit>There are no auditable events foreseen.</audit>
+            <management/>
+            <audit/>
             <dependencies>FIA_AUT_EXT.1 Dashboard Authentication Mechanisms</dependencies>
             
             <f-element>
@@ -763,7 +765,7 @@ This section describes any modifications that the ST author must make to the Bas
                  they may optionally list additional special characters supported
                 using the assignment. </note>
               <aactivity>
-                <TSS>The evaluator shall verify the TSS includes all the supported characters, rules, and limitations used by the EDR and that they meet the requirements of the SFR.<h:p/></TSS>
+                <TSS>The evaluator shall verify the TSS lists the supported characterset for the composition of administrator passwords. The evaluator shall verify that the TSS lists a password length value that is greater than or equal to 64.<h:p/></TSS>
                 <Guidance>The evaluator shall review the operational guidance to ensure that it
                   contains documentation on default password policy.<h:p/></Guidance>
                 <Tests>The evaluator shall perform the following tests:
@@ -777,18 +779,19 @@ This section describes any modifications that the ST author must make to the Bas
                 </Tests>
               </aactivity>
             </f-element>
+            <audit-event/>
           </f-component>
           
           
 
-        </subsection>
+        </section>
 
-        <subsection title="Security Management (FMT)" id="fmt">
+        <section title="Security Management (FMT)" id="fmt">
           <f-component name="Specification of Management Functions (EDR Management of EDR)" cc-id="fmt_smf.1" iteration="ENDPOINT">
             <consistency-rationale>This SFR defines a specific set of management functions for an
               EDR by an EDR. It does not impact the <xref g="bibAppPP"/> functionality.</consistency-rationale>
           <f-element>
-            <title><h:b>Refinement:</h:b>  The <h:b>EDR</h:b> shall be capable of performing the following
+            <title><h:b>The <h:b>EDR</h:b> shall be capable of performing the following
                 management functions: <h:br/>
                 <management-function-set default="O">
                   <manager cid="a">Administrator</manager>
@@ -806,7 +809,7 @@ This section describes any modifications that the ST author must make to the Bas
                   </management-function>
                   <management-function>
                     <text> Define a configurable
-                      denylist of <selectables>
+                      list of <selectables>
                         <selectable>filenames</selectable>
                         <selectable>folders</selectable>
                         <selectable>file hashes</selectable>
@@ -817,7 +820,7 @@ This section describes any modifications that the ST author must make to the Bas
                   </management-function>
                   <management-function>
                     <text> Configure visual suppression of incident alerts based on a configurable
-                      denylist of <selectables>
+                      list of <selectables>
                         <selectable>filenames</selectable>
                         <selectable>folders</selectable>
                         <selectable>file hashes</selectable>
@@ -830,7 +833,7 @@ This section describes any modifications that the ST author must make to the Bas
               </title>
               <note role="application"> This requirement captures all the configuration
                 functionality the TSF provides the administrator to configure the
-                EDR. 
+                EDR. Both configurable lists mentioned in the table, above, are intended to match one another.
               
                 <h:p/>
                 Chart legend: M = Mandatory, O = Optional, - = N/A</note>
@@ -850,14 +853,13 @@ This section describes any modifications that the ST author must make to the Bas
                     connectivity status of the Host Agent is recognized on the EDR management dashboard.</test>
                     <test>The evaluator shall use a file that triggers an incident alert to test the suppression
                     of such alerts for that specific file. Upon confirming the creation of incident alerts on access
-                    to the file, the evaluator shall configure suppression of the alert for each available
-                    suppression denylist file or metadata characteristic and verify that incident alerts are
-                    categorized as suppressed, hidden, unavailable, or never created.</test>
-                    <test>The evaluator shall attempt each function with each role and verify access conforms with the chart in the requirement.</test>
+                    to the file, the evaluator shall configure suppression of the alert for each selected suppression method (e.g. filenames) and verify that incident alerts are categorized as suppressed, hidden, unavailable, never created, or similarly categorized. No specific category naming is required, but it should follow the general intent of the examples provided.</test>
+                   
                   </testlist>
                 </Tests>
               </aactivity>
             </f-element>
+            <audit-event/>
           </f-component>
           
   
@@ -865,15 +867,15 @@ This section describes any modifications that the ST author must make to the Bas
             <consistency-rationale>This SFR defines a specific set of management functions for a
               Host Agent by an EDR. It does not impact the <xref g="bibAppPP"/> functionality.</consistency-rationale>
             <f-element>
-              <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall be capable of performing the following functions <h:b>that control
+              <title>The <h:b>EDR</h:b> shall be capable of performing the following functions <h:b>that control
                 behavior of the Host Agent</h:b>:<h:br/>
                 <management-function-set default="O">
                   <manager cid="a">Administrator</manager>
                   <manager cid="s">SOC Analyst</manager>
                   <manager cid="u">Read-Only User</manager>
                   <management-function>
-                    <text>Configure the time frame for sending Host Agent data to the EDR
-                        <assignable>list of configurable time frames</assignable>
+                    <text>Configure the frequency for sending Host Agent data to the EDR
+                        <assignable>list of configurable frequencies</assignable>
                     </text>
                     <M ref="a"/><O ref="s"/><_ ref="u"/>
                   </management-function>
@@ -885,7 +887,7 @@ This section describes any modifications that the ST author must make to the Bas
               </title>
               <note role="application">This requirement captures all the configuration
                 functionality the EDR provides the administrator to configure the
-                EDR Host Agents. <h:p/>
+                EDR Host Agents. The frequency for sending data to the EDR can be specified as a time value, but does not have to be. A value like Aggressive, Normal, Low Bandwidth is a measure of control of frequency and meets the requirement. For EDR products, some management is performed through a product’s configuration files stored at the OS level. In these cases, the OS Administrator can be considered the Administrator of the TOE.<h:p/>
               Chart legend: M = Mandatory, O = Optional, - = N/A</note>
               <aactivity>
                 <TSS>The evaluator shall verify the TSS contains a list of roles and what functions they can perform.  
@@ -899,11 +901,12 @@ This section describes any modifications that the ST author must make to the Bas
                    <test>The evaluator shall tag or categorize a group of individual endpoint systems and
                    verify that the tag or categorization persists within the EDR management dashboard for
                    other users.</test>
-                   <test>The evaluator shall attempt each function with each role and verify access conforms with the chart in the requirement.</test>
+                   <test>The evaluator shall attempt each function with each role and verify access conforms with the chart in the requirement. If no interface exists for a particular role to perform a function, that is sufficient to test that the role is not capable of performing the given function.</test>
                  </testlist>
                 </Tests>
               </aactivity>
             </f-element>
+            <audit-event/>
           </f-component>
           
           
@@ -914,11 +917,12 @@ This section describes any modifications that the ST author must make to the Bas
               It does not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>        
             
             <f-element>
-              <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall maintain the roles [<h:i>administrator, SOC analyst, read-only
+              <title>The <h:b>EDR</h:b> shall maintain the roles [<h:i>administrator, SOC analyst, read-only
                 user</h:i>].</title>
+                <aactivity><no-tests/></aactivity>
             </f-element>
             <f-element>
-              <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall be able to associate users with roles.</title>
+              <title>The <h:b>EDR</h:b> shall be able to associate users with roles.</title>
             
             <note role="application">The EDR will be configured, maintained, and
                 used by different user roles. At a minimum, one administrative role shall be
@@ -954,6 +958,7 @@ This section describes any modifications that the ST author must make to the Bas
                 </Tests>
               </aactivity>
             </f-element>
+            <audit-event/>
           </f-component>
           
           
@@ -966,8 +971,8 @@ This section describes any modifications that the ST author must make to the Bas
               EDR. It does not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>
             
             <comp-lev> lists the supported remediation functions and identifies the management roles that may perform these functions.</comp-lev>
-            <management>No specific management functions are identified.</management>
-            <audit>There are no auditable events foreseen.</audit>
+            <management/>
+            <audit/>
             <dependencies>FMT_SMR.1 Security Management Roles</dependencies>
             
             <f-element>
@@ -1028,9 +1033,10 @@ This section describes any modifications that the ST author must make to the Bas
                 </Tests>
               </aactivity>
             </f-element>
+            <audit-event/>
           </f-component>
 
-        </subsection>
+        </section>
 
  
 
@@ -1097,13 +1103,13 @@ This section describes any modifications that the ST author must make to the Bas
           </f-element>
         </f-component>
         -->
-      <subsection title="Protection of the TSF (FPT)" id="fpt">
+      <section title="Protection of the TSF (FPT)" id="fpt">
           
         <f-component cc-id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection">
             <consistency-rationale> This SFR defines a specific set of functions for logically distinct secure
               communication with a Host Agent. It does not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>
             <f-element>
-              <title><h:b>Refinement:</h:b> The <h:b> EDR</h:b> shall<h:b>
+              <title>The <h:b> EDR</h:b> shall<h:b>
                 <selectables>
                   <selectable>
                     implement 
@@ -1172,15 +1178,16 @@ This section describes any modifications that the ST author must make to the Bas
                   </Tests>
               </aactivity>
             </f-element>
+            <audit-event/>
           </f-component>
-      </subsection>
+      </section>
 
-      <subsection title="Trusted Path/Channels (FTP)" id="ftp">
+      <section title="Trusted Path/Channels (FTP)" id="ftp">
           <f-component cc-id="ftp_trp.1" name="Trusted Path">
             <consistency-rationale>This SFR defines a specific set of functions for secure remote
               administration of the EDR. It does not impact <xref g="bibAppPP"/> functionality.</consistency-rationale>
             <f-element>
-              <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall<h:b>
+              <title>The <h:b>EDR</h:b> shall<h:b>
                 <selectables> 
                   <selectable>
                     implement
@@ -1251,16 +1258,20 @@ This section describes any modifications that the ST author must make to the Bas
                   </Tests>
               </aactivity>
             </f-element>
+            <audit-event/>
           </f-component>
 
-      </subsection>
+      </section>
         
     </man-sfrs>
     <opt-sfrs/>
     <sel-sfrs/>
 
     <obj-sfrs>
-      <subsection title="Security Management (FMT)" id="fmt_obj">
+      <section id="sec-obj-audit-table" title="Auditable Events for Objective SFRs">
+           <audit-table id="at-objective" table="objective"/>
+	</section>
+      <section title="Security Management (FMT)" id="fmt_obj">
         
         <ext-comp-def fam-id="FMT_TRM_EXT" title="Trusted Remediation Functions">
           <mod-def>Components in this family define how the TOE can assert the authenticity of the remediation actions it requests from Host Agents.</mod-def>
@@ -1272,9 +1283,9 @@ This section describes any modifications that the ST author must make to the Bas
           
           
           <comp-lev> requires all management activities bound for a Host Agent to be digitally signed.</comp-lev>
-          <management>No specific management functions are identified.</management>
-          <audit>There are no auditable events foreseen.</audit>
-          <dependencies>No dependencies.</dependencies>
+          <management/>
+          <audit/>
+          <dependencies/>
           <!-- SME: note that FCS_COP.1 could also be considered for a dependency here but was not included since an EDR TOE may rely on the platform to provide the digital signature service. -->
             
             <f-element>
@@ -1287,7 +1298,7 @@ This section describes any modifications that the ST author must make to the Bas
                 <selectables>
                   <selectable>RSA</selectable>
                   <selectable>ECDSA</selectable>
-                </selectables> signatures that meet FIPS PUB 186-4.
+                </selectables> signatures that meet FIPS PUB 186-5.
               </title>
             
             <note role="application"> The intent of this requirement is to cryptographically tie any policy updates or
@@ -1311,8 +1322,9 @@ This section describes any modifications that the ST author must make to the Bas
               </Tests>
             </aactivity>
           </f-element>
+          <audit-event/>
         </f-component>
-      </subsection>
+      </section>
     </obj-sfrs>
 
   </section>
@@ -1347,7 +1359,7 @@ This section describes any modifications that the ST author must make to the Bas
       <tag>AppPP</tag>
       <description>
         <h:a href="https://www.niap-ccevs.org/MMO/PP/-429-/">Protection Profile for Application
-          Software</h:a>, Version 1.3, March 1, 2019
+          Software</h:a>, Version 2.0, MMMM DD, 202Y
       </description>
     </entry>
     <entry id="bibHAGT">
