@@ -791,7 +791,7 @@ This section describes any modifications that the ST author must make to the Bas
             <consistency-rationale>This SFR defines a specific set of management functions for an
               EDR by an EDR. It does not impact the <xref g="bibAppPP"/> functionality.</consistency-rationale>
           <f-element>
-            <title><h:b>The <h:b>EDR</h:b> shall be capable of performing the following
+            <title>The <h:b>EDR</h:b> shall be capable of performing the following
                 management functions: <h:br/>
                 <management-function-set default="O">
                   <manager cid="a">Administrator</manager>
