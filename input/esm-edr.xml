@@ -22,15 +22,17 @@ and so it is recommended that the intro text and associated table heading be upd
 
 -->
 
-<Module xmlns="https://niap-ccevs.org/cc/v1" xmlns:h="http://www.w3.org/1999/xhtml"
+<Module xmlns="https://niap-ccevs.org/cc/v1"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:sec="https://niap-ccevs.org/cc/v1/section"
   name="Endpoint Detection and Response (EDR)" boilerplate="yes"
   target-products="Endpoint Detection and Response (EDR)">
 
   <PPReference>
     <ReferenceTable>
-      <PPVersion>1.0</PPVersion>
+      <PPVersion>2.0</PPVersion>
       <PPAuthor>National Information Assurance Partnership</PPAuthor>
-      <PPPubDate>2020-10-23</PPPubDate>
+      <PPPubDate>2025-05-29</PPPubDate>
       <Keywords>EDR, ESM</Keywords>
     </ReferenceTable>
   </PPReference>
@@ -41,16 +43,21 @@ and so it is recommended that the intro text and associated table heading be upd
       <date>2020-10-23</date>
       <subject>First version released</subject>
     </entry>
+    <entry>
+      <version>2.0</version>
+      <date>2025-05-29</date>
+      <subject>CC2022 conversion</subject>
+    </entry>
   </RevisionHistory>
 
 
-  <chapter title="Introduction" id="int">
+  <section title="Introduction" id="int">
     <section title="Overview" id="ppoverview"> 
       The scope of this PP-Module is to describe the security functionality of an Endpoint Detection and Response (EDR) system in terms of [<abbr linkend="CC"/>] 
       and to define functional and assurance requirements for such products. This PP-Module is intended for use with the following Base-PPs:
       
       <h:ul>
-        <h:li>Protection Profile for Application Software <cite linkend="bibAppPP"/>, Version 1.3.</h:li>
+        <h:li>Protection Profile for Application Software <xref g="bibAppPP"/>, Version 1.3.</h:li>
       </h:ul>
       
       This Base-PP is valid because an EDR is deployed as a software application on a general-purpose operating system.
@@ -122,9 +129,9 @@ and so it is recommended that the intro text and associated table heading be upd
       
       <h:br/> EDR products rely on additional software running on the endpoint, called the Host
       Agent, to communicate commands or policy changes and to receive endpoint host data. Security
-      requirements for the Host Agent are addressed in the separate <cite linkend="bibHAGT"/>
+      requirements for the Host Agent are addressed in the separate <xref g="bibHAGT"/>
       PP-Module. Evaluation of an EDR system will require evaluations of different system components 
-      consisting of EDR and <cite linkend="bibHAGT"/>. Each evaluation must satisfy the requirements 
+      consisting of EDR and <xref g="bibHAGT"/>. Each evaluation must satisfy the requirements 
       in both the EDR and HA in addition to its Base-PP Application Software.
       
       
@@ -182,35 +189,40 @@ and so it is recommended that the intro text and associated table heading be upd
         </usecase>
       </usecases>
     </section>
-  </chapter>
+  </section>
 
-  <chapter title="Conformance Claims" id="conf">
-     <cclaims>
-      <cclaim title="Conformance Statement">
-        <description> This PP-Module inherits exact conformance as required from
-          the specified Base-PP and as defined in the CC and
-          CEM addenda for Exact Conformance, Selection-Based SFRs, and Optional
-          SFRs (dated May 2017).<h:p/> 
-          The following PPs and PP-Modules are allowed to be specified in a PP-Configuration with this PP-Module:
-          <h:ul>
-         
-            <h:li>PP-Module for Host Agents, Version 1.0.</h:li>
-          </h:ul><h:p/>
-        </description>
-      </cclaim>
-      <cclaim title="CC Conformance Claims">
-        <description>This PP-Module is conformant to Parts 2 (extended) and 3
-          (extended) of Common Criteria Version 3.1, Release 5 [CC].
-        </description>
-      </cclaim>
-      <cclaim title="Package Claims">
-        <description>This PP-Module is TLS Package Version 1.1
-          conformant.</description>
-      </cclaim>
-    </cclaims>
-  </chapter>
+     <section title="Conformance Claims" id="sec-cclaims" >
+	<!-- cc-version: cc-2022r1 or cc-31r5   -->
+	<!-- cc-approach: standard or direct-rationale  -->
+	<!-- display: Should this info be displayed in the Conformance -->
+	<!-- Claims section? If no, you have to write a free-form section -->
+	<CClaimsInfo 
+		cc-version="cc-2022r1"         
+		cc-approach="direct-rationale"         
+		display="yes">                 
 
-  <chapter title="Security Problem Description" id="spd"> The security problem is described in terms
+		<!-- Conformance for STs: exact, strict, or demonstrable -->
+		<cc-st-conf>exact</cc-st-conf>                  
+
+		<!-- Part 2 & 3 conformance (extended or conformant) -->
+		<cc-pt2-conf>extended</cc-pt2-conf>           
+		<cc-pt3-conf>extended</cc-pt3-conf>           
+
+		<!-- Claims conformance to these other PPs (none)-->
+		<cc-pp-conf/>              		  
+		
+		<!-- Can be in a configuration with these PPs and Modules -->
+		<cc-pp-config-with> 
+      <PP-cc-ref>Protection Profile for Application Software, Version 2.0</PP-cc-ref>
+      <Mod-cc-ref>PP-Module for Host Agents, Version 1.0</Mod-cc-ref>
+    </cc-pp-config-with>
+		<!-- Package claims -->
+        
+		<cc-pkg-claim>
+          <FP-cc-ref conf="conformant">Functional Package for TLS Version 2.0<comment>confirm version</comment></FP-cc-ref>
+        </cc-pkg-claim>
+
+  <section title="Security Problem Description" id="spd"> The security problem is described in terms
     of the threats that the EDR is expected to address, assumptions about the
     OE, and any organizational security policies that the EDR
     is expected to enforce.  These extend any threats, assumptions, and organizational security policies defined by the Base-PP.
@@ -224,29 +236,27 @@ and so it is recommended that the intro text and associated table heading be upd
             attempt to hide malicious activities from other privileged users.</description>
           <consistency-rationale>This threat is consistent with the Base-PP because it is a specific example of the T.LOCAL_ATTACK threat defined there. 
           In this case, the local attack is to maliciously alter the behavior of the application itself rather than to use the application as a method to attack the OS platform.</consistency-rationale>
-          <objective-refer ref="O.EDR_MANAGEMENT">
-            <rationale>The threat T.MISCONFIGURATION is countered by O.EDR_MANAGEMENT as this
-            provides for authorized management of administrative activities.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.ACCOUNTABILITY">
-            <rationale>The threat T.MISCONFIGURATION is countered by O.ACCOUNTABILITY as this
-              provides for identity, authentication, and audit of administrative activities.</rationale>
-          </objective-refer>
+          <addressed-by>FAU_ALT_EXT.1</addressed-by><rationale>The PP-Module includes FAU_ALT_EXT.1 to facilitate management by providing a function for authorized users to interact with security-relevant data that is provided to the TSF.</rationale>
+             <addressed-by>FAU_COL_EXT.1</addressed-by><rationale>The PP-Module includes FAU_COL_EXT.1 to facilitate management by defining the security-relevant data that is collected by the TSF.</rationale>
+             <addressed-by>FIA_AUT_EXT.1</addressed-by><rationale>The PP-Module includes FIA_AUT_EXT.1 to define how management users are authenticated by the TSF to limit the subjects that can execute management functions on the TOE.</rationale>
+             <addressed-by>FIA_PWD_EXT.1</addressed-by><rationale>The PP-Module includes FIA_PWD_EXT.1 to define composition requirements for the Password Authentication Factor to ensure that an authorized user cannot access protected management functions without authorization.</rationale>
+             <addressed-by>FMT_SMF.1/ENDPOINT</addressed-by><rationale>The PP-Module includes FMT_SMF.1/ENDPOINT to define the management functions that can be performed to control the behavior of the TSF and the management roles that are authorized to perform those functions.</rationale>
+             <addressed-by>FMT_SMF.1/HOST</addressed-by><rationale>The PP-Module includes FMT_SMF.1/HOST to define the management functions that can be performed to control the behavior of Host Agents that are connected to the TOE and the management roles that are authorized to perform those functions.</rationale>
+             <addressed-by>FMT_SMR.1</addressed-by><rationale>The PP-Module includes FMT_SMR.1 to define the management roles that the TSF supports so that its management functions can be separated by role.</rationale>
+             <addressed-by>FMT_SRF_EXT.1</addressed-by><rationale>The PP-Module includes FMT_SRF_EXT.1 to define the remediation functions that are available to authorized users to issue corrective actions on a system that has a connected Host Agent.</rationale>
+             <addressed-by>FMT_TRM_EXT.1</addressed-by><rationale>The PP-Module includes FMT_TRM_EXT.1 to provide an optional capability to ensure the integrity of management commands and policies issued to external Host Agents through use of a digital signature.</rationale>
+          <addressed-by>FAU_GEN.1/EDR</addressed-by><rationale>The PP-Module includes FAU_GEN.1/EDR to ensure that the TOE provides accountability through the generation of audit records for security-relevant events.</rationale>
+             <addressed-by>FIA_AUT_EXT.1</addressed-by><rationale>The PP-Module includes FIA_AUT_EXT.1 to provide a mechanism to authenticate management users so that they can be associated with their actions.</rationale>
         </threat>
         <threat name="T.CREDENTIAL_REUSE">
           <description>An attacker is positioned on a communications channel or elsewhere on the
             network infrastructure. Attackers may guess or harvest legitimate credentials from the
-            EDR, endpoints, or insecure network activity.</description>
+            EDR, endpoints, or insecure network activity.<comment>O.PROTECTED_STORAGE was mentioned in this threat but it was not assigned any sfrs. So I removed it from the list.</comment></description>
           <consistency-rationale>This threat is a specific example of T.NETWORK_EAVESDROP defined in the Base-PP.</consistency-rationale>
-          <objective-refer ref="O.PROTECTED_TRANSIT">
-            <rationale>The threat T.CREDENTIAL_REUSE is countered by O.PROTECTED_TRANSIT as this
-              provides for confidentiality of transmitted data.</rationale>
-          </objective-refer>
-          <objective-refer ref="O.PROTECTED_STORAGE">
-            <rationale>The threat T.CREDENTIAL_REUSE is countered by O.PROTECTED_STORAGE (from <cite linkend="bibAppPP"/>) as this
-              provides for confidentiality of locally stored credentials.</rationale>
-          </objective-refer>
-          <!-- 
+             <addressed-by>FPT_ITT.1</addressed-by><rationale>The PP-Module includes FPT_ITT.1 to define the internal trusted channel that the TSF uses to communicate with connected Host Agents as well as the communications protocols used to establish these trusted channels.</rationale>
+             <addressed-by>FTP_TRP.1</addressed-by><rationale>The PP-Module includes FTP_TRP.1 to define the communications protocols used to support secure remote administration of the TSF.</rationale>
+
+        <!-- 
           <objective-refer ref="O.PROTECTED_MEMORY">
             <rationale>The threat T.CREDENTIAL_REUSE is countered by O.PROTECTED_MEMORY as this
               provides for confidentiality of data in use.</rationale>
@@ -273,86 +283,10 @@ and so it is recommended that the intro text and associated table heading be upd
     <section title="Organizational Security Policies" id="OSPs">
       This PP-Module defines no additional organizational security policies beyond those defined in the Base-PP.
     </section>
-  </chapter>
+  </section>
 
-  <chapter title="Security Objectives" id="obj">
-    <section title="Security Objectives for the TOE" id="SecurityObjectivesTOE">
-      <SOs>
-        <SO name="O.ACCOUNTABILITY">
-          <description>The TOE must provide logging facilities which record
-            management actions undertaken by identified and authenticated management users.<h:p/>
-            Addressed by: FAU_GEN.1/EDR, FIA_AUT_EXT.1
-          </description>
-          <consistency-rationale>This objective relates to the ability of the TOE to identify and authenticate users, and
-            to record the behavior of these users. The Base-PP does not define an authentication mechanism so this objective
-            does not affect the enforcement of the Base-PP's SFRs.
-          </consistency-rationale>
-          <addressed-by>
-            FAU_GEN.1/EDR, FIA_AUT_EXT.1
-          </addressed-by>
-          <rationale>The PP-Module includes FAU_GEN.1/EDR to ensure that the TOE provides accountability through the generation of audit records for security-relevant events.
-            <h:br/><h:br/>The PP-Module includes FIA_AUT_EXT.1 to provide a mechanism to authenticate management users so that they can be associated with their actions.</rationale>
-          
-        </SO>
-        <SO name="O.EDR_MANAGEMENT">
-          <description>The TOE must facilitate authorized management by the enterprise,
-            providing consistent and supported interfaces for their security-relevant configuration,
-            maintenance, and operation.<h:p/>
-            Addressed by: FAU_ALT_EXT.1, FAU_COL_EXT.1, FIA_AUT_EXT.1, FIA_PWD_EXT.1, FMT_SMF.1/ENDPOINT, FMT_SMF.1/HOST, FMT_SMR.1, FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)
-          </description>
-          <consistency-rationale>This objective extends the Base-PP's O.EDR.MANAGEMENT
-            objective by supporting the management functions that are specific to the EDR TOE type.
-          </consistency-rationale>
-          <addressed-by>FAU_ALT_EXT.1, FAU_COL_EXT.1, FIA_AUT_EXT.1, FIA_PWD_EXT.1, FMT_SMF.1/ENDPOINT, FMT_SMF.1/HOST, FMT_SMR.1, 
-            FMT_SRF_EXT.1, FMT_TRM_EXT.1 (objective)</addressed-by>
-          <rationale>
-            The PP-Module includes FAU_ALT_EXT.1 to facilitate management by providing a function for authorized users to interact with security-relevant data that is provided to the TSF.
-            <h:br/><h:br/>The PP-Module includes FAU_COL_EXT.1 to facilitate management by defining the security-relevant data that is collected by the TSF.
-            <h:br/><h:br/>The PP-Module includes FIA_AUT_EXT.1 to define how management users are authenticated by the TSF to limit the subjects that can execute management functions on the TOE.
-            <h:br/><h:br/>The PP-Module includes FIA_PWD_EXT.1 to define composition requirements for the Password Authentication Factor to ensure that an authorized user cannot access protected management functions without authorization.
-            <h:br/><h:br/>The PP-Module includes FMT_SMF.1/ENDPOINT to define the management functions that can be performed to control the behavior of the TSF and the management roles that are authorized to perform those functions.
-            <h:br/><h:br/>The PP-Module includes FMT_SMF.1/HOST to define the management functions that can be performed to control the behavior of Host Agents that are connected to the TOE and the management roles that are authorized to perform those functions.
-            <h:br/><h:br/>The PP-Module includes FMT_SMR.1 to define the management roles that the TSF supports so that its management functions can be separated by role.
-            <h:br/><h:br/>The PP-Module includes FMT_SRF_EXT.1 to define the remediation functions that are available to authorized users to issue corrective actions on a system that has a connected Host Agent.
-            <h:br/><h:br/>The PP-Module includes FMT_TRM_EXT.1 to provide an optional capability to ensure the integrity of management commands and policies issued to external Host Agents through use of a digital signature
-          </rationale>
-
-          
-        </SO>
-        <SO name="O.PROTECTED_TRANSIT">
-          <description>To address both passive (eavesdropping) and active (packet modification)
-            network attack threats, conformant TOE
-              s will use a trusted channel to protect all communications. Sensitive data
-            includes cryptographic keys, passwords, and any other data specific to the application
-            that should not be exposed outside of the application or to unauthenticated users.<h:p/>
-            Addressed by: FCS_DTLSS_EXT.1 (from TLS Package), FCS_DTLSC_EXT.1 (from TLS Package), FCS_HTTPS_EXT.1 (from Base-PP), 
-            FCS_TLSC_EXT.1 (from TLS Package), FCS_TLSC_EXT.2 (from TLS Package), FCS_TLSS_EXT.1 (from TLS Package), 
-            FCS_TLSS_EXT.2 (from TLS Package), FPT_ITT.1, FTP_TRP.1
-          </description>
-          <consistency-rationale>This objective extends the Base-PP's O.PROTECTED_COMMS
-            
-            objective by ensuring that the communications related to the EDR and
-            enrolled Host Agents are secured in the same manner as other sensitive data.
-          </consistency-rationale>
-          <addressed-by>FCS_DTLSS_EXT.1 (from TLS Package), FCS_DTLSC_EXT.1 (from TLS Package), FCS_HTTPS_EXT.1 (from Base-PP), 
-            FCS_TLSC_EXT.1 (from TLS Package), FCS_TLSC_EXT.2 (from TLS Package), FCS_TLSS_EXT.1 (from TLS Package), 
-            FCS_TLSS_EXT.2 (from TLS Package), FPT_ITT.1, FTP_TRP.1</addressed-by>
-
-
-          <rationale>The PP-Module references FCS_HTTPS_EXT.1 from the Base-PP for cases when HTTPS is used as a trusted communications channel.
-            <h:br/><h:br/>The PP-Module references FCS_DTLSC_EXT.1 from the TLS Package for cases when DTLS as a client is used as a trusted communications channel.
-            <h:br/><h:br/>The PP-Module references FCS_DTLSS_EXT.1 from the TLS Package for cases when DTLS as a server is used as a trusted communications channel.
-            <h:br/><h:br/>The PP-Module references FCS_TLSC_EXT.1 from the TLS Package for cases when TLS as a client is used as a trusted communications channel.
-            <h:br/><h:br/>The PP-Module references FCS_TLSC_EXT.2 from the TLS Package for cases when the TOE uses a TLS client implementation that supports mutual authentication.
-            <h:br/><h:br/>The PP-Module references FCS_TLSS_EXT.1 from the TLS Package for cases when TLS as a server is used as a trusted communications channel.
-            <h:br/><h:br/>The PP-Module references FCS_TLSS_EXT.2 from the TLS Package for cases when the TOE uses a TLS client implementation that supports mutual authentication.
-            <h:br/><h:br/> The PP-Module includes FPT_ITT.1 to define the internal trusted channel that the TSF uses to communicate with connected Host Agents as well as the communications protocols used to establish these trusted channels.
-            <h:br/><h:br/> The PP-Module includes FTP_TRP.1 to define the communications protocols used to support secure remote administration of the TSF.
-          </rationale>
-            
-        </SO>
-      </SOs>
-    </section>
+  <section title="Security Objectives" id="obj">
+    
     <section title="Security Objectives for the Operational Environment"
       id="SecurityObjectivesTOEorEnvironment">The following security objectives for the Operational
       Environment assist the EDR in correctly providing its security functionality. These track with
@@ -367,15 +301,15 @@ and so it is recommended that the intro text and associated table heading be upd
       </SOEs>
     </section>
     <section id="secconrat" title="Security Objectives Rationale"> </section>
-  </chapter>
+  </section>
 
-  <chapter title="Security Requirements" id="req">
+  <section title="Security Requirements" id="req">
 
-    <base-pp product="application" version="1.3" name="Application Software" short="App" plural="Application Software"
+    <base-pp product="application" version="2.0" name="Application Software" short="App" plural="Application Software"
       url="https://www.niap-ccevs.org/Profile/Info.cfm?PPID=429&amp;id=429"
       xmlurl="https://github.com/commoncriteria/application/raw/4281d949ae0f570ac57de52f4b0e54c013aec022/input/application.xml">
       <sec-func-req-dir>
-        In a PP-Configuration that includes <cite linkend="bibAppPP"/>, the TOE is expected to rely on some of the security functions implemented by the application as a whole and evaluated against the Base-PP.
+        In a PP-Configuration that includes <xref g="bibAppPP"/>, the TOE is expected to rely on some of the security functions implemented by the application as a whole and evaluated against the Base-PP.
 The SFRs listed in this section are defined in the Base-PP and relevant to the secure operation of the EDR.
 This section describes any modifications that the ST author must make to the Base-PP SFRs to satisfy the required EDR functionality.
       </sec-func-req-dir>
@@ -408,7 +342,7 @@ This section describes any modifications that the ST author must make to the Bas
           <f-component cc-id="fau_alt_ext.1" name="Server Alerts">
             
             <consistency-rationale> This SFR defines auditable alerts for the EDR. It does not
-              impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
+              impact the <xref g="bibAppPP"/> functionality.</consistency-rationale>
             
             <comp-lev> describes alert triggers and the information contained in alerts.</comp-lev>
             <management>The following actions could be considered for the management functions in FMT: <h:ul>
@@ -498,8 +432,7 @@ This section describes any modifications that the ST author must make to the Bas
                   contains documentation on using the management dashboard to visualize and view
                   alerts. 
                   
-                  <h:br/><h:br/>The evaluator shall review the operational guidance to ensure that it
-                  contains documentation on the products supported for exporting alerts in standards-based formats.<h:p/></Guidance>
+                  <h:br/><h:br/>The evaluator shall examine the guidance documentation to ensure it describes the formats supported and the methods of data export being claimed (e.g., written to a file on the underlying platform, communication over a TOE interface to another product, etc.). If communication over a TOE interface to another product (other than the underlying platform) is required to export the data, the evaluator shall verify the guidance documentation describes what products or product types are supported, how to establish communication with those products, any requirements on those products (particular communication protocol, version of the protocol required, etc.), and the configuration of the TOE needed to communicate with those products.<h:p/></Guidance>
                 
                 <Tests> 
                   The evaluator shall perform the following tests:<h:br/><h:br/>
@@ -582,7 +515,7 @@ This section describes any modifications that the ST author must make to the Bas
 
           <f-component cc-id="fau_col_ext.1" name="Collected Endpoint Data">
             <consistency-rationale> This SFR defines the minimum event data that the EDR collects
-              from a Host Agent. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
+              from a Host Agent. It does not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>
 
             <comp-lev> identifies the specific data collected from a Host Agent.</comp-lev>
             <management>The following actions could be considered for the management functions in FMT: <h:ul>
@@ -632,7 +565,7 @@ This section describes any modifications that the ST author must make to the Bas
           
           <f-component cc-id="fau_gen.1" name="Audit Data Generation" iteration="EDR">
             <consistency-rationale> This SFR defines the minimum event data that the EDR server must
-              record about authorized management dashboard activity. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
+              record about authorized management dashboard activity. It does not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>
             
             <comp-lev> defines audiable events for the use of the EDR management functionality.</comp-lev>
             <management>There are no specific management functions identified.</management>
@@ -737,7 +670,7 @@ This section describes any modifications that the ST author must make to the Bas
           </ext-comp-def>
           <f-component cc-id="fia_aut_ext.1" name="Dashboard Authentication Mechanisms">
             <consistency-rationale> This SFR defines authentication mechanisms for the EDR. It does
-              not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
+              not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>
             
             <comp-lev> identifies the only authentication factors that may be used for authentication to a management interface of an EDR.</comp-lev>
             <management>No specific management functions are identified.</management>
@@ -789,7 +722,7 @@ This section describes any modifications that the ST author must make to the Bas
 
           <f-component cc-id="fia_pwd_ext.1" name="Password Authentication">
             <consistency-rationale> This SFR defines specific authentication criteria for
-              passwords. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
+              passwords. It does not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>
             
             <comp-lev> defines the length and character set requirements for password authentication factors.</comp-lev>
             <management>No specific management functions are identified.</management>
@@ -853,7 +786,7 @@ This section describes any modifications that the ST author must make to the Bas
         <subsection title="Security Management (FMT)" id="fmt">
           <f-component name="Specification of Management Functions (EDR Management of EDR)" cc-id="fmt_smf.1" iteration="ENDPOINT">
             <consistency-rationale>This SFR defines a specific set of management functions for an
-              EDR by an EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
+              EDR by an EDR. It does not impact the <xref g="bibAppPP"/> functionality.</consistency-rationale>
           <f-element>
             <title><h:b>Refinement:</h:b>  The <h:b>EDR</h:b> shall be capable of performing the following
                 management functions: <h:br/>
@@ -930,7 +863,7 @@ This section describes any modifications that the ST author must make to the Bas
   
           <f-component cc-id="fmt_smf.1" iteration="HOST" name="Specification of Management Functions (EDR Management of Host Agent)">
             <consistency-rationale>This SFR defines a specific set of management functions for a
-              Host Agent by an EDR. It does not impact the <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
+              Host Agent by an EDR. It does not impact the <xref g="bibAppPP"/> functionality.</consistency-rationale>
             <f-element>
               <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall be capable of performing the following functions <h:b>that control
                 behavior of the Host Agent</h:b>:<h:br/>
@@ -978,7 +911,7 @@ This section describes any modifications that the ST author must make to the Bas
           
           <f-component cc-id="fmt_smr.1" name="Security Management Roles">
             <consistency-rationale> This SFR defines a specific set of management roles for an EDR.
-              It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>        
+              It does not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>        
             
             <f-element>
               <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall maintain the roles [<h:i>administrator, SOC analyst, read-only
@@ -1030,7 +963,7 @@ This section describes any modifications that the ST author must make to the Bas
 
           <f-component cc-id="fmt_srf_ext.1" name="Specification of Remediation Functions">
             <consistency-rationale> This SFR defines a specific set of remediation functions for an
-              EDR. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
+              EDR. It does not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>
             
             <comp-lev> lists the supported remediation functions and identifies the management roles that may perform these functions.</comp-lev>
             <management>No specific management functions are identified.</management>
@@ -1038,8 +971,8 @@ This section describes any modifications that the ST author must make to the Bas
             <dependencies>FMT_SMR.1 Security Management Roles</dependencies>
             
             <f-element>
-              <title> The EDR shall be capable of performing the following
-                remediation functions: <h:br/>
+              <title> <h:p>The EDR shall be capable of performing the following
+                remediation functions:</h:p> <h:p>legend (Chart legend: X = Mandatory, O = Optional, - = N/A):</h:p>
                 <management-function-set default="O">
                   <manager cid="a">Administrator</manager>
                   <manager cid="s">SOC Analyst</manager>
@@ -1063,10 +996,11 @@ This section describes any modifications that the ST author must make to the Bas
                   </management-function>
                 </management-function-set>
               </title>
-              <note role="application"> This requirement captures all the remediation functionality
-                the EDR provides the SOC Analyst and optionally the Administrator.
-                <h:p/>Logically quarantine from the network refers to restricting communications from the endpoint to the rest of the network, 
-                it may include a restricted allowlist.
+              <note role="application"> <h:p>This requirement captures all the remediation functionality
+                the EDR provides the SOC Analyst and optionally the Administrator.</h:p>
+                <h:p>Logically quarantine from the network refers to restricting communications from the endpoint to the rest of the network, 
+                it may include a restricted allowlist.</h:p>
+                <h:p>Any function which is not mandatory for at least one role is considered optional for the TOE.</h:p>
                
                 <h:p/>
                 Chart legend: M = Mandatory, O = Optional, - = N/A</note>
@@ -1077,7 +1011,7 @@ This section describes any modifications that the ST author must make to the Bas
                   documented capabilities to perform the management functions.<h:p/></Guidance>
                 <Tests>For each role, the evaluator shall perform the below tests, verifying that each role in the chart can 
                   perform their permitted functions and are restricted from performing functions that they do not have access to per the 
-                  legend (Chart legend: X = Mandatory, O = Optional, - = N/A):
+                  
                   <testlist>
                     <test>Conditional: If "logically quarantining the endpoint from the network unless allowlisted" is selected 
                       the evaluator shall logically quarantine a managed endpoint system from the
@@ -1088,7 +1022,7 @@ This section describes any modifications that the ST author must make to the Bas
                     <test>The evaluator shall run an executable on a managed endpoint system, terminate
                     its process from the EDR management dashboard, and then verify that the process is no
                     longer running on the system.</test>
-                    <test>The evaluator shall place a file known to trigger an incident alert on the file system then retrieve the 
+                    <test>(Conditional: if the EDR includes the function to retrieve potentially unauthorized or affected files from an endpoint, then): The evaluator shall place a file known to trigger an incident alert on the file system then retrieve the 
                       contents of the file from the EDR management dashboard.</test>
                   </testlist>
                 </Tests>
@@ -1167,7 +1101,7 @@ This section describes any modifications that the ST author must make to the Bas
           
         <f-component cc-id="fpt_itt.1" name="Basic Internal TSF Data Transfer Protection">
             <consistency-rationale> This SFR defines a specific set of functions for logically distinct secure
-              communication with a Host Agent. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
+              communication with a Host Agent. It does not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>
             <f-element>
               <title><h:b>Refinement:</h:b> The <h:b> EDR</h:b> shall<h:b>
                 <selectables>
@@ -1244,7 +1178,7 @@ This section describes any modifications that the ST author must make to the Bas
       <subsection title="Trusted Path/Channels (FTP)" id="ftp">
           <f-component cc-id="ftp_trp.1" name="Trusted Path">
             <consistency-rationale>This SFR defines a specific set of functions for secure remote
-              administration of the EDR. It does not impact <cite linkend="bibAppPP"/> functionality.</consistency-rationale>
+              administration of the EDR. It does not impact <xref g="bibAppPP"/> functionality.</consistency-rationale>
             <f-element>
               <title><h:b>Refinement:</h:b> The <h:b>EDR</h:b> shall<h:b>
                 <selectables> 
@@ -1334,7 +1268,7 @@ This section describes any modifications that the ST author must make to the Bas
 
         <f-component cc-id="fmt_trm_ext.1" name="Trusted Remediation Functions">
           <consistency-rationale>This SFR defines protections for the integrity of commands sent to
-            the Host Agent. It does not impact the <cite linkend="bibAppPP"/> functionality. </consistency-rationale>
+            the Host Agent. It does not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>
           
           
           <comp-lev> requires all management activities bound for a Host Agent to be digitally signed.</comp-lev>
@@ -1381,7 +1315,7 @@ This section describes any modifications that the ST author must make to the Bas
       </subsection>
     </obj-sfrs>
 
-  </chapter>
+  </section>
 
   <appendix title="Implicitly Satisfied Requirements" id="satisfiedreqs">
     <h:table>
