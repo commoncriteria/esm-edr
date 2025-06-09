@@ -353,7 +353,7 @@ This section describes any modifications that the ST author must make to the Bas
               <h:li>Configure visual suppression of alerts.</h:li>
             </h:ul></management>
             <audit>There are no auditable events foreseen.</audit>
-            <dependencies/>
+            <dependencies>No dependencies.</dependencies>   
             
             
             <f-element id="fau-alt-ext-1-1">
@@ -406,8 +406,7 @@ This section describes any modifications that the ST author must make to the Bas
                 standards-based formats the EDR must provide for the export of selected alerts, at least one must be selected. </note>
               <aactivity>
                   <TSS>
-                    The evaluator shall examine the TSS to ensure that it describes how alerts for changes in Host Agent
-                    enrollment status and potentially unauthorized activities on enrolled endpoints are detected and displayed.
+                    The evaluator shall examine the TSS to ensure that it describes how alerts for changes in potentially unauthorized activities on enrolled endpoints are detected and displayed.
                     The evaluator shall examine the TSS to ensure it contains the
                     list of unauthorized activity types categorized or labeled by the EDR upon
                     detection.<h:br/><h:br/>
@@ -418,9 +417,7 @@ This section describes any modifications that the ST author must make to the Bas
                   The evaluator shall examine the TSS to ensure that it describes what formats are supported.<h:p/></TSS>
                 
                 <Guidance>
-                  The evaluator shall review operational guidance to ensure that it
-                  contains documentation on enrolling and unenrolling Host Agents from the
-                  EDR.<h:br/><h:br/>
+                  
                   
                   The evaluator shall review operational guidance to identify a
                   list of unauthorized activity types categorized or labeled by the EDR upon
@@ -433,22 +430,18 @@ This section describes any modifications that the ST author must make to the Bas
                   contains documentation on using the management dashboard to visualize and view
                   alerts. 
                   
-                  <h:br/><h:br/>The evaluator shall examine the guidance documentation to ensure it describes the formats supported and the methods of data export being claimed (e.g., written to a file on the underlying platform, communication over a TOE interface to another product, etc.). If communication over a TOE interface to another product (other than the underlying platform) is required to export the data, the evaluator shall verify the guidance documentation describes what products or product types are supported, how to establish communication with those products, any requirements on those products (particular communication protocol, version of the protocol required, etc.), and the configuration of the TOE needed to communicate with those products.<h:p/></Guidance>
+                  <h:br/><h:br/>The evaluator shall examine the guidance documentation to ensure it describes the formats supported and the methods of data export being claimed (e.g., written to a file on the underlying platform, communication over a TOE interface to another product, etc.). If communication over a TOE interface to another product (other than the underlying platform) is required to export the data, the evaluator shall verify the guidance documentation describes what products or product types are supported, how to establish communication with those products, any requirements on those products (particular communication protocol, version of the protocol required, etc.), and the configuration of the TOE needed to communicate with those products.<h:p/>
+                </Guidance>
                 
                 <Tests> 
-                  The evaluator shall perform the following tests:<h:br/><h:br/>
-                  The evaluator shall follow guidance to unenroll a Host Agent from the
-                  EDR and verify that the unenrollment action is recorded in an auditable and
-                  timestamped activity log. 
-                  <h:br/>
-                  <h:br/>
-                  The evaluator
-                  shall follow guidance to enroll a Host Agent to the EDR and verify that the
-                  enrollment action is recorded in an auditable and timestamped activity log.<h:br/><h:br/>
+                  <h:p>
+                  The evaluator shall perform the following tests:</h:p>
+                 
+                <h:p>
                   <h:b>For Windows,</h:b> the evaluator shall test the EDR's ability to detect
                   anomalous activity by performing the following subtests based on the platform of
                   the enrolled Host Agent's system, verifying for each that, corresponding alerts
-                  were generated in the management dashboard:<h:br/><testlist>
+                  were generated in the management dashboard:</h:p><testlist>
                     <test>The evaluator shall open a Windows command prompt as a user and run the
                       command <h:code>cmd /c certutil -urlcache -split -f &#60;remote file&#62;
                         &#60;download directory&#62;</h:code>, where the remote file is a valid file path
@@ -466,10 +459,10 @@ This section describes any modifications that the ST author must make to the Bas
                       valid file path to a readable, local executable, and time is a start time that
                       occurs within minutes of the task being created. </test>
                   </testlist>
-                  <h:b>For Linux,</h:b> the evaluator shall test the EDR's ability to detect
+                  <h:p><h:b>For Linux,</h:b> the evaluator shall test the EDR's ability to detect
                   anomalous activity by performing the following subtests based on the platform of
                   the enrolled Host Agent's system, verifying for each that, corresponding alerts
-                  were generated in the management dashboard:<h:br/>
+                  were generated in the management dashboard:</h:p>
                   <testlist>
                     <test>The evaluator shall open a terminal and run the command <h:code>scp
                       &#60;remote user&#62;@&#60;remote host&#62;:&#60;remote path&#62;
@@ -488,7 +481,7 @@ This section describes any modifications that the ST author must make to the Bas
                       /etc/cron.hourly/persist</h:code>, where the outside IP is a valid
                       external address.</test>
                   </testlist>
-                  <h:b>For all platforms:</h:b>
+                  <h:p><h:b>For all platforms:</h:b></h:p>
                   <testlist>
                     <test>The evaluator shall review an alert on the management dashboard and verify that
                       the alert contains a severity field and the fields specified in the ST.
@@ -511,7 +504,7 @@ This section describes any modifications that the ST author must make to the Bas
 
           
           <ext-comp-def fam-id="FAU_COL_EXT" title="Collected Endpoint Data">
-            <mod-def>Components in this family define requirements for the data that is collected from a Host Agent.</mod-def>
+            <fam-behavior>Components in this family define requirements for the data that is collected from a Host Agent.</fam-behavior>
           </ext-comp-def>
           
 
@@ -525,7 +518,7 @@ This section describes any modifications that the ST author must make to the Bas
               <h:li>Configuration of label or tag information to associate collected data with individual endpoint systems or groups of systems.</h:li>
             </h:ul></management>
             <audit>There are no auditable events foreseen.</audit>
-            <dependencies/>
+            <dependencies>No dependencies.</dependencies>   
             <f-element>
               <title>The EDR shall collect the following minimum set of endpoint
                 data from a Host Agent: <h:ol type="a">
@@ -581,7 +574,7 @@ This section describes any modifications that the ST author must make to the Bas
             <f-element>
               <title>The <h:b>EDR</h:b> shall generate an audit data of the following auditable events: 
                 <h:ol type="a">
-                  <h:li><h:del>Start-up and shutdown of the audit functions;</h:del></h:li>
+                  <h:li><h:s>Start-up and shutdown of the audit functions;</h:s></h:li>
                   <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit; and</h:li>
                 </h:ol>
                 [<h:i>
@@ -590,6 +583,7 @@ This section describes any modifications that the ST author must make to the Bas
                   <h:li>Remediation commands sent to a Host Agent, affected endpoint, or network
                     devices;</h:li>
                   <h:li>EDR configuration changes;</h:li>
+                  <h:li>Change in Host Agent enrollment status;</h:li>
                   <h:li><assignable>Other auditable events</assignable></h:li>
                   </h:ol>
                 </h:i>].
@@ -636,18 +630,17 @@ This section describes any modifications that the ST author must make to the Bas
                 The evaluator shall check the administrative guide and ensure that it provides a format for audit records. 
                 Each audit record format type must be covered, along with a brief description of each field. The evaluator shall 
                 check to make sure that the description of the fields contains the information required in FAU_GEN.1.2/EDR.
+                <h:br/><h:br/>
+                The evaluator shall review operational guidance to ensure that it contains documentation on enrolling and unenrolling Host Agents from the EDR.
               <h:p/></Guidance>
               <Tests>The evaluator shall perform the following tests:
                 <testlist>
-                  <test>The evaluator shall login to the EDR management dashboard and verify that audit
-                    log data describing the activity is recorded.</test>
-                  <test>The evaluator shall issue a valid remediation command provided by the EDR to
-                    a Host Agent and verify that audit log data describing the activity is recorded on the EDR management dashboard.</test>
-                  <test>The evaluator shall change a non-destructive EDR configuration option within the EDR management
-                    dashboard, change it back to the original setting, and verify that the audit log data describing
-                    the activity is recorded.</test>
-                  <test>The evalutor shall perform the action to generate all other auditable 
-                    events listed in the assignement and verify the activity is recorded.</test>
+                  <test>The evaluator shall login to the EDR management dashboard and verify that audit log data describing the activity is recorded.</test>
+                  <test>The evaluator shall issue a valid remediation command provided by the EDR to a Host Agent and verify that audit log data describing the activity is recorded on the EDR management dashboard.</test>
+                  <test>The evaluator shall change a non-destructive EDR configuration option within the EDR management dashboard, change it back to the original setting, and verify that the audit log data describing the activity is recorded.</test>
+                  <test>The evaluator shall follow guidance to unenroll a Host Agent from the EDR and verify that the unenrollment action is recorded in an auditable and timestamped activity log.</test>
+                  <test>The evaluator shall follow guidance to enroll a Host Agent to the EDR and verify that the enrollment action is recorded in an auditable and timestamped activity log.</test>
+                  <test>The evalutor shall perform the action to generate all other auditable events listed in the assignement and verify the activity is recorded.</test>
                 </testlist>
                 When verifying the test results from FAU_GEN.1.1/EDR, the evaluator shall ensure the audit records generated during 
                 testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries.
@@ -681,7 +674,7 @@ This section describes any modifications that the ST author must make to the Bas
             <comp-lev> identifies the only authentication factors that may be used for authentication to a management interface of an EDR.</comp-lev>
             <management/>
             <audit/>
-            <dependencies/>
+            <dependencies>No dependencies.</dependencies>   
             
             <f-element>
               <title> The EDR shall 
@@ -1286,7 +1279,7 @@ This section describes any modifications that the ST author must make to the Bas
           <comp-lev> requires all management activities bound for a Host Agent to be digitally signed.</comp-lev>
           <management/>
           <audit/>
-          <dependencies/>
+          <dependencies>No dependencies.</dependencies>   
           <!-- SME: note that FCS_COP.1 could also be considered for a dependency here but was not included since an EDR TOE may rely on the platform to provide the digital signature service. -->
             
             <f-element>
