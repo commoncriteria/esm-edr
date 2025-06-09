@@ -426,8 +426,7 @@ The following sections list Common Criteria and technology terms used in this do
                 
                 
               <div class="eacategory">TSS</div><div class="ea"><div class="ea">
-                    The evaluator shall examine the TSS to ensure that it describes how alerts for changes in Host Agent
-                    enrollment status and potentially unauthorized activities on enrolled endpoints are detected and displayed.
+                    The evaluator shall examine the TSS to ensure that it describes how alerts for changes in potentially unauthorized activities on enrolled endpoints are detected and displayed.
                     The evaluator shall examine the TSS to ensure it contains the
                     list of unauthorized activity types categorized or labeled by the EDR upon
                     detection.<br/><br/>
@@ -436,9 +435,7 @@ The following sections list Common Criteria and technology terms used in this do
                     are displayed and what content is included.<br/><br/>
                   
                   The evaluator shall examine the TSS to ensure that it describes what formats are supported.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">
-                  The evaluator shall review operational guidance to ensure that it
-                  contains documentation on enrolling and unenrolling Host Agents from the
-                  EDR.<br/><br/>
+                  
                   
                   The evaluator shall review operational guidance to identify a
                   list of unauthorized activity types categorized or labeled by the EDR upon
@@ -451,20 +448,16 @@ The following sections list Common Criteria and technology terms used in this do
                   contains documentation on using the management dashboard to visualize and view
                   alerts. 
                   
-                  <br/><br/>The evaluator shall examine the guidance documentation to ensure it describes the formats supported and the methods of data export being claimed (e.g., written to a file on the underlying platform, communication over a TOE interface to another product, etc.). If communication over a TOE interface to another product (other than the underlying platform) is required to export the data, the evaluator shall verify the guidance documentation describes what products or product types are supported, how to establish communication with those products, any requirements on those products (particular communication protocol, version of the protocol required, etc.), and the configuration of the TOE needed to communicate with those products.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> 
-                  The evaluator shall perform the following tests:<br/><br/>
-                  The evaluator shall follow guidance to unenroll a Host Agent from the
-                  EDR and verify that the unenrollment action is recorded in an auditable and
-                  timestamped activity log. 
-                  <br/>
-                  <br/>
-                  The evaluator
-                  shall follow guidance to enroll a Host Agent to the EDR and verify that the
-                  enrollment action is recorded in an auditable and timestamped activity log.<br/><br/>
+                  <br/><br/>The evaluator shall examine the guidance documentation to ensure it describes the formats supported and the methods of data export being claimed (e.g., written to a file on the underlying platform, communication over a TOE interface to another product, etc.). If communication over a TOE interface to another product (other than the underlying platform) is required to export the data, the evaluator shall verify the guidance documentation describes what products or product types are supported, how to establish communication with those products, any requirements on those products (particular communication protocol, version of the protocol required, etc.), and the configuration of the TOE needed to communicate with those products.<p></p>
+                </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea"> 
+                  <p>
+                  The evaluator shall perform the following tests:</p>
+                 
+                <p>
                   <b>For Windows,</b> the evaluator shall test the EDR's ability to detect
                   anomalous activity by performing the following subtests based on the platform of
                   the enrolled Host Agent's system, verifying for each that, corresponding alerts
-                  were generated in the management dashboard:<br/><span class="testlist-"><ul>
+                  were generated in the management dashboard:</p><span class="testlist-"><ul>
                     <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FAU_ALT_EXT.1:1</a>:
       The evaluator shall open a Windows command prompt as a user and run the
                       command <code>cmd /c certutil -urlcache -split -f &lt;remote file&gt;
@@ -485,10 +478,10 @@ The following sections list Common Criteria and technology terms used in this do
                       valid file path to a readable, local executable, and time is a start time that
                       occurs within minutes of the task being created. </li>
                   </ul></span>
-                  <b>For Linux,</b> the evaluator shall test the EDR's ability to detect
+                  <p><b>For Linux,</b> the evaluator shall test the EDR's ability to detect
                   anomalous activity by performing the following subtests based on the platform of
                   the enrolled Host Agent's system, verifying for each that, corresponding alerts
-                  were generated in the management dashboard:<br/>
+                  were generated in the management dashboard:</p>
                   <span class="testlist-"><ul>
                     <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FAU_ALT_EXT.1:4</a>:
       The evaluator shall open a terminal and run the command <code>scp
@@ -504,7 +497,7 @@ The following sections list Common Criteria and technology terms used in this do
                       /etc/cron.hourly/persist</code>, where the outside IP is a valid
                       external address.</li>
                   </ul></span>
-                  <b>For all platforms:</b>
+                  <p><b>For all platforms:</b></p>
                   <span class="testlist-"><ul>
                     <li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FAU_ALT_EXT.1:6</a>:
       The evaluator shall review an alert on the management dashboard and verify that
@@ -571,21 +564,22 @@ The following sections list Common Criteria and technology terms used in this do
                 The evaluator shall check the administrative guide and ensure that it provides a format for audit records. 
                 Each audit record format type must be covered, along with a brief description of each field. The evaluator shall 
                 check to make sure that the description of the fields contains the information required in FAU_GEN.1.2/EDR.
+                <br/><br/>
+                The evaluator shall review operational guidance to ensure that it contains documentation on enrolling and unenrolling Host Agents from the EDR.
               <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests:
                 <span class="testlist-"><ul>
                   <li class="test-"><a id="_t_15" class="defined" href="#_t_15">Test FAU_GEN.1/EDR:1</a>:
-      The evaluator shall login to the EDR management dashboard and verify that audit
-                    log data describing the activity is recorded.</li>
+      The evaluator shall login to the EDR management dashboard and verify that audit log data describing the activity is recorded.</li>
                   <li class="test-"><a id="_t_16" class="defined" href="#_t_16">Test FAU_GEN.1/EDR:2</a>:
-      The evaluator shall issue a valid remediation command provided by the EDR to
-                    a Host Agent and verify that audit log data describing the activity is recorded on the EDR management dashboard.</li>
+      The evaluator shall issue a valid remediation command provided by the EDR to a Host Agent and verify that audit log data describing the activity is recorded on the EDR management dashboard.</li>
                   <li class="test-"><a id="_t_17" class="defined" href="#_t_17">Test FAU_GEN.1/EDR:3</a>:
-      The evaluator shall change a non-destructive EDR configuration option within the EDR management
-                    dashboard, change it back to the original setting, and verify that the audit log data describing
-                    the activity is recorded.</li>
+      The evaluator shall change a non-destructive EDR configuration option within the EDR management dashboard, change it back to the original setting, and verify that the audit log data describing the activity is recorded.</li>
                   <li class="test-"><a id="_t_18" class="defined" href="#_t_18">Test FAU_GEN.1/EDR:4</a>:
-      The evalutor shall perform the action to generate all other auditable 
-                    events listed in the assignement and verify the activity is recorded.</li>
+      The evaluator shall follow guidance to unenroll a Host Agent from the EDR and verify that the unenrollment action is recorded in an auditable and timestamped activity log.</li>
+                  <li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FAU_GEN.1/EDR:5</a>:
+      The evaluator shall follow guidance to enroll a Host Agent to the EDR and verify that the enrollment action is recorded in an auditable and timestamped activity log.</li>
+                  <li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FAU_GEN.1/EDR:6</a>:
+      The evalutor shall perform the action to generate all other auditable events listed in the assignement and verify the activity is recorded.</li>
                 </ul></span>
                 When verifying the test results from FAU_GEN.1.1/EDR, the evaluator shall ensure the audit records generated during 
                 testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries.
@@ -603,13 +597,13 @@ The following sections list Common Criteria and technology terms used in this do
                   contains documentation on configuring any supported authentication mechanisms and any support for 
                   multifactor authentication.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                   <span class="testlist-"><ul>
-                    <li class="test-"><a id="_t_19" class="defined" href="#_t_19">Test FIA_AUT_EXT.1:1</a>:
+                    <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FIA_AUT_EXT.1:1</a>:
       Conditional: If "provide authentication" is selected, 
                       the evaluator shall create an account with a username and password, verifying
                       that login authentication is case-sensitive. If additional factors are provided, each
                       factor shall be tested for login access. The evaluator shall verify that login access is granted for correct credentials
                       and denied in cases of incorrect credentials across available factors.</li>
-                    <li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FIA_AUT_EXT.1:2</a>:
+                    <li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FIA_AUT_EXT.1:2</a>:
       
                       Conditional: If "leverage the platform" is selected, the evaluator shall create an account following the platform rules. The evaluator shall verify that login access is granted for correct credentials
                       and denied in cases of incorrect credentials across available factors.</li>
@@ -621,9 +615,9 @@ The following sections list Common Criteria and technology terms used in this do
               <div class="eacategory">TSS</div><div class="ea"><div class="ea">The evaluator shall verify the TSS lists the supported characterset for the composition of administrator passwords. The evaluator shall verify that the TSS lists a password length value that is greater than or equal to 64.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall review the operational guidance to ensure that it
                   contains documentation on default password policy.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the following tests:
                   <span class="testlist-"><ul>
-                    <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FIA_PWD_EXT.1:1</a>:
+                    <li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FIA_PWD_EXT.1:1</a>:
       The evaluator shall verify that passwords up to 64 characters are supported.</li>
-                    <li class="test-"><a id="_t_22" class="defined" href="#_t_22">Test FIA_PWD_EXT.1:2</a>:
+                    <li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FIA_PWD_EXT.1:2</a>:
        The evaluator shall verify that password composition rules present in operational guidance
                       are enforced. While the evaluator is not required (nor is it feasible) to test all possible
                       composition rules, the evaluator shall ensure that all characters are supported, and rule characteristics
@@ -638,15 +632,15 @@ The following sections list Common Criteria and technology terms used in this do
                   documented capabilities to perform the management functions.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the below tests with each role, 
                   verifying each role is denied or can complete the action below as specified by the chart in the SFR:
                   <span class="testlist-"><ul>
-                    <li class="test-"><a id="_t_23" class="defined" href="#_t_23">Test FMT_SMF.1/ENDPOINT:1</a>:
+                    <li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FMT_SMF.1/ENDPOINT:1</a>:
       The evaluator shall configure the amount of time to retain collected EDR data
                     to a time frame in which existing data will be made unavailable and verify that the
                     data is no longer accessible through the EDR management dashboard.</li>
-                    <li class="test-"><a id="_t_24" class="defined" href="#_t_24">Test FMT_SMF.1/ENDPOINT:2</a>:
+                    <li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FMT_SMF.1/ENDPOINT:2</a>:
       The evaluator shall logically or physically inhibit the network communications
                     between a managed endpoint system and the EDR server and verify that the inhibited or halted
                     connectivity status of the Host Agent is recognized on the EDR management dashboard.</li>
-                    <li class="test-"><a id="_t_25" class="defined" href="#_t_25">Test FMT_SMF.1/ENDPOINT:3</a>:
+                    <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FMT_SMF.1/ENDPOINT:3</a>:
       The evaluator shall use a file that triggers an incident alert to test the suppression
                     of such alerts for that specific file. Upon confirming the creation of incident alerts on access
                     to the file, the evaluator shall configure suppression of the alert for each selected suppression method (e.g. filenames) and verify that incident alerts are categorized as suppressed, hidden, unavailable, never created, or similarly categorized. No specific category naming is required, but it should follow the general intent of the examples provided.</li>
@@ -660,14 +654,14 @@ The following sections list Common Criteria and technology terms used in this do
                   The evaluator shall verify the list matches the chart in the requirement.<p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea">The evaluator shall review the operational guidance to verify that the EDR has
                 documented capabilities to perform the management functions.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">The evaluator shall perform the below tests:
                  <span class="testlist-"><ul>
-                   <li class="test-"><a id="_t_26" class="defined" href="#_t_26">Test FMT_SMF.1/HOST:1</a>:
+                   <li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FMT_SMF.1/HOST:1</a>:
       The evaluator shall modify the time frame for sending Host Agent data to the EDR
                    and verify that an affected Host Agent is sending data at the intended interval.</li>
-                   <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FMT_SMF.1/HOST:2</a>:
+                   <li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FMT_SMF.1/HOST:2</a>:
       The evaluator shall tag or categorize a group of individual endpoint systems and
                    verify that the tag or categorization persists within the EDR management dashboard for
                    other users.</li>
-                   <li class="test-"><a id="_t_28" class="defined" href="#_t_28">Test FMT_SMF.1/HOST:3</a>:
+                   <li class="test-"><a id="_t_30" class="defined" href="#_t_30">Test FMT_SMF.1/HOST:3</a>:
       The evaluator shall attempt each function with each role and verify access conforms with the chart in the requirement. If no interface exists for a particular role to perform a function, that is sufficient to test that the role is not capable of performing the given function.</li>
                  </ul></span>
                 </div></div></span></div><div class="comp" id=""><h4>FMT_SMR.1 Security Management Roles</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMR.1</div>
@@ -682,14 +676,14 @@ The following sections list Common Criteria and technology terms used in this do
                   contains instructions for administering the EDR, which user
                   roles are supported, and which permissions each role has.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                   <span class="testlist-"><ul>
-                    <li class="test-"><a id="_t_29" class="defined" href="#_t_29">Test FMT_SMR.1:1</a>:
+                    <li class="test-"><a id="_t_31" class="defined" href="#_t_31">Test FMT_SMR.1:1</a>:
       The evaluator shall verify that the roles of administrator, SOC analyst, and
                       read-only user are available, creating individual accounts with each
                       role assigned.</li>
-                    <li class="test-"><a id="_t_30" class="defined" href="#_t_30">Test FMT_SMR.1:2</a>:
+                    <li class="test-"><a id="_t_32" class="defined" href="#_t_32">Test FMT_SMR.1:2</a>:
       The evaluator shall verify that non-administrator roles are not able to modify
                       the roles of their own account or those of others.</li>
-                    <li class="test-"><a id="_t_31" class="defined" href="#_t_31">Test FMT_SMR.1:3</a>:
+                    <li class="test-"><a id="_t_33" class="defined" href="#_t_33">Test FMT_SMR.1:3</a>:
       In the course of performing the testing activities for the evaluation,
                       the evaluator shall use all supported interfaces, although it is not
                       necessary to repeat each test involving an administrative action with each
@@ -698,7 +692,7 @@ The following sections list Common Criteria and technology terms used in this do
                       of this PP be tested; for instance, if the EDR can be administered through a local hardware interface or
                       TLS/HTTPS then both methods of administration must be exercised during the
                       execution of the test activities.</li>
-                    <li class="test-"><a id="_t_32" class="defined" href="#_t_32">Test FMT_SMR.1:4</a>:
+                    <li class="test-"><a id="_t_34" class="defined" href="#_t_34">Test FMT_SMR.1:4</a>:
       The evaluator shall attempt each function with each role and verify access conforms with the chart in the requirement.</li>
                   </ul></span>
                 </div></div></span></div><div class="comp" id=""><h4>FMT_SRF_EXT.1 Specification of Remediation Functions</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SRF_EXT.1</div>
@@ -711,19 +705,19 @@ The following sections list Common Criteria and technology terms used in this do
                   perform their permitted functions and are restricted from performing functions that they do not have access to per the 
                   
                   <span class="testlist-"><ul>
-                    <li class="test-"><a id="_t_33" class="defined" href="#_t_33">Test FMT_SRF_EXT.1:1</a>:
+                    <li class="test-"><a id="_t_35" class="defined" href="#_t_35">Test FMT_SRF_EXT.1:1</a>:
       Conditional: If "logically quarantining the endpoint from the network unless allowlisted" is selected 
                       the evaluator shall logically quarantine a managed endpoint system from the
                     network and verify that the system is unable to access network addresses or resources
                     outside of an allowlist.</li>
-                    <li class="test-"><a id="_t_34" class="defined" href="#_t_34">Test FMT_SRF_EXT.1:2</a>:
+                    <li class="test-"><a id="_t_36" class="defined" href="#_t_36">Test FMT_SRF_EXT.1:2</a>:
       Conditional: If "quarantining the malicious file on the endpoint" is selected 
                       the evaluator shall verify the functionality to quarantine potentially unauthorized files on the endpoint.</li>
-                    <li class="test-"><a id="_t_35" class="defined" href="#_t_35">Test FMT_SRF_EXT.1:3</a>:
+                    <li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FMT_SRF_EXT.1:3</a>:
       The evaluator shall run an executable on a managed endpoint system, terminate
                     its process from the EDR management dashboard, and then verify that the process is no
                     longer running on the system.</li>
-                    <li class="test-"><a id="_t_36" class="defined" href="#_t_36">Test FMT_SRF_EXT.1:4</a>:
+                    <li class="test-"><a id="_t_38" class="defined" href="#_t_38">Test FMT_SRF_EXT.1:4</a>:
       (Conditional: if the EDR includes the function to retrieve potentially unauthorized or affected files from an endpoint, then): The evaluator shall place a file known to trigger an incident alert on the file system then retrieve the 
                       contents of the file from the EDR management dashboard.</li>
                   </ul></span>
@@ -746,12 +740,12 @@ The following sections list Common Criteria and technology terms used in this do
                   the EDR for each supported method. 
                 <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                   <span class="testlist-"><ul>
-                    <li class="test-"><a id="_t_37" class="defined" href="#_t_37">Test FPT_ITT.1:1</a>:
+                    <li class="test-"><a id="_t_39" class="defined" href="#_t_39">Test FPT_ITT.1:1</a>:
        The evaluators shall ensure that communications using each specified
                         (in the operational guidance) Agent-Server communication method is tested
                         during the course of the evaluation, setting up the connections as described
                         in the operational guidance and ensuring that communication is successful. </li>
-                    <li class="test-"><a id="_t_38" class="defined" href="#_t_38">Test FPT_ITT.1:2</a>:
+                    <li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FPT_ITT.1:2</a>:
        The evaluator shall ensure, for each method of Agent-Server
                         communication, the channel data is not sent in plaintext. </li>
                     </ul></span>
@@ -776,17 +770,17 @@ The following sections list Common Criteria and technology terms used in this do
                   instructions for establishing the remote administrative sessions for each
                   supported method. <p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                     <span class="testlist-"><ul>
-                      <li class="test-"><a id="_t_39" class="defined" href="#_t_39">Test FTP_TRP.1:1</a>:
+                      <li class="test-"><a id="_t_41" class="defined" href="#_t_41">Test FTP_TRP.1:1</a>:
        The evaluators shall ensure that communications using each specified
                         (in the operational guidance) remote administration method is tested during
                         the course of the evaluation, setting up the connections as described in the
                         operational guidance and ensuring that communication is successful. </li>
-                      <li class="test-"><a id="_t_40" class="defined" href="#_t_40">Test FTP_TRP.1:2</a>:
+                      <li class="test-"><a id="_t_42" class="defined" href="#_t_42">Test FTP_TRP.1:2</a>:
        For each method of remote administration supported, the evaluator shall
                         follow the operational guidance to ensure that there is no available
                         interface that can be used by a remote user to establish remote
                         administrative sessions without invoking the trusted path. </li>
-                      <li class="test-"><a id="_t_41" class="defined" href="#_t_41">Test FTP_TRP.1:3</a>:
+                      <li class="test-"><a id="_t_43" class="defined" href="#_t_43">Test FTP_TRP.1:3</a>:
        The evaluator shall ensure, for each method of remote administration,
                         the channel data is not sent in plaintext. </li>
                     </ul></span>
