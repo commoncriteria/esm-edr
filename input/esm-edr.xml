@@ -642,7 +642,7 @@ This section describes any modifications that the ST author must make to the Bas
                   <test>The evaluator shall change a non-destructive EDR configuration option within the EDR management dashboard, change it back to the original setting, and verify that the audit log data describing the activity is recorded.</test>
                   <test>The evaluator shall follow guidance to unenroll a Host Agent from the EDR and verify that the unenrollment action is recorded in an auditable and timestamped activity log.</test>
                   <test>The evaluator shall follow guidance to enroll a Host Agent to the EDR and verify that the enrollment action is recorded in an auditable and timestamped activity log.</test>
-                  <test>The evalutor shall perform the action to generate all other auditable events listed in the assignement and verify the activity is recorded.</test>
+                  <test>The evaluator shall perform the action to generate all other auditable events listed in the assignment and verify the activity is recorded.</test>
                 </testlist>
                 When verifying the test results from FAU_GEN.1.1/EDR, the evaluator shall ensure the audit records generated during 
                 testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries.
@@ -761,7 +761,7 @@ This section describes any modifications that the ST author must make to the Bas
                  they may optionally list additional special characters supported
                 using the assignment. </note>
               <aactivity>
-                <TSS>The evaluator shall verify the TSS lists the supported characterset for the composition of administrator passwords. The evaluator shall verify that the TSS lists a password length value that is greater than or equal to 64.<h:p/></TSS>
+                <TSS>The evaluator shall verify the TSS lists the supported character set for the composition of administrator passwords. The evaluator shall verify that the TSS lists a password length value that is greater than or equal to 64.<h:p/></TSS>
                 <Guidance>The evaluator shall review the operational guidance to ensure that it
                   contains documentation on default password policy.<h:p/></Guidance>
                 <Tests>The evaluator shall perform the following tests:
