@@ -26,7 +26,7 @@ and so it is recommended that the intro text and associated table heading be upd
     xmlns:h="http://www.w3.org/1999/xhtml"
     xmlns:sec="https://niap-ccevs.org/cc/v1/section"
   name="Endpoint Detection and Response (EDR)" boilerplate="yes"
-  target-products="Endpoint Detection and Response (EDR)">
+  target-products="Endpoint Detection and Response (EDR)" target-product="Endpoint Detection and Response (EDR)">
 
   <PPReference>
     <ReferenceTable>
@@ -53,7 +53,7 @@ and so it is recommended that the intro text and associated table heading be upd
 
   <section title="Introduction" id="int">
     <section title="Overview" id="ppoverview"> 
-      The scope of this PP-Module is to describe the security functionality of an Endpoint Detection and Response (EDR) system in terms of [<abbr linkend="CC"/>] 
+      The scope of this PP-Module is to describe the security functionality of an Endpoint Detection and Response (EDR) system in terms of [<xref to="CC"/>] 
       and to define functional and assurance requirements for such products. This PP-Module is intended for use with the following Base-PPs:
       
       <h:ul>
@@ -218,7 +218,7 @@ and so it is recommended that the intro text and associated table heading be upd
 		<!-- Package claims -->
         
 		<cc-pkg-claim>
-          <FP-cc-ref conf="conformant">Functional Package for TLS Version 2.0<comment>confirm version</comment></FP-cc-ref>
+          <FP-cc-ref conf="conformant">Functional Package for TLS Version 2.0 </FP-cc-ref>
         </cc-pkg-claim>
   </CClaimsInfo></section>
 
@@ -282,10 +282,7 @@ and so it is recommended that the intro text and associated table heading be upd
         </assumption>     
       </assumptions>
     </section>
-    <section title="Organizational Security Policies" id="OSPs">
-      This PP-Module defines no additional organizational security policies beyond those defined in the Base-PP.
-      <OSPs/>
-    </section>
+    <section title="Organizational Security Policies" id="OSPs"/>
   </section>
 
   <section title="Security Objectives" id="obj">
