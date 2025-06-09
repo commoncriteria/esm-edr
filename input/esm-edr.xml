@@ -53,7 +53,7 @@ and so it is recommended that the intro text and associated table heading be upd
 
   <section title="Introduction" id="int">
     <section title="Overview" id="ppoverview"> 
-      The scope of this PP-Module is to describe the security functionality of an Endpoint Detection and Response (EDR) system in terms of [<xref to="CC"/>] 
+      The scope of this PP-Module is to describe the security functionality of an Endpoint Detection and Response (EDR) system in terms of [CC] 
       and to define functional and assurance requirements for such products. This PP-Module is intended for use with the following Base-PPs:
       
       <h:ul>
@@ -213,7 +213,7 @@ and so it is recommended that the intro text and associated table heading be upd
 		<!-- Can be in a configuration with these PPs and Modules -->
 		<cc-pp-config-with> 
       <PP-cc-ref>Protection Profile for Application Software, Version 2.0</PP-cc-ref>
-      <Mod-cc-ref>PP-Module for Host Agents, Version 1.0</Mod-cc-ref>
+      <Mod-cc-ref>PP-Module for Host Agents, Version 2.0</Mod-cc-ref>
     </cc-pp-config-with>
 		<!-- Package claims -->
         
