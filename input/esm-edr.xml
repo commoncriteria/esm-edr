@@ -1279,7 +1279,7 @@ This section describes any modifications that the ST author must make to the Bas
 
         <f-component cc-id="fmt_trm_ext.1" name="Trusted Remediation Functions">
           <consistency-rationale>This SFR defines protections for the integrity of commands sent to
-            the Host Agent. It does not impact the <xref g="bibAppPP"/> functionality.</consistency-rationale>
+            the Host Agent. It does not impact the <xref to="bibAppPP"/> functionality.</consistency-rationale>
           
           
           <comp-lev> requires all management activities bound for a Host Agent to be digitally signed.</comp-lev>
