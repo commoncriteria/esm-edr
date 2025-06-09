@@ -282,7 +282,9 @@ and so it is recommended that the intro text and associated table heading be upd
         </assumption>     
       </assumptions>
     </section>
-    <section title="Organizational Security Policies" id="OSPs"/>
+      <sec:Organizational_Security_Policies>
+        <OSPs/>
+     </sec:Organizational_Security_Policies>
   </section>
 
   <section title="Security Objectives" id="obj">
