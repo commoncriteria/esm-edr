@@ -35,6 +35,7 @@
 * Warning: Detected an empty _p_ element./Module[1]""/section[5]""/obj-sfrs[1]""/section[2]""/f-component[1]""/f-element[1]""/aactivity[1]""/TSS[1]"The evalu"/h:p[1]""
 * Warning: Detected an empty _p_ element./Module[1]""/section[5]""/obj-sfrs[1]""/section[2]""/f-component[1]""/f-element[1]""/aactivity[1]""/Guidance[1]"The evalu"/h:p[1]""
 * Warning: fmt_trm_ext.1 in obj-sfrs section is missing a _depends_/_objective_ sub tree (We're transitioning to using depends and not sections). /Module[1]""/section[5]""/obj-sfrs[1]""/section[2]""/f-component[1]""
+ Failed to find a reference to CC.
 DONTKNOWWHATIT IS:_
 DONTKNOWWHATIT IS:_
 DONTKNOWWHATIT IS:_

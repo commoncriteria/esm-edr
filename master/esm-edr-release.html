@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html><head><meta content="text/html;charset=utf-8" http-equiv="Content-Type"></meta><meta content="utf-8" http-equiv="encoding"></meta><title>PP-Module for </title><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script><script type="text/x-mathjax-config">
+<html><head><meta content="text/html;charset=utf-8" http-equiv="Content-Type"></meta><meta content="utf-8" http-equiv="encoding"></meta><title>PP-Module for Endpoint Detection And Response (EDR)</title><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script><script type="text/x-mathjax-config">
             MathJax.Hub.Config({
             extensions: ["tex2jax.js"],
             jax: ["input/TeX", "output/HTML-CSS"],
@@ -629,7 +629,7 @@ function showTarget(id){
 	            img[src="images/collapsed.png"] { display:none;}
 
           }
-    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/><a href="#Comment-2-">Comment: Comment-2-</a><br/><a href="#Comment-3-">Comment: Comment-3-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for </h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
+    </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/><a href="#Comment-2-">Comment: Comment-2-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for Endpoint Detection And Response (EDR)</h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 2.0<br/>2025-05-29<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2020-10-23</td><td>First version released</td></tr>
 <tr><td>2.0</td><td>2025-05-29</td><td>CC2022 conversion</td></tr>
 </table><h2>Contents</h2><div class="toc" id="toc"><a href="#int" style="text-indent:0px">1<span>Introduction</span></a><a href="#ppoverview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#TOEplatform" style="text-indent:20px">1.3.2<span>TOE Platform</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-cclaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#spd" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#OSPs" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#obj" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#secconrat" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#req" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-AppPP" style="text-indent:10px">5.1<span>
@@ -650,7 +650,7 @@ function showTarget(id){
     </span></a><a href="#sel-sfrs" style="text-indent:0px">Appendix B - <span>Selection-based Requirements
     </span></a><a href="#ext-comp-defs" style="text-indent:0px">Appendix C - <span>Extended Component Definitions</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.1<span>Extended Components Table</span></a><a href="#ext-comp-defs-bg" style="text-indent:10px">C.2<span>Extended Component Definitions</span></a><a href="#ext-comp-FIA" style="text-indent:20px">C.2.1<span>Identification and Authentication (FIA)</span></a><a href="#ext-comp-FIA_AUT_EXT" style="text-indent:30px">C.2.1.1<span>FIA_AUT_EXT Dashboard Authentication Mechanisms</span></a><a href="#ext-comp-FIA_PWD_EXT" style="text-indent:30px">C.2.1.2<span>FIA_PWD_EXT Password Authentication</span></a><a href="#ext-comp-FAU" style="text-indent:20px">C.2.2<span>Security Audit (FAU)</span></a><a href="#ext-comp-FAU_ALT_EXT" style="text-indent:30px">C.2.2.1<span>FAU_ALT_EXT Server Alerts</span></a><a href="#ext-comp-FAU_COL_EXT" style="text-indent:30px">C.2.2.2<span>FAU_COL_EXT Collected Endpoint Data</span></a><a href="#ext-comp-FMT" style="text-indent:20px">C.2.3<span>Security Management (FMT)</span></a><a href="#ext-comp-FMT_SRF_EXT" style="text-indent:30px">C.2.3.1<span>FMT_SRF_EXT Specification of Remediation Functions</span></a><a href="#ext-comp-FMT_TRM_EXT" style="text-indent:30px">C.2.3.2<span>FMT_TRM_EXT Trusted Remediation Functions</span></a><a href="#satisfiedreqs" style="text-indent:0px">Appendix D - <span>Implicitly Satisfied Requirements</span></a><a href="#acronyms" style="text-indent:0px">Appendix E - <span>Acronyms</span></a><a href="#appendix-bibliography" style="text-indent:0px">Appendix F - <span>Bibliography</span></a></div><h1 class="indexable" data-level="1" id="int">1 Introduction</h1>
     <h2 class="indexable" data-level="2" id="ppoverview">1.1 Overview</h2> 
-      The scope of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is to describe the security functionality of an Endpoint Detection and Response (<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>) system in terms of [] 
+      The scope of this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is to describe the security functionality of an Endpoint Detection and Response (<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>) system in terms of [<a href="#CC" class="dynref" data-format=""></a>] 
       and to define functional and assurance requirements for such products. This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is intended for use with the following <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PPs</a></abbr>:
       
       <ul>
@@ -807,7 +807,7 @@ The following sections list Common Criteria and technology terms used in this do
 				</dd><p></p><dd>The following <abbr class="dyn-abbr"><a href="#abbr_PP">PPs</a></abbr> and <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>-Modules are allowed to be specified in a 
 					<abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> with this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>:
 					<ul><li>Protection Profile for Application Software, Version 2.0</li><li><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> for Host Agents, Version 1.0</li></ul></dd><dt>Package Claim</dt><p></p><dd><ul><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is 
-					    Functional Package for <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Version 2.0confirm version conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not conform to any 
+					    Functional Package for <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Version 2.0  conformant.</li><li>This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not conform to any 
 						assurance packages.</li></ul></dd><p></p><dd>
 		The functional packages to which the <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> conforms may include <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are not mandatory 
 		to claim for the sake of conformance. An <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> that claims one or more of these functional 
@@ -824,7 +824,7 @@ The following sections list Common Criteria and technology terms used in this do
             privileged user trying to access without proper authorization.. Attackers may
             attempt to hide malicious activities from other privileged users.</span></dd><dt class="threat defined" id="T.CREDENTIAL_REUSE">T.CREDENTIAL_REUSE</dt><dd><span class="description">An attacker is positioned on a communications channel or elsewhere on the
             network infrastructure. Attackers may guess or harvest legitimate credentials from the
-            <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>, endpoints, or insecure network activity.<span style="" class="comment " id="Comment-3-">O.PROTECTED_STORAGE was mentioned in this threat but it was not assigned any sfrs. So I removed it from the list.</span></span></dd></dl>
+            <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>, endpoints, or insecure network activity.<span style="" class="comment " id="Comment-2-">O.PROTECTED_STORAGE was mentioned in this threat but it was not assigned any sfrs. So I removed it from the list.</span></span></dd></dl>
     
     <h2 class="indexable" data-level="2" id="Assumptions">3.2 Assumptions</h2>
 These assumptions are made on the Operational Environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>) in order to be able to ensure that the
@@ -837,14 +837,7 @@ provide all of its security functionality.
             The <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> will robustly handle occasional instances when
           connectivity is unavailable or unreliable.</span></dd></dl>
     
-    <h2 class="indexable" data-level="2" id="OSPs">3.3 Organizational Security Policies</h2><p>An organization deploying the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is
-      expected to satisfy the organizational security policy listed below in addition to all
-      organizational security policies defined by the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. </p>
-      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines no additional organizational security policies beyond those defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
-      
-      This document does not define any additional OSPs.
-    
-    
+    <h2 class="indexable" data-level="2" id="OSPs">3.3 Organizational Security Policies</h2>
   <h1 class="indexable" data-level="1" id="obj">4 Security Objectives</h1>
     
     <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">4.1 Security Objectives for the Operational Environment</h2>
@@ -1306,7 +1299,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
       </h3>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
       App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> that are needed to support
-       functionality.
+      Endpoint Detection and Response (<abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>) functionality.
       This is considered to be consistent because the functionality provided by the
       App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> is being used for its intended purpose.
       

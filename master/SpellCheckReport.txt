@@ -1,4 +1,3 @@
-output/esm-edr-release-linkable.html: 0confirm
 output/esm-edr-release-linkable.html: 202Y
 output/esm-edr-release-linkable.html: AGD
 output/esm-edr-release-linkable.html: CC2022
@@ -22,7 +21,6 @@ output/esm-edr-release-linkable.html: subtests
 output/esm-edr-release-linkable.html: unenroll
 output/esm-edr-release-linkable.html: unenrolling
 output/esm-edr-release-linkable.html: unenrollment
-output/esm-edr-release.html: 0confirm
 output/esm-edr-release.html: 202Y
 output/esm-edr-release.html: CC2022
 output/esm-edr-release.html: CEM
@@ -56,7 +54,6 @@ output/esm-edr-sd.html: subtests
 output/esm-edr-sd.html: unenroll
 output/esm-edr-sd.html: unenrolling
 output/esm-edr-sd.html: unenrollment
-output/esm-edr.html: 0confirm
 output/esm-edr.html: 202Y
 output/esm-edr.html: AGD
 output/esm-edr.html: CC2022
