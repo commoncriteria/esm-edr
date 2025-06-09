@@ -1,21 +1,20 @@
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:285:66: error: element "section" incomplete; missing required element "OSPs"
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:311:39: error: text not allowed here; expected data
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:311:39: error: element "comment" not allowed here; expected data
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:311:71: error: element "branch" incomplete; expected data
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:313:25: error: element "sec-func-req-dir" not allowed yet; missing required element "url"
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:805:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:805:57: error: found attribute "ref", but no attributes allowed here
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:820:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:820:57: error: found attribute "ref", but no attributes allowed here
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:831:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:831:57: error: found attribute "ref", but no attributes allowed here
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:881:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:881:57: error: found attribute "ref", but no attributes allowed here
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:885:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:885:57: error: found attribute "ref", but no attributes allowed here
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:993:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:993:57: error: found attribute "ref", but no attributes allowed here
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:997:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:997:57: error: found attribute "ref", but no attributes allowed here
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:1001:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
-/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:1001:57: error: found attribute "ref", but no attributes allowed here
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:313:39: error: text not allowed here; expected data
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:313:39: error: element "comment" not allowed here; expected data
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:313:71: error: element "branch" incomplete; expected data
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:315:25: error: element "sec-func-req-dir" not allowed yet; missing required element "url"
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:807:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:807:57: error: found attribute "ref", but no attributes allowed here
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:822:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:822:57: error: found attribute "ref", but no attributes allowed here
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:833:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:833:57: error: found attribute "ref", but no attributes allowed here
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:883:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:883:57: error: found attribute "ref", but no attributes allowed here
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:887:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:887:57: error: found attribute "ref", but no attributes allowed here
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:995:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:995:57: error: found attribute "ref", but no attributes allowed here
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:999:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:999:57: error: found attribute "ref", but no attributes allowed here
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:1003:57: error: element "_" not allowed here; expected the element end-tag or element "M", "NA", "O", "X", "aactivity" or "app-note"
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:1003:57: error: found attribute "ref", but no attributes allowed here
