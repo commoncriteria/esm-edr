@@ -581,7 +581,7 @@ This section describes any modifications that the ST author must make to the Bas
 
          
             <f-element>
-              <title>The <h:b>EDR</h:b> shall generate an audit data of the following auditable events: 
+              <title>The <h:b>EDR</h:b> shall generate an audit <h:b>data</h:b> of the following auditable events: 
                 <h:ol type="a">
                   <h:li><h:s>Start-up and shutdown of the audit functions;</h:s></h:li>
                   <h:li>All auditable events for the [<h:i>not specified</h:i>] level of audit; and</h:li>
@@ -606,7 +606,7 @@ This section describes any modifications that the ST author must make to the Bas
             </f-element>
             
             <f-element>
-              <title>The <h:b>EDR</h:b> shall record within each audit data at least the following information: 
+              <title>The <h:b>EDR</h:b> shall record within each audit <h:b>data</h:b> at least the following information: 
                 <h:ol type='a'>
                   <h:li>Date and time of the event,</h:li>
                   <h:li>Type of event,</h:li>
