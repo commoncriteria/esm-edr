@@ -237,17 +237,19 @@ and so it is recommended that the intro text and associated table heading be upd
             attempt to hide malicious activities from other privileged users.</description>
           <consistency-rationale>This threat is consistent with the Base-PP because it is a specific example of the T.LOCAL_ATTACK threat defined there. 
           In this case, the local attack is to maliciously alter the behavior of the application itself rather than to use the application as a method to attack the OS platform.</consistency-rationale>
+          
           <addressed-by>FAU_ALT_EXT.1</addressed-by><rationale>The PP-Module includes FAU_ALT_EXT.1 to facilitate management by providing a function for authorized users to interact with security-relevant data that is provided to the TSF.</rationale>
-             <addressed-by>FAU_COL_EXT.1</addressed-by><rationale>The PP-Module includes FAU_COL_EXT.1 to facilitate management by defining the security-relevant data that is collected by the TSF.</rationale>
-             <addressed-by>FIA_AUT_EXT.1</addressed-by><rationale>The PP-Module includes FIA_AUT_EXT.1 to define how management users are authenticated by the TSF to limit the subjects that can execute management functions on the TOE.</rationale>
+          <addressed-by>FAU_COL_EXT.1</addressed-by><rationale>The PP-Module includes FAU_COL_EXT.1 to facilitate management by defining the security-relevant data that is collected by the TSF.</rationale>
+          <addressed-by>FAU_GEN.1/EDR</addressed-by><rationale>The PP-Module includes FAU_GEN.1/EDR to ensure that the TOE provides accountability through the generation of audit records for security-relevant events.</rationale>
+          <addressed-by>FIA_AUT_EXT.1</addressed-by><rationale>The PP-Module includes FIA_AUT_EXT.1 to define how management users are authenticated by the TSF to limit the subjects that can execute management functions on the TOE.</rationale>
              <addressed-by>FIA_PWD_EXT.1</addressed-by><rationale>The PP-Module includes FIA_PWD_EXT.1 to define composition requirements for the Password Authentication Factor to ensure that an authorized user cannot access protected management functions without authorization.</rationale>
              <addressed-by>FMT_SMF.1/ENDPOINT</addressed-by><rationale>The PP-Module includes FMT_SMF.1/ENDPOINT to define the management functions that can be performed to control the behavior of the TSF and the management roles that are authorized to perform those functions.</rationale>
              <addressed-by>FMT_SMF.1/HOST</addressed-by><rationale>The PP-Module includes FMT_SMF.1/HOST to define the management functions that can be performed to control the behavior of Host Agents that are connected to the TOE and the management roles that are authorized to perform those functions.</rationale>
              <addressed-by>FMT_SMR.1</addressed-by><rationale>The PP-Module includes FMT_SMR.1 to define the management roles that the TSF supports so that its management functions can be separated by role.</rationale>
              <addressed-by>FMT_SRF_EXT.1</addressed-by><rationale>The PP-Module includes FMT_SRF_EXT.1 to define the remediation functions that are available to authorized users to issue corrective actions on a system that has a connected Host Agent.</rationale>
              <addressed-by>FMT_TRM_EXT.1</addressed-by><rationale>The PP-Module includes FMT_TRM_EXT.1 to provide an optional capability to ensure the integrity of management commands and policies issued to external Host Agents through use of a digital signature.</rationale>
-          <addressed-by>FAU_GEN.1/EDR</addressed-by><rationale>The PP-Module includes FAU_GEN.1/EDR to ensure that the TOE provides accountability through the generation of audit records for security-relevant events.</rationale>
-             <addressed-by>FIA_AUT_EXT.1</addressed-by><rationale>The PP-Module includes FIA_AUT_EXT.1 to provide a mechanism to authenticate management users so that they can be associated with their actions.</rationale>
+          
+             
         </threat>
         <threat name="T.CREDENTIAL_REUSE">
           <description>An attacker is positioned on a communications channel or elsewhere on the
