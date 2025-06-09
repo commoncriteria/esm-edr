@@ -340,7 +340,7 @@ This section describes any modifications that the ST author must make to the Bas
         <section title="Security Audit (FAU)" id="fau">
 
           <ext-comp-def fam-id="FAU_ALT_EXT" title="Server Alerts">
-            <mod-def>Components in this family define requirements for system activity that causes the TSF to generate an alert of the activity and for the contents of these alerts.</mod-def>
+            <fam-behavior>Components in this family define requirements for system activity that causes the TSF to generate an alert of the activity and for the contents of these alerts.</fam-behavior>
           </ext-comp-def>
 
           <f-component cc-id="fau_alt_ext.1" name="Server Alerts">
@@ -665,7 +665,7 @@ This section describes any modifications that the ST author must make to the Bas
 
         <section title="Identification and Authentication (FIA)" id="fia">
           <ext-comp-def fam-id="FIA_AUT_EXT" title="Dashboard Authentication Mechanisms">
-            <mod-def>Components in this family define requirements for authentication behavior that is unique to an EDR TOE.</mod-def>
+            <fam-behavior>Components in this family define requirements for authentication behavior that is unique to an EDR TOE.</fam-behavior>
           </ext-comp-def>
           <f-component cc-id="fia_aut_ext.1" name="Dashboard Authentication Mechanisms">
             <consistency-rationale> This SFR defines authentication mechanisms for the EDR. It does
@@ -713,7 +713,7 @@ This section describes any modifications that the ST author must make to the Bas
   
           
           <ext-comp-def fam-id="FIA_PWD_EXT" title="Password Authentication">
-            <mod-def>Components in this family define requirements for password authentication criteria.</mod-def>
+            <fam-behavior>Components in this family define requirements for password authentication criteria.</fam-behavior>
           </ext-comp-def>
 
           <f-component cc-id="fia_pwd_ext.1" name="Password Authentication">
@@ -957,7 +957,7 @@ This section describes any modifications that the ST author must make to the Bas
           
           
           <ext-comp-def fam-id="FMT_SRF_EXT" title="Specification of Remediation Functions">
-            <mod-def>Components in this family define requirements for remediation functions that an EDR can perform to affect the behavior of an endpoint system.</mod-def>
+            <fam-behavior>Components in this family define requirements for remediation functions that an EDR can perform to affect the behavior of an endpoint system.</fam-behavior>
           </ext-comp-def>
 
           <f-component cc-id="fmt_srf_ext.1" name="Specification of Remediation Functions">
@@ -1268,7 +1268,7 @@ This section describes any modifications that the ST author must make to the Bas
       <section title="Security Management (FMT)" id="fmt_obj">
         
         <ext-comp-def fam-id="FMT_TRM_EXT" title="Trusted Remediation Functions">
-          <mod-def>Components in this family define how the TOE can assert the authenticity of the remediation actions it requests from Host Agents.</mod-def>
+          <fam-behavior>Components in this family define how the TOE can assert the authenticity of the remediation actions it requests from Host Agents.</fam-behavior>
         </ext-comp-def>
 
         <f-component cc-id="fmt_trm_ext.1" name="Trusted Remediation Functions">
