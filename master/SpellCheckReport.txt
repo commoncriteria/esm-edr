@@ -19,6 +19,7 @@ output/esm-edr-release-linkable.html: bibHAGT
 output/esm-edr-release-linkable.html: collectable
 output/esm-edr-release-linkable.html: eXpression
 output/esm-edr-release-linkable.html: multifactor
+output/esm-edr-release-linkable.html: sfrs
 output/esm-edr-release-linkable.html: subtests
 output/esm-edr-release-linkable.html: unenroll
 output/esm-edr-release-linkable.html: unenrolling
@@ -40,6 +41,7 @@ output/esm-edr-release.html: allowlisted
 output/esm-edr-release.html: bibAppPP
 output/esm-edr-release.html: bibHAGT
 output/esm-edr-release.html: eXpression
+output/esm-edr-release.html: sfrs
 output/esm-edr-sd.html: 202Y
 output/esm-edr-sd.html: AGD
 output/esm-edr-sd.html: CC2022
@@ -79,6 +81,7 @@ output/esm-edr.html: bibHAGT
 output/esm-edr.html: collectable
 output/esm-edr.html: eXpression
 output/esm-edr.html: multifactor
+output/esm-edr.html: sfrs
 output/esm-edr.html: subtests
 output/esm-edr.html: unenroll
 output/esm-edr.html: unenrolling

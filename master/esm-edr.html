@@ -632,17 +632,17 @@ function showTarget(id){
     </style></head><body onLoad="init()"><div id="commmentbox-"><a href="#Comment-1-">Comment: Comment-1-</a><br/><a href="#Comment-2-">Comment: Comment-2-</a><br/><a href="#Comment-3-">Comment: Comment-3-</a><br/></div><h1 class="title" style="page-break-before:auto;">PP-Module for </h1><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><div class="center"><img src="images/niaplogo.png" alt="NIAP Logo"></img><br/>
       Version: 2.0<br/>2025-05-29<br/><b>National Information Assurance Partnership</b><br/></div><h2 style="page-break-before:always;">Revision History</h2><table><tr class="header"><th>Version</th><th>Date</th><th>Comment</th></tr><tr><td>1.0</td><td>2020-10-23</td><td>First version released</td></tr>
 <tr><td>2.0</td><td>2025-05-29</td><td>CC2022 conversion</td></tr>
-</table><h2>Contents</h2><div class="toc" id="toc"><a href="#int" style="text-indent:0px">1<span>Introduction</span></a><a href="#ppoverview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#TOEplatform" style="text-indent:20px">1.3.2<span>TOE Platform</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-cclaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#obj" style="text-indent:0px">3<span>Security Objectives</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">3.1<span>Security Objectives for the Operational Environment</span></a><a href="#secconrat" style="text-indent:10px">3.2<span>Security Objectives Rationale</span></a><a href="#req" style="text-indent:0px">4<span>Security Requirements</span></a><a href="#secreq-" style="text-indent:10px">4.1<span>
+</table><h2>Contents</h2><div class="toc" id="toc"><a href="#int" style="text-indent:0px">1<span>Introduction</span></a><a href="#ppoverview" style="text-indent:10px">1.1<span>Overview</span></a><a href="#glossary" style="text-indent:10px">1.2<span>Terms</span></a><a href="#cc-terms" style="text-indent:20px">1.2.1<span>Common Criteria Terms</span></a><a href="#tech-terms" style="text-indent:20px">1.2.2<span>Technical Terms</span></a><a href="#TOEdescription" style="text-indent:10px">1.3<span>Compliant Targets of Evaluation</span></a><a href="#TOEboundary" style="text-indent:20px">1.3.1<span>TOE Boundary</span></a><a href="#TOEplatform" style="text-indent:20px">1.3.2<span>TOE Platform</span></a><a href="#usecases" style="text-indent:10px">1.4<span>Use Cases</span></a><a href="#sec-cclaims" style="text-indent:0px">2<span>Conformance Claims</span></a><a href="#spd" style="text-indent:0px">3<span>Security Problem Definition</span></a><a href="#threats" style="text-indent:10px">3.1<span>Threats</span></a><a href="#Assumptions" style="text-indent:10px">3.2<span>Assumptions</span></a><a href="#OSPs" style="text-indent:10px">3.3<span>Organizational Security Policies</span></a><a href="#obj" style="text-indent:0px">4<span>Security Objectives</span></a><a href="#SecurityObjectivesTOEorEnvironment" style="text-indent:10px">4.1<span>Security Objectives for the Operational Environment</span></a><a href="#secconrat" style="text-indent:10px">4.2<span>Security Objectives Rationale</span></a><a href="#req" style="text-indent:0px">5<span>Security Requirements</span></a><a href="#secreq-AppPP" style="text-indent:10px">5.1<span>
     Protection Profile for Application Software
        Security Functional Requirements Direction
-    </span></a><a href="#modsfr-" style="text-indent:20px">4.1.1<span> Modified SFRs </span></a><a href="#man-sfrs" style="text-indent:10px">4.2<span>TOE Security Functional Requirements</span></a><a href="#sec-sel-audit-table" style="text-indent:20px">4.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#fau" style="text-indent:20px">4.2.2<span>Security Audit (FAU)</span></a><a href="#fia" style="text-indent:20px">4.2.3<span>Identification and Authentication (FIA)</span></a><a href="#fmt" style="text-indent:20px">4.2.4<span>Security Management (FMT)</span></a><a href="#fpt" style="text-indent:20px">4.2.5<span>Protection of the TSF (FPT)</span></a><a href="#ftp" style="text-indent:20px">4.2.6<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-req-map" style="text-indent:10px">4.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">5<span>Consistency Rationale</span></a><a href="#conrat-" style="text-indent:10px">5.1<span>
-    Protection Profile for Application Software</span></a><a href="#contoe-" style="text-indent:20px">5.1.1<span>
+    </span></a><a href="#modsfr-AppPP" style="text-indent:20px">5.1.1<span> Modified SFRs </span></a><a href="#man-sfrs" style="text-indent:10px">5.2<span>TOE Security Functional Requirements</span></a><a href="#sec-sel-audit-table" style="text-indent:20px">5.2.1<span>Auditable Events for Mandatory SFRs</span></a><a href="#fau" style="text-indent:20px">5.2.2<span>Security Audit (FAU)</span></a><a href="#fia" style="text-indent:20px">5.2.3<span>Identification and Authentication (FIA)</span></a><a href="#fmt" style="text-indent:20px">5.2.4<span>Security Management (FMT)</span></a><a href="#fpt" style="text-indent:20px">5.2.5<span>Protection of the TSF (FPT)</span></a><a href="#ftp" style="text-indent:20px">5.2.6<span>Trusted Path/Channels (FTP)</span></a><a href="#obj-req-map" style="text-indent:10px">5.3<span>TOE Security Functional Requirements Rationale</span></a><a href="#mod-conrat" style="text-indent:0px">6<span>Consistency Rationale</span></a><a href="#conrat-AppPP" style="text-indent:10px">6.1<span>
+    Protection Profile for Application Software</span></a><a href="#contoe-AppPP" style="text-indent:20px">6.1.1<span>
 	Consistency of TOE Type
-      </span></a><a href="#consecprob-" style="text-indent:20px">5.1.2<span>
+      </span></a><a href="#consecprob-AppPP" style="text-indent:20px">6.1.2<span>
 	Consistency of Security Problem Definition
-      </span></a><a href="#conobj-" style="text-indent:20px">5.1.3<span>
+      </span></a><a href="#conobj-AppPP" style="text-indent:20px">6.1.3<span>
 			Consistency of OE Objectives
-		</span></a><a href="#conreq-" style="text-indent:20px">5.1.4<span>
+		</span></a><a href="#conreq-AppPP" style="text-indent:20px">6.1.4<span>
 	Consistency of Requirements
       </span></a><a href="#opt-sfrs" style="text-indent:0px">Appendix A - <span>Optional SFRs</span></a><a href="#opt-sfrs" style="text-indent:10px">A.1<span>Strictly Optional Requirements
     </span></a><a href="#obj-sfrs" style="text-indent:10px">A.2<span>Objective Requirements
@@ -761,7 +761,7 @@ The following sections list Common Criteria and technology terms used in this do
         its Host Agent (left) over an untrusted network. <p></p> 
 	
 	The requirements for the Host Agent are not covered in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>, however it is expected that an ESM 
-	system will evaluate against a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes both the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>  and the  <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. <div class="figure" id="figure-toe_overview"><img id="toe_overview" src="images/edr_overview.png" width="" height=""></img><br/><span class="ctr" data-myid="toe_overview" data-counter-type="ct-figure">Figure <span class="counter">2</span></span>:
+	system will evaluate against a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes both the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>  and the <a onclick="showTarget('bibHAGT')" href="#bibHAGT" class="bibHAGT-ref"> <span class="counter">bibHAGT</span></a> <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. <div class="figure" id="figure-toe_overview"><img id="toe_overview" src="images/edr_overview.png" width="" height=""></img><br/><span class="ctr" data-myid="toe_overview" data-counter-type="ct-figure">Figure <span class="counter">2</span></span>:
       <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> and Host Agent Communications</div>
       
       <h3 class="indexable" data-level="3" id="TOEplatform">1.3.2 TOE Platform</h3> The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> platform, which consists of the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> or 
@@ -814,9 +814,40 @@ The following sections list Common Criteria and technology terms used in this do
 		packages may include any non-mandatory <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that are appropriate to claim based on the 
 		capabilities of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> and on any triggers for their inclusion based inherently on the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> 
 		selections made. 
-	</dd></dl><h1 class="indexable" data-level="1" id="obj">3 Security Objectives</h1>
+	</dd></dl><h1 class="indexable" data-level="1" id="spd">3 Security Problem Definition</h1> The security problem is described in terms
+    of the threats that the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> is expected to address, assumptions about the
+    <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>, and any organizational security policies that the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>
+    is expected to enforce.  These extend any threats, assumptions, and organizational security policies defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
+    <h2 class="indexable" data-level="2" id="threats">3.1 Threats</h2>
+      <dl><dt class="threat defined" id="T.MISCONFIGURATION">T.MISCONFIGURATION</dt><dd><span class="description">An attacker is a legitimate privileged user with access to change
+            the configuration of the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>'s security capabilities or is not a legitimate 
+            privileged user trying to access without proper authorization.. Attackers may
+            attempt to hide malicious activities from other privileged users.</span></dd><dt class="threat defined" id="T.CREDENTIAL_REUSE">T.CREDENTIAL_REUSE</dt><dd><span class="description">An attacker is positioned on a communications channel or elsewhere on the
+            network infrastructure. Attackers may guess or harvest legitimate credentials from the
+            <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>, endpoints, or insecure network activity.<span style="" class="comment " id="Comment-3-">O.PROTECTED_STORAGE was mentioned in this threat but it was not assigned any sfrs. So I removed it from the list.</span></span></dd></dl>
     
-    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">3.1 Security Objectives for the Operational Environment</h2>
+    <h2 class="indexable" data-level="2" id="Assumptions">3.2 Assumptions</h2>
+These assumptions are made on the Operational Environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>) in order to be able to ensure that the
+security functionality specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> can be provided by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
+If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is placed in an <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> that does not meet these assumptions, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may no longer be able to
+provide all of its security functionality.
+      
+      <dl><dt class="assumption defined" id="A.CONNECTIVITY">A.CONNECTIVITY</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> relies on network connectivity to carry out its
+          management activities. The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> will provide reliable network connectivity for the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> to operate.
+            The <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> will robustly handle occasional instances when
+          connectivity is unavailable or unreliable.</span></dd></dl>
+    
+    <h2 class="indexable" data-level="2" id="OSPs">3.3 Organizational Security Policies</h2><p>An organization deploying the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is
+      expected to satisfy the organizational security policy listed below in addition to all
+      organizational security policies defined by the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. </p>
+      This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> defines no additional organizational security policies beyond those defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
+      
+      This document does not define any additional OSPs.
+    
+    
+  <h1 class="indexable" data-level="1" id="obj">4 Security Objectives</h1>
+    
+    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">4.1 Security Objectives for the Operational Environment</h2>
 The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements technical and procedural measures to assist the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in correctly providing its security functionality (which is defined by the security objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>).
 The security objectives for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> consist of a set of statements describing the goals that the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> should achieve.
 This section defines the security objectives that are to be addressed by the <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> domain or by non-technical or procedural means.
@@ -826,12 +857,12 @@ The assumptions identified in Section 3 are incorporated as security objectives 
       the assumptions about the environment. <dl><dt class="SOE defined" id="OE.RELIABLE_TRANSIT">OE.RELIABLE_TRANSIT</dt><dd><span class="description">Wired or wireless network traffic between the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> and
             host agents will provide reasonably reliable connectivity.</span></dd></dl>
     
-    <h2 id="secconrat" class="indexable,h2" data-level="2">3.2 Security Objectives Rationale</h2>   
+    <h2 id="secconrat" class="indexable,h2" data-level="2">4.2 Security Objectives Rationale</h2>   
 		This section describes how the assumptions and organizational 
 		security policies map to operational environment security objectives.
-	<table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Assumption or OSP</td><td>Security Objectives</td><td>Rationale</td></tr><tr class="major-row"><td rowspan="1">A.CONNECTIVITY</td><td><a href="#OE.RELIABLE_TRANSIT">OE.RELIABLE_​TRANSIT</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> objective <a href="#OE.RELIABLE_TRANSIT">OE.RELIABLE_TRANSIT</a> is realized through
-            A.CONNECTIVITY.</td></tr></table>
-  <h1 id="req" class="indexable" data-level="1">4 Security Requirements</h1>
+	<table><caption><span class="ctr" data-myid="t-sec-obj-rat" data-counter-type="ct-Table" id="t-sec-obj-rat">Table <span class="counter">1</span></span>: Security Objectives Rationale</caption><tr class="header"><td>Assumption or OSP</td><td>Security Objectives</td><td>Rationale</td></tr><tr class="major-row"><td rowspan="1"><a href="#A.CONNECTIVITY">A.CONNECTIVITY</a></td><td><a href="#OE.RELIABLE_TRANSIT">OE.RELIABLE_​TRANSIT</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> objective <a href="#OE.RELIABLE_TRANSIT">OE.RELIABLE_TRANSIT</a> is realized through
+            <a href="#A.CONNECTIVITY">A.CONNECTIVITY</a>.</td></tr></table>
+  <h1 id="req" class="indexable" data-level="1">5 Security Requirements</h1>
       This chapter describes the security requirements which have to be fulfilled by the product under evaluation.
      Those requirements comprise functional components from Part 2 and assurance components from Part 3 of 
        <a href="#bibCC">[CC]</a>.
@@ -855,23 +886,23 @@ The assumptions identified in Section 3 are incorporated as security objectives 
             suggesting the purpose of the operation, e.g. "/EXAMPLE1."
        </li>
      </ul>
-   <h2 id="secreq-" class="indexable" data-level="2">4.1 
+   <h2 id="secreq-AppPP" class="indexable" data-level="2">5.1 
     Protection Profile for Application Software
        Security Functional Requirements Direction
     </h2>
         In a <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> that includes <a onclick="showTarget('bibAppPP')" href="#bibAppPP" class="bibAppPP-ref"> <span class="counter">bibAppPP</span></a>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is expected to rely on some of the security functions implemented by the application as a whole and evaluated against the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.
 The <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> listed in this section are defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> and relevant to the secure operation of the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>.
 This section describes any modifications that the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> author must make to the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> to satisfy the required <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> functionality.
-      <h3 id="modsfr-" class="indexable" data-level="3">4.1.1  Modified SFRs </h3>
+      <h3 id="modsfr-AppPP" class="indexable" data-level="3">5.1.1  Modified SFRs </h3>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> does not modify any <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> defined by the App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>.
-    <h2 id="man-sfrs" class="indexable" data-level="2">4.2 TOE Security Functional Requirements</h2>
+    <h2 id="man-sfrs" class="indexable" data-level="2">5.2 TOE Security Functional Requirements</h2>
 	The following section describes the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> that must be satisfied by any <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> that claims conformance to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>.
 	These <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> must be claimed regardless of which <abbr class="dyn-abbr"><a href="#abbr_PP-Configuration">PP-Configuration</a></abbr> is used to define the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
         
-      <h3 class="indexable" data-level="3" id="sec-sel-audit-table">4.2.1 Auditable Events for Mandatory SFRs</h3>
+      <h3 class="indexable" data-level="3" id="sec-sel-audit-table">5.2.1 Auditable Events for Mandatory SFRs</h3>
 			<table class="sort_kids_" border="1"><caption data-sortkey="#0"><span class="ctr" data-myid="at-Man" data-counter-type="ct-Table" id="at-Man">Table <span class="counter">2</span></span>: Auditable Events for Mandatory Requirements</caption><tr data-sortkey="#1"><th>Requirement</th><th>Auditable Events</th><th>Additional Audit Record Contents</th></tr><tr data-sortkey="FAU_ALT_EXT.1"><td rowspan="2"><a href="#FAU_ALT_EXT.1">FAU_ALT_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_ALT_EXT.1#"><td></td></tr><tr data-sortkey="FAU_ALT_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FAU_COL_EXT.1"><td rowspan="2"><a href="#FAU_COL_EXT.1">FAU_COL_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_COL_EXT.1#"><td></td></tr><tr data-sortkey="FAU_COL_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FAU_GEN.1/EDR"><td rowspan="2"><a href="#FAU_GEN.1/EDR">FAU_GEN.1/EDR</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FAU_GEN.1/EDR#"><td></td></tr><tr data-sortkey="FAU_GEN.1/EDR.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_AUT_EXT.1"><td rowspan="2"><a href="#FIA_AUT_EXT.1">FIA_AUT_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_AUT_EXT.1#"><td></td></tr><tr data-sortkey="FIA_AUT_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FIA_PWD_EXT.1"><td rowspan="2"><a href="#FIA_PWD_EXT.1">FIA_PWD_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FIA_PWD_EXT.1#"><td></td></tr><tr data-sortkey="FIA_PWD_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FMT_SMF.1/ENDPOINT"><td rowspan="2"><a href="#FMT_SMF.1/ENDPOINT">FMT_SMF.1/ENDPOINT</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_SMF.1/ENDPOINT#"><td></td></tr><tr data-sortkey="FMT_SMF.1/ENDPOINT.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FMT_SMF.1/HOST"><td rowspan="2"><a href="#FMT_SMF.1/HOST">FMT_SMF.1/HOST</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_SMF.1/HOST#"><td></td></tr><tr data-sortkey="FMT_SMF.1/HOST.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FMT_SMR.1"><td rowspan="2"><a href="#FMT_SMR.1">FMT_SMR.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_SMR.1#"><td></td></tr><tr data-sortkey="FMT_SMR.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FMT_SRF_EXT.1"><td rowspan="2"><a href="#FMT_SRF_EXT.1">FMT_SRF_EXT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FMT_SRF_EXT.1#"><td></td></tr><tr data-sortkey="FMT_SRF_EXT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FPT_ITT.1"><td rowspan="2"><a href="#FPT_ITT.1">FPT_ITT.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FPT_ITT.1#"><td></td></tr><tr data-sortkey="FPT_ITT.1.1"><td>No events specified</td><td>N/A</td></tr><tr data-sortkey="FTP_TRP.1"><td rowspan="2"><a href="#FTP_TRP.1">FTP_TRP.1</a></td><td style="display:none"></td></tr><tr style="display:none;" data-sortkey="FTP_TRP.1#"><td></td></tr><tr data-sortkey="FTP_TRP.1.1"><td>No events specified</td><td>N/A</td></tr></table>
 	 
-        <h3 id="fau" class="indexable" data-level="3">4.2.2 Security Audit (FAU)</h3>
+        <h3 id="fau" class="indexable" data-level="3">5.2.2 Security Audit (FAU)</h3>
 
           
 
@@ -1175,7 +1206,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
 
         
 
-        <h3 id="fia" class="indexable" data-level="3">4.2.3 Identification and Authentication (FIA)</h3>
+        <h3 id="fia" class="indexable" data-level="3">5.2.3 Identification and Authentication (FIA)</h3>
           
           <div class="comp" id="FIA_AUT_EXT.1"><h4>FIA_AUT_EXT.1 Dashboard Authentication Mechanisms</h4>
             
@@ -1267,7 +1298,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
 
         
 
-        <h3 id="fmt" class="indexable" data-level="3">4.2.4 Security Management (FMT)</h3>
+        <h3 id="fmt" class="indexable" data-level="3">5.2.4 Security Management (FMT)</h3>
           <div class="comp" id="FMT_SMF.1/ENDPOINT"><h4>FMT_SMF.1/ENDPOINT Specification of Management Functions (EDR Management of EDR)</h4>
             
           <div class="element"><div class="reqid" id="FMT_SMF.1.1/ENDPOINT"><a href="#FMT_SMF.1.1/ENDPOINT" class="abbr">FMT_SMF.1.1/ENDPOINT</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr></b> shall be capable of performing the following
@@ -1474,7 +1505,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
  
 
           
-      <h3 id="fpt" class="indexable" data-level="3">4.2.5 Protection of the TSF (FPT)</h3>
+      <h3 id="fpt" class="indexable" data-level="3">5.2.5 Protection of the TSF (FPT)</h3>
           
         <div class="comp" id="FPT_ITT.1"><h4>FPT_ITT.1 Basic Internal TSF Data Transfer Protection</h4>
             
@@ -1544,7 +1575,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
                   </div></div></div></div></div>
       
 
-      <h3 id="ftp" class="indexable" data-level="3">4.2.6 Trusted Path/Channels (FTP)</h3>
+      <h3 id="ftp" class="indexable" data-level="3">5.2.6 Trusted Path/Channels (FTP)</h3>
           <div class="comp" id="FTP_TRP.1"><h4>FTP_TRP.1 Trusted Path</h4>
             
             <div class="element"><div class="reqid" id="FTP_TRP.1.1"><a href="#FTP_TRP.1.1" class="abbr">FTP_TRP.1.1</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr></b> shall<b>
@@ -1608,8 +1639,8 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
 
       
         
-    <h2 id="obj-req-map" class="indexable" data-level="2">4.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
-    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">3</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="10">T.MISCONFIGURATION</td><td><a href="#FAU_ALT_EXT.1">FAU_ALT_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FAU_ALT_EXT.1">FAU_ALT_EXT.1</a> to facilitate management by providing a function for authorized users to interact with security-relevant data that is provided to the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
+    <h2 id="obj-req-map" class="indexable" data-level="2">5.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
+    showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">3</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="10"><a href="#T.MISCONFIGURATION">T.MISCONFIGURATION</a></td><td><a href="#FAU_ALT_EXT.1">FAU_ALT_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FAU_ALT_EXT.1">FAU_ALT_EXT.1</a> to facilitate management by providing a function for authorized users to interact with security-relevant data that is provided to the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
 <tr><td><a href="#FAU_COL_EXT.1">FAU_COL_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FAU_COL_EXT.1">FAU_COL_EXT.1</a> to facilitate management by defining the security-relevant data that is collected by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
 <tr><td><a href="#FAU_GEN.1/EDR">FAU_GEN.1/EDR</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FAU_GEN.1/EDR">FAU_GEN.1/EDR</a> to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> provides accountability through the generation of audit records for security-relevant events.</td></tr>
 <tr><td><a href="#FIA_AUT_EXT.1">FIA_AUT_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FIA_AUT_EXT.1">FIA_AUT_EXT.1</a> to define how management users are authenticated by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to limit the subjects that can execute management functions on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td></tr>
@@ -1619,23 +1650,23 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
 <tr><td><a href="#FMT_SMR.1">FMT_SMR.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FMT_SMR.1">FMT_SMR.1</a> to define the management roles that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> supports so that its management functions can be separated by role.</td></tr>
 <tr><td><a href="#FMT_SRF_EXT.1">FMT_SRF_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FMT_SRF_EXT.1">FMT_SRF_EXT.1</a> to define the remediation functions that are available to authorized users to issue corrective actions on a system that has a connected Host Agent.</td></tr>
 <tr><td><a href="#FMT_TRM_EXT.1">FMT_TRM_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FMT_TRM_EXT.1">FMT_TRM_EXT.1</a> to provide an optional capability to ensure the integrity of management commands and policies issued to external Host Agents through use of a digital signature.</td></tr>
-<tr class="major-row"><td rowspan="2">T.CREDENTIAL_​REUSE</td><td><a href="#FPT_ITT.1">FPT_ITT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FPT_ITT.1">FPT_ITT.1</a> to define the internal trusted channel that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> uses to communicate with connected Host Agents as well as the communications protocols used to establish these trusted channels.</td></tr>
+<tr class="major-row"><td rowspan="2"><a href="#T.CREDENTIAL_REUSE">T.CREDENTIAL_​REUSE</a></td><td><a href="#FPT_ITT.1">FPT_ITT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FPT_ITT.1">FPT_ITT.1</a> to define the internal trusted channel that the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> uses to communicate with connected Host Agents as well as the communications protocols used to establish these trusted channels.</td></tr>
 <tr><td><a href="#FTP_TRP.1">FTP_TRP.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FTP_TRP.1">FTP_TRP.1</a> to define the communications protocols used to support secure remote administration of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
-</table></p><h1 id="mod-conrat" class="indexable" data-level="1">5 Consistency Rationale</h1><h2 id="conrat-" class="indexable" data-level="2">5.1 
-    Protection Profile for Application Software</h2><h3 id="contoe-" class="indexable" data-level="3">5.1.1 
+</table></p><h1 id="mod-conrat" class="indexable" data-level="1">6 Consistency Rationale</h1><h2 id="conrat-AppPP" class="indexable" data-level="2">6.1 
+    Protection Profile for Application Software</h2><h3 id="contoe-AppPP" class="indexable" data-level="3">6.1.1 
 	Consistency of TOE Type
       </h3> If this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> is used to extend the Application Software <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr>, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> type for
         the overall <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is still a software-based application. The <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> boundary is simply extended
         to include the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> functionality that is built into the application so that additional
-        security functionality is claimed within the scope of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. <h3 id="consecprob-" class="indexable" data-level="3">5.1.2 
+        security functionality is claimed within the scope of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. <h3 id="consecprob-AppPP" class="indexable" data-level="3">6.1.2 
 	Consistency of Security Problem Definition
       </h3><table><caption><span class="ctr" data-myid="t-con-sec-prob-def" data-counter-type="ct-Table" id="t-con-sec-prob-def">Table <span class="counter">4</span></span>: Consistency of Security Problem Definition (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
-		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th></tr><tr><td>T.MISCONFIGURATION</td><td>This threat applies to management functionality that is introduced in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> and does not affect the functionality described by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td>T.CREDENTIAL_REUSE</td><td>This threat applies to authentication functionality that is introduced in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> and does not affect the functionality described by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td>A.CONNECTIVITY</td><td>This assumption is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because assuming network availability is consistent with the A.PLATFORM
-          assumption defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, which expects the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to have a trustworthy computing platform.</td></tr></table><h3 id="conobj-" class="indexable" data-level="3">5.1.3 
+		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> Threat, Assumption, OSP</th><th>Consistency Rationale</th></tr><tr><td><a href="#T.MISCONFIGURATION">T.MISCONFIGURATION</a></td><td>This threat applies to management functionality that is introduced in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> and does not affect the functionality described by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td><a href="#T.CREDENTIAL_REUSE">T.CREDENTIAL_REUSE</a></td><td>This threat applies to authentication functionality that is introduced in this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> and does not affect the functionality described by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>.</td></tr><tr><td><a href="#A.CONNECTIVITY">A.CONNECTIVITY</a></td><td>This assumption is consistent with the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because assuming network availability is consistent with the A.PLATFORM
+          assumption defined by the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>, which expects the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> to have a trustworthy computing platform.</td></tr></table><h3 id="conobj-AppPP" class="indexable" data-level="3">6.1.3 
 			Consistency of OE Objectives
 		</h3><p><table><caption><span class="ctr" data-myid="t-con-oe-objs" data-counter-type="ct-Table" id="t-con-oe-objs">Table <span class="counter">5</span></span>: Consistency of <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objectives (App <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> base)
 		</caption><tr><th><abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> Objective</th><th>Consistency Rationale</th></tr><tr><td><a href="#OE.RELIABLE_TRANSIT">OE.RELIABLE_TRANSIT</a></td><td> This objective relates to an external interface that does not exist in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>
-          and does not affect <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> functionality.</td></tr></table></p><h3 id="conreq-" class="indexable" data-level="3">5.1.4 
+          and does not affect <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> functionality.</td></tr></table></p><h3 id="conreq-AppPP" class="indexable" data-level="3">6.1.4 
 	Consistency of Requirements
       </h3>
       This <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> identifies several <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> from the
