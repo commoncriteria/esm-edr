@@ -330,8 +330,8 @@ This section describes any modifications that the ST author must make to the Bas
       
       
       
-      <con-mod id="T.MISCONFIGURATION">This threat applies to management functionality that is introduced in this PP-Module and does not affect the functionality described by the Base-PP.</con-mod>
-      <con-mod id="T.CREDENTIAL_REUSE">This threat applies to authentication functionality that is introduced in this PP-Module and does not affect the functionality described by the Base-PP.</con-mod>
+      <con-mod ref="T.MISCONFIGURATION">This threat applies to management functionality that is introduced in this PP-Module and does not affect the functionality described by the Base-PP.</con-mod>
+      <con-mod ref="T.CREDENTIAL_REUSE">This threat applies to authentication functionality that is introduced in this PP-Module and does not affect the functionality described by the Base-PP.</con-mod>
 
     </base-pp>
 
@@ -528,8 +528,14 @@ This section describes any modifications that the ST author must make to the Bas
                   <h:li>Privileged and unprivileged endpoint account login activity,</h:li>
                   <h:li>Process creation,</h:li>
                   <h:li>Libraries and modules loaded by processes,</h:li>
-                  <h:li>Filenames and <selectables><selectable><assignable>other metadata</assignable></selectable><selectable>no other metadata</selectable></selectables> of files created and <selectables><selectable><assignable>other activities performed to files</assignable></selectable><selectable>not other activities</selectable></selectables> on persistent storage,</h:li>
-                  <h:li><selectables><selectable><assignable>Other host data</assignable></selectable><sekectable>no other host data</sekectable></selectables>.</h:li>
+                  <h:li>Filenames and <selectables>
+                    <selectable><assignable>other metadata</assignable></selectable>
+                    <selectable>no other metadata</selectable>
+                  </selectables> of files created and <selectables>
+                      <selectable><assignable>other activities performed to files</assignable></selectable>
+                      <selectable>not other activities</selectable>
+                    </selectables> on persistent storage,</h:li>
+                  <h:li><selectables><selectable><assignable>Other host data</assignable></selectable><selectable>no other host data</selectable></selectables>.</h:li>
                 </h:ol>
               </title>
               <note role="application">The intent of this requirement is to specify the minimum set
@@ -1275,7 +1281,7 @@ This section describes any modifications that the ST author must make to the Bas
 
         <f-component cc-id="fmt_trm_ext.1" name="Trusted Remediation Functions">
           <consistency-rationale>This SFR defines protections for the integrity of commands sent to
-            the Host Agent. It does not impact the <xref g="bibAppPP"/> functionality. </consistency-rationale>
+            the Host Agent. It does not impact the <xref g="bibAppPP"/> functionality.</consistency-rationale>
           
           
           <comp-lev> requires all management activities bound for a Host Agent to be digitally signed.</comp-lev>
@@ -1322,7 +1328,7 @@ This section describes any modifications that the ST author must make to the Bas
         </f-component>
       </section>
     </obj-sfrs>
-
+    <impl-dep-sfrs/>
   </section>
 
   <appendix title="Implicitly Satisfied Requirements" id="satisfiedreqs">
@@ -1366,5 +1372,4 @@ This section describes any modifications that the ST author must make to the Bas
       </description>
     </entry>
   </bibliography>
-  <acronyms/>
 </Module>
