@@ -310,8 +310,9 @@ and so it is recommended that the intro text and associated table heading be upd
     <base-pp id="AppPP" name="Application Software" product="Application" short="App" version="2.0" >
       <git>
           <url>https://github.com/commoncriteria/application</url>
-          <branch>release-1.4<comment> update later</comment></branch>
+          <branch>release-1.4</branch>
         </git>
+       
       <sec-func-req-dir>
         In a PP-Configuration that includes <xref to="bibAppPP"/>, the TOE is expected to rely on some of the security functions implemented by the application as a whole and evaluated against the Base-PP.
 The SFRs listed in this section are defined in the Base-PP and relevant to the secure operation of the EDR.
