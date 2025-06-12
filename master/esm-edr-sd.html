@@ -274,7 +274,7 @@
    </style></head><body><div style="text-align: center; margin-left: auto; margin-right: auto;"><h1 class="title" style="page-break-before:auto;">Supporting Document<br/>
         Mandatory Technical Document</h1><img src="images/niaplogo.png" alt="NIAP"></img><hr width="50%"></hr><noscript><h1 style="text-align:center; border-style: dashed; border-width: medium; border-color: red;">This page is best viewed with JavaScript enabled!</h1></noscript><br/>
     PP-Module for Endpoint Detection And Response (EDR)<br/>
-      Version: 2.0<br/>2025-05-29<br/><b>National Information Assurance Partnership</b></div><div class="foreword"><h1 style="text-align: center">Foreword</h1><p>This is a Supporting Document (SD), intended to complement the Common Criteria version 3
+      Version: 2.0<br/>2025-06-13<br/><b>National Information Assurance Partnership</b></div><div class="foreword"><h1 style="text-align: center">Foreword</h1><p>This is a Supporting Document (SD), intended to complement the Common Criteria version 3
       and the associated Common Evaluation Methodology for
       Information Technology Security Evaluation.</p><p>SDs may be “Guidance Documents”, that highlight specific approaches 
       and application of the standard to areas where no mutual recognition of
@@ -284,7 +284,7 @@
       The usage of the latter class is not only mandatory, but certificates
       issued as a result of their application are recognized under the CCRA.</p><p><b>Technical Editor:</b><br/>
       National Information Assurance Partnership (NIAP)
-      </p><p><b style="page-break-before:always;">Document history:</b><table><tr class="header"><th>Version</th><th>Date</th><th style="align:left;">Comment</th></tr><tr><td>1.0</td><td>2020-10-23</td><td>First version released</td></tr><tr><td>2.0</td><td>2025-05-29</td><td>CC2022 conversion</td></tr></table></p><p><b>General Purpose:</b><br/>
+      </p><p><b style="page-break-before:always;">Document history:</b><table><tr class="header"><th>Version</th><th>Date</th><th style="align:left;">Comment</th></tr><tr><td>1.0</td><td>2020-10-23</td><td>First version released</td></tr><tr><td>2.0</td><td>2025-06-13</td><td>CC2022 conversion</td></tr></table></p><p><b>General Purpose:</b><br/>
       The purpose of this SD is to define evaluation methods for the functional behavior of
       Endpoint Detection and Response (EDR)      
       products.
@@ -534,7 +534,7 @@ The following sections list Common Criteria and technology terms used in this do
        
                       <span class="testlist-"><ul>
                         <li class="test-"><a id="_t_12" class="defined" href="#_t_12">Test FAU_COL_EXT.1:4.1</a>:
-      The evaluator shall create a new non-empty file within persistent storage and verify that the activity is accurately reported to the EDR based on filename and any other metadata indicated in bullet e.</li>
+      The evaluator shall create a new, non-empty file in persistent storage and verify that the activity is accurately reported to the EDR based on filename and any other metadata indicated in bullet e.</li>
                         <li class="test-"><a id="_t_13" class="defined" href="#_t_13">Test FAU_COL_EXT.1:4.2</a>:
       (Conditional): If other activities performed on files are indicated in bullet e, the evaluator shall perform them on a non-empty file within persistent storage and verify that the activity is accurately reported to the EDR based on filename and any other metadata indicated in bullet e.</li>
                       
@@ -598,7 +598,7 @@ The following sections list Common Criteria and technology terms used in this do
                   multifactor authentication.<p></p></div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                   <span class="testlist-"><ul>
                     <li class="test-"><a id="_t_21" class="defined" href="#_t_21">Test FIA_AUT_EXT.1:1</a>:
-      Conditional: If "provide authentication" is selected, 
+      Conditional: If "provide authentication..." is selected, 
                       the evaluator shall create an account with a username and password, verifying
                       that login authentication is case-sensitive. If additional factors are provided, each
                       factor shall be tested for login access. The evaluator shall verify that login access is granted for correct credentials
@@ -643,7 +643,10 @@ The following sections list Common Criteria and technology terms used in this do
                     <li class="test-"><a id="_t_27" class="defined" href="#_t_27">Test FMT_SMF.1/ENDPOINT:3</a>:
       The evaluator shall use a file that triggers an incident alert to test the suppression
                     of such alerts for that specific file. Upon confirming the creation of incident alerts on access
-                    to the file, the evaluator shall configure suppression of the alert for each selected suppression method (e.g. filenames) and verify that incident alerts are categorized as suppressed, hidden, unavailable, never created, or similarly categorized. No specific category naming is required, but it should follow the general intent of the examples provided.</li>
+                    to the file, the evaluator shall configure suppression of the alert for each
+                    selected suppression method (e.g., filenames) and verify that incident alerts are categorized as suppressed, 
+                    hidden, unavailable, never created, or similarly categorized. No specific category naming is required, but it
+                    should follow the general intent of the examples provided.</li>
                    
                   </ul></span>
                 </div></div></span></div><div class="comp" id=""><h4>FMT_SMF.1/HOST Specification of Management Functions (EDR Management of Host Agent)</h4><span class="activity_pane_body"><div class="component-activity-header">FMT_SMF.1/HOST</div>
@@ -819,12 +822,12 @@ guidance, and testing.</p><h1 id="biblio" class="indexable" data-level="A">Appen
               April 2017.</li><li><a href="http://www.commoncriteriaportal.org/files/ccfiles/CCPART3V3.1R5.pdf">Part
                 3: Security Assurance Components</a>, CCMB-2017-04-003, Version 3.1 Revision 5,
               April 2017.</li></ul></td></tr>
-    <tr><td><span id="bibAppPP"></span>[AppPP]</td><td>
+    <tr><td><span id="bibAppPP"></span>[AppPP]</td><td><span style="" class="comment " id="Comment-3-">Need to update link when v2.0 is released.</span>
         <a href="https://www.niap-ccevs.org/MMO/PP/-429-/">Protection Profile for Application
           Software</a>, Version 2.0, MMMM DD, 202Y
       </td></tr>
 
-    <tr><td><span id="bibHAGT"></span>[Host Agent]</td><td>
+    <tr><td><span id="bibHAGT"></span>[Host Agent]</td><td><span style="" class="comment " id="Comment-4-">Need to update link when v2.0 is released.</span>
         <a href="https://commoncriteria.github.io/pp/esm-hostagent/esm-hostagent-release.html">PP-Module for Host Agent</a>, Version 1.0, October 23rd 2020
       </td></tr>
 
