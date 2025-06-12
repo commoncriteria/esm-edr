@@ -318,13 +318,13 @@ and so it is recommended that the intro text and associated table heading be upd
   </section>
 
   <section title="Security Requirements" id="req">
-
+<comment>Need to update NIAP url when version 2.0 is published.</comment>
     <base-pp id="AppPP" name="Application Software" product="Application" short="App" version="2.0" >
       <git>
           <url>https://github.com/commoncriteria/application</url>
           <branch>release-1.4</branch>
         </git>
-      
+      <url>https://www.niap-ccevs.org/protectionprofiles/462</url>    
       
        
       <sec-func-req-dir>
