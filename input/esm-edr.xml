@@ -250,7 +250,8 @@ and so it is recommended that the intro text and associated table heading be upd
           
           <addressed-by>FAU_ALT_EXT.1</addressed-by><rationale>The PP-Module includes FAU_ALT_EXT.1 to facilitate management by providing a function for authorized users to interact with security-relevant data that is provided to the TSF.</rationale>
           <addressed-by>FAU_COL_EXT.1</addressed-by><rationale>The PP-Module includes FAU_COL_EXT.1 to facilitate management by defining the security-relevant data that is collected by the TSF.</rationale>
-          <addressed-by>FAU_GEN.1/EDR</addressed-by><rationale>The PP-Module includes FAU_GEN.1/EDR to ensure that the TOE provides accountability through the generation of audit records for security-relevant events.</rationale>
+          <addressed-by>FAU_GEN.1/EDR</addressed-by><rationale>The PP-Module includes FAU_GEN.1/EDR
+            to ensure that the TOE provides accountability through the generation of audit data for security-relevant events.</rationale>
           <addressed-by>FIA_AUT_EXT.1</addressed-by><rationale>The PP-Module includes FIA_AUT_EXT.1 to define how management users are authenticated by the TSF to limit the subjects that can execute management functions on the TOE.</rationale>
              <addressed-by>FIA_PWD_EXT.1</addressed-by><rationale>The PP-Module includes FIA_PWD_EXT.1 to define composition requirements for the Password Authentication Factor to ensure that an authorized user cannot access protected management functions without authorization.</rationale>
              <addressed-by>FMT_SMF.1/ENDPOINT</addressed-by><rationale>The PP-Module includes FMT_SMF.1/ENDPOINT to define the management functions that can be performed to control the behavior of the TSF and the management roles that are authorized to perform those functions.</rationale>
@@ -610,7 +611,7 @@ This section describes any modifications that the ST author must make to the Bas
               </title>             
               
               <note role="application">The intent of this requirement is to specify the minimum set
-                of audit records generated about actions on the EDR. Changes made to configuration files at the OS level will be audited by the OS and are not covered by this requirement.</note>              
+                of audit data generated about actions on the EDR. Changes made to configuration files at the OS level will be audited by the OS and are not covered by this requirement.</note>              
             </f-element>
             
             <f-element>
@@ -626,14 +627,16 @@ This section describes any modifications that the ST author must make to the Bas
                 </h:ol>
             </title>
    
-            <note role="application"> This requirement outlines the information to be included in audit records. All audits must 
+            <note role="application"> This requirement outlines the information to be included in
+              audit data. All audits must 
               contain at least the information mentioned in FAU_GEN.1.2/EDR, but may contain more information 
               which can be assigned. 
               </note>
             <aactivity>
               <TSS>The evaluator shall check the TSS and ensure that it lists all of the auditable events claimed in the SFR. 
                 The evaluator shall check to make sure that every audit event type specified by the SFR is described in the TSS. <h:br/><h:br/>
-                The evaluator shall check the TSS and ensure that it provides a format for audit records. 
+                The evaluator shall check the TSS and ensure that it provides a format for audit
+                data. 
                 Each audit record format type must be covered, along with a brief description of each field.
               <h:p/></TSS>                            
               
@@ -646,7 +649,8 @@ This section describes any modifications that the ST author must make to the Bas
                 approach taken while determining which actions in the administrative guide are security relevant with 
                 respect to this PP-Module. The evaluator may perform this activity as part of the activities 
                 associated with ensuring the AGD_OPE guidance  satisfies the requirements.<h:br/><h:br/>
-                The evaluator shall check the administrative guide and ensure that it provides a format for audit records. 
+                The evaluator shall check the administrative guide and ensure that it provides a
+                format for audit data. 
                 Each audit record format type must be covered, along with a brief description of each field. The evaluator shall 
                 check to make sure that the description of the fields contains the information required in FAU_GEN.1.2/EDR.
                 <h:br/><h:br/>
@@ -661,12 +665,13 @@ This section describes any modifications that the ST author must make to the Bas
                   <test>The evaluator shall follow guidance to enroll a Host Agent to the EDR and verify that the enrollment action is recorded in an auditable and timestamped activity log.</test>
                   <test>The evaluator shall perform the action to generate all other auditable events listed in the assignment and verify the activity is recorded.</test>
                 </testlist>
-                When verifying the test results from FAU_GEN.1.1/EDR, the evaluator shall ensure the audit records generated during 
+                When verifying the test results from FAU_GEN.1.1/EDR, the evaluator shall ensure the
+                audit data generated during 
                 testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries.
                 <h:br/><h:br/> 
                 Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
                 For example, testing performed to ensure that the administrative guidance provided is correct verifies that AGD_OPE.1 
-                is satisfied and should address the invocation of the administrative actions that are needed to verify the audit records 
+                is satisfied and should address the invocation of the administrative actions that are needed to verify the audit data 
                 are generated as expected.<h:br/><h:br/>
               </Tests>
             </aactivity>
@@ -806,7 +811,7 @@ This section describes any modifications that the ST author must make to the Bas
           <f-element>
             <title>The EDR shall be capable of performing the following management functions:<h:br/><h:br/>
               <h:b><ctr id="fmt_smf" ctr-type="Table">: Management Functions</ctr></h:b><h:br/><h:br/>
-              [Status Markers:<h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> N/A -
+              [Status Markers:<h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> - -
               Not Applicable<h:br/>
                 <management-function-set default="O">
                   <manager cid="a">Administrator</manager>
@@ -886,7 +891,7 @@ This section describes any modifications that the ST author must make to the Bas
               <title>The EDR shall be capable of performing the following management functions <h:b>that control
                 behavior of the Host Agent</h:b>:<h:br/>[
                 <h:b><ctr id="fmt_smf" ctr-type="Table">: Management Functions</ctr></h:b><h:br/><h:br/>
-                [Status Markers:<h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> N/A -
+                [Status Markers:<h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> - -
                 Not Applicable<h:br/>
                 <management-function-set default="O">
                   <manager cid="a">Administrator</manager>
@@ -911,8 +916,7 @@ This section describes any modifications that the ST author must make to the Bas
                 is a measure of control of frequency and meets the requirement. For EDR products, 
                 some management is performed through a product’s configuration files stored at the
                 OS level. In these cases, the OS administrator can be considered the administrator
-                of the TOE.<h:p/>
-              Chart legend: M = Mandatory, O = Optional, - = N/A</note>
+                of the TOE.<h:p/>              
               <aactivity>
                 <TSS>The evaluator shall verify the TSS contains a list of roles and what functions they can perform.  
                   The evaluator shall verify the list matches the chart in the requirement.<h:p/></TSS>
@@ -1003,7 +1007,7 @@ This section describes any modifications that the ST author must make to the Bas
               <title> The TSF shall be capable of performing the following remediation functions:
                 <h:b><ctr id="fmt_srf_ext" ctr-type="Table">: Management
                   Functions</ctr></h:b><h:br/><h:br/>
-                [Status Markers:<h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> N/A -
+                [Status Markers:<h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> - -
                 Not Applicable<h:br/><h:br/>
               
                 <management-function-set default="O">
@@ -1036,7 +1040,7 @@ This section describes any modifications that the ST author must make to the Bas
                 <h:p>Any function that is not mandatory for at least one role is considered optional for the TOE.</h:p>
                
                 <h:p/>
-                Chart legend: M = Mandatory, O = Optional, - = N/A</note>
+                
               <aactivity>
                 <TSS>The evaluator shall check to ensure that the TSS describes what roles can perform what 
                   remediation actions and how each remediation action is performed.<h:p/></TSS>
@@ -1374,7 +1378,7 @@ This section describes any modifications that the ST author must make to the Bas
       <h:tr>
         <h:td>FPT_STM.1 - Reliable Time Stamps</h:td>
         <h:td>
-          CC Part 2 specifies FPT_STM.1 as a dependency of FAU_GEN.1 because the audit records require a reliable timestamp to satisfy FAU_GEN.1.2. 
+          CC Part 2 specifies FPT_STM.1 as a dependency of FAU_GEN.1 because the audit data require a reliable timestamp to satisfy FAU_GEN.1.2. 
           This dependency is implicitly addressed through the A.PLATFORM assumption of the Base-PP because a "trustworthy computing platform" is assumed to include a reliable system clock.
         </h:td>
       </h:tr>
