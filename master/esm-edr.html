@@ -1129,7 +1129,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
               <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">The intent of this requirement is to specify the minimum set
-                of audit records generated about actions on the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>. Changes made to configuration files at the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> level will be audited by the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> and are not covered by this requirement.</span></div></div></div>
+                of audit data generated about actions on the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>. Changes made to configuration files at the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> level will be audited by the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> and are not covered by this requirement.</span></div></div></div>
             
             <div class="element"><div class="reqid" id="FAU_GEN.1.2/EDR"><a href="#FAU_GEN.1.2/EDR" class="abbr">FAU_GEN.1.2/EDR</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall record within the audit data at least the following information: 
                 <ol type="a">
@@ -1144,7 +1144,8 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
                 </ol>
             <div class="appnote"><span class="note-header">Application
       Note:
-    </span><span class="note"> This requirement outlines the information to be included in audit records. All audits must 
+    </span><span class="note"> This requirement outlines the information to be included in
+              audit data. All audits must 
               contain at least the information mentioned in <a href="#FAU_GEN.1.2/EDR">FAU_GEN.1.2/EDR</a>, but may contain more information 
               which can be assigned. 
               </span></div></div></div>
@@ -1156,7 +1157,8 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
               
             <div class="eacategory"><abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr></div><div class="ea"><div class="ea">The evaluator shall check the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> and ensure that it lists all of the auditable events claimed in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>. 
                 The evaluator shall check to make sure that every audit event type specified by the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is described in the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr>. <br/><br/>
-                The evaluator shall check the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> and ensure that it provides a format for audit records. 
+                The evaluator shall check the <abbr class="dyn-abbr"><a href="#abbr_TSS">TSS</a></abbr> and ensure that it provides a format for audit
+                data. 
                 Each audit record format type must be covered, along with a brief description of each field.
               <p></p></div></div><div class="eacategory">Guidance</div><div class="ea"><div class="ea"> The evaluator shall check the administrative guide and ensure that it lists all of the auditable events claimed in the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr>. 
                 The evaluator shall check to make sure that every audit event type mandated by the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> is described.<br/><br/> 
@@ -1167,7 +1169,8 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
                 approach taken while determining which actions in the administrative guide are security relevant with 
                 respect to this <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr>. The evaluator may perform this activity as part of the activities 
                 associated with ensuring the AGD_OPE guidance  satisfies the requirements.<br/><br/>
-                The evaluator shall check the administrative guide and ensure that it provides a format for audit records. 
+                The evaluator shall check the administrative guide and ensure that it provides a
+                format for audit data. 
                 Each audit record format type must be covered, along with a brief description of each field. The evaluator shall 
                 check to make sure that the description of the fields contains the information required in <a href="#FAU_GEN.1.2/EDR">FAU_GEN.1.2/EDR</a>.
                 <br/><br/>
@@ -1187,12 +1190,13 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
                   <li class="test-"><a id="_t_20" class="defined" href="#_t_20">Test FAU_GEN.1/EDR:6</a>:
       The evaluator shall perform the action to generate all other auditable events listed in the assignment and verify the activity is recorded.</li>
                 </ul></span>
-                When verifying the test results from <a href="#FAU_GEN.1.1/EDR">FAU_GEN.1.1/EDR</a>, the evaluator shall ensure the audit records generated during 
+                When verifying the test results from <a href="#FAU_GEN.1.1/EDR">FAU_GEN.1.1/EDR</a>, the evaluator shall ensure the
+                audit data generated during 
                 testing match the format specified in the administrative guide, and that the fields in each audit record have the proper entries.
                 <br/><br/> 
                 Note that the testing here can be accomplished in conjunction with the testing of the security mechanisms directly. 
                 For example, testing performed to ensure that the administrative guidance provided is correct verifies that AGD_OPE.1 
-                is satisfied and should address the invocation of the administrative actions that are needed to verify the audit records 
+                is satisfied and should address the invocation of the administrative actions that are needed to verify the audit data 
                 are generated as expected.<br/><br/>
               </div></div></div></div></div>
 
@@ -1301,7 +1305,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
             
           <div class="element"><div class="reqid" id="FMT_SMF.1.1/ENDPOINT"><a href="#FMT_SMF.1.1/ENDPOINT" class="abbr">FMT_SMF.1.1/ENDPOINT</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> shall be capable of performing the following management functions:<br/><br/>
               <b><span class="ctr" data-myid="fmt_smf" data-counter-type="ct-Table" id="fmt_smf">Table <span class="counter">3</span>: Management Functions</span></b><br/><br/>
-              [Status Markers:<br/> M - Mandatory<br/> O - Optional or Objective<br/> N/A -
+              [Status Markers:<br/> M - Mandatory<br/> O - Optional or Objective<br/> - -
               Not Applicable<br/>
                 <table class="mfs" style="width: 100%;"><tr class="header"><td>#</td><td>Management Function</td><td>Administrator</td><td>SOC Analyst</td><td>Read-Only User</td></tr>
 <tr id="_mf_1"><td>1</td><td style="text-align:left">Configure the amount of time to retain data collected by the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>
@@ -1359,7 +1363,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
             <div class="element"><div class="reqid" id="FMT_SMF.1.1/HOST"><a href="#FMT_SMF.1.1/HOST" class="abbr">FMT_SMF.1.1/HOST</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> shall be capable of performing the following management functions <b>that control
                 behavior of the Host Agent</b>:<br/>[
                 <b><span class="ctr" data-myid="fmt_smf" data-counter-type="ct-Table" id="fmt_smf">Table <span class="counter">4</span>: Management Functions</span></b><br/><br/>
-                [Status Markers:<br/> M - Mandatory<br/> O - Optional or Objective<br/> N/A -
+                [Status Markers:<br/> M - Mandatory<br/> O - Optional or Objective<br/> - -
                 Not Applicable<br/>
                 <table class="mfs" style="width: 100%;"><tr class="header"><td>#</td><td>Management Function</td><td>Administrator</td><td>SOC Analyst</td><td>Read-Only User</td></tr>
 <tr id="_mf_5"><td>5</td><td style="text-align:left">Configure the frequency for sending Host Agent data to the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>
@@ -1377,8 +1381,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
                 is a measure of control of frequency and meets the requirement. For <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> products, 
                 some management is performed through a product’s configuration files stored at the
                 <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> level. In these cases, the <abbr class="dyn-abbr"><a href="#abbr_OS">OS</a></abbr> administrator can be considered the administrator
-                of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.<p></p>
-              Chart legend: M = Mandatory, O = Optional, - = N/A</span></div></div></div>
+                of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.<p></p></span></div></div></div>
             
           <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FMT_SMF.1/HOST">FMT_SMF.1/HOST</a></div>
                 
@@ -1465,7 +1468,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
             <div class="element"><div class="reqid" id="FMT_SRF_EXT.1.1"><a href="#FMT_SRF_EXT.1.1" class="abbr">FMT_SRF_EXT.1.1</a></div><div class="reqdesc"> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of performing the following remediation functions:
                 <b><span class="ctr" data-myid="fmt_srf_ext" data-counter-type="ct-Table" id="fmt_srf_ext">Table <span class="counter">5</span>: Management
                   Functions</span></b><br/><br/>
-                [Status Markers:<br/> M - Mandatory<br/> O - Optional or Objective<br/> N/A -
+                [Status Markers:<br/> M - Mandatory<br/> O - Optional or Objective<br/> - -
                 Not Applicable<br/><br/>
               
                 <table class="mfs" style="width: 100%;"><tr class="header"><td>#</td><td>Management Function</td><td>Administrator</td><td>SOC Analyst</td><td>Read-Only User</td></tr>
@@ -1481,9 +1484,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
                 <p>Logically quarantine from the network refers to restricting communications from the endpoint to the rest of the network, 
                 it may include a restricted allowlist.</p>
                 <p>Any function that is not mandatory for at least one role is considered optional for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</p>
-               
-                <p></p>
-                Chart legend: M = Mandatory, O = Optional, - = N/A</span></div></div></div>
+              </span></div></div></div>
             
           <div class="activity_pane hide"><div class="activity_pane_header"><a onclick="toggle(this);return false;" href="#"><span class="activity_pane_label"> Evaluation Activities </span><span class="toggler"></span></a></div><div class="activity_pane_body"><div class="component-activity-header"><a href="#FMT_SRF_EXT.1">FMT_SRF_EXT.1</a></div>
                 
@@ -1655,7 +1656,8 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
     <h2 id="obj-req-map" class="indexable" data-level="2">5.3 TOE Security Functional Requirements Rationale</h2><p>The following rationale provides justification for each <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>, 
     showing that the <abbr class="dyn-abbr"><a href="#abbr_SFR">SFRs</a></abbr> are suitable to address the specified threats:<br/><table><caption><span class="ctr" data-myid="t-obj_map" data-counter-type="ct-Table" id="t-obj_map">Table <span class="counter">6</span></span>: <abbr class="dyn-abbr"><a href="#abbr_SFR">SFR</a></abbr> Rationale</caption><tr><th>Threat</th><th>Addressed by</th><th>Rationale</th></tr><tr class="major-row"><td rowspan="10"><a href="#T.MISCONFIGURATION">T.MISCONFIGURATION</a></td><td><a href="#FAU_ALT_EXT.1">FAU_ALT_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FAU_ALT_EXT.1">FAU_ALT_EXT.1</a> to facilitate management by providing a function for authorized users to interact with security-relevant data that is provided to the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
 <tr><td><a href="#FAU_COL_EXT.1">FAU_COL_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FAU_COL_EXT.1">FAU_COL_EXT.1</a> to facilitate management by defining the security-relevant data that is collected by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr>.</td></tr>
-<tr><td><a href="#FAU_GEN.1/EDR">FAU_GEN.1/EDR</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FAU_GEN.1/EDR">FAU_GEN.1/EDR</a> to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> provides accountability through the generation of audit records for security-relevant events.</td></tr>
+<tr><td><a href="#FAU_GEN.1/EDR">FAU_GEN.1/EDR</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FAU_GEN.1/EDR">FAU_GEN.1/EDR</a>
+            to ensure that the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> provides accountability through the generation of audit data for security-relevant events.</td></tr>
 <tr><td><a href="#FIA_AUT_EXT.1">FIA_AUT_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FIA_AUT_EXT.1">FIA_AUT_EXT.1</a> to define how management users are authenticated by the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> to limit the subjects that can execute management functions on the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.</td></tr>
 <tr><td><a href="#FIA_PWD_EXT.1">FIA_PWD_EXT.1</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FIA_PWD_EXT.1">FIA_PWD_EXT.1</a> to define composition requirements for the Password Authentication Factor to ensure that an authorized user cannot access protected management functions without authorization.</td></tr>
 <tr><td><a href="#FMT_SMF.1/ENDPOINT">FMT_SMF.1/ENDPOINT</a></td><td>The <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> includes <a href="#FMT_SMF.1/ENDPOINT">FMT_SMF.1/ENDPOINT</a> to define the management functions that can be performed to control the behavior of the <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> and the management roles that are authorized to perform those functions.</td></tr>
@@ -1834,7 +1836,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
               lists the supported remediation functions and identifies the management roles that may perform these functions.</p><h4>Management: FMT_SRF_EXT.1</h4><p>There are no management functions foreseen.</p><h4>Audit: FMT_SRF_EXT.1</h4><p>There are no audit events foreseen.</p><h4>FMT_SRF_EXT.1 Specification of Remediation Functions</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components.</td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td><a href="#FMT_SMR.1">FMT_SMR.1</a> Security Management Roles</td></tr></table><h4 id="ext-comp-FMT_SRF_EXT.1.1">FMT_SRF_EXT.1.1</h4> The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of performing the following remediation functions:
                 <b><span class="ctr" data-myid="fmt_srf_ext" data-counter-type="ct-Table" id="fmt_srf_ext">Table <span class="counter">12</span>: Management
                   Functions</span></b><br/><br/>
-                [Status Markers:<br/> M - Mandatory<br/> O - Optional or Objective<br/> N/A -
+                [Status Markers:<br/> M - Mandatory<br/> O - Optional or Objective<br/> - -
                 Not Applicable<br/><br/>
               
                 <table class="mfs" style="width: 100%;"><tr class="header"><td>#</td><td>Management Function</td><td>Administrator</td><td>SOC Analyst</td><td>Read-Only User</td></tr>
@@ -1871,7 +1873,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
       <tr>
         <td>FPT_STM.1 - Reliable Time Stamps</td>
         <td>
-          <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2 specifies FPT_STM.1 as a dependency of FAU_GEN.1 because the audit records require a reliable timestamp to satisfy FAU_GEN.1.2. 
+          <abbr class="dyn-abbr"><a href="#abbr_CC">CC</a></abbr> Part 2 specifies FPT_STM.1 as a dependency of FAU_GEN.1 because the audit data require a reliable timestamp to satisfy FAU_GEN.1.2. 
           This dependency is implicitly addressed through the A.PLATFORM assumption of the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr> because a "trustworthy computing platform" is assumed to include a reliable system clock.
         </td>
       </tr>
