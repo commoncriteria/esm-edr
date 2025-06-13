@@ -68,8 +68,7 @@ and so it is recommended that the intro text and associated table heading be upd
       and to define functional and assurance requirements for such products. This PP-Module is intended for use with the following Base-PPs:
       
       <h:ul>
-        <h:li>Protection Profile for Application Software <xref to="bibAppPP"/>, Version 2.0.
-          <comment>Update the URL and Date accordingly (within the bib)</comment></h:li>
+        <h:li>Protection Profile for Application Software <xref to="bibAppPP"/>, Version 2.0.</h:li>
       </h:ul>
       
       This Base-PP is valid because an EDR is deployed as a software application on a general-purpose operating system.
@@ -806,8 +805,8 @@ This section describes any modifications that the ST author must make to the Bas
               EDR by an EDR. It does not impact the <xref to="bibAppPP"/> functionality.</consistency-rationale>
           <f-element>
             <title>The EDR shall be capable of performing the following management functions:<h:br/><h:br/>
-              <h:b><ctr id="fmt_smf" ctr-type="Table">: Management Functions</ctr></h:b><h:br/><h:br/>[
-              Status Markers: <h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> N/A -
+              <h:b><ctr id="fmt_smf" ctr-type="Table">: Management Functions</ctr></h:b><h:br/><h:br/>
+              [Status Markers:<h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> N/A -
               Not Applicable<h:br/>
                 <management-function-set default="O">
                   <manager cid="a">Administrator</manager>
@@ -886,8 +885,8 @@ This section describes any modifications that the ST author must make to the Bas
             <f-element>
               <title>The EDR shall be capable of performing the following management functions <h:b>that control
                 behavior of the Host Agent</h:b>:<h:br/>[
-                <h:b><ctr id="fmt_smf" ctr-type="Table">: Management Functions</ctr></h:b><h:br/><h:br/>[
-                Status Markers: <h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> N/A -
+                <h:b><ctr id="fmt_smf" ctr-type="Table">: Management Functions</ctr></h:b><h:br/><h:br/>
+                [Status Markers:<h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> N/A -
                 Not Applicable<h:br/>
                 <management-function-set default="O">
                   <manager cid="a">Administrator</manager>
@@ -1003,8 +1002,8 @@ This section describes any modifications that the ST author must make to the Bas
             <f-element>
               <title> The TSF shall be capable of performing the following remediation functions:
                 <h:b><ctr id="fmt_srf_ext" ctr-type="Table">: Management
-                  Functions</ctr></h:b><h:br/><h:br/>[
-                Status Markers: <h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> N/A -
+                  Functions</ctr></h:b><h:br/><h:br/>
+                [Status Markers:<h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> N/A -
                 Not Applicable<h:br/><h:br/>
               
                 <management-function-set default="O">
