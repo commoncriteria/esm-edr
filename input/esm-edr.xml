@@ -916,7 +916,7 @@ This section describes any modifications that the ST author must make to the Bas
                 is a measure of control of frequency and meets the requirement. For EDR products, 
                 some management is performed through a product’s configuration files stored at the
                 OS level. In these cases, the OS administrator can be considered the administrator
-                of the TOE.<h:p/>              
+                of the TOE.<h:p/></note>              
               <aactivity>
                 <TSS>The evaluator shall verify the TSS contains a list of roles and what functions they can perform.  
                   The evaluator shall verify the list matches the chart in the requirement.<h:p/></TSS>
@@ -1038,9 +1038,7 @@ This section describes any modifications that the ST author must make to the Bas
                 <h:p>Logically quarantine from the network refers to restricting communications from the endpoint to the rest of the network, 
                 it may include a restricted allowlist.</h:p>
                 <h:p>Any function that is not mandatory for at least one role is considered optional for the TOE.</h:p>
-               
-                <h:p/>
-                
+              </note>
               <aactivity>
                 <TSS>The evaluator shall check to ensure that the TSS describes what roles can perform what 
                   remediation actions and how each remediation action is performed.<h:p/></TSS>
