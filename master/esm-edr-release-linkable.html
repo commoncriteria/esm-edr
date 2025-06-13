@@ -812,7 +812,7 @@ The following sections list Common Criteria and technology terms used in this do
 These assumptions are made on the Operational Environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>) in order to be able to ensure that the
 security functionality specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> can be provided by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr><a id="period_78" href="#period_78">. </a>If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is placed in an <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> that does not meet these assumptions, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may no longer be able to
 provide all of its security functionality<a id="period_79" href="#period_79">. </a>      
-      <dl><dt class="assumption defined" id="A.CONNECTIVITY">A.CONNECTIVITY</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> relies on network connectivity to carry out its
+      <dl><dt class="assumption defined" id="A.CONNECTIVITY">A.CONNECTIVITY</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> relies on network connectivity to carry out its
           management activities<a id="period_80" href="#period_80">. </a>The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> will provide reliable network connectivity for the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> to operate<a id="period_81" href="#period_81">. </a>            The <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> will robustly handle occasional instances when
           connectivity is unavailable or unreliable<a id="period_82" href="#period_82">. </a></span></dd></dl>
     
@@ -879,7 +879,7 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                
             
             
-            <div class="element"><div class="reqid" id="FAU_ALT_EXT.1.1"><a href="#FAU_ALT_EXT.1.1" class="abbr">FAU_ALT_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> shall alert authorized users on a management dashboard
+            <div class="element"><div class="reqid" id="FAU_ALT_EXT.1.1"><a href="#FAU_ALT_EXT.1.1" class="abbr">FAU_ALT_EXT.1.1</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall alert authorized users on a management dashboard
                 in the event of: detection of potentially unauthorized activity on enrolled endpoints<a id="period_107" href="#period_107">. </a>              <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note"> The intent of this requirement is to specify the minimum set
@@ -1258,7 +1258,7 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
         <h3 id="fmt" class="indexable" data-level="3">5.2.4 Security Management (FMT)</h3>
           <div class="comp" id="FMT_SMF.1/ENDPOINT"><h4>FMT_SMF.1/ENDPOINT Specification of Management Functions (EDR Management of EDR)</h4>
             
-          <div class="element"><div class="reqid" id="FMT_SMF.1.1/ENDPOINT"><a href="#FMT_SMF.1.1/ENDPOINT" class="abbr">FMT_SMF.1.1/ENDPOINT</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> shall be capable of performing the following management functions:<br><br>
+          <div class="element"><div class="reqid" id="FMT_SMF.1.1/ENDPOINT"><a href="#FMT_SMF.1.1/ENDPOINT" class="abbr">FMT_SMF.1.1/ENDPOINT</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of performing the following management functions:<br><br>
               <b><span class="ctr" data-myid="fmt_smf" data-counter-type="ct-Table" id="fmt_smf">Table <span class="counter">3</span>: Management Functions</span></b><br><br>
               [Status Markers:<br> M - Mandatory<br> O - Optional or Objective<br> - -
               Not Applicable<br>
@@ -1314,7 +1314,7 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
   
           <div class="comp" id="FMT_SMF.1/HOST"><h4>FMT_SMF.1/HOST Specification of Management Functions (EDR Management of Host Agent)</h4>
             
-            <div class="element"><div class="reqid" id="FMT_SMF.1.1/HOST"><a href="#FMT_SMF.1.1/HOST" class="abbr">FMT_SMF.1.1/HOST</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> shall be capable of performing the following management functions <b>that control
+            <div class="element"><div class="reqid" id="FMT_SMF.1.1/HOST"><a href="#FMT_SMF.1.1/HOST" class="abbr">FMT_SMF.1.1/HOST</a></div><div class="reqdesc">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall be capable of performing the following management functions <b>that control
                 behavior of the Host Agent</b>:<br>[
                 <b><span class="ctr" data-myid="fmt_smf" data-counter-type="ct-Table" id="fmt_smf">Table <span class="counter">4</span>: Management Functions</span></b><br><br>
                 [Status Markers:<br> M - Mandatory<br> O - Optional or Objective<br> - -
@@ -1739,7 +1739,7 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
              Server Alerts,
               describes alert triggers and the information contained in alerts<a id="period_350" href="#period_350">. </a></p><h4>Management: FAU_ALT_EXT.1</h4><p>The following actions could be considered for the management functions in FMT: <ul>
               <li>Configure visual suppression of alerts<a id="period_351" href="#period_351">. </a></li>
-            </ul></p><h4>Audit: FAU_ALT_EXT.1</h4><p>There are no auditable events foreseen<a id="period_352" href="#period_352">. </a></p><h4>FAU_ALT_EXT.1 Server Alerts</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_353" href="#period_353">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies<a id="period_354" href="#period_354">. </a></td></tr></table><h4 id="ext-comp-FAU_ALT_EXT.1.1">FAU_ALT_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> shall alert authorized users on a management dashboard
+            </ul></p><h4>Audit: FAU_ALT_EXT.1</h4><p>There are no auditable events foreseen<a id="period_352" href="#period_352">. </a></p><h4>FAU_ALT_EXT.1 Server Alerts</h4><div style="margin-left: 1em;"><table class="ecd_heir_dep" style="width: 100%"><tr><td style="whitespace: nowrap">Hierarchical to:</td><td style="width: 100%">No other components<a id="period_353" href="#period_353">. </a></td></tr><tr style="background-color: inherit"><td>Dependencies to:</td><td>No dependencies<a id="period_354" href="#period_354">. </a></td></tr></table><h4 id="ext-comp-FAU_ALT_EXT.1.1">FAU_ALT_EXT.1.1</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall alert authorized users on a management dashboard
                 in the event of: detection of potentially unauthorized activity on enrolled endpoints<a id="period_355" href="#period_355">. </a>              <h4 id="ext-comp-FAU_ALT_EXT.1.2">FAU_ALT_EXT.1.2</h4>The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall provide a visualization of detected alerts of
                 potentially unauthorized incidents, and shall include: <ol type="a">
                   <li>An initial incident severity and [<b>selection</b>: <span class="selectable-content" id="_s_1">assessment</span>, <span class="selectable-content" id="_s_2">categorization</span>, <span class="selectable-content" id="_s_3">score</span>, <span class="selectable-content" id="_s_4">ranking</span>],</li>
