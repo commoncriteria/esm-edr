@@ -281,7 +281,7 @@ and so it is recommended that the intro text and associated table heading be upd
     <section id="Assumptions" title="Assumptions">
       <assumptions>
         <assumption name="A.CONNECTIVITY">
-          <description>The EDR relies on network connectivity to carry out its
+          <description>The TSF relies on network connectivity to carry out its
           management activities. The OE will provide reliable network connectivity for the EDR to operate.
             The EDR will robustly handle occasional instances when
           connectivity is unavailable or unreliable.</description>
@@ -375,7 +375,7 @@ This section describes any modifications that the ST author must make to the Bas
             
             
             <f-element id="fau-alt-ext-1-1">
-              <title>The EDR shall alert authorized users on a management dashboard
+              <title>The TSF shall alert authorized users on a management dashboard
                 in the event of: detection of potentially unauthorized activity on enrolled endpoints.
               </title>
               <note role="application"> The intent of this requirement is to specify the minimum set
@@ -809,7 +809,7 @@ This section describes any modifications that the ST author must make to the Bas
             <consistency-rationale>This SFR defines a specific set of management functions for an
               EDR by an EDR. It does not impact the <xref to="bibAppPP"/> functionality.</consistency-rationale>
           <f-element>
-            <title>The EDR shall be capable of performing the following management functions:<h:br/><h:br/>
+            <title>The TSF shall be capable of performing the following management functions:<h:br/><h:br/>
               <h:b><ctr id="fmt_smf" ctr-type="Table">: Management Functions</ctr></h:b><h:br/><h:br/>
               [Status Markers:<h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> - -
               Not Applicable<h:br/>
@@ -888,7 +888,7 @@ This section describes any modifications that the ST author must make to the Bas
             <consistency-rationale>This SFR defines a specific set of management functions for a
               Host Agent by an EDR. It does not impact the <xref to="bibAppPP"/> functionality.</consistency-rationale>
             <f-element>
-              <title>The EDR shall be capable of performing the following management functions <h:b>that control
+              <title>The TSF shall be capable of performing the following management functions <h:b>that control
                 behavior of the Host Agent</h:b>:<h:br/>[
                 <h:b><ctr id="fmt_smf" ctr-type="Table">: Management Functions</ctr></h:b><h:br/><h:br/>
                 [Status Markers:<h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> - -
