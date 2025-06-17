@@ -324,7 +324,7 @@ and so it is recommended that the intro text and associated table heading be upd
           <url>https://github.com/commoncriteria/application</url>
           <branch>release-1.4</branch>
         </git>
-      <url>https://www.niap-ccevs.org/protectionprofiles/462</url>    
+      <url>https://www.niap-ccevs.org/protectionprofiles/516</url>    
       
        
       <sec-func-req-dir>
@@ -1388,10 +1388,9 @@ This section describes any modifications that the ST author must make to the Bas
     <cc-entry/>
     <entry id="bibAppPP">
       <tag>AppPP</tag>
-      <description><comment>Need to update link when v2.0 is released.</comment>
-        <h:a href="https://www.niap-ccevs.org/MMO/PP/-429-/">Protection Profile for Application
-          Software</h:a>, Version 2.0, MMMM DD, 202Y
-      </description>
+      <description>
+        <h:a href="https://www.niap-ccevs.org/protectionprofiles/516"
+          >Protection Profile for Application Software, Version 2.0, June 16, 2025</h:a></description>      
     </entry>
     <entry id="bibHAGT">
       <tag>Host Agent</tag>
