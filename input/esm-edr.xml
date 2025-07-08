@@ -224,13 +224,16 @@ and so it is recommended that the intro text and associated table heading be upd
 		<!-- Can be in a configuration with these PPs and Modules -->
 		<cc-pp-config-with> 
       <PP-cc-ref>Protection Profile for Application Software, Version 2.0</PP-cc-ref>
-      <Mod-cc-ref>PP-Module for Host Agents, Version 2.0</Mod-cc-ref>
+		  <Mod-cc-ref>PP-Module for Enterprise-Management (EM), Version 2.0</Mod-cc-ref>
+      <Mod-cc-ref>PP-Module for Host Agents (HA), Version 2.0</Mod-cc-ref>
     </cc-pp-config-with>
 		<!-- Package claims -->
         
-		<cc-pkg-claim>
-          <FP-cc-ref conf="conformant">Functional Package for TLS Version 2.0 </FP-cc-ref>
-        </cc-pkg-claim>
+	  <cc-pkg-claim>
+	    <FP-cc-ref conf="conformant">Functional Package for SSH, Version 1.0</FP-cc-ref>
+	    <FP-cc-ref conf="conformant">Functional Package for TLS, Version 2.1</FP-cc-ref>
+	    <FP-cc-ref conf="conformant">Functional Package for X.509, Version 1.0</FP-cc-ref>
+	  </cc-pkg-claim>
   </CClaimsInfo></section>
 
   <section title="Security Problem Definition" id="spd"> The security problem is described in terms
