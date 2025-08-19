@@ -46,7 +46,7 @@ and so it is recommended that the intro text and associated table heading be upd
     <entry>
       <version>2.0</version>
       <date>2025-06-13</date>
-      <subject>CC2022 conversion</subject>
+      <subject>CC:2022 conversion</subject>
     </entry>
   </RevisionHistory>
 
@@ -181,7 +181,7 @@ and so it is recommended that the intro text and associated table heading be upd
 
     <section title="Use Cases" id="usecases"> Requirements in this PP-Module are designed to address
       the security problem for the following use cases. An EDR's functionality may be
-      extended by addons, plugins, threat feeds, or other reputation services. These are out of
+      extended by add-ons, plug-ins, threat feeds, or other reputation services. These are out of
       scope of this PP-Module. <usecases>
         <usecase title="Detection of Potential Unauthorized Activity" id="detect">
           <description>The detection of potentially unauthorized activity, software, or users is
@@ -225,7 +225,7 @@ and so it is recommended that the intro text and associated table heading be upd
 		<cc-pp-config-with> 
       <PP-cc-ref>Protection Profile for Application Software, Version 2.0</PP-cc-ref>
 		  <Mod-cc-ref>PP-Module for Enterprise-Management (EM), Version 2.0</Mod-cc-ref>
-      <Mod-cc-ref>PP-Module for Host Agents (HA), Version 2.0</Mod-cc-ref>
+      <Mod-cc-ref>PP-Module for Host Agent (HA), Version 2.0</Mod-cc-ref>
     </cc-pp-config-with>
 		<!-- Package claims -->
         
@@ -1339,7 +1339,7 @@ This section describes any modifications that the ST author must make to the Bas
             commands sent to the Host Agent as being from the EDR. This is not to 
             protect the policies in transit as they are already protected by FPT_ITT.1. 
             If the TSF implements this function, any signature algorithms used should be consistent with any selections made in 
-            FCS_COP.1/Sig Gen and FCS_COP.1/Sig Ver in the Protection Profile for Application Software, Version 2.0.</note>
+            FCS_COP.1/Sig Gen and FCS_COP.1/SigVer in the Protection Profile for Application Software, Version 2.0.</note>
             <aactivity>
               <TSS>The evaluator shall check to ensure that the TSS describes how all commands and policies are signed.<h:p/></TSS>
               <Guidance>The evaluator shall review the operational guidance and ensure that the
