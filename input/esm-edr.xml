@@ -1387,20 +1387,5 @@ This section describes any modifications that the ST author must make to the Bas
     
   </appendix>
 
-  <bibliography>
-    <cc-entry/>
-    <entry id="bibAppPP">
-      <tag>AppPP</tag>
-      <description>
-        <h:a href="https://www.niap-ccevs.org/protectionprofiles/516"
-          >Protection Profile for Application Software, Version 2.0, June 16, 2025</h:a></description>      
-    </entry>
-    <entry id="bibHAGT">
-      <tag>Host Agent</tag>
-      <description><comment>Need to update link when v2.0 is released.</comment>
-        <h:a href="https://commoncriteria.github.io/pp/esm-hostagent/esm-hostagent-release.html"
-          >PP-Module for Host Agent</h:a>, Version 1.0, October 23rd 2020
-      </description>
-    </entry>
-  </bibliography>
-</Module>
+  <bibliography/>
+    </Module>
