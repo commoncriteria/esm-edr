@@ -18,7 +18,6 @@ output/esm-edr-release-linkable.html: subtests
 output/esm-edr-release-linkable.html: unenroll
 output/esm-edr-release-linkable.html: unenrolling
 output/esm-edr-release-linkable.html: unenrollment
-output/esm-edr-release-linkable.html: v2
 output/esm-edr-release.html: CEM
 output/esm-edr-release.html: Cyber
 output/esm-edr-release.html: ESM
@@ -31,7 +30,6 @@ output/esm-edr-release.html: UID
 output/esm-edr-release.html: allowlisted
 output/esm-edr-release.html: eXpression
 output/esm-edr-release.html: ons
-output/esm-edr-release.html: v2
 output/esm-edr-sd.html: AGD
 output/esm-edr-sd.html: CEM
 output/esm-edr-sd.html: ESM
@@ -47,7 +45,6 @@ output/esm-edr-sd.html: subtests
 output/esm-edr-sd.html: unenroll
 output/esm-edr-sd.html: unenrolling
 output/esm-edr-sd.html: unenrollment
-output/esm-edr-sd.html: v2
 output/esm-edr.html: AGD
 output/esm-edr.html: CEM
 output/esm-edr.html: Cyber
@@ -68,4 +65,3 @@ output/esm-edr.html: subtests
 output/esm-edr.html: unenroll
 output/esm-edr.html: unenrolling
 output/esm-edr.html: unenrollment
-output/esm-edr.html: v2
