@@ -11,7 +11,6 @@ output/esm-edr-release-linkable.html: TODO
 output/esm-edr-release-linkable.html: UID
 output/esm-edr-release-linkable.html: allowlisted
 output/esm-edr-release-linkable.html: collectable
-output/esm-edr-release-linkable.html: eXpression
 output/esm-edr-release-linkable.html: multifactor
 output/esm-edr-release-linkable.html: ons
 output/esm-edr-release-linkable.html: subtests
@@ -28,7 +27,6 @@ output/esm-edr-release.html: SigVer
 output/esm-edr-release.html: Smartcards
 output/esm-edr-release.html: UID
 output/esm-edr-release.html: allowlisted
-output/esm-edr-release.html: eXpression
 output/esm-edr-release.html: ons
 output/esm-edr-sd.html: AGD
 output/esm-edr-sd.html: CEM
@@ -58,7 +56,6 @@ output/esm-edr.html: TODO
 output/esm-edr.html: UID
 output/esm-edr.html: allowlisted
 output/esm-edr.html: collectable
-output/esm-edr.html: eXpression
 output/esm-edr.html: multifactor
 output/esm-edr.html: ons
 output/esm-edr.html: subtests
