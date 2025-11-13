@@ -82,7 +82,7 @@ and so it is recommended that the intro text and associated table heading be upd
       <!--   <term abbr="CSA" full="Computer Security Act"/> -->
       <!--<term abbr="DNS" full="Domain Name System"/> -->
       <term abbr="CEF" full="Common Event Format"/>
-      <term abbr="CybOX" full="Cyber Observable eXpression"/>
+      <term abbr="CybOX" full="Cyber Observable expression"/>
       <term abbr="DRBG" full="Deterministic Random Bit Generator"/>
       <term abbr="DSS" full="Digital Signature Standard"/>
       <!--<term abbr="DT" full="Date/Time Vector"/>-->
@@ -124,7 +124,7 @@ and so it is recommended that the intro text and associated table heading be upd
         responsible for reviewing potentially unauthorized activities via alerts and
         performing remediation and clean up.
       </term>
-      <term abbr="STIX" full="Structured Threat Information eXpression"/>
+      <term abbr="STIX" full="Structured Threat Information expression"/>
       <term abbr="TLS" full="Transport Layer Security"/>
       <!--   <term abbr="XCCDF" full="eXtensible Configuration Checklist Description Format"/> -->
       <!--   <term abbr="XOR" full="Exclusive Or"/> -->
@@ -246,7 +246,7 @@ and so it is recommended that the intro text and associated table heading be upd
         <threat name="T.MISCONFIGURATION">
           <description>An attacker is a legitimate privileged user with access to change
             the configuration of the EDR's security capabilities or is not a legitimate 
-            privileged user trying to access without proper authorization.. Attackers may
+            privileged user trying to access without proper authorization. Attackers may
             attempt to hide malicious activities from other privileged users.</description>
           <consistency-rationale>This threat is consistent with the Base-PP because it is a specific example of the T.LOCAL_ATTACK threat defined there. 
           In this case, the local attack is to maliciously alter the behavior of the application itself rather than to use the application as a method to attack the OS platform.</consistency-rationale>
@@ -321,7 +321,7 @@ and so it is recommended that the intro text and associated table heading be upd
   </section>
 
   <section title="Security Requirements" id="req">
-<comment>Need to update NIAP url when version 2.0 is published.</comment>
+<comment>Need to update NIAP URL when version 2.0 is published.</comment>
     <base-pp id="AppPP" name="Application Software" product="Application" short="App" version="2.0" >
       <git>
           <url>https://github.com/commoncriteria/application</url>
@@ -410,8 +410,8 @@ This section describes any modifications that the ST author must make to the Bas
               <title>The TSF shall provide a data export capability for
                   selected alerts with a specified standards-based format of 
 				  <selectables linebreak="yes">
-                    <selectable>Structured Threat Information eXpression (STIX)</selectable>
-                    <selectable>Cyber Observable eXpression (CybOX)</selectable>
+                    <selectable>Structured Threat Information expression (STIX)</selectable>
+                    <selectable>Cyber Observable expression (CybOX)</selectable>
                     <selectable>Incident Object Description Exchange Format (IODEF)</selectable>
                     <selectable>Common Event Format (CEF)</selectable>
                     <selectable>Log Event Extended Format (LEEF)</selectable>
