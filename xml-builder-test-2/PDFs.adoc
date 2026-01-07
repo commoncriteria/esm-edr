@@ -1,0 +1,4 @@
+* https://commoncriteria.github.io/esm-edr/xml-builder-test-2/esm-edr-release-linkable.html.pdf[esm-edr-release-linkable.html.pdf]
+* https://commoncriteria.github.io/esm-edr/xml-builder-test-2/esm-edr-sd.html.pdf[esm-edr-sd.html.pdf]
+* https://commoncriteria.github.io/esm-edr/xml-builder-test-2/esm-edr-release.html.pdf[esm-edr-release.html.pdf]
+* https://commoncriteria.github.io/esm-edr/xml-builder-test-2/esm-edr.html.pdf[esm-edr.html.pdf]
