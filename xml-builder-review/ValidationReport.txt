@@ -1,0 +1,1 @@
+/home/runner/work/esm-edr/esm-edr/input/esm-edr.xml:161:71: error: attribute "id" not allowed here; expected attribute "boilerplate"
