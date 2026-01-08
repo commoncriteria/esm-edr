@@ -297,6 +297,9 @@ This section describes any modifications that the ST author must make to the Bas
     </base-pp>
     <!-- 5.2 TOE Security Functional Requirements -->
     <man-sfrs>
+      <section id="sec-sel-audit-table" title="Auditable Events for Mandatory SFRs">
+        <audit-table id="at-Man" table="mandatory"/>
+      </section>
       <!-- 5.2.1 Security Audit (FAU) -->
       <section title="Security Audit (FAU)" id="fau-mandatory">
         <ext-comp-def title="Server Alerts" fam-id="FAU_ALT_EXT">
@@ -1135,6 +1138,9 @@ This section describes any modifications that the ST author must make to the Bas
     <opt-sfrs/>
     <sel-sfrs/>
     <obj-sfrs>
+      <section id="sec-obj-audit-table" title="Auditable Events for Objective SFRs">
+        <audit-table id="at-objective" table="objective"/>
+      </section>
       <!-- 5.2.6 Security Management (FMT) -->
       <section title="Security Management (FMT)" id="fmt-objective">
         <ext-comp-def title="Trusted Remediation Functions" fam-id="FMT_TRM_EXT">
