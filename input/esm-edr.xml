@@ -727,7 +727,7 @@ This section describes any modifications that the ST author must make to the Bas
               <h:br/>
               - -
               Not Applicable
-              <h:br/>]
+              <h:br/>
               <management-function-set default="O">
                 <manager cid="A">Administrator</manager>
                 <manager cid="S">SOC Analyst</manager>
@@ -812,7 +812,7 @@ This section describes any modifications that the ST author must make to the Bas
               <h:br/>
               - -
                 Not Applicable
-              <h:br/>]
+              <h:br/>
               <management-function-set default="O">
                 <manager cid="A">Administrator</manager>
                 <manager cid="S">SOC Analyst</manager>
@@ -945,7 +945,7 @@ This section describes any modifications that the ST author must make to the Bas
               - -
                 Not Applicable
               <h:br/>
-              <h:br/>]
+              <h:br/>
               <management-function-set default="O">
                 <manager cid="A">Administrator</manager>
                 <manager cid="S">SOC Analyst</manager>
