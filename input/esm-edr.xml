@@ -717,15 +717,6 @@ This section describes any modifications that the ST author must make to the Bas
               </h:b>
               [Status Markers: M - Mandatory O - Optional or Objective - -
               Not Applicable]
-              Status Markers:
-              <h:br/>
-              O - Indicates that this function is optional for this role
-              <h:br/>
-              M - Indicates that this function is mandatory for this role.
-              <h:br/>
-              NA - Indicates that this function is not applicable for this role
-              <h:br/>
-              <h:br/>
               <management-function-set default="O">
                 <manager cid="A">Administrator</manager>
                 <manager cid="S">SOC Analyst</manager>
@@ -800,15 +791,6 @@ This section describes any modifications that the ST author must make to the Bas
               </h:b>
               [Status Markers: M - Mandatory O - Optional or Objective - -
                 Not Applicable]
-              Status Markers:
-              <h:br/>
-              O - Indicates that this function is optional for this role
-              <h:br/>
-              M - Indicates that this function is mandatory for this role.
-              <h:br/>
-              NA - Indicates that this function is not applicable for this role
-              <h:br/>
-              <h:br/>
               <management-function-set default="O">
                 <manager cid="A">Administrator</manager>
                 <manager cid="S">SOC Analyst</manager>
@@ -932,15 +914,6 @@ This section describes any modifications that the ST author must make to the Bas
               </h:b>
               [Status Markers: M - Mandatory O - Optional or Objective - -
                 Not Applicable]
-              Status Markers:
-              <h:br/>
-              O - Indicates that this function is optional for this role
-              <h:br/>
-              M - Indicates that this function is mandatory for this role.
-              <h:br/>
-              NA - Indicates that this function is not applicable for this role
-              <h:br/>
-              <h:br/>
               <management-function-set default="O">
                 <manager cid="A">Administrator</manager>
                 <manager cid="S">SOC Analyst</manager>
