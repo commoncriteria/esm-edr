@@ -712,11 +712,22 @@ This section describes any modifications that the ST author must make to the Bas
           <f-element id="fmt_smf-1-1_ENDPOINT">
             <title>
               The TSF shall be capable of performing the following management functions:
+              <h:br/>
+              <h:br/>
               <h:b>
                 <ctr id="fmt_smf" ctr-type="Table">: Management Functions</ctr>
               </h:b>
-              [Status Markers: M - Mandatory O - Optional or Objective - -
-              Not Applicable]
+              <h:br/>
+              <h:br/>
+              [Status Markers:
+              <h:br/>
+              M - Mandatory
+              <h:br/>
+              O - Optional or Objective
+              <h:br/>
+              - -
+              Not Applicable
+              <h:br/>]
               <management-function-set default="O">
                 <manager cid="A">Administrator</manager>
                 <manager cid="S">SOC Analyst</manager>
@@ -786,11 +797,22 @@ This section describes any modifications that the ST author must make to the Bas
               The TSF shall be capable of performing the following management functions
               <h:b>that control
                 behavior of the Host Agent</h:b>
-              :[<h:b>
+              :
+              <h:br/>
+              [<h:b>
                 <ctr id="fmt_smf" ctr-type="Table">: Management Functions</ctr>
               </h:b>
-              [Status Markers: M - Mandatory O - Optional or Objective - -
-                Not Applicable]
+              <h:br/>
+              <h:br/>
+              [Status Markers:
+              <h:br/>
+              M - Mandatory
+              <h:br/>
+              O - Optional or Objective
+              <h:br/>
+              - -
+                Not Applicable
+              <h:br/>]
               <management-function-set default="O">
                 <manager cid="A">Administrator</manager>
                 <manager cid="S">SOC Analyst</manager>
@@ -912,8 +934,18 @@ This section describes any modifications that the ST author must make to the Bas
                 <ctr id="fmt_srf_ext" ctr-type="Table">: Management
                   Functions</ctr>
               </h:b>
-              [Status Markers: M - Mandatory O - Optional or Objective - -
-                Not Applicable]
+              <h:br/>
+              <h:br/>
+              [Status Markers:
+              <h:br/>
+              M - Mandatory
+              <h:br/>
+              O - Optional or Objective
+              <h:br/>
+              - -
+                Not Applicable
+              <h:br/>
+              <h:br/>]
               <management-function-set default="O">
                 <manager cid="A">Administrator</manager>
                 <manager cid="S">SOC Analyst</manager>
