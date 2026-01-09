@@ -799,7 +799,7 @@ This section describes any modifications that the ST author must make to the Bas
                 behavior of the Host Agent</h:b>
               :
               <h:br/>
-              [<h:b>
+              <h:b>
                 <ctr id="fmt_smf" ctr-type="Table">: Management Functions</ctr>
               </h:b>
               <h:br/>
