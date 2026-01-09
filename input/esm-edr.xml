@@ -796,8 +796,8 @@ This section describes any modifications that the ST author must make to the Bas
             <title>
               The TSF shall be capable of performing the following management functions
               <h:b>that control
-                behavior of the Host Agent</h:b>
-              :
+                behavior of the Host Agent</h:b>:
+              <h:br/>
               <h:br/>
               <h:b>
                 <ctr id="fmt_smf" ctr-type="Table">: Management Functions</ctr>
