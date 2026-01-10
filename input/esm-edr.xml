@@ -1098,7 +1098,7 @@ This section describes any modifications that the ST author must make to the Bas
             </title>
           </f-element>
           <f-element id="ftp_trp-1-3">
-            <title>The TSF shall<h:b><selectables><selectable id="ftp_trp.1.3_1">implement functionality</selectable><selectable id="ftp_trp.1.3_2">invoke platform-provided functionality</selectable></selectables>  to </h:b>require the use of the trusted path for [<h:i>all remote
+            <title>The TSF shall<h:b><selectables><selectable id="ftp_trp.1.3_1">implement functionality</selectable><selectable id="ftp_trp.1.3_2">invoke platform-provided functionality</selectable></selectables>  to</h:b> require the use of the trusted path for [<h:i>all remote
                 administration actions</h:i>].</title>
             <note role="application">This requirement ensures that authorized remote
                 administrators initiate all communication with the EDR via a
