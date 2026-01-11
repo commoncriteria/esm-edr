@@ -240,6 +240,8 @@
           management activities. The OE will provide reliable network connectivity for the EDR to operate.
             The EDR will robustly handle occasional instances when
           connectivity is unavailable or unreliable.</description>
+          <consistency-rationale>This assumption is consistent with the Base-PP because assuming network availability is consistent with the A.PLATFORM
+          assumption defined by the Base-PP, which expects the TOE to have a trustworthy computing platform.</consistency-rationale>
           <objective-refer ref="OE.RELIABLE_TRANSIT">
             <rationale>The OE objective OE.RELIABLE_TRANSIT is realized through
             A.CONNECTIVITY.</rationale>
