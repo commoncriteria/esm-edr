@@ -227,6 +227,8 @@
           <rationale>The PP-Module includes FMT_SMR.1 to define the management roles that the TSF supports so that its management functions can be separated by role.</rationale>
           <addressed-by>FMT_SRF_EXT.1</addressed-by>
           <rationale>The PP-Module includes FMT_SRF_EXT.1 to define the remediation functions that are available to authorized users to issue corrective actions on a system that has a connected Host Agent.</rationale>
+          <addressed-by>FMT_TRM_EXT.1 (objective)</addressed-by>
+          <rationale>The PP-Module includes FMT_TRM_EXT.1 to provide an optional capability to ensure the integrity of management commands and policies issued to external Host Agents through use of a digital signature.</rationale>
         </threat>
       </threats>
     </sec:Threats>
@@ -1098,7 +1100,7 @@ This section describes any modifications that the ST author must make to the Bas
             </title>
           </f-element>
           <f-element id="ftp_trp-1-3">
-            <title>The TSF shall<h:b><selectables><selectable id="ftp_trp.1.3_1">implement functionality</selectable><selectable id="ftp_trp.1.3_2">invoke platform-provided functionality</selectable></selectables>  to</h:b> require the use of the trusted path for [<h:i>all remote
+            <title>The TSF shall<h:b><selectables><selectable id="ftp_trp.1.3_1">implement functionality</selectable><selectable id="ftp_trp.1.3_2">invoke platform-provided functionality</selectable></selectables>  to </h:b>require the use of the trusted path for [<h:i>all remote
                 administration actions</h:i>].</title>
             <note role="application">This requirement ensures that authorized remote
                 administrators initiate all communication with the EDR via a
