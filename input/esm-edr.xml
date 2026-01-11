@@ -264,6 +264,8 @@
         <SOE name="OE.RELIABLE_TRANSIT">
           <description>Wired or wireless network traffic between the EDR and
             host agents will provide reasonably reliable connectivity.</description>
+          <consistency-rationale>This objective relates to an external interface that does not exist in the Base-PP
+          and does not affect Base-PP functionality.</consistency-rationale>
         </SOE>
       </SOEs>
     </section>
