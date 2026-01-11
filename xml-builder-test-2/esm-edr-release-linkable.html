@@ -938,9 +938,10 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                 <br>
                 The evaluator shall examine the guidance documentation to ensure it describes the formats supported and the methods of data export being claimed (e.g., written to a file on the underlying platform, communication over a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> interface to another product, etc.)<a id="period_125" href="#period_125">. </a>If communication over a <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> interface to another product (other than the underlying platform) is required to export the data, the evaluator shall verify the guidance documentation describes what products or product types are supported, how to establish communication with those products, any requirements on those products (particular communication protocol, version of the protocol required, etc.), and the configuration of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> needed to communicate with those products<a id="period_126" href="#period_126">. </a>                <p></p>
               </div></div><div class="eacategory">Tests</div><div class="ea"><div class="ea">
-                <p>The evaluator shall perform the following tests:</p>
+                The evaluator shall perform the following tests:
                 <span class="testlist-"><ul>
-                  <p><b>For Windows,</b> the evaluator shall test the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>'s ability to detect anomalous activity by performing the following subtests based on the platform of the enrolled Host Agent's system, verifying for each that, corresponding alerts were generated in the management dashboard:</p>
+                  <b>For Windows,</b>
+                  the evaluator shall test the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>'s ability to detect anomalous activity by performing the following subtests based on the platform of the enrolled Host Agent's system, verifying for each that, corresponding alerts were generated in the management dashboard:
                   <li class="test-"><a id="_t_1" class="defined" href="#_t_1">Test FAU_ALT_EXT.1:1</a>:
       The evaluator shall open a Windows command prompt as a user and run the command <code>cmd /c certutil -urlcache -split -f &lt;remote file&gt;
                         &lt;download directory&gt;</code>, where the remote file is a valid file path to an accessible, remotely stored executable, and the download directory is a valid directory path writable by the current local user<a id="period_127" href="#period_127">. </a></li>
@@ -952,7 +953,8 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                         executable&gt;" /<abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr> &lt;time&gt;</code>, where the local executable is a valid file path to a readable, local executable, and time is a start time that occurs within minutes of the task being created<a id="period_130" href="#period_130">. </a></li>
                 </ul></span>
                 <span class="testlist-"><ul>
-                  <p><b>For Linux,</b> the evaluator shall test the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>'s ability to detect anomalous activity by performing the following subtests based on the platform of the enrolled Host Agent's system, verifying for each that, corresponding alerts were generated in the management dashboard:</p>
+                  <b>For Linux,</b>
+                  the evaluator shall test the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>'s ability to detect anomalous activity by performing the following subtests based on the platform of the enrolled Host Agent's system, verifying for each that, corresponding alerts were generated in the management dashboard:
                   <li class="test-"><a id="_t_4" class="defined" href="#_t_4">Test FAU_ALT_EXT.1:4</a>:
       The evaluator shall open a terminal and run the command <code>scp
                       &lt;remote user&gt;@&lt;remote host&gt;:&lt;remote path&gt;
@@ -963,9 +965,7 @@ The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="
                       /etc/cron.hourly/persist</code>, where the outside <abbr class="dyn-abbr"><a href="#abbr_IP">IP</a></abbr> is a valid external address<a id="period_133" href="#period_133">. </a></li>
                 </ul></span>
                 <span class="testlist-"><ul>
-                  <p>
-                    <b>For all platforms:</b>
-                  </p>
+                  <b>For all platforms:</b>
                   <li class="test-"><a id="_t_6" class="defined" href="#_t_6">Test FAU_ALT_EXT.1:6</a>:
       The evaluator shall review an alert on the management dashboard and verify that the alert contains a severity field and the fields specified in the <abbr class="dyn-abbr"><a href="#abbr_ST">ST</a></abbr><a id="period_134" href="#period_134">. </a>The evaluator will open or view the alert and verify that a timeline of events is available for review<a id="period_135" href="#period_135">. </a>The timeline shall show a progression of events over time<a id="period_136" href="#period_136">. </a></li>
                   <li class="test-"><a id="_t_7" class="defined" href="#_t_7">Test FAU_ALT_EXT.1:7</a>:
