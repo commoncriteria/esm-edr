@@ -870,9 +870,6 @@ This section describes any modifications that the ST author must make to the Bas
           <f-element id="fmt_smr-1-1">
             <title>The TSF shall maintain the roles [<h:i>administrator, SOC analyst, read-only
                 user</h:i>].</title>
-            <aactivity>
-              <no-tests/>
-            </aactivity>
           </f-element>
           <f-element id="fmt_smr-1-2">
             <title>The TSF shall be able to associate users with roles.</title>
@@ -924,7 +921,9 @@ This section describes any modifications that the ST author must make to the Bas
           <f-element id="fmt_srf_ext-1-1">
             <title>
               The TSF shall be capable of performing the following remediation functions:
-              <h:b>
+              <h:br/>
+              <h:br/>             
+			  <h:b>
                 <ctr id="fmt_srf_ext" ctr-type="Table">: Management
                   Functions</ctr>
               </h:b>
