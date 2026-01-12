@@ -7,7 +7,6 @@ output/esm-edr-release-linkable.html: SPD
 output/esm-edr-release-linkable.html: STM
 output/esm-edr-release-linkable.html: SigVer
 output/esm-edr-release-linkable.html: Smartcards
-output/esm-edr-release-linkable.html: TODO
 output/esm-edr-release-linkable.html: UID
 output/esm-edr-release-linkable.html: allowlisted
 output/esm-edr-release-linkable.html: collectable
@@ -32,7 +31,6 @@ output/esm-edr-sd.html: AGD
 output/esm-edr-sd.html: CEM
 output/esm-edr-sd.html: ESM
 output/esm-edr-sd.html: SPD
-output/esm-edr-sd.html: TODO
 output/esm-edr-sd.html: allowlisted
 output/esm-edr-sd.html: collectable
 output/esm-edr-sd.html: evaluator’s
@@ -52,7 +50,6 @@ output/esm-edr.html: SPD
 output/esm-edr.html: STM
 output/esm-edr.html: SigVer
 output/esm-edr.html: Smartcards
-output/esm-edr.html: TODO
 output/esm-edr.html: UID
 output/esm-edr.html: allowlisted
 output/esm-edr.html: collectable
