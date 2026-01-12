@@ -950,7 +950,6 @@ This section describes any modifications that the ST author must make to the Bas
             <f-element>
               <title>The TSF shall maintain the roles [<h:i>administrator, SOC analyst, read-only
                 user</h:i>].</title>
-                <aactivity><no-tests/></aactivity>
             </f-element>
             <f-element>
               <title>The TSF shall be able to associate users with roles.</title>
