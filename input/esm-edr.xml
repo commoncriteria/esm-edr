@@ -261,7 +261,7 @@ and so it is recommended that the intro text and associated table heading be upd
              <addressed-by>FMT_SMF.1/HOST</addressed-by><rationale>The PP-Module includes FMT_SMF.1/HOST to define the management functions that can be performed to control the behavior of Host Agents that are connected to the TOE and the management roles that are authorized to perform those functions.</rationale>
              <addressed-by>FMT_SMR.1</addressed-by><rationale>The PP-Module includes FMT_SMR.1 to define the management roles that the TSF supports so that its management functions can be separated by role.</rationale>
              <addressed-by>FMT_SRF_EXT.1</addressed-by><rationale>The PP-Module includes FMT_SRF_EXT.1 to define the remediation functions that are available to authorized users to issue corrective actions on a system that has a connected Host Agent.</rationale>
-             <addressed-by>FMT_TRM_EXT.1</addressed-by><rationale>The PP-Module includes FMT_TRM_EXT.1 to provide an optional capability to ensure the integrity of management commands and policies issued to external Host Agents through use of a digital signature.</rationale>
+             <addressed-by>FMT_TRM_EXT.1 (objective)</addressed-by><rationale>The PP-Module includes FMT_TRM_EXT.1 to provide an optional capability to ensure the integrity of management commands and policies issued to external Host Agents through use of a digital signature.</rationale>
           
              
         </threat>
@@ -892,7 +892,7 @@ This section describes any modifications that the ST author must make to the Bas
               Host Agent by an EDR. It does not impact the <xref to="bibAppPP"/> functionality.</consistency-rationale>
             <f-element>
               <title>The TSF shall be capable of performing the following management functions <h:b>that control
-                behavior of the Host Agent</h:b>:<h:br/>
+                behavior of the Host Agent</h:b>:<h:br/><h:br/>
                 <h:b><ctr id="fmt_smf" ctr-type="Table">: Management Functions</ctr></h:b><h:br/><h:br/>
                 [Status Markers:<h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> - -
                 Not Applicable<h:br/>
@@ -1006,7 +1006,7 @@ This section describes any modifications that the ST author must make to the Bas
             <dependencies>FMT_SMR.1 Security Management Roles</dependencies>
             
             <f-element>
-              <title> The TSF shall be capable of performing the following remediation functions:
+              <title> The TSF shall be capable of performing the following remediation functions:<h:br/><h:br/>
                 <h:b><ctr id="fmt_srf_ext" ctr-type="Table">: Management
                   Functions</ctr></h:b><h:br/><h:br/>
                 [Status Markers:<h:br/> M - Mandatory<h:br/> O - Optional or Objective<h:br/> - -
