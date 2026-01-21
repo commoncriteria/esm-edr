@@ -18,8 +18,8 @@ See the [release](#Release-Version) section if you are looking for the officiall
 * [Supporting Document for Endpoint Detection and Response](https://commoncriteria.github.io/pp/esm-edr/esm-edr-sd.pdf) (pdf)
 
 ## Release Version
-* [Protection Profile Module for Endpoint Detection and Response] (https://commoncriteria.github.io/esm-edr/release-2.0/esm-edr-release.html) (html)
-* [Supporting Document for Endpoint Detection and Response] (https://commoncriteria.github.io/esm-edr/release-2.0/esm-edr-sd.html) (html)
+* [Protection Profile Module for Endpoint Detection and Response](https://commoncriteria.github.io/esm-edr/release-2.0/esm-edr-release.html) (html)
+* [Supporting Document for Endpoint Detection and Response](https://commoncriteria.github.io/esm-edr/release-2.0/esm-edr-sd.html) (html)
 * [Combined Document for Endpoint Detection and Response](https://commoncriteria.github.io/esm-edr/release-2.0/esm-edr.html) (html)
 * [Protection Profile Module for Endpoint Detection and Response](https://commoncriteria.github.io/esm-edr/release-2.0/esm-edr-release.html.pdf) (pdf)
 * [Supporting Document for Endpoint Detection and Response](https://commoncriteria.github.io/esm-edr/release-2.0/esm-edr-sd.html.pdf) (pdf)
