@@ -1,4 +1,0 @@
-* https://commoncriteria.github.io/esm-edr/master/esm-edr-release-linkable.html.pdf[esm-edr-release-linkable.html.pdf]
-* https://commoncriteria.github.io/esm-edr/master/esm-edr-sd.html.pdf[esm-edr-sd.html.pdf]
-* https://commoncriteria.github.io/esm-edr/master/esm-edr-release.html.pdf[esm-edr-release.html.pdf]
-* https://commoncriteria.github.io/esm-edr/master/esm-edr.html.pdf[esm-edr.html.pdf]
