@@ -307,7 +307,7 @@ This section describes any modifications that the ST author must make to the Bas
         <audit-table id="at-Man" table="mandatory"/>
       </section>
       <!-- 5.2.1 Security Audit (FAU) -->
-      <section title="Security Audit (FAU)" id="fau-mandatory">
+      <section title="Class FAU: Security Audit" id="fau-mandatory">
         <ext-comp-def title="Server Alerts" fam-id="FAU_ALT_EXT">
           <fam-behavior>Components in this family define requirements for system activity that causes the TSF to generate an alert of the activity and for the contents of these alerts.</fam-behavior>
         </ext-comp-def>
@@ -595,7 +595,7 @@ This section describes any modifications that the ST author must make to the Bas
         </f-component>
       </section>
       <!-- 5.2.2 Identification and Authentication (FIA) -->
-      <section title="Identification and Authentication (FIA)" id="fia-mandatory">
+      <section title="Class FIA: Identification and Authentication" id="fia-mandatory">
         <ext-comp-def title="Dashboard Authentication Mechanisms" fam-id="FIA_AUT_EXT">
           <fam-behavior>Components in this family define requirements for authentication behavior that is unique to an EDR TOE.</fam-behavior>
         </ext-comp-def>
@@ -691,7 +691,7 @@ This section describes any modifications that the ST author must make to the Bas
         </f-component>
       </section>
       <!-- 5.2.3 Security Management (FMT) -->
-      <section title="Security Management (FMT)" id="fmt-mandatory">
+      <section title="Class FMT: Security Management" id="fmt-mandatory">
         <ext-comp-def title="Specification of Remediation Functions" fam-id="FMT_SRF_EXT">
           <fam-behavior>Components in this family define requirements for remediation functions that an EDR can perform to affect the behavior of an endpoint system.</fam-behavior>
         </ext-comp-def>
@@ -996,7 +996,7 @@ This section describes any modifications that the ST author must make to the Bas
         </f-component>
       </section>
       <!-- 5.2.4 Protection of the TSF (FPT) -->
-      <section title="Protection of the TSF (FPT)" id="fpt-mandatory">
+      <section title="Class FPT: Protection of the TSF" id="fpt-mandatory">
         <!-- FPT_ITT.1 Basic Internal TSF Data Transfer Protection -->
         <f-component cc-id="fpt_itt.1" id="fpt-itt-1" name="Basic Internal TSF Data Transfer Protection">
           <consistency-rationale>
@@ -1062,7 +1062,7 @@ This section describes any modifications that the ST author must make to the Bas
         </f-component>
       </section>
       <!-- 5.2.5 Trusted Path/Channels (FTP) -->
-      <section title="Trusted Path/Channels (FTP)" id="ftp-mandatory">
+      <section title="Class FTP: Trusted Path/Channels" id="ftp-mandatory">
         <!-- FTP_TRP.1 Trusted Path -->
         <f-component cc-id="ftp_trp.1" id="ftp-trp-1" name="Trusted Path">
           <consistency-rationale>
@@ -1140,7 +1140,7 @@ This section describes any modifications that the ST author must make to the Bas
         <audit-table id="at-objective" table="objective"/>
       </section>
       <!-- 5.2.6 Security Management (FMT) -->
-      <section title="Security Management (FMT)" id="fmt-objective">
+      <section title="Class FMT: Security Management" id="fmt-objective">
         <ext-comp-def title="Trusted Remediation Functions" fam-id="FMT_TRM_EXT">
           <fam-behavior>Components in this family define how the TOE can assert the authenticity of the remediation actions it requests from Host Agents.</fam-behavior>
         </ext-comp-def>
