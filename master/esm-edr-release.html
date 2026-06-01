@@ -829,34 +829,26 @@ The following sections list Common Criteria and technology terms used in this do
       <dl><dt class="threat defined" id="T.CREDENTIAL_REUSE">T.CREDENTIAL_REUSE</dt><dd><span class="description">An attacker is positioned on a communications channel or elsewhere on the            network infrastructure. Attackers may guess or harvest legitimate credentials from the            <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>, endpoints, or insecure network activity.</span></dd><dt class="threat defined" id="T.MISCONFIGURATION">T.MISCONFIGURATION</dt><dd><span class="description">An attacker is a legitimate privileged user with access to change            the configuration of the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr>'s security capabilities or is not a legitimate             privileged user trying to access without proper authorization. Attackers may            attempt to hide malicious activities from other privileged users.</span></dd></dl>
     
     
-    <h2 class="indexable" data-level="2" id="Assumptions">3.2 Assumptions</h2>
-These assumptions are made on the Operational Environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>) in order to be able to ensure that the
+    <h2 class="indexable" data-level="2" id="Assumptions">3.2 Assumptions</h2><p>These assumptions are made on the Operational Environment (<abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr>) in order to be able to ensure that the
 security functionality specified in the <abbr class="dyn-abbr"><a href="#abbr_PP-Module">PP-Module</a></abbr> can be provided by the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>.
 If the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is placed in an <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> that does not meet these assumptions, the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> may no longer be able to
-provide all of its security functionality.
-      
+provide all of its security functionality.</p>
       <dl><dt class="assumption defined" id="A.CONNECTIVITY">A.CONNECTIVITY</dt><dd><span class="description">The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> relies on network connectivity to carry out its
           management activities. The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> will provide reliable network connectivity for the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> to operate.
             The <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> will robustly handle occasional instances when
           connectivity is unavailable or unreliable.</span></dd></dl>
     
     
-    <h2 class="indexable" data-level="2" id="Organizational_Security_Policies">3.3 Organizational Security Policies</h2><p>An organization deploying the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> is
-      expected to satisfy the organizational security policy listed below in addition to all
-      organizational security policies defined by the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>. </p>
+    <h2 class="indexable" data-level="2" id="Organizational_Security_Policies">3.3 Organizational Security Policies</h2><p>This <abbr class="dyn-abbr"><a href="#abbr_PP">PP</a></abbr> defines no Organizational Security Policies beyond those defined in the claimed <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr>(s).</p>
       
-      This document does not define any additional OSPs.
-    
     
   <h1 class="indexable" data-level="1" id="Security_Objectives">4 Security Objectives</h1>
     
     
-    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">4.1 Security Objectives for the Operational Environment</h2>
-The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements technical and procedural measures to assist the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in correctly providing its security functionality (which is defined by the security objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>).
+    <h2 class="indexable" data-level="2" id="SecurityObjectivesTOEorEnvironment">4.1 Security Objectives for the Operational Environment</h2><p>The <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> implements technical and procedural measures to assist the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr> in correctly providing its security functionality (which is defined by the security objectives for the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>).
 The security objectives for the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> consist of a set of statements describing the goals that the <abbr class="dyn-abbr"><a href="#abbr_OE">OE</a></abbr> should achieve.
 This section defines the security objectives that are to be addressed by the <abbr class="dyn-abbr"><a href="#abbr_IT">IT</a></abbr> domain or by non-technical or procedural means.
-The assumptions identified in Section 3 are incorporated as security objectives for the environment.
-      
+The assumptions identified in Section 3 are incorporated as security objectives for the environment.</p>
       The following security objectives for the Operational Environment assist the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> in correctly providing its security functionality. These track with the assumptions about the environment.
       <dl><dt class="SOE defined" id="OE.RELIABLE_TRANSIT">OE.RELIABLE_TRANSIT</dt><dd><span class="description">Wired or wireless network traffic between the <abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr> and
             host agents will provide reasonably reliable connectivity.</span></dd></dl>
@@ -1227,7 +1219,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
         
         <div class="comp" id="FPT_ITT.1"><h4>FPT_ITT.1 Basic Internal TSF Data Transfer Protection</h4>
           
-          <div class="element"><div class="reqid" id="FPT_ITT.1.1"><a href="#FPT_ITT.1.1" class="abbr">FPT_ITT.1.1</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr></b> shall<b> [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="fpt_itt.1.1_1">implement [<b>selection</b>: <span class="selectable-content" id="itt_tls_from_package"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> as defined in the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Package</span>, <span class="selectable-content" id="https_from_package"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> as defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></span>] </span></li><li style=""><span class="selectable-content" id="fpt_itt.1.1_2">invoke platform-provided functionality for [<b>selection</b>: <span class="selectable-content" id="itt_invoke_platform_tls"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr></span>, <span class="selectable-content" id="fpt_itt.1.1_3"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span>] </span></li></ul>] 
+          <div class="element"><div class="reqid" id="FPT_ITT.1.1"><a href="#FPT_ITT.1.1" class="abbr">FPT_ITT.1.1</a></div><div class="reqdesc">The <b><abbr class="dyn-abbr"><a href="#abbr_EDR">EDR</a></abbr></b> shall<b> [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="fpt_itt.1.1_1">implement [<b>selection</b>: <span class="selectable-content" id="itt_tls_from_package"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> as defined in the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Package</span>, <span class="selectable-content" id="https_from_package"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> as defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></span>]</span></li><li style=""><span class="selectable-content" id="fpt_itt.1.1_2">invoke platform-provided functionality for [<b>selection</b>: <span class="selectable-content" id="itt_invoke_platform_tls"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr></span>, <span class="selectable-content" id="fpt_itt.1.1_3"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span>]</span></li></ul>] 
                 to</b> protect <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> data from [<i>modification, disclosure</i>] when it is transmitted between separate parts of the <abbr class="dyn-abbr"><a href="#abbr_TOE">TOE</a></abbr>. <div class="appnote"><span class="note-header">Application
       Note:
     </span><span class="note">
@@ -1265,7 +1257,7 @@ This section describes any modifications that the <abbr class="dyn-abbr"><a href
           
           <div class="element"><div class="reqid" id="FTP_TRP.1.1"><a href="#FTP_TRP.1.1" class="abbr">FTP_TRP.1.1</a></div><div class="reqdesc">
               The <abbr class="dyn-abbr"><a href="#abbr_TSF">TSF</a></abbr> shall
-              <b> [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="ftp_trp.1.1_1">implement [<b>selection</b>: <span class="selectable-content" id="trp_tls_from_package"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> as defined in the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Package</span>, <span class="selectable-content" id="ITC_HTTPS_2"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> as defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></span>] </span></li><li style=""><span class="selectable-content" id="ftp_trp.1.1_2">invoke platform-provided functionality for [<b>selection</b>: <span class="selectable-content" id="ftp_invoke_platform_tls"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr></span>, <span class="selectable-content" id="ftp_trp.1.1_3"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span>] </span></li></ul>]  to</b>
+              <b> [<b>selection</b>: <ul><li style=""><span class="selectable-content" id="ftp_trp.1.1_1">implement [<b>selection</b>: <span class="selectable-content" id="trp_tls_from_package"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> as defined in the <abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr> Package</span>, <span class="selectable-content" id="ITC_HTTPS_2"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr> as defined in the <abbr class="dyn-abbr"><a href="#abbr_Base-PP">Base-PP</a></abbr></span>]</span></li><li style=""><span class="selectable-content" id="ftp_trp.1.1_2">invoke platform-provided functionality for [<b>selection</b>: <span class="selectable-content" id="ftp_invoke_platform_tls"><abbr class="dyn-abbr"><a href="#abbr_TLS">TLS</a></abbr></span>, <span class="selectable-content" id="ftp_trp.1.1_3"><abbr class="dyn-abbr"><a href="#abbr_HTTPS">HTTPS</a></abbr></span>]</span></li></ul>]  to</b>
               provide a communication path between itself and [<i>remote</i>]
               <b>administrators</b>
               that is logically distinct from other communication paths and
