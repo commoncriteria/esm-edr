@@ -1,11 +1,10 @@
-* Error: Detected dangling id-reference to itt-tls-from-package from attribute
-        on-sel/Module[1]""/include-pkg[1]""/depends[1]""/on-sel[1]""
-* Error: Detected dangling id-reference to itt-invoke-platform-tls from attribute
-        on-sel/Module[1]""/include-pkg[1]""/depends[2]""/on-sel[1]""
-* Error: Detected dangling id-reference to trp-tls-from-package from attribute
-        on-sel/Module[1]""/include-pkg[1]""/depends[3]""/on-sel[1]""
-* Error: Detected dangling id-reference to trp-invoke-platform-tls from attribute
-        on-sel/Module[1]""/include-pkg[1]""/depends[4]""/on-sel[1]""
+transforms/xsl/module2html.xsl:449: namespace error : Failed to parse QName 'xsl:'
+                 --><xsl::apply-templates select="cc:cc-doc-ref[@id=cc:from-doc/
+                         ^
+compilation error: file transforms/xsl/module-commons.xsl line 70 element apply-template
+xsltStylePreCompute: unknown xsl:apply-template
+* Error: Detected dangling id-reference to sel_all_ssh from attribute
+        on-sel/Module[1]""/sec:Conformance_Claims[1]""/CClaimsInfo[1]""/cc-pkg-claim[1]""/FP-cc-ref[1]""/cc-doc-ref[1]""/depends[1]""/on-sel[1]""
 * Error: Detected multiple elements with an id of 'fmt_smf'.
 * Error: Detected multiple elements with an id of 'mf-1'.
 * Error: Detected multiple elements with an id of 'mf-2'.
